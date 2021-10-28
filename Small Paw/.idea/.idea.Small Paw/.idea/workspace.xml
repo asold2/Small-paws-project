@@ -6,7 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fb0a57f-19ca-4686-81d4-710c877a6df1" name="Changes" comment="commit before pull">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Small Paw/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Small Paw/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../small-paws-project/small-paws-project/src/main/java/smallpawsproject/smallpawsproject/authentication/ValidatorInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../small-paws-project/small-paws-project/src/main/java/smallpawsproject/smallpawsproject/authentication/ValidatorInterfaceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../small-paws-project/small-paws-project/src/main/java/smallpawsproject/smallpawsproject/controllers/AnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../small-paws-project/small-paws-project/src/main/java/smallpawsproject/smallpawsproject/controllers/AnimalController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635423859199</updated>
-      <workItem from="1635423867187" duration="999000" />
+      <workItem from="1635423867187" duration="1588000" />
     </task>
     <task id="LOCAL-00001" summary="commit before pull">
       <created>1635424203991</created>

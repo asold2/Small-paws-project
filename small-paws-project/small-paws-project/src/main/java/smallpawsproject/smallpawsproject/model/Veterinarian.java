@@ -1,11 +1,11 @@
 package smallpawsproject.smallpawsproject.model;
 
-public class AnimalAttendant
+public class Veterinarian
 {
   private String userName;
   private String password;
 
-  public AnimalAttendant(String userName, String password)
+  public Veterinarian(String userName, String password)
   {
     this.userName = userName;
     this.password = password;
@@ -20,8 +20,6 @@ public class AnimalAttendant
   {
     this.userName = userName;
   }
-
-
 
   public String getPassword()
   {

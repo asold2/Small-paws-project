@@ -5,8 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Registration" />
-      <Folder Include="Data\Validation" />
       <Folder Include="Pages\PageCode" />
     </ItemGroup>
 

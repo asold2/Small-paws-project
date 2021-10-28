@@ -9,44 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a9ba415-a1c6-43bb-896a-1e5c0f2404e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/Data/CloudDataLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Data/IDataLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Model/Animal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Model/AnimalAttendant.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Model/PerOwner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Model/Veterinarian.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Pages/CreateAccount.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Pages/Login.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Pages/Login.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Pages/ViewAnimals.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Data/Registration/CloudUserCreateAccountServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Data/Registration/IUserCreateAccountServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Data/Validation/CloudUserLogInServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Data/Validation/IUserLogInServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Data/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Data/WeatherForecastService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Pages/Counter.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Pages/FetchData.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Pages/Index.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Shared/SurveyPrompt.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Client.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Client.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Client.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Client.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.RazorComponent.input.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Data/CloudDataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Data/CloudDataLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Data/IDataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Data/IDataLoader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +37,10 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="208Rm4TAEwN3XoMNOFbDzBxWYGb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -127,15 +101,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635424384162</updated>
-      <workItem from="1635424391676" duration="3842000" />
+      <workItem from="1635424391676" duration="6533000" />
+      <workItem from="1635432922188" duration="357000" />
     </task>
+    <task id="LOCAL-00001" summary="Models, Diagram and Pages update">
+      <created>1635428872040</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635428872040</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -147,8 +130,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Models, Diagram and Pages update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Models, Diagram and Pages update" />
   </component>
 </project>

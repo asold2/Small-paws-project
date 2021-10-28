@@ -1,14 +1,13 @@
 package smallpawsproject.smallpawsproject.model;
 
-public class AnimalAttendant
+public class AnimalAttendant extends UserLogIn
 {
   private String userName;
   private String password;
 
   public AnimalAttendant(String userName, String password)
   {
-    this.userName = userName;
-    this.password = password;
+    super(userName,password);
   }
 
   public String getUserName()

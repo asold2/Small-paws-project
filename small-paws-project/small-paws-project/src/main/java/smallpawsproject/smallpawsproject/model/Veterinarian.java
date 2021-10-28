@@ -1,14 +1,13 @@
 package smallpawsproject.smallpawsproject.model;
 
-public class Veterinarian
+public class Veterinarian extends UserLogIn
 {
   private String userName;
   private String password;
 
   public Veterinarian(String userName, String password)
   {
-    this.userName = userName;
-    this.password = password;
+    super(userName,password);
   }
 
   public String getUserName()

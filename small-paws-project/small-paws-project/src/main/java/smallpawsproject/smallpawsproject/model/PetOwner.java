@@ -1,6 +1,6 @@
 package smallpawsproject.smallpawsproject.model;
 
-public class PetOwner
+public class PetOwner extends UserLogIn
 {
   private String firstName;
   private String lastName;
@@ -18,6 +18,7 @@ public class PetOwner
       String familyStatus, int avgIncome, String adress, String jobTitle,
       int id, String userName, String password)
   {
+    super(userName,password);
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
@@ -27,8 +28,6 @@ public class PetOwner
     this.adress = adress;
     JobTitle = jobTitle;
     this.id = id;
-    this.userName = userName;
-    this.password = password;
   }
 
   public String getFirstName()

@@ -1,0 +1,146 @@
+Index: Client/obj/Debug/net5.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>is_global = true\r\nbuild_property.TargetFramework = net5.0\r\nbuild_property.TargetPlatformMinVersion = \r\nbuild_property.UsingMicrosoftNETSdkWeb = true\r\nbuild_property.ProjectTypeGuids = \r\nbuild_property.PublishSingleFile = \r\nbuild_property.IncludeAllContentForSelfExtract = \r\nbuild_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows\r\nbuild_property.RootNamespace = Small_paws\r\nbuild_property.ProjectDir = F:\\Small-paws-project\\Small paws\\Client\\\r\n
+===================================================================
+diff --git a/Client/obj/Debug/net5.0/Client.GeneratedMSBuildEditorConfig.editorconfig b/Client/obj/Debug/net5.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+--- a/Client/obj/Debug/net5.0/Client.GeneratedMSBuildEditorConfig.editorconfig	
++++ b/Client/obj/Debug/net5.0/Client.GeneratedMSBuildEditorConfig.editorconfig	
+@@ -6,5 +6,5 @@
+ build_property.PublishSingleFile = 
+ build_property.IncludeAllContentForSelfExtract = 
+ build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+-build_property.RootNamespace = Small_paws
+-build_property.ProjectDir = F:\Small-paws-project\Small paws\Client\
++build_property.RootNamespace = Client
++build_property.ProjectDir = F:\Small-paws-project\Small Paw\Client\
+Index: Client/obj/project.assets.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 3,\r\n  \"targets\": {\r\n    \"net5.0\": {}\r\n  },\r\n  \"libraries\": {},\r\n  \"projectFileDependencyGroups\": {\r\n    \"net5.0\": []\r\n  },\r\n  \"packageFolders\": {\r\n    \"C:\\\\Users\\\\asold\\\\.nuget\\\\packages\\\\\": {},\r\n    \"C:\\\\Program Files (x86)\\\\Microsoft\\\\Xamarin\\\\NuGet\": {}\r\n  },\r\n  \"project\": {\r\n    \"version\": \"1.0.0\",\r\n    \"restore\": {\r\n      \"projectUniqueName\": \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\Client.csproj\",\r\n      \"projectName\": \"Client\",\r\n      \"projectPath\": \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\Client.csproj\",\r\n      \"packagesPath\": \"C:\\\\Users\\\\asold\\\\.nuget\\\\packages\\\\\",\r\n      \"outputPath\": \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\obj\\\\\",\r\n      \"projectStyle\": \"PackageReference\",\r\n      \"fallbackFolders\": [\r\n        \"C:\\\\Program Files (x86)\\\\Microsoft\\\\Xamarin\\\\NuGet\"\r\n      ],\r\n      \"configFilePaths\": [\r\n        \"C:\\\\Users\\\\asold\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\",\r\n        \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.Offline.config\",\r\n        \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Xamarin.Offline.config\"\r\n      ],\r\n      \"originalTargetFrameworks\": [\r\n        \"net5.0\"\r\n      ],\r\n      \"sources\": {\r\n        \"C:\\\\Program Files (x86)\\\\Microsoft SDKs\\\\NuGetPackages\\\\\": {},\r\n        \"https://api.nuget.org/v3/index.json\": {}\r\n      },\r\n      \"frameworks\": {\r\n        \"net5.0\": {\r\n          \"targetAlias\": \"net5.0\",\r\n          \"projectReferences\": {}\r\n        }\r\n      },\r\n      \"warningProperties\": {\r\n        \"warnAsError\": [\r\n          \"NU1605\"\r\n        ]\r\n      }\r\n    },\r\n    \"frameworks\": {\r\n      \"net5.0\": {\r\n        \"targetAlias\": \"net5.0\",\r\n        \"imports\": [\r\n          \"net461\",\r\n          \"net462\",\r\n          \"net47\",\r\n          \"net471\",\r\n          \"net472\",\r\n          \"net48\"\r\n        ],\r\n        \"assetTargetFallback\": true,\r\n        \"warn\": true,\r\n        \"frameworkReferences\": {\r\n          \"Microsoft.AspNetCore.App\": {\r\n            \"privateAssets\": \"none\"\r\n          },\r\n          \"Microsoft.NETCore.App\": {\r\n            \"privateAssets\": \"all\"\r\n          }\r\n        },\r\n        \"runtimeIdentifierGraphPath\": \"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\5.0.400\\\\RuntimeIdentifierGraph.json\"\r\n      }\r\n    }\r\n  }\r\n}
+===================================================================
+diff --git a/Client/obj/project.assets.json b/Client/obj/project.assets.json
+--- a/Client/obj/project.assets.json	
++++ b/Client/obj/project.assets.json	
+@@ -14,11 +14,11 @@
+   "project": {
+     "version": "1.0.0",
+     "restore": {
+-      "projectUniqueName": "F:\\Small-paws-project\\Small paws\\Client\\Client.csproj",
++      "projectUniqueName": "F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj",
+       "projectName": "Client",
+-      "projectPath": "F:\\Small-paws-project\\Small paws\\Client\\Client.csproj",
++      "projectPath": "F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj",
+       "packagesPath": "C:\\Users\\asold\\.nuget\\packages\\",
+-      "outputPath": "F:\\Small-paws-project\\Small paws\\Client\\obj\\",
++      "outputPath": "F:\\Small-paws-project\\Small Paw\\Client\\obj\\",
+       "projectStyle": "PackageReference",
+       "fallbackFolders": [
+         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+Index: Client/obj/Debug/net5.0/Client.csproj.FileListAbsolute.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\appsettings.Development.json\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\appsettings.json\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.StaticWebAssets.xml\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.exe\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.deps.json\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.runtimeconfig.json\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.runtimeconfig.dev.json\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.dll\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\ref\\Client.dll\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.pdb\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.Views.dll\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\bin\\Debug\\net5.0\\Client.Views.pdb\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.csproj.AssemblyReference.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.GeneratedMSBuildEditorConfig.editorconfig\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.AssemblyInfoInputs.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.AssemblyInfo.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.csproj.CoreCompileInputs.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.MvcApplicationPartsAssemblyInfo.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.RazorComponent.input.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\App.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\Pages\\Counter.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\Pages\\FetchData.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\Pages\\Index.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\Shared\\SurveyPrompt.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\_Imports.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\Shared\\MainLayout.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\Shared\\NavMenu.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.RazorComponent.output.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\RazorDeclaration\\Client.dll\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.TagHelpers.input.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.TagHelpers.output.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.RazorCoreGenerate.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\App.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Pages\\Counter.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Pages\\FetchData.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Pages\\Index.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Shared\\SurveyPrompt.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\_Imports.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Shared\\MainLayout.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Shared\\NavMenu.razor.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Pages\\Error.cshtml.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Razor\\Pages\\_Host.cshtml.g.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.RazorAssemblyInfo.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.RazorAssemblyInfo.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\staticwebassets\\Client.StaticWebAssets.Manifest.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\staticwebassets\\Client.StaticWebAssets.xml\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\scopedcss\\Shared\\MainLayout.razor.rz.scp.css\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\scopedcss\\Shared\\NavMenu.razor.rz.scp.css\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\scopedcss\\bundle\\Client.styles.css\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\scopedcss\\projectbundle\\Client.bundle.scp.css\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.RazorTargetAssemblyInfo.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.RazorTargetAssemblyInfo.cs\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.Views.pdb\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.dll\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\ref\\Client.dll\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.pdb\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.genruntimeconfig.cache\r\nC:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\Debug\\net5.0\\Client.csproj.CopyComplete\r\n
+===================================================================
+diff --git a/Client/obj/Debug/net5.0/Client.csproj.FileListAbsolute.txt b/Client/obj/Debug/net5.0/Client.csproj.FileListAbsolute.txt
+--- a/Client/obj/Debug/net5.0/Client.csproj.FileListAbsolute.txt	
++++ b/Client/obj/Debug/net5.0/Client.csproj.FileListAbsolute.txt	
+@@ -56,3 +56,22 @@
+ C:\Users\hansl\Documents\GitHub\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.pdb
+ C:\Users\hansl\Documents\GitHub\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache
+ C:\Users\hansl\Documents\GitHub\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.csproj.CopyComplete
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.csproj.AssemblyReference.cache
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.GeneratedMSBuildEditorConfig.editorconfig
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.AssemblyInfoInputs.cache
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.AssemblyInfo.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.csproj.CoreCompileInputs.cache
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.MvcApplicationPartsAssemblyInfo.cache
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.RazorComponent.input.cache
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.RazorComponent.output.cache
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.dll
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\ref\Client.dll
++F:\Small-paws-project\Small Paw\Client\obj\Debug\net5.0\Client.pdb
+Index: .idea/.idea.Small Paw/.idea/indexLayout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"UserContentModel\">\r\n    <attachedFolders />\r\n    <explicitIncludes />\r\n    <explicitExcludes />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/.idea.Small Paw/.idea/indexLayout.xml b/.idea/.idea.Small Paw/.idea/indexLayout.xml
+--- a/.idea/.idea.Small Paw/.idea/indexLayout.xml	
++++ b/.idea/.idea.Small Paw/.idea/indexLayout.xml	
+@@ -1,7 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="UserContentModel">
+-    <attachedFolders />
++    <attachedFolders>
++      <Path>../../Small-paws-project</Path>
++    </attachedFolders>
+     <explicitIncludes />
+     <explicitExcludes />
+   </component>
+Index: Client/obj/project.packagespec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"restore\":{\"projectUniqueName\":\"C:\\\\Users\\\\hansl\\\\Documents\\\\GitHub\\\\Small-paws-project\\\\Small Paw\\\\Client\\\\Client.csproj\",\"projectName\":\"Client\",\"projectPath\":\"C:\\\\Users\\\\hansl\\\\Documents\\\\GitHub\\\\Small-paws-project\\\\Small Paw\\\\Client\\\\Client.csproj\",\"outputPath\":\"C:\\\\Users\\\\hansl\\\\Documents\\\\GitHub\\\\Small-paws-project\\\\Small Paw\\\\Client\\\\obj\\\\\",\"projectStyle\":\"PackageReference\",\"fallbackFolders\":[\"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\NuGetFallbackFolder\"],\"originalTargetFrameworks\":[\"net5.0\"],\"sources\":{\"https://api.nuget.org/v3/index.json\":{}},\"frameworks\":{\"net5.0\":{\"targetAlias\":\"net5.0\",\"projectReferences\":{}}},\"warningProperties\":{\"warnAsError\":[\"NU1605\"]}}\"frameworks\":{\"net5.0\":{\"targetAlias\":\"net5.0\",\"imports\":[\"net461\",\"net462\",\"net47\",\"net471\",\"net472\",\"net48\"],\"assetTargetFallback\":true,\"warn\":true,\"frameworkReferences\":{\"Microsoft.AspNetCore.App\":{\"privateAssets\":\"none\"},\"Microsoft.NETCore.App\":{\"privateAssets\":\"all\"}},\"runtimeIdentifierGraphPath\":\"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\5.0.400\\\\RuntimeIdentifierGraph.json\"}}
+===================================================================
+diff --git a/Client/obj/project.packagespec.json b/Client/obj/project.packagespec.json
+--- a/Client/obj/project.packagespec.json	
++++ b/Client/obj/project.packagespec.json	
+@@ -1,1 +1,1 @@
+-"restore":{"projectUniqueName":"C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\Client.csproj","projectName":"Client","projectPath":"C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\Client.csproj","outputPath":"C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small Paw\\Client\\obj\\","projectStyle":"PackageReference","fallbackFolders":["C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"],"originalTargetFrameworks":["net5.0"],"sources":{"https://api.nuget.org/v3/index.json":{}},"frameworks":{"net5.0":{"targetAlias":"net5.0","projectReferences":{}}},"warningProperties":{"warnAsError":["NU1605"]}}"frameworks":{"net5.0":{"targetAlias":"net5.0","imports":["net461","net462","net47","net471","net472","net48"],"assetTargetFallback":true,"warn":true,"frameworkReferences":{"Microsoft.AspNetCore.App":{"privateAssets":"none"},"Microsoft.NETCore.App":{"privateAssets":"all"}},"runtimeIdentifierGraphPath":"C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"}}
+\ No newline at end of file
++"restore":{"projectUniqueName":"F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj","projectName":"Client","projectPath":"F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj","outputPath":"F:\\Small-paws-project\\Small Paw\\Client\\obj\\","projectStyle":"PackageReference","fallbackFolders":["C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"],"originalTargetFrameworks":["net5.0"],"sources":{"C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\":{},"https://api.nuget.org/v3/index.json":{}},"frameworks":{"net5.0":{"targetAlias":"net5.0","projectReferences":{}}},"warningProperties":{"warnAsError":["NU1605"]}}"frameworks":{"net5.0":{"targetAlias":"net5.0","imports":["net461","net462","net47","net471","net472","net48"],"assetTargetFallback":true,"warn":true,"frameworkReferences":{"Microsoft.AspNetCore.App":{"privateAssets":"none"},"Microsoft.NETCore.App":{"privateAssets":"all"}},"runtimeIdentifierGraphPath":"C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"}}
+\ No newline at end of file
+Index: Client/obj/rider.project.restore.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>16354232971197761
+===================================================================
+diff --git a/Client/obj/rider.project.restore.info b/Client/obj/rider.project.restore.info
+--- a/Client/obj/rider.project.restore.info	
++++ b/Client/obj/rider.project.restore.info	
+@@ -1,1 +1,1 @@
+-16354232971197761
+\ No newline at end of file
++16354238642359739
+\ No newline at end of file
+Index: Client/obj/Client.csproj.nuget.dgspec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"format\": 1,\r\n  \"restore\": {\r\n    \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\Client.csproj\": {}\r\n  },\r\n  \"projects\": {\r\n    \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\Client.csproj\": {\r\n      \"version\": \"1.0.0\",\r\n      \"restore\": {\r\n        \"projectUniqueName\": \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\Client.csproj\",\r\n        \"projectName\": \"Client\",\r\n        \"projectPath\": \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\Client.csproj\",\r\n        \"packagesPath\": \"C:\\\\Users\\\\asold\\\\.nuget\\\\packages\\\\\",\r\n        \"outputPath\": \"F:\\\\Small-paws-project\\\\Small paws\\\\Client\\\\obj\\\\\",\r\n        \"projectStyle\": \"PackageReference\",\r\n        \"fallbackFolders\": [\r\n          \"C:\\\\Program Files (x86)\\\\Microsoft\\\\Xamarin\\\\NuGet\"\r\n        ],\r\n        \"configFilePaths\": [\r\n          \"C:\\\\Users\\\\asold\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\",\r\n          \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.Offline.config\",\r\n          \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Xamarin.Offline.config\"\r\n        ],\r\n        \"originalTargetFrameworks\": [\r\n          \"net5.0\"\r\n        ],\r\n        \"sources\": {\r\n          \"C:\\\\Program Files (x86)\\\\Microsoft SDKs\\\\NuGetPackages\\\\\": {},\r\n          \"https://api.nuget.org/v3/index.json\": {}\r\n        },\r\n        \"frameworks\": {\r\n          \"net5.0\": {\r\n            \"targetAlias\": \"net5.0\",\r\n            \"projectReferences\": {}\r\n          }\r\n        },\r\n        \"warningProperties\": {\r\n          \"warnAsError\": [\r\n            \"NU1605\"\r\n          ]\r\n        }\r\n      },\r\n      \"frameworks\": {\r\n        \"net5.0\": {\r\n          \"targetAlias\": \"net5.0\",\r\n          \"imports\": [\r\n            \"net461\",\r\n            \"net462\",\r\n            \"net47\",\r\n            \"net471\",\r\n            \"net472\",\r\n            \"net48\"\r\n          ],\r\n          \"assetTargetFallback\": true,\r\n          \"warn\": true,\r\n          \"frameworkReferences\": {\r\n            \"Microsoft.AspNetCore.App\": {\r\n              \"privateAssets\": \"none\"\r\n            },\r\n            \"Microsoft.NETCore.App\": {\r\n              \"privateAssets\": \"all\"\r\n            }\r\n          },\r\n          \"runtimeIdentifierGraphPath\": \"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\5.0.400\\\\RuntimeIdentifierGraph.json\"\r\n        }\r\n      }\r\n    }\r\n  }\r\n}
+===================================================================
+diff --git a/Client/obj/Client.csproj.nuget.dgspec.json b/Client/obj/Client.csproj.nuget.dgspec.json
+--- a/Client/obj/Client.csproj.nuget.dgspec.json	
++++ b/Client/obj/Client.csproj.nuget.dgspec.json	
+@@ -1,17 +1,17 @@
+ {
+   "format": 1,
+   "restore": {
+-    "F:\\Small-paws-project\\Small paws\\Client\\Client.csproj": {}
++    "F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj": {}
+   },
+   "projects": {
+-    "F:\\Small-paws-project\\Small paws\\Client\\Client.csproj": {
++    "F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj": {
+       "version": "1.0.0",
+       "restore": {
+-        "projectUniqueName": "F:\\Small-paws-project\\Small paws\\Client\\Client.csproj",
++        "projectUniqueName": "F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj",
+         "projectName": "Client",
+-        "projectPath": "F:\\Small-paws-project\\Small paws\\Client\\Client.csproj",
++        "projectPath": "F:\\Small-paws-project\\Small Paw\\Client\\Client.csproj",
+         "packagesPath": "C:\\Users\\asold\\.nuget\\packages\\",
+-        "outputPath": "F:\\Small-paws-project\\Small paws\\Client\\obj\\",
++        "outputPath": "F:\\Small-paws-project\\Small Paw\\Client\\obj\\",
+         "projectStyle": "PackageReference",
+         "fallbackFolders": [
+           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"

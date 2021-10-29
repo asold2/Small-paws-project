@@ -1,5 +1,5 @@
 ﻿@page "/"
-@layout LoginLayout
+@layout LoginCreateAccountLayout
 
 		<div class="container-login">
 			<div class="wrap-login">
@@ -11,13 +11,15 @@
 				<div class="wrap-input">
 					<span class="label-input">Username</span>
 					<input class="input" type="text" name="username" placeholder="Type your username">
-					<span class='focus-input' data-symbol="&#xf023;"></span>
+					<span class='focus-input'></span>
+					<i class="fas fa-user-alt"></i>
 				</div>
 
 				<div class="wrap-input">
 					<span class="label-input">Password</span>
 					<input class="input" type="password" placeholder="Type your password">
-					<span class="focus-input" data-symbol="&#xf190;"></span>
+					<span class="focus-input"></span>
+					<i class="fas fa-lock"></i>
 				</div>
 
 				<div class="wrap-login-btn">
@@ -28,7 +30,7 @@
 				</div>
 				
 				<div class="wrap-SignUp">	
-					<a href="#">Sign Up</a>
+					<a class="signUp" href="#">Sign Up</a>
 				</div>
 
 			</div>

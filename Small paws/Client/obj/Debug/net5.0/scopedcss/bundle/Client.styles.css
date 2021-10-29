@@ -1,3 +1,4 @@
+/* _content/Client/Pages/CreateAccount.razor.rz.scp.css */
 /* _content/Client/Pages/Login.razor.rz.scp.css */
 
 ul[b-qqczw58t74], li[b-qqczw58t74] {
@@ -13,6 +14,16 @@ input[b-qqczw58t74] {
 textarea[b-qqczw58t74] {
     outline: none;
     border: none;
+}
+i[b-qqczw58t74]{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 45px;
+    left: 15px;
+    pointer-events: none;
+    color: #adadad;
 }
 
 input[b-qqczw58t74]::-webkit-input-placeholder { color: #adadad;}
@@ -104,27 +115,6 @@ button:hover[b-qqczw58t74] {
     
 }
 
-.focus-input[b-qqczw58t74]::after {
-    content: attr(data-symbol);
-    font-family: Material-Design-Iconic-Font;
-    color: #adadad;
-    font-size: 22px;
-
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: calc(100% - 20px);
-    bottom: 0;
-    left: 0;
-    padding-left: 13px;
-    padding-top: 3px;
-}
-
 .focus-input[b-qqczw58t74]::before {
     content: "";
     display: block;
@@ -140,22 +130,22 @@ button:hover[b-qqczw58t74] {
     transition: all 0.4s;
 }
 
-
 .input:focus + .focus-input[b-qqczw58t74]::before {
     width: 100%;
 }
 
-.has-val.input + .focus-input[b-qqczw58t74]::before {
+.input:not(:placeholder-shown) + .focus-input[b-qqczw58t74]::before {
     width: 100%;
 }
 
-.input:focus + .focus-input[b-qqczw58t74]::after {
+.input:focus ~ i[b-qqczw58t74] {
     color: #a64bf4;
 }
 
-.has-val.input + .focus-input[b-qqczw58t74]::after {
+.input:not(:placeholder-shown) ~ i[b-qqczw58t74] {
     color: #a64bf4;
 }
+
 
 
 
@@ -228,8 +218,17 @@ button:hover[b-qqczw58t74] {
     display: flex;
     justify-content: center;
 }
-/* _content/Client/Shared/LoginLayout.razor.rz.scp.css */
-.page[b-lg0yj4nxvf]{
+.signUp[b-qqczw58t74]{
+    color: grey;
+    text-decoration: none;
+}
+.signUp:hover[b-qqczw58t74]{
+    transition: color;
+    transition-duration: 1s;
+    color: purple;
+}
+/* _content/Client/Shared/LoginCreateAccountLayout.razor.rz.scp.css */
+.page[b-blai4qmvh7]{
     background: linear-gradient(225deg, rgba(255,0,172,1) 0%, rgba(69,23,142,1) 50%, rgba(0,212,255,1) 100%);
     width: 100%;
     height: 100%;

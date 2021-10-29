@@ -52,9 +52,10 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.pdb
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.csproj.CopyComplete
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\LoginLayout.razor.g.cs
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\LoginLayout.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\Login.razor.rz.scp.css
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\LoginLayout.razor.rz.scp.css
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\LoginCreateAccountLayout.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\LoginCreateAccountLayout.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\CreateAccount.razor.rz.scp.css
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\LoginCreateAccountLayout.razor.rz.scp.css

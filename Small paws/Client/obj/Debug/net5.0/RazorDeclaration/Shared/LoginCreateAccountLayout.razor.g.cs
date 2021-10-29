@@ -82,7 +82,7 @@ using Client.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class LoginLayout : LayoutComponentBase
+    public partial class LoginCreateAccountLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

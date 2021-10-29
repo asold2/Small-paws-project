@@ -21,7 +21,6 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccount.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewAnimals.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorComponent.output.cache
@@ -33,7 +32,6 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\CreateAccount.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewAnimals.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
@@ -42,7 +40,6 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorAssemblyInfo.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\staticwebassets\Client.StaticWebAssets.Manifest.cache
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\staticwebassets\Client.StaticWebAssets.xml
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\Login.razor.rz.scp.css
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\bundle\Client.styles.css
@@ -55,3 +52,9 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.pdb
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.csproj.CopyComplete
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\LoginLayout.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\LoginLayout.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\Login.razor.rz.scp.css
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\LoginLayout.razor.rz.scp.css

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Client.Pages
+namespace Client.Shared
 {
     #line hidden
     using System;
@@ -82,9 +82,7 @@ using Client.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.LayoutAttribute(typeof(LoginLayout))]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class LoginLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

@@ -1,11 +1,20 @@
-﻿@page "/Login"
-<div>
-        
-    <ul>
-        <li><h3>Login</h3></li>
-        <li>Username: <input type="text"></li>
-        <li>Password: <input type="password"></li>
-        <li><button>LogIn</button></li>
-    </ul>
+﻿@page "/"
+@layout LoginLayout
+
+<div class="LoginPage">
+   <div class="loginDiv" style="min-width: 18rem; max-width: 30.5%;">
+                       <div class="text-center">
+                           <h3>Login</h3>
+                       </div>
+                       <ul>
+                           <li>Username: <input type="text"></li>
+                           <li>Password: <input type="password"></li>
+                       </ul>
+       <div class="text-center">
+           <a href="#" class="loginButton">LogIn</a>
+           <a href="#">Create Account</a>
+       </div>
+       </div> 
 </div>
+
 

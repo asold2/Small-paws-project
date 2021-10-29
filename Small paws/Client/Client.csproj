@@ -6,6 +6,14 @@
 
     <ItemGroup>
       <Folder Include="Pages\PageCode" />
+      <Folder Include="wwwroot\Images" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Shared\bg-01.jpg">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

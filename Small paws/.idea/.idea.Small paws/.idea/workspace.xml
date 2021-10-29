@@ -9,14 +9,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a9ba415-a1c6-43bb-896a-1e5c0f2404e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/Data/Registration/CloudUserCreateAccountServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Data/Registration/IUserCreateAccountServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Data/Validation/CloudUserLogInServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Data/Validation/IUserLogInServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Shared/LoginLayout.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Shared/LoginLayout.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Shared/bg-01.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Client/App.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Data/CloudDataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Data/CloudDataLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Data/IDataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Data/IDataLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Pages/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Pages/Login.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Pages/Login.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bin/Debug/net5.0/Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/bin/Debug/net5.0/ref/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bin/Debug/net5.0/ref/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.RazorComponent.input.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.RazorCoreGenerate.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.TagHelpers.output.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/App.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/Razor/Shared/NavMenu.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/ref/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/ref/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/scopedcss/Pages/Login.razor.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/scopedcss/Pages/Login.razor.rz.scp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/scopedcss/bundle/Client.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/scopedcss/bundle/Client.styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/scopedcss/projectbundle/Client.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/scopedcss/projectbundle/Client.bundle.scp.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +79,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -102,7 +130,8 @@
       <option name="presentableId" value="Default" />
       <updated>1635424384162</updated>
       <workItem from="1635424391676" duration="6533000" />
-      <workItem from="1635432922188" duration="357000" />
+      <workItem from="1635432922188" duration="487000" />
+      <workItem from="1635492124609" duration="7145000" />
     </task>
     <task id="LOCAL-00001" summary="Models, Diagram and Pages update">
       <created>1635428872040</created>
@@ -111,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635428872040</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Data folder changes">
+      <created>1635433393100</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635433393100</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +171,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Models, Diagram and Pages update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Models, Diagram and Pages update" />
+    <MESSAGE value="Data folder changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data folder changes" />
   </component>
 </project>

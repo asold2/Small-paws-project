@@ -18,7 +18,6 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorComponent.input.cache
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccount.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewAnimals.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -29,7 +28,6 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.TagHelpers.output.cache
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorCoreGenerate.cache
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\CreateAccount.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewAnimals.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -57,7 +55,6 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\Login.razor.rz.scp.css
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\LoginCreateAccountLayout.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\LoginCreateAccountLayout.razor.g.cs
-C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\CreateAccount.razor.rz.scp.css
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\LoginCreateAccountLayout.razor.rz.scp.css
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\appsettings.json
@@ -120,3 +117,9 @@ C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\n
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.pdb
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.csproj.CopyComplete
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccountDetails.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccountMain.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\CreateAccountDetails.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\CreateAccountMain.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\CreateAccountDetails.razor.rz.scp.css
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\CreateAccountMain.razor.rz.scp.css

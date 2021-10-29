@@ -1,20 +1,38 @@
 ﻿@page "/"
 @layout LoginLayout
 
-<div class="LoginPage">
-   <div class="loginDiv" style="min-width: 18rem; max-width: 30.5%;">
-                       <div class="text-center">
-                           <h3>Login</h3>
-                       </div>
-                       <ul>
-                           <li>Username: <input type="text"></li>
-                           <li>Password: <input type="password"></li>
-                       </ul>
-       <div class="text-center">
-           <a href="#" class="loginButton">LogIn</a>
-           <a href="#">Create Account</a>
-       </div>
-       </div> 
-</div>
+		<div class="container-login">
+			<div class="wrap-login">
+				
+				<span class="login-title">
+					<b>Login</b>
+				</span>
 
+				<div class="wrap-input">
+					<span class="label-input">Username</span>
+					<input class="input" type="text" name="username" placeholder="Type your username">
+					<span class='focus-input' data-symbol="&#xf023;"></span>
+				</div>
+
+				<div class="wrap-input">
+					<span class="label-input">Password</span>
+					<input class="input" type="password" placeholder="Type your password">
+					<span class="focus-input" data-symbol="&#xf190;"></span>
+				</div>
+
+				<div class="wrap-login-btn">
+					<div class="login-bgbtn"></div>
+					<button class="login-btn">
+						Login
+					</button>
+				</div>
+				
+				<div class="wrap-SignUp">	
+					<a href="#">Sign Up</a>
+				</div>
+
+			</div>
+		</div>
+
+	
 

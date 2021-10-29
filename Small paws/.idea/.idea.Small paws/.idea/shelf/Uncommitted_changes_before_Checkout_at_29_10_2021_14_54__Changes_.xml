@@ -1,0 +1,19 @@
+﻿<changelist name="Uncommitted_changes_before_Checkout_at_29_10_2021_14_54_[Changes]" date="1635512085845" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_10_2021_14_54_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 29.10.2021 14:54 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Client/obj/project.nuget.cache" />
+    <option name="AFTER_PATH" value="Client/obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_10_2021_14_54_[Changes]/project.nuget.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/obj/Debug/net5.0/Client.assets.cache" />
+    <option name="AFTER_PATH" value="Client/obj/Debug/net5.0/Client.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_10_2021_14_54_[Changes]/Client.assets.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/obj/Debug/net5.0/Client.csproj.AssemblyReference.cache" />
+    <option name="AFTER_PATH" value="Client/obj/Debug/net5.0/Client.csproj.AssemblyReference.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Small paws/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_10_2021_14_54_[Changes]/Client.csproj.AssemblyReference.cache" />
+  </binary>
+</changelist>

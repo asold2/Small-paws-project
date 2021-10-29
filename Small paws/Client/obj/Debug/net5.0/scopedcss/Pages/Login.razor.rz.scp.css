@@ -34,7 +34,7 @@ textarea:-moz-placeholder[b-qqczw58t74] { color: #adadad;}
 textarea[b-qqczw58t74]::-moz-placeholder { color: #adadad;}
 textarea:-ms-input-placeholder[b-qqczw58t74] { color: #adadad;}
 
-/*---------------------------------------------*/
+
 button[b-qqczw58t74] {
     outline: none !important;
     border: none;
@@ -78,6 +78,7 @@ button:hover[b-qqczw58t74] {
 
 .login-title[b-qqczw58t74] {
     display: block;
+    font-family: 'Poppins', sans-serif;
     font-size: 39px;
     color: #333333;
     line-height: 1.2;
@@ -184,8 +185,8 @@ button:hover[b-qqczw58t74] {
 }
 
 .login-btn[b-qqczw58t74] {
-    font-family: Poppins-Medium;
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
     color: #fff;
     line-height: 1.2;
     text-transform: uppercase;
@@ -219,9 +220,15 @@ button:hover[b-qqczw58t74] {
 .signUp[b-qqczw58t74]{
     color: grey;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: smaller;
 }
 .signUp:hover[b-qqczw58t74]{
     transition: color;
     transition-duration: 1s;
     color: purple;
+}
+.label-input[b-qqczw58t74]{
+    font-family: 'Poppins', sans-serif;
+    font-size: smaller;
 }

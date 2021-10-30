@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.repositories.PetOwnerRepository;
 
+import java.io.File;
 import java.util.List;
 //import main.java.smallpawsproject.repositories.PetOwnerRepository;
 
@@ -36,9 +37,5 @@ public class CreateAccountController
   @GetMapping(value = "/petowners")
   public Iterable<PetOwner> getPetOwners(){
   return petOwnerRepository.findAll();
-
   }
-
-
-
 }

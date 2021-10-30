@@ -1,5 +1,6 @@
-﻿
+﻿@page "/CreateAccountMain"
 @layout LoginCreateAccountLayout
+@inherits CreateAccountMainRazor
 
 		<div class="container-login">
 			<div class="wrap-login">
@@ -34,13 +35,13 @@
 
 				<div class="wrap-login-btn">
 					<div class="login-bgbtn"></div>
-					<button class="login-btn">
+					<button @onclick="LoadCreateAccountDetails" class="login-btn">
 						Continue
 					</button>
 				</div>
 				
 				<div class="wrap-SignUp">	
-					<a class="signUp" href="#">LogIn</a>
+					<a @onclick="LoadLogIn" class="signUp" href="#">LogIn</a>
 				</div>
 
 			</div>

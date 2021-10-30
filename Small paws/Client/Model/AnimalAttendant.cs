@@ -1,8 +1,6 @@
 ﻿namespace Client.Model
 {
-    public class AnimalAttendant
+    public class AnimalAttendant : User
     {
-        private string Username;
-        private string Password;
     }
 }

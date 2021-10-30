@@ -1,6 +1,23 @@
 ﻿@page "/ViewAnimals"
+@inherits ViewAnimalsRazor
 <h3>ViewAnimals</h3>
 
-@code {
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Age</th>
+        <th>Type of animal</th>
+        <th>Descripition</th>
+    </tr>
+    @foreach (var animal in Animals)
+    {
+        <tr>
+            <td>@animal.Id</td>
+            <td>@animal.Age</td>
+            <td>@animal.TypeOfAnimal</td>
+            <td>@animal.Description</td>
+        </tr>
+    }
+
     
-}
+</table>

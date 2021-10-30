@@ -4,15 +4,23 @@ namespace Client.Pages
 {
     public class CreateAccountMainRazor : ComponentBase
     {
-        [Inject] protected NavigationManager navigationManager { get; set; }
+        [Inject] private NavigationManager NavigationManager { get; set; }
+
+        public string Email { get; protected set; }
+        public string Username { get; protected set; }
+        public string Password { get; protected set; }
+        protected string PasswordConfirmation { get; set; }
 
         protected void LoadLogIn()
         {
-            navigationManager.NavigateTo("");
+            NavigationManager.NavigateTo("");
         }
         protected void LoadCreateAccountDetails()
         {
-            navigationManager.NavigateTo("CreateAccountDetails");
+            if (Password.Equals(PasswordConfirmation))
+            {
+                NavigationManager.NavigateTo("CreateAccountDetails");
+            }
         }
     }
 }

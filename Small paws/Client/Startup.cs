@@ -1,3 +1,6 @@
+using Client.Data;
+using Client.Data.Registration;
+using Client.Data.Validation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +24,9 @@ namespace Client
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSingleton<IDataLoader, CloudDataLoader>();
+            services.AddSingleton<IUserLogInServices, CloudUserLogInServices>();
+            services.AddSingleton<IUserCreateAccountServices, CloudUserCreateAccountServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

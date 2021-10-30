@@ -1,21 +1,28 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using Client.Data.Validation;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+
 
 
 namespace Client.Pages
 {
     public class LoginRazor : ComponentBase
     {
-    [Inject] protected NavigationManager navigationManager { get; set; }
+    [Inject] private NavigationManager NavigationManager { get; set; }
+    [Inject] private IUserLogInServices UserLogInServices { get; set; }
 
-    protected void LoadMainPage()
+    protected string Username;
+    protected string Password;
+
+    protected async void LoadMainPage()
     {
-        navigationManager.NavigateTo("ViewAnimals");
+        if (await UserLogInServices.ValidateUserAsync(Username, Password))
+        {
+            NavigationManager.NavigateTo("ViewAnimals");    
+        }
     }
     protected void LoadCreateAccount()
     {
-        navigationManager.NavigateTo("CreateAccountMain");
+        NavigationManager.NavigateTo("CreateAccountMain");
     }
     
     }

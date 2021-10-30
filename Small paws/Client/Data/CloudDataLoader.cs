@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Client.Model;
 
@@ -8,7 +9,7 @@ namespace Client.Data
 {
     public class CloudDataLoader : IDataLoader
     {
-        private string uri;
+        private const string Uri = "https://localhost:8090";
         private readonly HttpClient _httpClient;
         public CloudDataLoader(HttpClient httpClient)
         {
@@ -17,7 +18,15 @@ namespace Client.Data
 
         public async Task<IList<Animal>> GetAnimalsAsync()
         {
-            return null;
+            var responseMessage = await _httpClient.GetAsync(Uri + "/animals");
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception("Ups something went wrong");
+            }
+
+            var message = await responseMessage.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<List<Animal>>(message);
+            return result;
         }
     }
 }

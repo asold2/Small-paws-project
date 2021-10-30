@@ -9,15 +9,15 @@ import javax.persistence.Id;
 public class Veterinarian extends UserLogIn
 {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String userName;
   private String password;
 
-  public Veterinarian(String userName, String password)
+  public Veterinarian(Long id,String userName, String password)
   {
-    super(userName,password);
+    super(id,userName,password);
   }
+  public Veterinarian(){}
 
   public String getUserName()
   {

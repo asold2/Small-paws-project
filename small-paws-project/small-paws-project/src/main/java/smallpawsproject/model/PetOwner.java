@@ -14,7 +14,6 @@ public class PetOwner extends UserLogIn implements Serializable
 {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String firstName;
   private String lastName;
@@ -31,11 +30,11 @@ public class PetOwner extends UserLogIn implements Serializable
 
 
   @JsonCreator
-  public PetOwner(String firstName, String lastName, int age, String sex,
+  public PetOwner(Long id,String firstName, String lastName, int age, String sex,
       String familyStatus, int avgIncome, String address, String jobTitle,
       String userName, String password)
   {
-    super(userName,password);
+    super(id,userName,password);
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;

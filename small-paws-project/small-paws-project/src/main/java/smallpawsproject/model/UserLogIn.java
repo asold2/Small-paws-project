@@ -1,23 +1,26 @@
 package smallpawsproject.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonCreator;
 
+import javax.persistence.*;
+
+@Table(name="LogInUsers")
 @Entity
 public class UserLogIn
 {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name="User_id")
+  @GeneratedValue
   private Long id;
   String userName;
   String password;
 
   public UserLogIn(){};
 
-  public UserLogIn(String userName, String password)
+  @JsonCreator
+  public UserLogIn(Long id ,String userName, String password)
   {
+    this.id = id;
     this.userName = userName;
     this.password = password;
   }

@@ -31,7 +31,7 @@ public class RegistrationServiceImpl implements RegistrationService
   {
     try
     {
-      FileReader reader = new FileReader("accounts.json");
+      FileReader reader = new FileReader("small-paws-project/small-paws-project/accounts.json");
         jsonArray = (JSONArray) parser.parse(reader);
     }
     catch (FileNotFoundException | ParseException e)
@@ -56,7 +56,7 @@ public class RegistrationServiceImpl implements RegistrationService
     jsonArray.add(jsonObject);
 
     try {
-      FileWriter fileWriter = new FileWriter("accounts.json");
+      FileWriter fileWriter = new FileWriter("small-paws-project/small-paws-project/accounts.json");
 
       fileWriter.write(jsonArray.toJSONString());
       fileWriter.close();

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-public class PetOwner extends UserLogIn implements Serializable
+public class PetOwner implements Serializable
 {
 
   @Id
@@ -34,7 +34,9 @@ public class PetOwner extends UserLogIn implements Serializable
       String familyStatus, int avgIncome, String address, String jobTitle,
       String userName, String password)
   {
-    super(id,userName,password);
+    this.id = id;
+    this.userName = userName;
+    this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;

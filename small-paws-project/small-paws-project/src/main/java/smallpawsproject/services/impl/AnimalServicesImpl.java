@@ -62,7 +62,6 @@ public class AnimalServicesImpl implements AnimalServices
             FileReader reader = new FileReader("small-paws-project/small-paws-project/animals.json");
             jsonArray = (JSONArray) parser.parse(reader);
 
-
             if (jsonArray!=null)
             {
               for (int i = 0; i < jsonArray.size(); i++)

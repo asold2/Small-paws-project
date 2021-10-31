@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @Service
 public class AnimalServicesImpl implements AnimalServices
@@ -34,17 +35,6 @@ public class AnimalServicesImpl implements AnimalServices
 
   @Override public void AddAnimal(Animal animal)
   {
-//      try
-//      {
-//        FileReader reader = new FileReader("small-paws-project/small-paws-project/animals.json");
-//        jsonArray = (JSONArray) parser.parse(reader);
-//      }
-//      catch (FileNotFoundException | ParseException e)
-//      {
-//        e.printStackTrace();
-//      }
-
-
       jsonObject = new JSONObject();
       jsonObject.put("TypeOfAnimal", animal.getTypeOfAnimal());
       jsonObject.put("Age", animal.getAge());
@@ -61,5 +51,30 @@ public class AnimalServicesImpl implements AnimalServices
         // TODO Auto-generated catch block
         e.printStackTrace();
       }
+  }
+
+  @Override public ArrayList<Animal> GetAnimals()
+  {
+    ArrayList<Animal> animals = new ArrayList<>();
+
+    try
+          {
+            FileReader reader = new FileReader("small-paws-project/small-paws-project/animals.json");
+            jsonArray = (JSONArray) parser.parse(reader);
+
+
+            if (jsonArray!=null)
+            {
+              for (int i = 0; i < jsonArray.size(); i++)
+              {
+                animals.add((Animal) jsonArray.get(i));
+              }
+            }
+          }
+          catch (FileNotFoundException | ParseException e)
+          {
+            e.printStackTrace();
+          }
+    return animals;
   }
 }

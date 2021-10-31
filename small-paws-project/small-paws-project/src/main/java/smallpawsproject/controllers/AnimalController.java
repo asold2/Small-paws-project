@@ -2,27 +2,32 @@ package smallpawsproject.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import smallpawsproject.model.Animal;
 import smallpawsproject.repositories.AnimalRepository;
+import smallpawsproject.services.AnimalServices;
 
 @RestController
 public class AnimalController
 {
   @Autowired
-  private final AnimalRepository animalRepository;
+  private final AnimalServices animalServices;
 
-  public AnimalController(AnimalRepository animalRepository)
+  public AnimalController(AnimalServices animalServices)
   {
-    this.animalRepository = animalRepository;
+    this.animalServices = animalServices;
   }
 
-  @RequestMapping("/animals")
-  public String getAnimals(Model model){
-    model.addAttribute("animals", animalRepository.findAll());
-    return "";
+  @RequestMapping(method = RequestMethod.POST, value = "/addAnimal")
+  @ResponseBody
+  public void AddAnimal(@RequestBody Animal animal)
+  {
+    System.out.println("Added animal");
+
+    Animal animalToAdd = new Animal(animal.getTypeOfAnimal(),animal.getAge(),animal.getDescription());
+    animalServices.AddAnimal(animalToAdd);
   }
 }

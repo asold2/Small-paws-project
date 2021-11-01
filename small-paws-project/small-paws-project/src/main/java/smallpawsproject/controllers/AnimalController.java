@@ -1,6 +1,7 @@
 package smallpawsproject.controllers;
 
 
+import net.minidev.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,6 @@ public class AnimalController
 {
   @Autowired
   private final AnimalServices animalServices;
-  private ArrayList<Animal> animals;
 
 
   public AnimalController(AnimalServices animalServices)
@@ -25,21 +25,22 @@ public class AnimalController
     this.animalServices = animalServices;
   }
 
-  @RequestMapping(method = RequestMethod.POST, value = "/addAnimal")
+  @RequestMapping(method = RequestMethod.POST, value = "/animal")
   @ResponseBody
   public void AddAnimal(@RequestBody Animal animal)
   {
     System.out.println("Added animal");
 
-    Animal animalToAdd = new Animal(animal.getTypeOfAnimal(),animal.getAge(),animal.getDescription());
-    animalServices.AddAnimal(animalToAdd);
+    //Animal animalToAdd = new Animal(animal.getTypeOfAnimal(),animal.getAge(),animal.getDescription());
+    animalServices.AddAnimal(animal);
+    //System.out.println(animalToAdd.getTypeOfAnimal());
   }
 
-  @RequestMapping(method = RequestMethod.GET, value = "getAnimals")
-  public ArrayList<Animal> getAnimals()
+  @RequestMapping(method = RequestMethod.GET, value = "animals")
+  @ResponseBody
+  public JSONArray getAnimals()
   {
     System.out.println("Animals are out");
-    animals = animalServices.GetAnimals();
-    return animals;
+    return animalServices.GetAnimals();
   }
 }

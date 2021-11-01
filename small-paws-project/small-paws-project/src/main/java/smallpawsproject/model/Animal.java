@@ -1,19 +1,23 @@
 package smallpawsproject.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
-@Table(name="animals")
+//@Table(name="animals")
 @Entity
 public class Animal
 {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  //@GeneratedValue(strategy = GenerationType.AUTO)
   private Long ID;
   private String TypeOfAnimal;
   private int Age;
   private String Description;
 
-  public Animal(String typeOfAnimal, int age, String description)
+  @JsonCreator
+  public Animal(@JsonProperty("typeOfAnimal") String typeOfAnimal, @JsonProperty("age") int age,@JsonProperty("description") String description)
   {
     TypeOfAnimal = typeOfAnimal;
     Age = age;

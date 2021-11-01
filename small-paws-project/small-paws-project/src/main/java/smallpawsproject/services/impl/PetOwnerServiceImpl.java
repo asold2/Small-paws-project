@@ -93,19 +93,13 @@ public class PetOwnerServiceImpl implements PetOwnerService
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
-      petOwnerRepository.save(petOwner);
+//      petOwnerRepository.save(petOwner);
   }
 
   @Override public String authenticatePetOwner(String username, String password)
       throws JsonProcessingException
   {
     String jwt="";
-
-    for(int i=0; i<petOwners.size(); i++){
-
-    }
-
-
     for (PetOwner petOwner : petOwners)
     {
       if ((petOwner.getUserName().equals(username)) && (petOwner.getPassword()

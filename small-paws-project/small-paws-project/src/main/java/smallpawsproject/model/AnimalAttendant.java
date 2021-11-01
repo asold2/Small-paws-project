@@ -1,11 +1,11 @@
 package smallpawsproject.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
-public class AnimalAttendant extends UserLogIn
+public class AnimalAttendant extends Employee
 {
   @Id
   private Long id;
@@ -13,6 +13,7 @@ public class AnimalAttendant extends UserLogIn
   private String password;
   private role role;
 
+  @JsonCreator
   public AnimalAttendant(Long id,String userName, String password, role userRole)
   {
     super(id,userName,password, userRole);

@@ -45,6 +45,8 @@ public class JWTSecurityConfiguration extends WebSecurityConfigurerAdapter
 //        .antMatchers("")
 //        .authenticated()
         .antMatchers("/register")
+        .permitAll()
+        .antMatchers("/loginEmployee")
         .permitAll();
 
 

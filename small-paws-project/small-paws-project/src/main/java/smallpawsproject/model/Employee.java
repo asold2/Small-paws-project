@@ -1,12 +1,13 @@
 package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 
 @Table(name="LogInUsers")
 @Entity
-public class UserLogIn
+public class Employee
 {
   @Id
   @Column(name="User_id")
@@ -17,10 +18,10 @@ public class UserLogIn
   private role role;
   public enum role{Veterinarian, AnimalAttendant}
 
-  public UserLogIn(){};
+  public Employee(){};
 
   @JsonCreator
-  public UserLogIn(Long id ,String userName, String password, role userRole)
+  public Employee(@JsonProperty("id") Long id ,@JsonProperty("userName") String userName,@JsonProperty("password") String password,@JsonProperty("role") role userRole)
   {
     this.id = id;
     this.userName = userName;

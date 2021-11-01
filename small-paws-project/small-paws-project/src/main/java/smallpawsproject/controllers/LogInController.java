@@ -13,15 +13,15 @@ import smallpawsproject.services.*;
 public class LogInController
 {
   @Autowired
-  private final UserLogInRepository userLogInRepository;
+  private final EmployeeService employeeService;
   @Autowired
   private final PetOwnerService petOwnerService;
 
 
-  public LogInController(UserLogInRepository userLogInRepository,
+  public LogInController(EmployeeService employeeService,
       PetOwnerService petOwnerService)
   {
-    this.userLogInRepository = userLogInRepository;
+    this.employeeService = employeeService;
     this.petOwnerService = petOwnerService;
   }
   @GetMapping("/loginPetOwner")
@@ -29,19 +29,14 @@ public class LogInController
   public AuthResponseInterface loginPetOwner(@RequestBody AuthRequest request)
       throws JsonProcessingException
   {
-//    if(request.getUsername().equals("admin") && request.getPassword().equals("admin")){
-////      String jwtToken = JWTProvider.createSimpleToken(request.getUsername());
-//
-//
-//      System.out.println(new AuthResponse("asdgfhrwtaskjbfliua478tlaf"));
-//      return new AuthResponse();
-//    }
-//    System.out.println(new AuthErrorResponse("Bad credentials"));
-//    petOwnerService.authenticatePetOwner(request.getUsername(), request.getPassword());
     return new AuthResponse(petOwnerService.authenticatePetOwner(request.getUserName(), request.getPassword()));
+  }
 
-
-
+  @GetMapping("/loginEmployee")
+  @ResponseBody
+  public AuthResponse loginEmployee(@RequestBody AuthRequest request){
+    return new AuthResponse(employeeService.authenticateEmployee(
+        request.getUserName(), request.getPassword()));
   }
 
 

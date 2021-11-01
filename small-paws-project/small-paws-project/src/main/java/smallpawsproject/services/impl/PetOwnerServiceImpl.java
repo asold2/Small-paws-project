@@ -31,7 +31,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
   private JSONObject jsonObject;
   private PetOwnerRepository petOwnerRepository;
   JSONParser parser = new JSONParser();
-  private final FileReader reader = new FileReader("small-paws-project/small-paws-project/accounts.json");
+  private final FileReader reader = new FileReader("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
   private List<PetOwner> petOwners;
   private final ObjectMapper objectMapper = new ObjectMapper();
   public PetOwnerServiceImpl() throws FileNotFoundException
@@ -85,7 +85,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
     petOwners.add(petOwner);
 
     try {
-      FileWriter fileWriter = new FileWriter("small-paws-project/small-paws-project/accounts.json");
+      FileWriter fileWriter = new FileWriter("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
 
       fileWriter.write(jsonArray.toJSONString());
       fileWriter.close();
@@ -100,7 +100,6 @@ public class PetOwnerServiceImpl implements PetOwnerService
       throws JsonProcessingException
   {
     String jwt="";
-//    jwt = new Gson().toJson(petOwners.get(0));
 
     for(int i=0; i<petOwners.size(); i++){
 
@@ -112,12 +111,15 @@ public class PetOwnerServiceImpl implements PetOwnerService
       if ((petOwner.getUserName().equals(username)) && (petOwner.getPassword()
           .equals(password)))
       {
-        jwt = "Succes";
+            jwt = new Gson().toJson(petOwner);
+            break;
       }
       else
       {
         jwt = "Wrong input";
       }
+      System.out.println(petOwner.getPassword());
+      System.out.println(petOwner.getUserName());
     }
 
     return jwt;

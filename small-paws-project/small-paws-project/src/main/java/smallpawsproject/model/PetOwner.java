@@ -27,9 +27,9 @@ public class PetOwner implements Serializable
 
 
   @JsonCreator
-  public PetOwner(Long id,String firstName, String lastName, int age, String sex,
-      String familyStatus, int avgIncome, String address, String jobTitle,
-      String userName, String password)
+  public PetOwner(@JsonProperty("id") Long id,@JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("age") int age,@JsonProperty("sex") String sex,
+      @JsonProperty("familyStatus") String familyStatus,@JsonProperty("avgIncome") int avgIncome,@JsonProperty("address") String address,@JsonProperty("jobTitle") String jobTitle,
+      @JsonProperty("userName") String userName,@JsonProperty("password") String password)
   {
     this.id = id;
     this.userName = userName;

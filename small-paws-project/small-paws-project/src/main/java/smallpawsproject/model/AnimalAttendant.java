@@ -11,12 +11,23 @@ public class AnimalAttendant extends UserLogIn
   private Long id;
   private String userName;
   private String password;
+  private role role;
 
-  public AnimalAttendant(Long id,String userName, String password)
+  public AnimalAttendant(Long id,String userName, String password, role userRole)
   {
-    super(id,userName,password);
+    super(id,userName,password, userRole);
   }
   public AnimalAttendant(){}
+
+  @Override public role getRole()
+  {
+    return role;
+  }
+
+  @Override public void setRole(role role)
+  {
+    this.role = role;
+  }
 
   public String getUserName()
   {

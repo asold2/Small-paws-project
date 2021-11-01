@@ -3,28 +3,27 @@ package smallpawsproject.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import smallpawsproject.model.PetOwner;
-import smallpawsproject.model.UserLogIn;
-import smallpawsproject.services.RegistrationService;
-//import main.java.smallpawsproject.repositories.PetOwnerRepository;
+import smallpawsproject.services.PetOwnerService;
 
 @RestController
 public class CreateAccountController
 {
   @Autowired
-  private final RegistrationService registrationService;
+  private final PetOwnerService petOwnerService;
 
-  public CreateAccountController(RegistrationService registrationService)
+  public CreateAccountController(PetOwnerService registrationService)
   {
-    this.registrationService = registrationService;
+    this.petOwnerService = registrationService;
   }
 
+  //public route(without being authorized by spring)
   @RequestMapping(method = RequestMethod.POST, value = "/register")
   @ResponseBody
   public void registerPetOwner(@RequestBody PetOwner petOwner){
     System.out.println("Registering pet owner");
 
     PetOwner petOwneToCreate = new PetOwner(petOwner.getId(), petOwner.getFirstName(), petOwner.getLastName(), petOwner.getAge(), petOwner.getSex(), petOwner.getFamilyStatus(), petOwner.getAvgIncome(), petOwner.getAdress(), petOwner.getJobTitle(), petOwner.getUserName(), petOwner.getPassword());
-    registrationService.registerPetOwner(petOwneToCreate);
+    petOwnerService.registerPetOwner(petOwneToCreate);
   }
 
 

@@ -9,7 +9,7 @@ namespace Client.Data
 {
     public class CloudDataLoader : IDataLoader
     {
-        private const string Uri = "localhost:8090";
+        private const string Uri = "http://localhost:8090";
         private readonly HttpClient _httpClient;
         public CloudDataLoader()
         {

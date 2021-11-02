@@ -9,7 +9,7 @@ namespace Client.Pages
 {
     public class ViewAnimalsRazor :ComponentBase
     {
-        [Inject] protected IList<Animal> Animals { get; set; }
+        protected IList<Animal> Animals { get; set; }
         [Inject] protected IDataLoader DataLoader { get; set; }
 
         protected override async Task OnInitializedAsync()

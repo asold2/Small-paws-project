@@ -6,7 +6,7 @@ namespace Client.Pages
     {
         [Inject] private NavigationManager NavigationManager { get; set; }
 
-        public string Email { get; protected set; }
+        // public string Email { get; protected set; }
         public string Username { get; protected set; }
         public string Password { get; protected set; }
         protected string PasswordConfirmation { get; set; }

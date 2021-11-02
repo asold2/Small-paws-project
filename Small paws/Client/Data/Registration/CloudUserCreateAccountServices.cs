@@ -10,7 +10,7 @@ namespace Client.Data.Registration
     public class CloudUserCreateAccountServices : IUserCreateAccountServices
     {
         private readonly HttpClient _httpClient;
-        private const string Uri = "https://localhost:8090";
+        private const string Uri = "localhost:8090";
 
         public CloudUserCreateAccountServices()
         {

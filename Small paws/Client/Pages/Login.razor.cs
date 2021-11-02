@@ -19,7 +19,7 @@ namespace Client.Pages
     protected async Task LoadMainPage()
     {
         
-        if (await UserLogInServices.ValidateUserAsync(Username, Password, Role))
+        if (await UserLogInServices.ValidateUserAsync(Username, Password, Role) == 202)
         {
             NavigationManager.NavigateTo("ViewAnimals");    
         }

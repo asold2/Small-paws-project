@@ -4,6 +4,6 @@ namespace Client.Data.Validation
 {
     public interface IUserLogInServices
     {
-        Task<bool> ValidateUserAsync(string username, string password, string role);
+        Task<int> ValidateUserAsync(string username, string password, string role);
     }
 }

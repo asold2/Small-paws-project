@@ -8,7 +8,7 @@ namespace Client.Pages
     public abstract class CreateAccountDetailsRazor : ComponentBase
     {
         [Inject] private NavigationManager NavigationManager { get; set; }
-        [Inject] private CreateAccountMain CreateAccountMain { get; set; }
+        private CreateAccountMain CreateAccountMain { get; set; }
         [Inject] private IUserCreateAccountServices UserCreateAccountServices { get; set; }
 
         protected string FirstName;
@@ -18,7 +18,7 @@ namespace Client.Pages
         protected string FamilyStatus;
         protected int AverageIncome;
         protected string Address;
-        protected int ZipCode;
+        // protected int ZipCode;
         protected string JobTitle;
         protected int Id;
 

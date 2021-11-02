@@ -9,7 +9,7 @@ namespace Client.Data.Validation
 {
     public class CloudUserLogInServices : IUserLogInServices
     {
-        private const string Uri = "https://localhost:8090";
+        private const string Uri = "http://localhost:8090";
         private readonly HttpClient _httpClient;
         
         public CloudUserLogInServices()
@@ -18,7 +18,7 @@ namespace Client.Data.Validation
         }
 
 
-        public async Task<bool> ValidateUserAsync(string username, string password, string role)
+        public async Task<int> ValidateUserAsync(string username, string password, string role)
         {
             var AuthRequest = new AuthRequest()
             {
@@ -26,7 +26,10 @@ namespace Client.Data.Validation
                 Password = password,
                 Role = role
             };
-            var userAsJson = JsonSerializer.Serialize(AuthRequest);
+            var userAsJson = JsonSerializer.Serialize(AuthRequest, new JsonSerializerOptions
+            {
+              PropertyNameCaseInsensitive  = true
+            });
             HttpContent httpContent = new StringContent(
                 userAsJson,
                 Encoding.UTF8,
@@ -38,7 +41,7 @@ namespace Client.Data.Validation
             }
 
             var message = await responseMessage.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<bool>(message);
+            var result = JsonSerializer.Deserialize<int>(message);
             return result;
         }
     }

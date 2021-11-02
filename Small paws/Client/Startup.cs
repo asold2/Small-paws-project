@@ -1,3 +1,4 @@
+using System.Collections;
 using Client.Data;
 using Client.Data.Registration;
 using Client.Data.Validation;
@@ -27,6 +28,7 @@ namespace Client
             services.AddSingleton<IDataLoader, CloudDataLoader>();
             services.AddSingleton<IUserLogInServices, CloudUserLogInServices>();
             services.AddSingleton<IUserCreateAccountServices, CloudUserCreateAccountServices>();
+            // services.AddScoped<IList, >();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

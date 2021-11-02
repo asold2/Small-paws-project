@@ -24,6 +24,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.Collection;
 import java.util.List;
+import java.io.File;
 
 @Service
 public class PetOwnerServiceImpl implements PetOwnerService
@@ -32,11 +33,12 @@ public class PetOwnerServiceImpl implements PetOwnerService
   private JSONObject jsonObject;
   private PetOwnerRepository petOwnerRepository;
   JSONParser parser = new JSONParser();
-  private final FileReader reader = new FileReader("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
+  private final FileReader reader = new FileReader(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
   private List<PetOwner> petOwners;
   private final ObjectMapper objectMapper = new ObjectMapper();
   public PetOwnerServiceImpl() throws FileNotFoundException
   {
+
   };
 
 
@@ -79,7 +81,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
 
     jsonObject = new JSONObject();
     jsonObject.put("id", petOwner.getId());
-    jsonObject.put("fisrtName", petOwner.getFirstName());
+    jsonObject.put("firstName", petOwner.getFirstName());
     jsonObject.put("lastName", petOwner.getLastName());
     jsonObject.put("age", petOwner.getAge());
     jsonObject.put("sex", petOwner.getSex());
@@ -94,7 +96,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
     petOwners.add(petOwner);
 
     try {
-      FileWriter fileWriter = new FileWriter("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
+      FileWriter fileWriter = new FileWriter(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
 
       fileWriter.write(jsonArray.toJSONString());
       fileWriter.close();

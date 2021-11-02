@@ -4,20 +4,24 @@
 
 <table>
     <tr>
-        <th>Id</th>
+        @*<th>Id</th>*@
         <th>Age</th>
         <th>Type of animal</th>
         <th>Descripition</th>
     </tr>
-    @foreach (var animal in Animals)
+    @if (Animals != null)
     {
-        <tr>
-            @* <td>@animal.Id</td> *@
-            <td>@animal.Age</td>
-            <td>@animal.TypeOfAnimal</td>
-            <td>@animal.Description</td>
-        </tr>
+        @foreach (var animal in Animals)
+        {
+            <tr>
+                @* <td>@animal.Id</td> *@
+                <td>@animal.Age</td>
+                <td>@animal.TypeOfAnimal</td>
+                <td>@animal.Description</td>
+            </tr>
+        }
     }
+
 
     
 </table>

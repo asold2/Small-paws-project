@@ -5,6 +5,6 @@ namespace Client.Data.Registration
 {
     public interface IUserCreateAccountServices
     {
-        Task<bool> CreateUserAsync(PetOwner petOwner);
+        Task<int> CreateUserAsync(PetOwner petOwner);
     }
 }

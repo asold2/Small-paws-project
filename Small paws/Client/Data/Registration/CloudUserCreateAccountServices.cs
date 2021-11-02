@@ -10,7 +10,7 @@ namespace Client.Data.Registration
     public class CloudUserCreateAccountServices : IUserCreateAccountServices
     {
         private readonly HttpClient _httpClient;
-        private const string Uri = "localhost:8090";
+        private const string Uri = "http://localhost:8090";
 
         public CloudUserCreateAccountServices()
         {
@@ -18,7 +18,7 @@ namespace Client.Data.Registration
         }
 
 
-        public async Task<bool> CreateUserAsync(PetOwner petOwner)
+        public async Task<int> CreateUserAsync(PetOwner petOwner)
         { 
            
             var userAsJson = JsonSerializer.Serialize(petOwner);
@@ -33,7 +33,7 @@ namespace Client.Data.Registration
                 throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
             }
             var message = await responseMessage.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<bool>(message);
+            var result = JsonSerializer.Deserialize<int>(message);
             return result;
         }
     }

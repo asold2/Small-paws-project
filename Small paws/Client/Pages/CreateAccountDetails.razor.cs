@@ -1,14 +1,17 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using Client.Data.Registration;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
+
 
 namespace Client.Pages
 {
     public abstract class CreateAccountDetailsRazor : ComponentBase
     {
         [Inject] private NavigationManager NavigationManager { get; set; }
-        private CreateAccountMain CreateAccountMain { get; set; }
+        [Inject] private AuthRequest AuthRequest { get; set; }
         [Inject] private IUserCreateAccountServices UserCreateAccountServices { get; set; }
 
         protected string FirstName;
@@ -26,10 +29,9 @@ namespace Client.Pages
         {
             var petOwner = new PetOwner
             {
-/*                Email = CreateAccountMain.Email,
-                Username = CreateAccountMain.Username,
-                Password = CreateAccountMain.Password,
-                */
+/*             Email = CreateAccountMain.Email,*/
+                Username = AuthRequest.Username,
+                Password = AuthRequest.Password,
                 FirstName = FirstName,
                 LastName = LastName,
                 Age = Age,
@@ -41,7 +43,8 @@ namespace Client.Pages
                 JobTitle = JobTitle,
                 Id = Id
             };
-            if (await UserCreateAccountServices.CreateUserAsync(petOwner))
+
+            if (await UserCreateAccountServices.CreateUserAsync(petOwner) == 201)
             {
                 NavigationManager.NavigateTo("ViewAnimals");
             }

@@ -12,10 +12,7 @@ import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.PetOwnerRepository;
 import smallpawsproject.services.AnimalServices;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 @Service
@@ -37,7 +34,7 @@ public class AnimalServicesImpl implements AnimalServices
   {
     try
     {
-      FileReader reader = new FileReader("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
+      FileReader reader = new FileReader(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
       jsonArray = (JSONArray) parser.parse(reader);
     }
     catch (FileNotFoundException | ParseException e)
@@ -67,7 +64,7 @@ public class AnimalServicesImpl implements AnimalServices
   {
     try
           {
-            FileReader reader = new FileReader("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
+            FileReader reader = new FileReader(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
             jsonArray = (JSONArray) parser.parse(reader);
 
           }

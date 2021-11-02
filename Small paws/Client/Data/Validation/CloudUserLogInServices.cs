@@ -12,20 +12,21 @@ namespace Client.Data.Validation
         private const string Uri = "https://localhost:8090";
         private readonly HttpClient _httpClient;
         
-        public CloudUserLogInServices(HttpClient httpClient)
+        public CloudUserLogInServices()
         {
-            _httpClient = httpClient;
+            _httpClient = new HttpClient();
         }
 
 
-        public async Task<bool> ValidateUserAsync(string username, string password)
+        public async Task<bool> ValidateUserAsync(string username, string password, string role)
         {
-            var user = new User
+            var AuthRequest = new AuthRequest()
             {
                 Username = username,
-                Password = password
+                Password = password,
+                Role = role
             };
-            var userAsJson = JsonSerializer.Serialize(user);
+            var userAsJson = JsonSerializer.Serialize(AuthRequest);
             HttpContent httpContent = new StringContent(
                 userAsJson,
                 Encoding.UTF8,

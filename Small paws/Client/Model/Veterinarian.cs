@@ -1,6 +1,6 @@
 ﻿namespace Client.Model
 {
-    public class Veterinarian : User
+    public class Veterinarian : Employee
     {
     }
 }

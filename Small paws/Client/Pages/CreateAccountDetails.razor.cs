@@ -26,9 +26,10 @@ namespace Client.Pages
         {
             var petOwner = new PetOwner
             {
-                Email = CreateAccountMain.Email,
+/*                Email = CreateAccountMain.Email,
                 Username = CreateAccountMain.Username,
                 Password = CreateAccountMain.Password,
+                */
                 FirstName = FirstName,
                 LastName = LastName,
                 Age = Age,
@@ -36,7 +37,7 @@ namespace Client.Pages
                 FamilyStatus = FamilyStatus,
                 AvgIncome = AverageIncome,
                 Address = Address,
-                ZipCode = ZipCode,
+               // ZipCode = ZipCode,
                 JobTitle = JobTitle,
                 Id = Id
             };

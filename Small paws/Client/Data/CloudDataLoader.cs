@@ -9,11 +9,11 @@ namespace Client.Data
 {
     public class CloudDataLoader : IDataLoader
     {
-        private const string Uri = "https://localhost:8090";
+        private const string Uri = "localhost:8090";
         private readonly HttpClient _httpClient;
-        public CloudDataLoader(HttpClient httpClient)
+        public CloudDataLoader()
         {
-            _httpClient = httpClient;
+            _httpClient = new HttpClient();
         }
 
         public async Task<IList<Animal>> GetAnimalsAsync()

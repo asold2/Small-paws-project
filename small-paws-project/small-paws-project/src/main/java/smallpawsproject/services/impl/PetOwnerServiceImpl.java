@@ -107,21 +107,21 @@ public class PetOwnerServiceImpl implements PetOwnerService
   }
 
   @Override public int authenticatePetOwner(String username, String password)
-      throws JsonProcessingException
   {
-
+    int answer = 0;
     for (PetOwner petOwner : petOwners)
     {
       if ((petOwner.getUserName().equals(username)) && (petOwner.getPassword()
           .equals(password)))
       {
-            return HttpServletResponse.SC_ACCEPTED;
+            answer = HttpServletResponse.SC_ACCEPTED;
+            break;
       }
       else
       {
-       return HttpServletResponse.SC_FORBIDDEN;
+       answer = HttpServletResponse.SC_FORBIDDEN;
       }
     }
-    return HttpServletResponse.SC_BAD_GATEWAY;
+    return answer;
   }
 }

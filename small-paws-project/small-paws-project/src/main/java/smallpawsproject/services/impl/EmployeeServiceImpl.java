@@ -51,6 +51,9 @@ public class EmployeeServiceImpl implements EmployeeService
     {
       employees = new ArrayList<>();
       employees = objectMapper.readValue(jsonArray.toJSONString(), new TypeReference<List<Employee>>(){});
+      for(int i=0; i<employees.size(); i++){
+
+      }
     }
     catch (JsonProcessingException e)
     {
@@ -83,19 +86,23 @@ public class EmployeeServiceImpl implements EmployeeService
 
   @Override public int authenticateEmployee(String username, String password)
   {
+    int answer = 0;
     for(Employee employee : employees){
-      if ((employee.getUserName().equals(username)) && (employee.getPassword()
-          .equals(password)))
+      if (employee.getUserName().equals(username) && employee.getPassword()
+          .equals(password))
       {
-        return HttpServletResponse.SC_ACCEPTED;
+        System.out.println(employee.getUserName());
+        System.out.println(employee.getPassword());
+        answer = HttpServletResponse.SC_ACCEPTED;
+        break;
       }
       else
       {
-        return HttpServletResponse.SC_FORBIDDEN;
+        answer = HttpServletResponse.SC_FORBIDDEN;
       }
     }
 
 
-    return HttpServletResponse.SC_BAD_GATEWAY;
+    return answer;
   }
 }

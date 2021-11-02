@@ -9,6 +9,9 @@ import smallpawsproject.securityjwt.http.AuthResponse;
 import smallpawsproject.securityjwt.http.AuthResponseInterface;
 //import smallpawsproject.securityjwt.provider.JWTProvider;
 import smallpawsproject.services.*;
+
+import javax.servlet.http.HttpServletResponse;
+
 @RestController
 public class LogInController
 {
@@ -39,6 +42,18 @@ public class LogInController
         request.getUserName(), request.getPassword());
   }
 
+  @GetMapping("/login")
+  @ResponseBody
+  public int login(@RequestBody AuthRequest request){
+    if(request.getRole().equals("PetOwner")){
+      return petOwnerService.authenticatePetOwner(request.getUserName(),
+          request.getPassword());
+    }
+    else if(request.getRole().equals("Employee")){
+      return employeeService.authenticateEmployee(request.getUserName(),
+          request.getPassword());
+    }
+    return HttpServletResponse.SC_FORBIDDEN;
+    }
+  }
 
-
-}

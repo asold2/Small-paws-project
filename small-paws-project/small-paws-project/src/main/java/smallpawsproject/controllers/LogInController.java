@@ -26,17 +26,17 @@ public class LogInController
   }
   @GetMapping("/loginPetOwner")
   @ResponseBody
-  public AuthResponseInterface loginPetOwner(@RequestBody AuthRequest request)
+  public int loginPetOwner(@RequestBody AuthRequest request)
       throws JsonProcessingException
   {
-    return new AuthResponse(petOwnerService.authenticatePetOwner(request.getUserName(), request.getPassword()));
+    return petOwnerService.authenticatePetOwner(request.getUserName(), request.getPassword());
   }
 
   @GetMapping("/loginEmployee")
   @ResponseBody
-  public AuthResponse loginEmployee(@RequestBody AuthRequest request){
-    return new AuthResponse(employeeService.authenticateEmployee(
-        request.getUserName(), request.getPassword()));
+  public int loginEmployee(@RequestBody AuthRequest request){
+    return employeeService.authenticateEmployee(
+        request.getUserName(), request.getPassword());
   }
 
 

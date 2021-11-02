@@ -15,6 +15,7 @@ import smallpawsproject.model.PetOwner;
 import smallpawsproject.repositories.EmployeeRepository;
 import smallpawsproject.services.EmployeeService;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -80,24 +81,21 @@ public class EmployeeServiceImpl implements EmployeeService
     }
   }
 
-  @Override public String authenticateEmployee(String username, String password)
+  @Override public int authenticateEmployee(String username, String password)
   {
-    String jwt="";
-
     for(Employee employee : employees){
       if ((employee.getUserName().equals(username)) && (employee.getPassword()
           .equals(password)))
       {
-        jwt = new Gson().toJson(employee);
-        break;
+        return HttpServletResponse.SC_ACCEPTED;
       }
       else
       {
-        jwt = "Wrong input";
+        return HttpServletResponse.SC_FORBIDDEN;
       }
     }
 
 
-    return jwt;
+    return HttpServletResponse.SC_BAD_GATEWAY;
   }
 }

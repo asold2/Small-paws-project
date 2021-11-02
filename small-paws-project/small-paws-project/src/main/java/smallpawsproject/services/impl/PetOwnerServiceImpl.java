@@ -17,6 +17,7 @@ import smallpawsproject.model.PetOwner;
 import smallpawsproject.repositories.PetOwnerRepository;
 import smallpawsproject.services.PetOwnerService;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -66,8 +67,16 @@ public class PetOwnerServiceImpl implements PetOwnerService
 
   }
 
-  @Override public void registerPetOwner(PetOwner petOwner)
+  @Override public int registerPetOwner(PetOwner petOwner)
   {
+    for(int i=0; i<petOwners.size(); i++){
+      if(petOwners.get(i).getUserName().equals(petOwner.getUserName())
+      || petOwners.get(i).getId().equals(petOwner.getId())
+      || (petOwners.get(i).getFirstName().equals(petOwner.getFirstName()) && petOwners.get(i).getLastName().equals(petOwner.getLastName()))){
+        return HttpServletResponse.SC_CONFLICT;
+      }
+    }
+
     jsonObject = new JSONObject();
     jsonObject.put("id", petOwner.getId());
     jsonObject.put("fisrtName", petOwner.getFirstName());
@@ -94,28 +103,25 @@ public class PetOwnerServiceImpl implements PetOwnerService
       e.printStackTrace();
     }
 //      petOwnerRepository.save(petOwner);
+    return HttpServletResponse.SC_CREATED;
   }
 
-  @Override public String authenticatePetOwner(String username, String password)
+  @Override public int authenticatePetOwner(String username, String password)
       throws JsonProcessingException
   {
-    String jwt="";
+
     for (PetOwner petOwner : petOwners)
     {
       if ((petOwner.getUserName().equals(username)) && (petOwner.getPassword()
           .equals(password)))
       {
-            jwt = new Gson().toJson(petOwner);
-            break;
+            return HttpServletResponse.SC_ACCEPTED;
       }
       else
       {
-        jwt = "Wrong input";
+       return HttpServletResponse.SC_FORBIDDEN;
       }
-      System.out.println(petOwner.getPassword());
-      System.out.println(petOwner.getUserName());
     }
-
-    return jwt;
+    return HttpServletResponse.SC_BAD_GATEWAY;
   }
 }

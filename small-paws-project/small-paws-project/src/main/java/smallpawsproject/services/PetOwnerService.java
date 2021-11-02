@@ -9,9 +9,9 @@ import java.util.List;
 @Service
 public interface PetOwnerService
 {
-  void registerPetOwner(PetOwner petOwner);
+  int registerPetOwner(PetOwner petOwner);
 
-  String authenticatePetOwner(String username, String password)
+  int authenticatePetOwner(String username, String password)
       throws JsonProcessingException;
 //  void save(List<PetOwner> list);
 }

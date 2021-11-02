@@ -1,4 +1,6 @@
-﻿using Client.Data.Validation;
+﻿using System.Threading.Tasks;
+using Client.Data.Validation;
+using Client.Model;
 using Microsoft.AspNetCore.Components;
 
 
@@ -12,18 +14,31 @@ namespace Client.Pages
 
     protected string Username;
     protected string Password;
+    protected string Role;
 
-    protected async void LoadMainPage()
+    protected async Task LoadMainPage()
     {
-        if (await UserLogInServices.ValidateUserAsync(Username, Password))
+        
+        if (await UserLogInServices.ValidateUserAsync(Username, Password, Role))
         {
             NavigationManager.NavigateTo("ViewAnimals");    
         }
+
     }
     protected void LoadCreateAccount()
     {
         NavigationManager.NavigateTo("CreateAccountMain");
     }
     
+    protected void SetToEmployee()
+    {
+        Role = "Employee";
     }
+    protected void SetToPetOwner()
+    {
+        Role = "PetOwner";
+    }
+    }
+    
+
 }

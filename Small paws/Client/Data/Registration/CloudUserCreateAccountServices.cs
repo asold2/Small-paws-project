@@ -26,7 +26,7 @@ namespace Client.Data.Registration
                 userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            var responseMessage = await _httpClient.PostAsync(Uri + "/users", httpContent);
+            var responseMessage = await _httpClient.PostAsync(Uri + "/register", httpContent);
             
             if (!responseMessage.IsSuccessStatusCode)
             {

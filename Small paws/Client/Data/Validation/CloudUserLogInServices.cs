@@ -31,7 +31,7 @@ namespace Client.Data.Validation
                 userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            var responseMessage = await _httpClient.PostAsync(Uri + "/users", httpContent);
+            var responseMessage = await _httpClient.PostAsync(Uri + "/login", httpContent);
             if (!responseMessage.IsSuccessStatusCode)
             {
                 throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");

@@ -36,7 +36,7 @@ public class AnimalController
     //System.out.println(animalToAdd.getTypeOfAnimal());
   }
 
-  @RequestMapping(method = RequestMethod.GET, value = "animals")
+  @RequestMapping(method = RequestMethod.GET, value = "/animals")
   @ResponseBody
   public JSONArray getAnimals()
   {

@@ -42,7 +42,7 @@ public class LogInController
         request.getUserName(), request.getPassword());
   }
 
-  @GetMapping("/login")
+  @PostMapping("/login")
   @ResponseBody
   public int login(@RequestBody AuthRequest request){
     if(request.getRole().equals("PetOwner")){

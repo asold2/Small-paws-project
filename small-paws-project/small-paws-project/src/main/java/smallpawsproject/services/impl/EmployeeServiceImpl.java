@@ -27,7 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService
   private JSONArray jsonArray = new JSONArray();
   private JSONObject jsonObject;
   JSONParser parser = new JSONParser();
-  private final FileReader reader = new FileReader(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/employees.json");
+  private final FileReader reader = new FileReader(new File("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/employees.json"));
   private final ObjectMapper objectMapper = new ObjectMapper();
   private List<Employee> employees;
   private final EmployeeRepository employeeRepository;
@@ -72,7 +72,7 @@ public class EmployeeServiceImpl implements EmployeeService
     jsonArray.add(jsonObject);
 
     try {
-      FileWriter fileWriter = new FileWriter(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/employees.json");
+      FileWriter fileWriter = new FileWriter(new File("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/employees.json"));
       fileWriter.write(jsonArray.toJSONString());
       fileWriter.close();
     } catch (IOException e) {

@@ -33,7 +33,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
   private JSONObject jsonObject;
   private PetOwnerRepository petOwnerRepository;
   JSONParser parser = new JSONParser();
-  private final FileReader reader = new FileReader(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
+  private final FileReader reader = new FileReader(new File("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json"));
   private List<PetOwner> petOwners;
   private final ObjectMapper objectMapper = new ObjectMapper();
   public PetOwnerServiceImpl() throws FileNotFoundException
@@ -96,7 +96,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
     petOwners.add(petOwner);
 
     try {
-      FileWriter fileWriter = new FileWriter(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json");
+      FileWriter fileWriter = new FileWriter(new File("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json"));
 
       fileWriter.write(jsonArray.toJSONString());
       fileWriter.close();

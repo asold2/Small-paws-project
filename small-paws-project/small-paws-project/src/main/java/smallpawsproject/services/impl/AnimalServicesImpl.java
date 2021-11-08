@@ -34,7 +34,7 @@ public class AnimalServicesImpl implements AnimalServices
   {
     try
     {
-      FileReader reader = new FileReader(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
+      FileReader reader = new FileReader(new File("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json"));
       jsonArray = (JSONArray) parser.parse(reader);
     }
     catch (FileNotFoundException | ParseException e)
@@ -50,7 +50,7 @@ public class AnimalServicesImpl implements AnimalServices
       jsonArray.add(jsonObject);
 
       try {
-        FileWriter fileWriter = new FileWriter("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
+        FileWriter fileWriter = new FileWriter("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
 
         fileWriter.write(jsonArray.toJSONString());
         fileWriter.close();
@@ -64,7 +64,7 @@ public class AnimalServicesImpl implements AnimalServices
   {
     try
           {
-            FileReader reader = new FileReader(new File("").getAbsoluteFile() + "/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
+            FileReader reader = new FileReader(new File("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json"));
             jsonArray = (JSONArray) parser.parse(reader);
 
           }

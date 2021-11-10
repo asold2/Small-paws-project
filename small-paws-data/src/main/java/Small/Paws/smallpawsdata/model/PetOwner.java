@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-
+@Table(name="PetOwners")
 @Entity
 public class PetOwner implements Serializable
 {
@@ -23,6 +24,7 @@ public class PetOwner implements Serializable
   private String JobTitle;
   private String userName;
   private String password;
+  
 
   public PetOwner(){}
 

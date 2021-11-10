@@ -4,12 +4,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 //@Table(name="animals")
 @Entity
 @Table(name = "animal")
-public class Animal
+public class Animal implements Serializable
 {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

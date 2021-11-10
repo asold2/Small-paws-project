@@ -3,6 +3,7 @@ package Small.Paws.smallpawsdata.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.persistence.Entity;
+import java.io.Serializable;
 
 @Entity
 public class AnimalAttendant extends Employee

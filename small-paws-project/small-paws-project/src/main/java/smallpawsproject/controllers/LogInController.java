@@ -27,20 +27,20 @@ public class LogInController
     this.employeeService = employeeService;
     this.petOwnerService = petOwnerService;
   }
-  @GetMapping("/loginPetOwner")
-  @ResponseBody
-  public int loginPetOwner(@RequestBody AuthRequest request)
-      throws JsonProcessingException
-  {
-    return petOwnerService.authenticatePetOwner(request.getUserName(), request.getPassword());
-  }
-
-  @GetMapping("/loginEmployee")
-  @ResponseBody
-  public int loginEmployee(@RequestBody AuthRequest request){
-    return employeeService.authenticateEmployee(
-        request.getUserName(), request.getPassword());
-  }
+//  @GetMapping("/loginPetOwner")
+//  @ResponseBody
+//  public int loginPetOwner(@RequestBody AuthRequest request)
+//      throws JsonProcessingException
+//  {
+//    return petOwnerService.authenticatePetOwner(request.getUserName(), request.getPassword());
+//  }
+//
+//  @GetMapping("/loginEmployee")
+//  @ResponseBody
+//  public int loginEmployee(@RequestBody AuthRequest request){
+//    return employeeService.authenticateEmployee(
+//        request.getUserName(), request.getPassword());
+//  }
 
   @PostMapping("/login")
   @ResponseBody

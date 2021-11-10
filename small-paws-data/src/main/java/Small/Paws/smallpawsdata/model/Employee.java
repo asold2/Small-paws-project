@@ -4,10 +4,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Table(name="LogInUsers")
+@Table(name="Employees")
 @Entity
-public class Employee
+public class Employee implements Serializable
 {
   @Id
   @Column(name="User_id")

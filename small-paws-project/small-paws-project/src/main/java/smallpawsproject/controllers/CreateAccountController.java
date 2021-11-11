@@ -21,12 +21,12 @@ public class CreateAccountController
   }
 
   //public route(without being authorized by spring)
-  @RequestMapping(method = RequestMethod.POST, value = "/register")
+  @PostMapping("/newAccount")
   @ResponseBody
   public int registerPetOwner(@RequestBody PetOwner petOwner){
     System.out.println("Registering pet owner");
 
-    var petOwnerToCreate = new PetOwner(petOwner.getId(), petOwner.getFirstName(), petOwner.getLastName(), petOwner.getAge(), petOwner.getSex(), petOwner.getFamilyStatus(), petOwner.getAvgIncome(), petOwner.getAdress(), petOwner.getJobTitle(), petOwner.getUserName(), petOwner.getPassword());
+    var petOwnerToCreate = new PetOwner(petOwner.getId(), petOwner.getFirstName(), petOwner.getLastName(), petOwner.getAge(), petOwner.getSex(), petOwner.getFamilyStatus(), petOwner.getAvgIncome(), petOwner.getAddress(), petOwner.getJobTitle(), petOwner.getUserName(), petOwner.getPassword());
     return petOwnerService.registerPetOwner(petOwnerToCreate);
 
   }

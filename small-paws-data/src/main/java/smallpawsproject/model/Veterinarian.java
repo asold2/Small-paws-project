@@ -1,4 +1,4 @@
-package Small.Paws.smallpawsdata.model;
+package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
@@ -14,9 +14,9 @@ public class Veterinarian extends Employee
 //  private role role;
 
   @JsonCreator
-  public Veterinarian(Long id,String userName, String password, role userRole)
+  public Veterinarian(String userName, String password, role userRole)
   {
-    super(id,userName,password, userRole);
+    super( userName, password, userRole);
   }
   public Veterinarian(){}
 

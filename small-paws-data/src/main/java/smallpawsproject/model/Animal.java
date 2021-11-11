@@ -1,4 +1,4 @@
-package Small.Paws.smallpawsdata.model;
+package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

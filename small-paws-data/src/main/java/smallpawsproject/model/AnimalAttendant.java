@@ -3,17 +3,18 @@ package smallpawsproject.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
 @Entity
 public class AnimalAttendant extends Employee
 {
 
 
   @JsonCreator
-  public AnimalAttendant(int id, role userRole)
+  public AnimalAttendant(String userName, String password, role userRole)
   {
-    super(id, userRole);
+    super( userName, password, userRole);
   }
   public AnimalAttendant(){}
+
 
 }

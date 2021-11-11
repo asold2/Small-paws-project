@@ -1,6 +1,6 @@
-package Small.Paws.smallpawsdata.repositories;
+package smallpawsproject.repositories;
 
-import Small.Paws.smallpawsdata.model.PetOwner;
+import smallpawsproject.model.PetOwner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PetOwnerRepository extends JpaRepository<PetOwner, Long>

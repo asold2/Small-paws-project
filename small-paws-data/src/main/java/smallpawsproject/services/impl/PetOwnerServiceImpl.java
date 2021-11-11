@@ -1,13 +1,17 @@
-package Small.Paws.smallpawsdata.services.impl;
+package smallpawsproject.services.impl;
 
-import Small.Paws.smallpawsdata.model.PetOwner;
-import Small.Paws.smallpawsdata.repositories.PetOwnerRepository;
-import Small.Paws.smallpawsdata.services.PetOwnerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import smallpawsproject.model.PetOwner;
+import smallpawsproject.repositories.PetOwnerRepository;
+import smallpawsproject.services.PetOwnerService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class PetOwnerServiceImpl implements PetOwnerService
 {
+  @Autowired
   private final PetOwnerRepository petOwnerRepository;
 
   public PetOwnerServiceImpl(PetOwnerRepository petOwnerRepository)
@@ -18,5 +22,10 @@ public class PetOwnerServiceImpl implements PetOwnerService
   @Override public void registerPetOwner(PetOwner petOwner)
   {
     petOwnerRepository.save(petOwner);
+  }
+
+  @Override public List<PetOwner> getPetOwners()
+  {
+    return petOwnerRepository.findAll();
   }
 }

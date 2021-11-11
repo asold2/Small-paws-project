@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import smallpawsproject.model.Animal;
-import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.services.AnimalServices;
 
 import java.util.ArrayList;

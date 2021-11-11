@@ -1,9 +1,10 @@
-package Small.Paws.smallpawsdata.dataaccess;
+package smallpawsproject.dataaccess;
 
-import Small.Paws.smallpawsdata.model.Animal;
-import Small.Paws.smallpawsdata.model.Employee;
-import Small.Paws.smallpawsdata.model.PetOwner;
-import Small.Paws.smallpawsdata.services.ServiceFactory;
+import smallpawsproject.model.Account;
+import smallpawsproject.model.Animal;
+import smallpawsproject.model.Employee;
+import smallpawsproject.model.PetOwner;
+import smallpawsproject.services.ServiceFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -30,11 +31,17 @@ public class DataAccessImpl implements DataAccess
 
   @Override public List<PetOwner> getPetOwners()
   {
-    return null;
+    return serviceFactory.getPetOwnerService().getPetOwners();
   }
 
   @Override public List<Animal> getAnimals()
   {
     return null;
+  }
+
+  @Override public List<Account> getAccounts()
+  {
+    return serviceFactory.getAccountService().getAccounts();
+
   }
 }

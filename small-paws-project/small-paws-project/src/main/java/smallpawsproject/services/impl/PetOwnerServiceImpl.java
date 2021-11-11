@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import smallpawsproject.model.PetOwner;
-import smallpawsproject.repositories.PetOwnerRepository;
+
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.PetOwnerService;
@@ -32,92 +32,59 @@ import java.io.File;
 @Service
 public class PetOwnerServiceImpl implements PetOwnerService
 {
-//  private JSONArray jsonArray = new JSONArray();
-//  private JSONObject jsonObject;
-  private PetOwnerRepository petOwnerRepository;
   @Autowired
   private ClientFactory clientFactory;
 
-  private ClientRMI client;
-//  JSONParser parser = new JSONParser();
-//  private final FileReader reader = new FileReader(new File("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json"));
-//  private List<PetOwner> petOwners;
-//  private final ObjectMapper objectMapper = new ObjectMapper();
+  private final ClientRMI client;
+  private List<PetOwner> petOwners;
 
 
   public PetOwnerServiceImpl (ClientFactory clientFactory){
     this.clientFactory = clientFactory;
     client = clientFactory.getClient();
-    System.out.println("Client started");
+    try
+    {
+      client.connect();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+
+    try
+    {
+      petOwners = client.getPetOwners();
+      System.out.println(petOwners.get(0).getUserName());
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
-  @Autowired
-  public void setPetOwnerRepository(PetOwnerRepository petOwnerRepository)
-  {
-
-    this.petOwnerRepository = petOwnerRepository;
-
-//    try
-//    {
-//      jsonArray = (JSONArray) parser.parse(reader);
-//    }
-//    catch (ParseException e)
-//    {
-//      e.printStackTrace();
-//    }
-
-//    try
-//    {
-//      petOwners = new ArrayList<>();
-//      petOwners = objectMapper.readValue(jsonArray.toJSONString(), new TypeReference<List<PetOwner>>(){});
-//    }
-//    catch (JsonProcessingException e)
-//    {
-//      e.printStackTrace();
-//    }
-
-
-  }
 
   @Override public int registerPetOwner(PetOwner petOwner)
   {
+    System.out.println("At the beggining og method");
+    for(int i=0; i<petOwners.size(); i++){
+      if(petOwners.get(i).getUserName().equals(petOwner.getUserName())
+          || petOwners.get(i).getId() == (petOwner.getId())
+          || (petOwners.get(i).getFirstName().equals(petOwner.getFirstName()) && petOwners.get(i).getLastName().equals(petOwner.getLastName()))){
+        return HttpServletResponse.SC_CONFLICT;
+      }
+    }
 
-    System.out.println(client);
+    try
+    {
+      client.registerPetOwner(petOwner);
+      System.out.println("Sending to server");
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    System.out.println("Pet owner sent to server");
 
-    //    for(int i=0; i<petOwners.size(); i++){
-//      if(petOwners.get(i).getUserName().equals(petOwner.getUserName())
-//      || petOwners.get(i).getId().equals(petOwner.getId())
-//      || (petOwners.get(i).getFirstName().equals(petOwner.getFirstName()) && petOwners.get(i).getLastName().equals(petOwner.getLastName()))){
-//        return HttpServletResponse.SC_CONFLICT;
-//      }
-//    }
-
-//    jsonObject = new JSONObject();
-//    jsonObject.put("id", petOwner.getId());
-//    jsonObject.put("firstName", petOwner.getFirstName());
-//    jsonObject.put("lastName", petOwner.getLastName());
-//    jsonObject.put("age", petOwner.getAge());
-//    jsonObject.put("sex", petOwner.getSex());
-//    jsonObject.put("familyStatus", petOwner.getFamilyStatus());
-//    jsonObject.put("avgIncome", petOwner.getAvgIncome());
-//    jsonObject.put("address", petOwner.getAdress());
-//    jsonObject.put("jobTitle", petOwner.getJobTitle());
-//    jsonObject.put("username", petOwner.getUserName());
-//    jsonObject.put("password", petOwner.getPassword());
-//
-//    jsonArray.add(jsonObject);
-//    petOwners.add(petOwner);
-
-//    try {
-//      FileWriter fileWriter = new FileWriter(new File("small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/accounts.json"));
-//
-//      fileWriter.write(jsonArray.toJSONString());
-//      fileWriter.close();
-//    } catch (IOException e) {
-//      // TODO Auto-generated catch block
-//      e.printStackTrace();
-//    }
-//      petOwnerRepository.save(petOwner);
     return HttpServletResponse.SC_CREATED;
   }
 

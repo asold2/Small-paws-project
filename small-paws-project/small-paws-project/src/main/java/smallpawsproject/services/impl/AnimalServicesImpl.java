@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smallpawsproject.model.Animal;
 import smallpawsproject.model.PetOwner;
-import smallpawsproject.repositories.AnimalRepository;
-import smallpawsproject.repositories.PetOwnerRepository;
 import smallpawsproject.services.AnimalServices;
 
 import java.io.*;
@@ -20,15 +18,8 @@ public class AnimalServicesImpl implements AnimalServices
 {
   private JSONArray jsonArray = new JSONArray();
   private JSONObject jsonObject;
-  private AnimalRepository animalRepository;
   JSONParser parser = new JSONParser();
 
-
-  @Autowired
-  public void setAnimalRepository(AnimalRepository animalRepository)
-  {
-    this.animalRepository = animalRepository;
-  }
 
   @Override public void AddAnimal(Animal animal)
   {

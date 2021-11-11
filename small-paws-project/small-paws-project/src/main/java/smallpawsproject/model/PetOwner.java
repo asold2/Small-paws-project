@@ -9,9 +9,10 @@ import java.io.Serializable;
 @Entity
 public class PetOwner implements Serializable
 {
+  private static final long serialVersionUID = 663126647076776891L;
 
   @Id
-  private Long id;
+  private int id;
   private String firstName;
   private String lastName;
   private int age;
@@ -23,13 +24,15 @@ public class PetOwner implements Serializable
   private String userName;
   private String password;
 
+  @OneToOne(cascade = CascadeType.ALL)
+  private Account account;
+
   public PetOwner(){}
 
 
   @JsonCreator
-  public PetOwner(@JsonProperty("id") Long id,@JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("age") int age,@JsonProperty("sex") String sex,
-      @JsonProperty("familyStatus") String familyStatus,@JsonProperty("avgIncome") int avgIncome,@JsonProperty("address") String address,@JsonProperty("jobTitle") String jobTitle,
-      @JsonProperty("userName") String userName,@JsonProperty("password") String password)
+  public PetOwner(@JsonProperty("id") int id,@JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("age") int age,@JsonProperty("sex") String sex,
+      @JsonProperty("familyStatus") String familyStatus,@JsonProperty("avgIncome") int avgIncome,@JsonProperty("address") String address,@JsonProperty("jobTitle") String jobTitle, @JsonProperty("userName") String userName, @JsonProperty("password") String password)
   {
     this.id = id;
     this.userName = userName;
@@ -42,6 +45,37 @@ public class PetOwner implements Serializable
     this.avgIncome = avgIncome;
     this.address = address;
     JobTitle = jobTitle;
+    this.account = new Account(id , userName, password);
+  }
+
+  public String getAddress()
+  {
+    return address;
+  }
+
+  public void setAddress(String address)
+  {
+    this.address = address;
+  }
+
+  public String getUserName()
+  {
+    return userName;
+  }
+
+  public void setUserName(String userName)
+  {
+    this.userName = userName;
+  }
+
+  public String getPassword()
+  {
+    return password;
+  }
+
+  public void setPassword(String password)
+  {
+    this.password = password;
   }
 
   public String getFirstName()
@@ -104,10 +138,7 @@ public class PetOwner implements Serializable
     this.avgIncome = avgIncome;
   }
 
-  public String getAdress()
-  {
-    return address;
-  }
+
 
   public void setAdress(String adress)
   {
@@ -124,33 +155,23 @@ public class PetOwner implements Serializable
     JobTitle = jobTitle;
   }
 
-  public Long getId()
+  public int getId()
   {
     return id;
   }
 
-  public void setId(Long id)
+  public void setId(int id)
   {
     this.id = id;
   }
 
-  public String getUserName()
+  public Account getAccount()
   {
-    return userName;
+    return account;
   }
 
-  public void setUserName(String userName)
+  public void setAccount(Account account)
   {
-    this.userName = userName;
-  }
-
-  public String getPassword()
-  {
-    return password;
-  }
-
-  public void setPassword(String password)
-  {
-    this.password = password;
+    this.account = account;
   }
 }

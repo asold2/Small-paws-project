@@ -3,7 +3,7 @@ package smallpawsproject.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import smallpawsproject.repositories.*;
+import smallpawsproject.model.Account;
 import smallpawsproject.securityjwt.http.AuthRequest;
 import smallpawsproject.securityjwt.http.AuthResponse;
 import smallpawsproject.securityjwt.http.AuthResponseInterface;
@@ -15,45 +15,35 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class LogInController
 {
-  @Autowired
-  private final EmployeeService employeeService;
-  @Autowired
-  private final PetOwnerService petOwnerService;
-
-
-  public LogInController(EmployeeService employeeService,
-      PetOwnerService petOwnerService)
-  {
-    this.employeeService = employeeService;
-    this.petOwnerService = petOwnerService;
-  }
-//  @GetMapping("/loginPetOwner")
-//  @ResponseBody
-//  public int loginPetOwner(@RequestBody AuthRequest request)
-//      throws JsonProcessingException
-//  {
-//    return petOwnerService.authenticatePetOwner(request.getUserName(), request.getPassword());
-//  }
+//  @Autowired
+//  private final EmployeeService employeeService;
+//  @Autowired
+//  private final PetOwnerService petOwnerService;
 //
-//  @GetMapping("/loginEmployee")
-//  @ResponseBody
-//  public int loginEmployee(@RequestBody AuthRequest request){
-//    return employeeService.authenticateEmployee(
-//        request.getUserName(), request.getPassword());
-//  }
+  @Autowired
+  private AccountsService accountsService;
 
-  @PostMapping("/login")
+
+  public LogInController(AccountsService accountsService)
+  {
+    this.accountsService = accountsService;
+  }
+
+
+  @PostMapping("/account")
   @ResponseBody
-  public int login(@RequestBody AuthRequest request){
-    if(request.getRole().equals("PetOwner")){
-      return petOwnerService.authenticatePetOwner(request.getUserName(),
-          request.getPassword());
-    }
-    else if(request.getRole().equals("Employee")){
-      return employeeService.authenticateEmployee(request.getUserName(),
-          request.getPassword());
-    }
-    return HttpServletResponse.SC_FORBIDDEN;
+  public int login(@RequestBody Account account){
+//    if(request.getRole().equals("PetOwner")){
+//      return petOwnerService.authenticatePetOwner(request.getUserName(),
+//          request.getPassword());
+//    }
+//    else if(request.getRole().equals("Employee")){
+//      return employeeService.authenticateEmployee(request.getUserName(),
+//          request.getPassword());
+//    }
+
+    return accountsService.checkAccount(account.getUserName(),
+        account.getPassword());
     }
   }
 

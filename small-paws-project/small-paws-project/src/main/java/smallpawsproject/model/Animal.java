@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Animal
 {
   @Id
-  //@GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long ID;
   private String TypeOfAnimal;
   private int Age;

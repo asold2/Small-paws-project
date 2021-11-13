@@ -33,7 +33,7 @@ import java.io.File;
 public class PetOwnerServiceImpl implements PetOwnerService
 {
   @Autowired
-  private ClientFactory clientFactory;
+  private final ClientFactory clientFactory;
 
   private final ClientRMI client;
   private List<PetOwner> petOwners;
@@ -53,8 +53,10 @@ public class PetOwnerServiceImpl implements PetOwnerService
 
     try
     {
-      petOwners = client.getPetOwners();
-      System.out.println(petOwners.get(0).getUserName());
+     petOwners = client.getPetOwners();
+
+
+
     }
     catch (RemoteException e)
     {
@@ -65,7 +67,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
 
   @Override public int registerPetOwner(PetOwner petOwner)
   {
-    System.out.println("At the beggining og method");
+    System.out.println("At the beggining of method");
     for(int i=0; i<petOwners.size(); i++){
       if(petOwners.get(i).getUserName().equals(petOwner.getUserName())
           || petOwners.get(i).getId() == (petOwner.getId())
@@ -88,22 +90,5 @@ public class PetOwnerServiceImpl implements PetOwnerService
     return HttpServletResponse.SC_CREATED;
   }
 
-  @Override public int authenticatePetOwner(String username, String password)
-  {
-    int answer = 0;
-//    for (PetOwner petOwner : petOwners)
-//    {
-//      if ((petOwner.getUserName().equals(username)) && (petOwner.getPassword()
-//          .equals(password)))
-//      {
-//            answer = HttpServletResponse.SC_ACCEPTED;
-//            break;
-//      }
-//      else
-//      {
-//       answer = HttpServletResponse.SC_FORBIDDEN;
-//      }
-//    }
-    return answer;
-  }
+
 }

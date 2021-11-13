@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.json.JSONPropertyName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.services.PetOwnerService;
 
@@ -26,8 +27,10 @@ public class CreateAccountController
   public int registerPetOwner(@RequestBody PetOwner petOwner){
     System.out.println("Registering pet owner");
 
-    var petOwnerToCreate = new PetOwner(petOwner.getId(), petOwner.getFirstName(), petOwner.getLastName(), petOwner.getAge(), petOwner.getSex(), petOwner.getFamilyStatus(), petOwner.getAvgIncome(), petOwner.getAddress(), petOwner.getJobTitle(), petOwner.getUserName(), petOwner.getPassword());
-    return petOwnerService.registerPetOwner(petOwnerToCreate);
+    var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
+        petOwner.getAddress(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),
+        petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword());
+    return petOwnerService.registerPetOwner((PetOwner) petOwnerToCreate);
 
   }
 

@@ -30,9 +30,7 @@ public class AnimalController
   {
     System.out.println("Added animal");
 
-    //Animal animalToAdd = new Animal(animal.getTypeOfAnimal(),animal.getAge(),animal.getDescription());
     animalServices.AddAnimal(animal);
-    //System.out.println(animalToAdd.getTypeOfAnimal());
   }
 
   @RequestMapping(method = RequestMethod.GET, value = "/animals")

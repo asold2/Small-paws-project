@@ -1,10 +1,9 @@
 package smallpawsproject.model;
 
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
 
 @Entity
 @Table(name = "end_user")
@@ -20,6 +19,7 @@ public class EndUser implements Serializable
 
 public EndUser(){}
 
+  @JsonCreator
   public EndUser(String userName, String password)
   {
     this.userName = userName;

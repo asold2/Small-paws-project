@@ -1,6 +1,6 @@
 package smallpawsproject.rmi;
 
-import smallpawsproject.model.Account;
+import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 
 import java.rmi.Remote;
@@ -14,5 +14,5 @@ public interface ClientRMI extends Remote
   void connect() throws RemoteException;
   public static final String CLIENT_SERVICE_NAME = "rmi://localhost/client";
   List<PetOwner> getPetOwners() throws RemoteException;
-  List<Account> getAccounts() throws RemoteException;
+  List<EndUser> getUsers() throws RemoteException;
 }

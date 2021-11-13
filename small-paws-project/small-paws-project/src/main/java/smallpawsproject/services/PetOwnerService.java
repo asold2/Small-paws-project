@@ -11,6 +11,5 @@ public interface PetOwnerService
 {
   int registerPetOwner(PetOwner petOwner);
 
-  int authenticatePetOwner(String username, String password);
-//  void save(List<PetOwner> list);
+
 }

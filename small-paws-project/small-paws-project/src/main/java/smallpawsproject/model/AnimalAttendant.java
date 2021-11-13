@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 @Entity
-public class AnimalAttendant extends Employee
+public class AnimalAttendant extends EndUser
 {
 
 
   @JsonCreator
-  public AnimalAttendant(int id, role userRole)
+  public AnimalAttendant(String userName, String password)
   {
-    super(id, userRole);
+    super(userName, password);
   }
   public AnimalAttendant(){}
 

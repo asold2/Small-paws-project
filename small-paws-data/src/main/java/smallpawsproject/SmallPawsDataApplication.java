@@ -2,6 +2,7 @@ package smallpawsproject;
 
 import smallpawsproject.dataaccess.DataAccess;
 import smallpawsproject.dataaccess.DataAccessImpl;
+import smallpawsproject.model.AnimalAttendant;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.model.Veterinarian;
@@ -33,8 +34,8 @@ public class SmallPawsDataApplication {
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
 
-		petOwnerRepository.deleteAll();
-//		usersRepository.deleteAll();
+
+
 	}
 
 
@@ -56,21 +57,6 @@ public class SmallPawsDataApplication {
 	}
 
 	public static void main(String[] args) {
-//
-//		Server server = null;
-//		try
-//		{
-//			server = new ServerImpl();
-//			Naming.rebind("ServerTier3", (Remote)server);
-//		}
-//		catch (RemoteException e)
-//		{
-//			e.printStackTrace();
-//		}
-//		catch (MalformedURLException e)
-//		{
-//			e.printStackTrace();
-//		}
 		SpringApplication.run(SmallPawsDataApplication.class, args);
 	}
 }

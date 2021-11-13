@@ -30,7 +30,7 @@ public class PetOwner extends EndUser
   public PetOwner(@JsonProperty("jobTitle") String jobTitle, @JsonProperty("address") String address, @JsonProperty("age") int age,@JsonProperty("avgIncome") int avgIncome, @JsonProperty("familyStatus") String familyStatus, @JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("sex") String sex,
       @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password)
   {
-    super(id,userName, password);
+    super(userName, password);
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

@@ -56,8 +56,8 @@ public class UserServiceImpl implements UsersService
       }
       else{
         answer = HttpServletResponse.SC_FORBIDDEN;
+//        break;
       }
-      break;
     }
     return answer;
   }

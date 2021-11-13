@@ -1,31 +1,31 @@
 package smallpawsproject.services;
 
-import smallpawsproject.repositories.AccountsRepository;
+import smallpawsproject.repositories.UsersRepository;
 import smallpawsproject.repositories.PetOwnerRepository;
-import smallpawsproject.services.impl.AccountsServiceImpl;
+import smallpawsproject.services.impl.UsersServiceImpl;
 import smallpawsproject.services.impl.PetOwnerServiceImpl;
 
 public class ServiceFactory
 {
   private PetOwnerService petOwnerService;
-  private AccountsService accountsService;
+  private UsersService usersService;
 
 
 
-  private final AccountsRepository accountsRepository;
+  private final UsersRepository usersRepository;
   private final PetOwnerRepository petOwnerRepository;
-  public ServiceFactory(PetOwnerRepository petOwnerRepository, AccountsRepository accountsRepository)
+  public ServiceFactory(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository)
   {
     this.petOwnerRepository = petOwnerRepository;
-    this.accountsRepository = accountsRepository;
+    this.usersRepository = usersRepository;
 
   }
-  public AccountsService getAccountService(){
-    if(accountsService==null){
-      accountsService = new AccountsServiceImpl(accountsRepository);
-      return accountsService;
+  public UsersService getUserService(){
+    if(usersService ==null){
+      usersService = new UsersServiceImpl(usersRepository);
+      return usersService;
     }
-    return accountsService;
+    return usersService;
   }
 
   public PetOwnerService getPetOwnerService(){

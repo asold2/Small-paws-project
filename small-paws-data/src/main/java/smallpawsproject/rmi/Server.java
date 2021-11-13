@@ -1,9 +1,8 @@
 package smallpawsproject.rmi;
 
-import smallpawsproject.model.Account;
+import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 
-import javax.persistence.OneToOne;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
@@ -15,7 +14,7 @@ public interface Server extends Remote
   //  public static final String T3_SERVICE_NAME = "rmi://localhost/T3";
   void registerPetOwner(PetOwner petOwner) throws RemoteException;
   List<PetOwner> getPetOwners() throws RemoteException;
-  List<Account> getAccounts() throws RemoteException;
+  List<EndUser> getAccounts() throws RemoteException;
 
 
 }

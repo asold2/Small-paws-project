@@ -2,10 +2,8 @@ package smallpawsproject;
 
 import smallpawsproject.dataaccess.DataAccess;
 import smallpawsproject.dataaccess.DataAccessImpl;
-import smallpawsproject.model.Account;
 import smallpawsproject.model.Employee;
-import smallpawsproject.model.Veterinarian;
-import smallpawsproject.repositories.AccountsRepository;
+import smallpawsproject.repositories.UsersRepository;
 import smallpawsproject.repositories.EmployeeRepository;
 import smallpawsproject.rmi.Server;
 import smallpawsproject.rmi.ServerImpl;
@@ -23,25 +21,23 @@ import java.rmi.RemoteException;
 @SpringBootApplication
 public class SmallPawsDataApplication {
 		private final PetOwnerRepository petOwnerRepository;
-		private final AccountsRepository accountsRepository;
+		private final UsersRepository usersRepository;
 		private final EmployeeRepository employeeRepository;
 
 		private ServiceFactory serviceFactory;
 		private DataAccess dataAccess;
 
-	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, AccountsRepository accountsRepository, EmployeeRepository employeeRepository){
+	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, EmployeeRepository employeeRepository){
 		this.petOwnerRepository = petOwnerRepository;
-		this.accountsRepository = accountsRepository;
+		this.usersRepository = usersRepository;
 		this.employeeRepository = employeeRepository;
-		serviceFactory = new ServiceFactory(petOwnerRepository, accountsRepository);
+		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
 
 		Employee emp = new Employee( "Mary", "pass", Employee.role.Veterinarian);
 		employeeRepository.save(emp);
 		System.out.println(emp);
-//		accountsRepository.save(emp.getAccount());
-		System.out.println(employeeRepository.findAll().get(0).getUserName());
-		System.out.println(accountsRepository.findAll().get(0).getId());
+
 	}
 
 

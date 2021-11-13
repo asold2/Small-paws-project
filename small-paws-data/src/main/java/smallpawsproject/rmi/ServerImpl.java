@@ -1,7 +1,7 @@
 package smallpawsproject.rmi;
 
 import smallpawsproject.dataaccess.DataAccess;
-import smallpawsproject.model.Account;
+import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 
 import java.rmi.RemoteException;
@@ -28,8 +28,8 @@ public class ServerImpl implements Server
     return dataAccess.getPetOwners();
   }
 
-  @Override public List<Account> getAccounts() throws RemoteException
+  @Override public List<EndUser> getAccounts() throws RemoteException
   {
-    return dataAccess.getAccounts();
+    return dataAccess.getUsers();
   }
 }

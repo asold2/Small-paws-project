@@ -4,16 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
-import java.io.Serializable;
-@Table(name="PetOwners")
+
 @Entity
-public class PetOwner implements Serializable
+public class PetOwner extends EndUser
 {
   private static final long serialVersionUID = 663126647076776891L;
 
-
-  @Id
-  private int id;
   private String firstName;
   private String lastName;
   private int age;
@@ -25,8 +21,6 @@ public class PetOwner implements Serializable
   private String userName;
   private String password;
 
-  @OneToOne(cascade = CascadeType.ALL)
-  private Account account;
 
   public PetOwner(){}
 
@@ -36,7 +30,7 @@ public class PetOwner implements Serializable
       @JsonProperty("familyStatus") String familyStatus,@JsonProperty("avgIncome") int avgIncome,@JsonProperty("address") String address,@JsonProperty("jobTitle") String jobTitle,
       @JsonProperty("userName") String userName,@JsonProperty("password") String password)
   {
-    this.id = id;
+    super(id, userName, password);
     this.userName = userName;
     this.password = password;
     this.firstName = firstName;
@@ -47,7 +41,6 @@ public class PetOwner implements Serializable
     this.avgIncome = avgIncome;
     this.address = address;
     JobTitle = jobTitle;
-    this.account = new Account(id ,userName, password);
   }
 
   public String getFirstName()
@@ -123,15 +116,6 @@ public class PetOwner implements Serializable
     JobTitle = jobTitle;
   }
 
-  public int getId()
-  {
-    return id;
-  }
-
-  public void setId(int id)
-  {
-    this.id = id;
-  }
 
   public String getAddress()
   {
@@ -143,15 +127,6 @@ public class PetOwner implements Serializable
     this.address = address;
   }
 
-  public Account getAccount()
-  {
-    return account;
-  }
-
-  public void setAccount(Account account)
-  {
-    this.account = account;
-  }
 
   public String getUserName()
   {

@@ -2,9 +2,10 @@ package smallpawsproject;
 
 import smallpawsproject.dataaccess.DataAccess;
 import smallpawsproject.dataaccess.DataAccessImpl;
-import smallpawsproject.model.Employee;
+import smallpawsproject.model.EndUser;
+import smallpawsproject.model.PetOwner;
+import smallpawsproject.model.Veterinarian;
 import smallpawsproject.repositories.UsersRepository;
-import smallpawsproject.repositories.EmployeeRepository;
 import smallpawsproject.rmi.Server;
 import smallpawsproject.rmi.ServerImpl;
 import smallpawsproject.repositories.PetOwnerRepository;
@@ -22,22 +23,18 @@ import java.rmi.RemoteException;
 public class SmallPawsDataApplication {
 		private final PetOwnerRepository petOwnerRepository;
 		private final UsersRepository usersRepository;
-		private final EmployeeRepository employeeRepository;
 
 		private ServiceFactory serviceFactory;
 		private DataAccess dataAccess;
 
-	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, EmployeeRepository employeeRepository){
+	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository){
 		this.petOwnerRepository = petOwnerRepository;
 		this.usersRepository = usersRepository;
-		this.employeeRepository = employeeRepository;
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
 
-		Employee emp = new Employee( "Mary", "pass", Employee.role.Veterinarian);
-		employeeRepository.save(emp);
-		System.out.println(emp);
-
+		petOwnerRepository.deleteAll();
+//		usersRepository.deleteAll();
 	}
 
 

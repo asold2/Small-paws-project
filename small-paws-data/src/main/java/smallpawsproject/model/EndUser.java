@@ -1,18 +1,19 @@
 package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import org.springframework.stereotype.Component;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
+@Table(name = "end_user")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class EndUser implements Serializable
 {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private int userId;
   private String userName;
   private String password;
@@ -20,7 +21,6 @@ public class EndUser implements Serializable
 
 public EndUser(){}
 
-  @JsonCreator
   public EndUser(String userName, String password)
   {
     this.userName = userName;

@@ -2,14 +2,17 @@ package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
 
 import javax.persistence.*;
-
+//@Table(name = "pet_owner")
 @Entity
 public class PetOwner extends EndUser
 {
-  private static final long serialVersionUID = 663126647076776891L;
 
+//  private static final long serialVersionUID = 663126647076776891L;
+
+  private int id;
   private String firstName;
   private String lastName;
   private int age;
@@ -18,21 +21,31 @@ public class PetOwner extends EndUser
   private int avgIncome;
   private String address;
   private String JobTitle;
-  private String userName;
-  private String password;
 
 
   public PetOwner(){}
 
 
-  @JsonCreator
-  public PetOwner(@JsonProperty("id") int id,@JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("age") int age,@JsonProperty("sex") String sex,
-      @JsonProperty("familyStatus") String familyStatus,@JsonProperty("avgIncome") int avgIncome,@JsonProperty("address") String address,@JsonProperty("jobTitle") String jobTitle,
-      @JsonProperty("userName") String userName,@JsonProperty("password") String password)
-  {
-    super(id, userName, password);
-    this.userName = userName;
-    this.password = password;
+//  @JsonCreator
+//  public PetOwner(@JsonProperty("id") int id,@JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("age") int age,@JsonProperty("sex") String sex,
+//      @JsonProperty("familyStatus") String familyStatus,@JsonProperty("avgIncome") int avgIncome,@JsonProperty("address") String address,@JsonProperty("jobTitle") String jobTitle,
+//      @JsonProperty("userName") String userName,@JsonProperty("password") String password)
+//  {
+//    super(id, userName, password);
+////    this.userName = userName;
+////    this.password = password;
+//    this.firstName = firstName;
+//    this.lastName = lastName;
+//    this.age = age;
+//    this.sex = sex;
+//    this.familyStatus = familyStatus;
+//    this.avgIncome = avgIncome;
+//    this.address = address;
+//    JobTitle = jobTitle;
+//  }
+  public PetOwner(String jobTitle, String address, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password){
+    super( id ,userName, password);
+//    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
@@ -40,7 +53,7 @@ public class PetOwner extends EndUser
     this.familyStatus = familyStatus;
     this.avgIncome = avgIncome;
     this.address = address;
-    JobTitle = jobTitle;
+    this.JobTitle = jobTitle;
   }
 
   public String getFirstName()
@@ -125,26 +138,5 @@ public class PetOwner extends EndUser
   public void setAddress(String address)
   {
     this.address = address;
-  }
-
-
-  public String getUserName()
-  {
-    return userName;
-  }
-
-  public void setUserName(String userName)
-  {
-    this.userName = userName;
-  }
-
-  public String getPassword()
-  {
-    return password;
-  }
-
-  public void setPassword(String password)
-  {
-    this.password = password;
   }
 }

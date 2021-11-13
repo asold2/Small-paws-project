@@ -14,7 +14,7 @@ public class Animal implements Serializable
 {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long ID;
+  private int ID;
   private String TypeOfAnimal;
   private int Age;
   private String Description;
@@ -28,12 +28,12 @@ public class Animal implements Serializable
   }
   public Animal(){}
 
-  public Long getID()
+  public int getID()
   {
     return ID;
   }
 
-  public void setID(Long ID)
+  public void setID(int ID)
   {
     this.ID = ID;
   }

@@ -2,7 +2,6 @@ package smallpawsproject.dataaccess;
 
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.Animal;
-import smallpawsproject.model.Employee;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.services.ServiceFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +23,6 @@ public class DataAccessImpl implements DataAccess
     serviceFactory.getPetOwnerService().registerPetOwner(petOwner);
   }
 
-  @Override public List<Employee> getEmployees()
-  {
-    return null;
-  }
 
   @Override public List<PetOwner> getPetOwners()
   {

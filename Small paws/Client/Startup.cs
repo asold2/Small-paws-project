@@ -30,7 +30,7 @@ namespace Client
             services.AddSingleton<IDataLoader, CloudDataLoader>();
             services.AddSingleton<IUserLogInServices, CloudUserLogInServices>();
             services.AddSingleton<IUserCreateAccountServices, CloudUserCreateAccountServices>();
-            services.AddSingleton<AuthRequest>();
+            services.AddSingleton<EndUser>();
             // services.AddScoped<IList, >();
         }
 

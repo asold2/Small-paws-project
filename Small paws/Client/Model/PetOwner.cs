@@ -2,7 +2,7 @@
 
 namespace Client.Model
 {
-    public class PetOwner
+    public class PetOwner : EndUser
     {
         [JsonPropertyName("userName")]
         public string Username { get; set; }

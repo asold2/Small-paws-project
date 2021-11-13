@@ -8,7 +8,7 @@ namespace Client.Pages
         [Inject] private NavigationManager NavigationManager { get; set; }
 
         [Inject]
-        private AuthRequest AuthRequest { get; set; }
+        private EndUser EndUser { get; set; }
 
         private string Password { get; set; }
 
@@ -21,7 +21,7 @@ namespace Client.Pages
         }
         protected void LoadCreateAccountDetails()
         {
-            Password = AuthRequest.Password;
+            Password = EndUser.password;
             if (Password.Equals(PasswordConfirmation))
             {
                 NavigationManager.NavigateTo("CreateAccountDetails");

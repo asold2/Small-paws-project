@@ -18,15 +18,15 @@ namespace Client.Data.Validation
         }
 
 
-        public async Task<int> ValidateUserAsync(string username, string password, string role)
+        public async Task<int> ValidateUserAsync(string username, string password)
         {
-            var AuthRequest = new AuthRequest()
+            var endUser = new EndUser()
             {
-                Username = username,
-                Password = password,
-                Role = role
+                userName = username,
+                password = password,
             };
-            var userAsJson = JsonSerializer.Serialize(AuthRequest, new JsonSerializerOptions
+        
+            var userAsJson = JsonSerializer.Serialize(endUser, new JsonSerializerOptions
             {
               PropertyNameCaseInsensitive  = true
             });
@@ -34,7 +34,7 @@ namespace Client.Data.Validation
                 userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            var responseMessage = await _httpClient.PostAsync(Uri + "/login", httpContent);
+            var responseMessage = await _httpClient.PostAsync(Uri + "/account", httpContent);
             if (!responseMessage.IsSuccessStatusCode)
             {
                 throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
@@ -42,6 +42,7 @@ namespace Client.Data.Validation
 
             var message = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<int>(message);
+            Console.WriteLine(result + "HERE!!!!!!!!!!!!!!!!!!!!");
             return result;
         }
     }

@@ -2,7 +2,7 @@
 @layout LoginCreateAccountLayout
 @using Client.Model
 @inherits CreateAccountMainRazor
-@inject AuthRequest _authRequest
+@inject EndUser endUser
 
 		<div class="container-login">
 			<div class="wrap-login">
@@ -20,13 +20,13 @@
 			*@							
 					<div class="wrap-input">
 						<span class="label-input">Username</span>
-						<input class="input" type="text" name="username" placeholder="Type your username" @bind="_authRequest.Username">
+						<input class="input" type="text" name="username" placeholder="Type your username" @bind="endUser.userName">
 						<span class='focus-input'></span>
 						<i class="fas fa-user-alt"></i>
 					</div>
 					<div class="wrap-input">
 						<span class="label-input">Password</span>
-						<input class="input" type="password" placeholder="Type your password" @bind="_authRequest.Password">
+						<input class="input" type="password" placeholder="Type your password" @bind="endUser.password">
 						<span class="focus-input"></span>
 						<i class="fas fa-lock"></i>
 					</div>

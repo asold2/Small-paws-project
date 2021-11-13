@@ -14,12 +14,11 @@ namespace Client.Pages
 
     protected string Username;
     protected string Password;
-    protected string Role;
 
     protected async Task LoadMainPage()
     {
         
-        if (await UserLogInServices.ValidateUserAsync(Username, Password, Role) == 202)
+        if (await UserLogInServices.ValidateUserAsync(Username, Password) == 202)
         {
             NavigationManager.NavigateTo("ViewAnimals");    
         }
@@ -30,14 +29,7 @@ namespace Client.Pages
         NavigationManager.NavigateTo("CreateAccountMain");
     }
     
-    protected void SetToEmployee()
-    {
-        Role = "Employee";
-    }
-    protected void SetToPetOwner()
-    {
-        Role = "PetOwner";
-    }
+
     }
     
 

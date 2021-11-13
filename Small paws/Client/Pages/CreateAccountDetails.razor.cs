@@ -11,7 +11,7 @@ namespace Client.Pages
     public abstract class CreateAccountDetailsRazor : ComponentBase
     {
         [Inject] private NavigationManager NavigationManager { get; set; }
-        [Inject] private AuthRequest AuthRequest { get; set; }
+        [Inject] private EndUser EndUser { get; set; }
         [Inject] private IUserCreateAccountServices UserCreateAccountServices { get; set; }
 
         protected string FirstName;
@@ -30,8 +30,8 @@ namespace Client.Pages
             var petOwner = new PetOwner
             {
 /*             Email = CreateAccountMain.Email,*/
-                Username = AuthRequest.Username,
-                Password = AuthRequest.Password,
+                Username = EndUser.userName,
+                Password = EndUser.password,
                 FirstName = FirstName,
                 LastName = LastName,
                 Age = Age,

@@ -15,4 +15,8 @@
       <Folder Include="obj\Debug\net5.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Model\Employee.cs" />
+    </ItemGroup>
+
 </Project>

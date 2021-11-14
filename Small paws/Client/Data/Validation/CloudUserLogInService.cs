@@ -7,12 +7,12 @@ using Client.Model;
 
 namespace Client.Data.Validation
 {
-    public class CloudUserLogInServices : IUserLogInServices
+    public class CloudUserLogInService : IUserLogInService
     {
         private const string Uri = "http://localhost:8090";
         private readonly HttpClient _httpClient;
         
-        public CloudUserLogInServices()
+        public CloudUserLogInService()
         {
             _httpClient = new HttpClient();
         }

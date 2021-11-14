@@ -2,7 +2,7 @@
 
 namespace Client.Data.Validation
 {
-    public interface IUserLogInServices
+    public interface IUserLogInService
     {
         Task<int> ValidateUserAsync(string username, string password);
     }

@@ -12,7 +12,7 @@ namespace Client.Pages
     {
         [Inject] private NavigationManager NavigationManager { get; set; }
         [Inject] private EndUser EndUser { get; set; }
-        [Inject] private IUserCreateAccountServices UserCreateAccountServices { get; set; }
+        [Inject] private IUserCreateAccountService UserCreateAccountService { get; set; }
 
         protected string FirstName;
         protected string LastName;
@@ -44,7 +44,7 @@ namespace Client.Pages
                 Id = Id
             };
 
-            if (await UserCreateAccountServices.CreateUserAsync(petOwner) == 201)
+            if (await UserCreateAccountService.CreateUserAsync(petOwner) == 201)
             {
                 NavigationManager.NavigateTo("ViewAnimals");
             }

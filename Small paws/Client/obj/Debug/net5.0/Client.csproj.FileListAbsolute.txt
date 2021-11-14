@@ -190,3 +190,9 @@ C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\n
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.pdb
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.csproj.CopyComplete
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\AddAnimal.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewAnimal.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\AddAnimal.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewAnimal.razor.g.cs
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\AddAnimal.razor.rz.scp.css
+C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewAnimal.razor.rz.scp.css

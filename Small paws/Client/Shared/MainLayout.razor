@@ -1,8 +1,15 @@
 @inherits LayoutComponentBase
-
+@inject NavigationManager _navigationManager
+@if(_navigationManager.Uri.Contains("Login" )|| _navigationManager.Uri.Contains("CreateAccountMain")|| _navigationManager.Uri.Contains("CreateAccountDetails"))
+{
 <div class="page">
-    @if (1 == 2)
-    {
+    @Body    
+</div>
+}
+else
+{ 
+    <div class="page">
+    
         <div class="sidebar">
             <NavMenu/>
         </div>
@@ -16,10 +23,6 @@
                 @Body
             </div>
         </div>
-    }
-    <div class="main">
-        @Body
-      <Login/>
-    </div>
 
-</div>
+    </div>
+}

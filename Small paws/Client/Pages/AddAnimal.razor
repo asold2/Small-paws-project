@@ -1,0 +1,69 @@
+@page "/"
+
+@inherits AddAnimalRazor
+
+
+<div class="container-login">
+	<div class="wrap-login">
+				
+		<span class="login-title">
+			<b>Add new animal</b>
+		</span>
+		<div class="left-side">
+			<div class="picture-div">
+				<InputFile class="picture" src="photo_picture.png" OnChange="@UploadImage" alt="image of uploaded animal"/>
+			</div>
+			<div class="description-div">
+				<span class="description-text"><b>Description: </b></span>
+				<textarea class="description-area" placeholder="Type animal's description" @bind="Description"></textarea>
+				<span class="focus-input"></span>
+			</div>
+		</div>
+				
+				
+		<div class="right-side">
+			<div class="wrap-input">
+				<span class="label-input"><b>Animal type: </b></span>
+				<input class="input" type="text" placeholder="Type animal's type" @bind="AnimalType">
+				<span class="focus-input"></span>
+			</div>		
+			<div class="wrap-input">
+				<span class="label-input"><b>ID: </b></span>
+				<input class="input" type="text" placeholder="Type animal's id" @bind="Id">
+				<span class="focus-input"></span>
+			</div>					
+			<div class="wrap-input">
+				<span class="label-input"><b>Age: </b></span>
+				<input class="input" type="text" placeholder="Type animal's age" @bind="Age">
+				<span class="focus-input"></span>
+			</div>					
+			<div class="wrap-input">
+				<span class="label-input"><b>Washed: </b></span>
+				<div>
+					<input type="radio" @onclick="SetWashedToTrue"> Yes
+					<input type="radio" @onclick="SetWashedToFalse"/> No
+				</div>
+			</div>
+			<div class="wrap-input">
+				<span class="label-input"><b>Fed: </b></span>
+				<div>
+					<input type="radio" @onclick="SetFedToTrue"> Yes
+					<input type="radio" @onclick="SetFedToFalse"/> No
+				</div>
+			</div>
+			<div class="wrap-input">
+				<span class="label-input"><b>Vaccinated: </b></span>
+				<div>
+					<input type="radio" @onclick="SetVaccinatedToTrue"> Yes
+					<input type="radio" @onclick="SetVaccinatedToFalse"/> No
+				</div>
+			</div>
+		</div>
+	</div>
+					<div class="wrap-login-btn" @onclick="SaveAnimal">
+                    	<div class="login-bgbtn"></div>
+    						<button class="login-btn">
+                    		Save
+                    		</button>
+                    </div>
+		</div>

@@ -27,9 +27,9 @@ namespace Client
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<IDataLoader, CloudDataLoader>();
-            services.AddSingleton<IUserLogInServices, CloudUserLogInServices>();
-            services.AddSingleton<IUserCreateAccountServices, CloudUserCreateAccountServices>();
+            services.AddSingleton<IAnimalService, CloudAnimalService>();
+            services.AddSingleton<IUserLogInService, CloudUserLogInService>();
+            services.AddSingleton<IUserCreateAccountService, CloudUserCreateAccountService>();
             services.AddSingleton<EndUser>();
             // services.AddScoped<IList, >();
         }

@@ -10,13 +10,13 @@ namespace Client.Pages
     public class ViewAnimalsRazor :ComponentBase
     {
         protected IList<Animal> Animals { get; set; }
-        [Inject] protected IDataLoader DataLoader { get; set; }
+        [Inject] protected IAnimalService AnimalService { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                Animals = await DataLoader.GetAnimalsAsync();
+                Animals = await AnimalService.GetAnimalsAsync();
             }
             catch (Exception e)
             {

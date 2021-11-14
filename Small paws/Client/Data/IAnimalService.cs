@@ -4,8 +4,9 @@ using Client.Model;
 
 namespace Client.Data
 {
-    public interface IDataLoader
+    public interface IAnimalService
     {
         Task<IList<Animal>> GetAnimalsAsync();
+        Task AddAnimalAsync(Animal animal);
     }
 }

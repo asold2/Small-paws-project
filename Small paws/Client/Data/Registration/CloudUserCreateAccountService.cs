@@ -7,12 +7,12 @@ using Client.Model;
 
 namespace Client.Data.Registration
 {
-    public class CloudUserCreateAccountServices : IUserCreateAccountServices
+    public class CloudUserCreateAccountService : IUserCreateAccountService
     {
         private readonly HttpClient _httpClient;
         private const string Uri = "http://localhost:8090";
 
-        public CloudUserCreateAccountServices()
+        public CloudUserCreateAccountService()
         {
             _httpClient = new HttpClient();
         }

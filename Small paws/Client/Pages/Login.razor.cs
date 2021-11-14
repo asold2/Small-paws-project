@@ -10,7 +10,7 @@ namespace Client.Pages
     public class LoginRazor : ComponentBase
     {
     [Inject] private NavigationManager NavigationManager { get; set; }
-    [Inject] private IUserLogInServices UserLogInServices { get; set; }
+    [Inject] private IUserLogInService UserLogInService { get; set; }
 
     protected string Username;
     protected string Password;
@@ -18,7 +18,7 @@ namespace Client.Pages
     protected async Task LoadMainPage()
     {
         
-        if (await UserLogInServices.ValidateUserAsync(Username, Password) == 202)
+        if (await UserLogInService.ValidateUserAsync(Username, Password) == 202)
         {
             NavigationManager.NavigateTo("ViewAnimals");    
         }

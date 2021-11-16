@@ -82,7 +82,15 @@ using Client.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class ViewAnimal : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\Pages\ViewAnimal.razor"
+using System.Diagnostics.Eventing.Reader;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    public partial class ViewAnimal : ViewAnimalRazor
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

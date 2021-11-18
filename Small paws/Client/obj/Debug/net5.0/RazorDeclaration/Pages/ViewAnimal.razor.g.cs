@@ -89,7 +89,7 @@ using System.Diagnostics.Eventing.Reader;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ViewAnimal")]
     public partial class ViewAnimal : ViewAnimalRazor
     {
         #pragma warning disable 1998

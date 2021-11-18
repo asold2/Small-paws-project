@@ -1052,9 +1052,10 @@ button:hover[b-wx7l1li556] {
 
 .right-side[b-wx7l1li556]{
     float: right;
-    width: 45%;
+    width: 39%;
     height: 95%;
-
+    padding-left: 3%;
+    padding-right: 3%;
     border-style: solid;
     border-color: black;
     border-radius: 10px;

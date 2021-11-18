@@ -21,7 +21,21 @@
             </tr>
         }
     }
-
+<div class="card-deck">
+    @foreach (var  animal in Animals)
+    {
+        <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;">
+            <img class="card-img-top imageThumbnail" src="@animal.Picture"/>
+            
+           <tr>
+                @* <td>@animal.Id</td> *@
+                <td>@animal.Age</td>
+                <td>@animal.AnimalType</td>
+                <td>@animal.Description</td>
+           </tr>
+        </div>
+    }
+</div>
 
     
 </table>

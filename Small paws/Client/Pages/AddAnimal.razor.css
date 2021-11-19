@@ -1,39 +1,18 @@
+/*Title styling*/
 
-ul, li {
-    margin: 0;
-    list-style-type: none;
-}
-
-input {
-    outline: none;
-    border: none;
-}
-
-textarea {
-    outline: none;
-    border: none;
-}
-i{
-    position: absolute;
+.title{
     display: block;
-    width: 100%;
-    height: 100%;
-    top: 45px;
-    left: 15px;
-    pointer-events: none;
-    color: #adadad;
+    font-family: 'Poppins', sans-serif;
+    font-size: 39px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 5vh;
 }
 
-input::-webkit-input-placeholder { color: #adadad;}
-input:-moz-placeholder { color: #adadad;}
-input::-moz-placeholder { color: #adadad;}
-input:-ms-input-placeholder { color: #adadad;}
+/*Title styling end*/
 
-textarea::-webkit-input-placeholder { color: #adadad;}
-textarea:-moz-placeholder { color: #adadad;}
-textarea::-moz-placeholder { color: #adadad;}
-textarea:-ms-input-placeholder { color: #adadad;}
-
+/*Button styling*/
 
 button {
     outline: none !important;
@@ -45,109 +24,15 @@ button:hover {
     cursor: pointer;
 }
 
-
-
-.container-login {
-    width: 100%;
-    height: 100%;
-
-}
-
-.wrap-login {
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-
-
-.login {
-    width: 100%;
-}
-
-.login-title {
-    
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 39px;
-    color: #333333;
-    line-height: 1.2;
-    text-align: left;
-    margin-bottom: 5vh;
-}
-
-
-
-.input {
-    font-family: Poppins-Medium, sans-serif;
-    font-size: 16px;
-    color: #333333;
-    line-height: 1.2;
-
-    display: block;
-    width: 100%;
-    height: 55px;
-    background: transparent;
-    padding: 0 7px 0 43px;
-}
-
-.focus-input {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    border-bottom-color: rgba(0,0,255,.2);
-    border-bottom-style: solid;
-
-}
-
-.focus-input::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #7f7f7f;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-}
-
-.input:focus + .focus-input::before {
-    width: 100%;
-}
-
-.input:not(:placeholder-shown) + .focus-input::before {
-    width: 100%;
-}
-
-.input:focus ~ i {
-    color: #a64bf4;
-}
-
-.input:not(:placeholder-shown) ~ i {
-    color: #a64bf4;
-}
-
-
-
-
 .wrap-login-btn {
     width: 10%;
     height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
     float: right;
     z-index: 1;
     border-radius: 25px;
@@ -160,7 +45,6 @@ button:hover {
     -o-box-shadow: 0 5px 30px 0 rgba(3, 216, 222, 0.2);
     -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
 }
-
 .login-bgbtn {
     position: absolute;
     z-index: -1;
@@ -203,58 +87,100 @@ button:hover {
     left: 0;
 }
 
+/*Button styling end*/
 
-.wrap-input {
-    position: relative;
-    margin-bottom: 2vh;
-}
-.wrap-SignUp{
+/*Table styling*/
+
+table{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    height: 100%;
+
 }
-.signUp{
-    color: grey;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: smaller;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
-.signUp:hover{
-    transition: color;
-    transition-duration: 1s;
-    color: purple;
+td:nth-child(odd) {
+    width: 40%;
 }
-.label-input{
-    font-family: 'Poppins', sans-serif;
-    font-size: smaller;
+td:first-child {
+    width: 40%;
 }
+
+
+th, td {
+    padding: 2%;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 18pt;
+}
+
 .right-side{
     float: right;
-    width: 50%;
+    width: 46%;
     height: 100%;
-    padding-left: 3%;
-    padding-right: 3%
+    margin-left: 2%;
+    margin-right: 2%;
+    border-width: 5px;
+    border-style: outset;
+    border-color: grey;
+}
+.input{
+    border-style: none;
+    outline: none;
+}
+.input2
+{
+    background-color: #f2f2f2;
+    border-style: none;
+    outline: none;
 }
 
-.left-side{
+
+/*Table styling end*/
+
+/*Description styling*/
+.description-div{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    width: 96%;
     height: 100%;
-    width: 50%;
-    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.description-text{
+    
 }
 .description-area{
     width: 100%;
-    padding: 12px 20px;
+    height: 20vh;
+    border-width: 5px;
+    border-style: outset;
+    border-color: grey;
     box-sizing: border-box;
-    border: 2px solid rgba(0,0,0,0.45);
-    border-radius: 4px;
-    font-size: 16px;
     resize: none;
 }
-.description-div{
-    margin-top: 3%;
+/*Description styling end*/
 
+.picture-div{
+    float: left;
+    width: 46%;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 .picture{
+    height: 100%;
+    width: 100%;
+}
+.top-side{
     height: 50%;
     width: 100%;
 }
+.bot-side{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+

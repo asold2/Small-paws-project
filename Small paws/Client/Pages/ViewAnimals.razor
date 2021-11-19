@@ -21,6 +21,7 @@
             </tr>
         }
     }
+   @* 
 <div class="card-deck">
     @foreach (var  animal in Animals)
     {
@@ -28,7 +29,7 @@
             <img class="card-img-top imageThumbnail" src="@animal.Picture"/>
             
            <tr>
-                @* <td>@animal.Id</td> *@
+                <td>@animal.Id</td>
                 <td>@animal.Age</td>
                 <td>@animal.AnimalType</td>
                 <td>@animal.Description</td>
@@ -36,6 +37,6 @@
         </div>
     }
 </div>
-
+*@
     
 </table>

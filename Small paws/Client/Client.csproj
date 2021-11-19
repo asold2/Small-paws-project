@@ -10,7 +10,7 @@
 
     <ItemGroup>
       <Compile Remove="Model\Employee.cs" />
-      <Compile Update="Pages\ViewAnimal.razor.cs">
+      <Compile Update="Pages\ViewSpecificAnimal.razor.cs">
         <DependentUpon>ViewAnimal.razor</DependentUpon>
       </Compile>
     </ItemGroup>

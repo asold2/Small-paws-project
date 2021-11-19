@@ -16,7 +16,7 @@ namespace Client.Pages
         protected string WashedIcon = "far fa-check-circle";
         protected string FedIcon = "fas fa-times";
         protected string VaccinatedIcon = "far   fa-times-circle";
-        
+
         
         
     }

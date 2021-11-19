@@ -22,12 +22,14 @@ namespace Client.Pages
         protected bool Vaccinated;
         protected byte[] Picture;
         protected string Description;
-
-        protected async Task UploadImage(InputFileChangeEventArgs e)
-        { 
-            var ms = new MemoryStream();
-            await e.File.OpenReadStream().CopyToAsync(ms);
-            Picture = ms.ToArray();
+        protected string ShownImage = "photo_picture.png";
+        protected async Task UploadImage(InputFileChangeEventArgs eventArgs)
+        {
+            var sourceFile = eventArgs.File;
+            var buffers = new byte[sourceFile.Size];
+            await sourceFile.OpenReadStream().ReadAsync(buffers);
+            string imageType = sourceFile.ContentType;
+            ShownImage = $"data:{imageType};base64,{Convert.ToBase64String(buffers)}";
         }
         protected void SetWashedToTrue()
         {

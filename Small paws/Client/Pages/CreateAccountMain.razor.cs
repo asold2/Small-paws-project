@@ -12,7 +12,7 @@ namespace Client.Pages
 
         private string Password { get; set; }
 
-        // public string Email { get; protected set; }
+        public static string Email { get; protected set; }
         protected string PasswordConfirmation { get; set; }
 
         protected void LoadLogIn()

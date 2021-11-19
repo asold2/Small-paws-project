@@ -7,11 +7,14 @@ import net.minidev.json.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smallpawsproject.model.Animal;
-import smallpawsproject.model.PetOwner;
+import smallpawsproject.rmi.ClientFactory;
+import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.AnimalServices;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.util.ArrayList;
+import java.rmi.RemoteException;
+import java.util.List;
 
 @Service
 public class AnimalServicesImpl implements AnimalServices
@@ -20,49 +23,39 @@ public class AnimalServicesImpl implements AnimalServices
   private JSONObject jsonObject;
   JSONParser parser = new JSONParser();
 
+  @Autowired
+  private final ClientFactory clientFactory;
+
+  private final ClientRMI client;
+
+  public AnimalServicesImpl(ClientFactory clientFactory) {
+
+    this.clientFactory = clientFactory;
+    client = clientFactory.getClient();
+
+    try {
+      client.connect();
+    }catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+  }
 
   @Override public void AddAnimal(Animal animal)
   {
     try
     {
-      FileReader reader = new FileReader(new File("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json"));
-      jsonArray = (JSONArray) parser.parse(reader);
+      client.addAnimal(animal);
+      System.out.println("Sending to server");
     }
-    catch (FileNotFoundException | ParseException e)
+    catch (RemoteException e)
     {
       e.printStackTrace();
     }
-
-      jsonObject = new JSONObject();
-      jsonObject.put("TypeOfAnimal", animal.getTypeOfAnimal());
-      jsonObject.put("Age", animal.getAge());
-      jsonObject.put("Description", animal.getDescription());
-
-      jsonArray.add(jsonObject);
-
-      try {
-        FileWriter fileWriter = new FileWriter("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json");
-
-        fileWriter.write(jsonArray.toJSONString());
-        fileWriter.close();
-      } catch (IOException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-      }
   }
 
   @Override public JSONArray GetAnimals()
   {
-    try
-          {
-            FileReader reader = new FileReader(new File("../small-paws-project/small-paws-project/src/main/java/smallpawsproject/jsonFiles/animals.json"));
-            jsonArray = (JSONArray) parser.parse(reader);
-
-          }
-          catch (FileNotFoundException | ParseException e)
-          {
-            e.printStackTrace();
-          }
-    return jsonArray;
+return null;
   }
 }

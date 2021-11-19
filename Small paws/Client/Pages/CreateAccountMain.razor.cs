@@ -21,7 +21,7 @@ namespace Client.Pages
         }
         protected void LoadCreateAccountDetails()
         {
-            Password = EndUser.password;
+            Password = EndUser.Password;
             if (Password.Equals(PasswordConfirmation))
             {
                 NavigationManager.NavigateTo("CreateAccountDetails");

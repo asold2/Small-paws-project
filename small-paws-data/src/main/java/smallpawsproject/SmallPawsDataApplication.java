@@ -6,6 +6,7 @@ import smallpawsproject.model.AnimalAttendant;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.model.Veterinarian;
+import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
 import smallpawsproject.rmi.Server;
 import smallpawsproject.rmi.ServerImpl;
@@ -24,14 +25,16 @@ import java.rmi.RemoteException;
 public class SmallPawsDataApplication {
 		private final PetOwnerRepository petOwnerRepository;
 		private final UsersRepository usersRepository;
+		private final AnimalRepository animalRepository;
 
 		private ServiceFactory serviceFactory;
 		private DataAccess dataAccess;
 
-	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository){
+	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository){
 		this.petOwnerRepository = petOwnerRepository;
 		this.usersRepository = usersRepository;
-		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository);
+		this.animalRepository = animalRepository;
+		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
 
 

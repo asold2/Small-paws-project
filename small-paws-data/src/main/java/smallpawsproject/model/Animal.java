@@ -9,20 +9,30 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name = "animal")
 public class Animal implements Serializable
 {
+
+  private static final long serialVersionUID = 663126647076776891L;
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int ID;
-  private String TypeOfAnimal;
+  private byte[] Picture;
+  private String AnimalType;
   private int Age;
   private String Description;
+  private boolean Washed;
+  private boolean Fed;
+  private boolean Vaccinated;
 
   @JsonCreator
-  public Animal(@JsonProperty("typeOfAnimal") String typeOfAnimal, @JsonProperty("age") int age,@JsonProperty("description") String description)
+  public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age,@JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated)
   {
-    TypeOfAnimal = typeOfAnimal;
+    Picture = picture;
+    Washed = washed;
+    Fed = fed;
+    Vaccinated = vaccinated;
+    AnimalType = animalType;
     Age = age;
     Description = description;
   }
@@ -38,14 +48,14 @@ public class Animal implements Serializable
     this.ID = ID;
   }
 
-  public String getTypeOfAnimal()
+  public String getAnimalType()
   {
-    return TypeOfAnimal;
+    return AnimalType;
   }
 
-  public void setTypeOfAnimal(String typeOfAnimal)
+  public void setAnimalType(String animalType)
   {
-    TypeOfAnimal = typeOfAnimal;
+    AnimalType = animalType;
   }
 
   public int getAge()
@@ -67,4 +77,13 @@ public class Animal implements Serializable
   {
     Description = description;
   }
+
+  public byte[] getPicture() {
+    return Picture;
+  }
+
+  public void setPicture(byte[] picture) {
+    Picture = picture;
+  }
+
 }

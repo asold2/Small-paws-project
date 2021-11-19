@@ -12,4 +12,5 @@ public interface DataAccess
   List<PetOwner> getPetOwners();
   List<Animal> getAnimals();
   List<EndUser> getUsers();
+  void addAnimal(Animal animal);
 }

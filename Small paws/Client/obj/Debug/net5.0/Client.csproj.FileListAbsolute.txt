@@ -196,3 +196,9 @@ C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\ob
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewSpecificAnimal.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewSpecificAnimal.razor.g.cs
 C:\Users\Vosta\OneDrive\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewSpecificAnimal.razor.rz.scp.css
+C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\AddAnimal.razor.g.cs
+C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewSpecificAnimal.razor.g.cs
+C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\AddAnimal.razor.g.cs
+C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewSpecificAnimal.razor.g.cs
+C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\AddAnimal.razor.rz.scp.css
+C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewSpecificAnimal.razor.rz.scp.css

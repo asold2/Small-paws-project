@@ -9,18 +9,20 @@
         <th>Type of animal</th>
         <th>Descripition</th>
     </tr>
+    @*
     @if (Animals != null)
     {
         @foreach (var animal in Animals)
         {
             <tr>
-                @* <td>@animal.Id</td> *@
+                
                 <td>@animal.Age</td>
                 <td>@animal.AnimalType</td>
                 <td>@animal.Description</td>
             </tr>
         }
-    }
+}
+*@
    @* 
 <div class="card-deck">
     @foreach (var  animal in Animals)

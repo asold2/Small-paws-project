@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vosta\\OneDrive\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj": {}
+    "C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vosta\\OneDrive\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj": {
+    "C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vosta\\OneDrive\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\Vosta\\OneDrive\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
-        "packagesPath": "C:\\Users\\Vosta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vosta\\OneDrive\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\obj\\",
+        "projectPath": "C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
+        "packagesPath": "C:\\Users\\hansl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hansl\\Documents\\GitHub\\Small-paws-project\\Small paws\\Client\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Vosta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\hansl\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

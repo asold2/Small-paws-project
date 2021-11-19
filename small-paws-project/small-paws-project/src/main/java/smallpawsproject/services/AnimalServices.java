@@ -4,11 +4,11 @@ import net.minidev.json.JSONArray;
 import org.springframework.stereotype.Service;
 import smallpawsproject.model.Animal;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public interface AnimalServices
 {
-  void AddAnimal(Animal animal);
   JSONArray GetAnimals();
+  void AddAnimal(Animal animal);
 }

@@ -4,11 +4,7 @@ namespace Client.Model
 {
     public class PetOwner : EndUser
     {
-        [JsonPropertyName("userName")]
-        public string Username { get; set; }
 
-        [JsonPropertyName("password")]
-        public string Password{ get; set; }
         
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; }

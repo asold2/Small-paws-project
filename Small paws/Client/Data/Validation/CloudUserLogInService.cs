@@ -22,8 +22,8 @@ namespace Client.Data.Validation
         {
             var endUser = new EndUser()
             {
-                userName = username,
-                password = password,
+                UserName = username,
+                Password = password,
             };
         
             var userAsJson = JsonSerializer.Serialize(endUser, new JsonSerializerOptions

@@ -16,7 +16,7 @@ namespace Client.Pages
         {
             try
             {
-                Animals = await AnimalService.GetAnimalsAsync();
+               // Animals = await AnimalService.GetAnimalsAsync();
             }
             catch (Exception e)
             {

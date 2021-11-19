@@ -39,4 +39,9 @@ public class DataAccessImpl implements DataAccess
     return serviceFactory.getUserService().getUsers();
 
   }
+
+  @Override
+  public void addAnimal(Animal animal) {
+    serviceFactory.getAnimalService().addAnimal(animal);
+  }
 }

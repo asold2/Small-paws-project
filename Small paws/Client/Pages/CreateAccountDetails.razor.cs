@@ -30,8 +30,8 @@ namespace Client.Pages
             var petOwner = new PetOwner
             {
              //   Email = CreateAccountMain.Email,
-                Username = EndUser.userName,
-                Password = EndUser.password,
+                UserName = EndUser.UserName,
+                Password = EndUser.Password,
                 FirstName = FirstName,
                 LastName = LastName,
                 Age = Age,

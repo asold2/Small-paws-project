@@ -16,7 +16,6 @@ namespace Client.Pages
         
         protected string AnimalType;
         protected int? Age;
-        protected int? Id;
         protected bool Washed;
         protected bool Fed;
         protected bool Vaccinated;
@@ -26,10 +25,10 @@ namespace Client.Pages
         protected async Task UploadImage(InputFileChangeEventArgs eventArgs)
         {
             var sourceFile = eventArgs.File;
-            var buffers = new byte[sourceFile.Size];
-            await sourceFile.OpenReadStream().ReadAsync(buffers);
+            Picture = new byte[sourceFile.Size];
+            await sourceFile.OpenReadStream().ReadAsync(Picture);
             string imageType = sourceFile.ContentType;
-            ShownImage = $"data:{imageType};base64,{Convert.ToBase64String(buffers)}";
+            ShownImage = $"data:{imageType};base64,{Convert.ToBase64String(Picture)}";
         }
         protected void SetWashedToTrue()
         {
@@ -61,7 +60,6 @@ namespace Client.Pages
 
         protected async Task SaveAnimal()
         {
-            Debug.Assert(Id != null, nameof(Id) + " != null");
             Debug.Assert(Age != null, nameof(Age) + " != null");
             
             
@@ -70,7 +68,6 @@ namespace Client.Pages
                 Description = Description,
                 Picture = Picture,
                 AnimalType = AnimalType,
-                Id = (int) Id,
                 Age = (int) Age,
                 Washed = Washed,
                 Fed = Fed,

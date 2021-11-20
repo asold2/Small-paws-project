@@ -71,7 +71,7 @@ namespace Client.Pages
             }
             else
             {
-                
+                error = UserCreateAccountService.CreateUserAsync(petOwner).Result + " Error message";
             }
 
         }

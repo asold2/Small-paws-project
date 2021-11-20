@@ -11,7 +11,6 @@ import java.util.List;
 public interface ClientRMI extends Remote
 {
   void registerPetOwner(PetOwner petOwner) throws RemoteException;
-
   void connect() throws RemoteException;
   public static final String CLIENT_SERVICE_NAME = "rmi://localhost/client";
   List<PetOwner> getPetOwners() throws RemoteException;

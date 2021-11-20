@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.userdetails.UserDetails;
 //import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 
 import smallpawsproject.rmi.ClientFactory;
@@ -90,5 +91,20 @@ public class PetOwnerServiceImpl implements PetOwnerService
     return HttpServletResponse.SC_CREATED;
   }
 
+  @Override public int checkUsername(String userName)
+  {
+    System.out.println(userName);
+    int answer = 0;
+    for(PetOwner user : petOwners){
+      if(user.getUserName().equals(userName)){
+        answer = HttpServletResponse.SC_FORBIDDEN;
+        break;
+      }
+      else{
+        answer = HttpServletResponse.SC_ACCEPTED;
+      }
+    }
+    return answer;
+  }
 
 }

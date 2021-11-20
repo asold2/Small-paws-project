@@ -43,6 +43,14 @@ public class UserServiceImpl implements UsersService
 
   @Override public List<EndUser> getUsers()
   {
+    try
+    {
+      return client.getUsers();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
     return null;
   }
 

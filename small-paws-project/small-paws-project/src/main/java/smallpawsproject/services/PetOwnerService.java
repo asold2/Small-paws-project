@@ -11,5 +11,5 @@ public interface PetOwnerService
 {
   int registerPetOwner(PetOwner petOwner);
 
-
+  int checkUsername(String userName);
 }

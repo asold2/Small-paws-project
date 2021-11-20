@@ -1,0 +1,51 @@
+@page "/ViewSpecificAnimal"
+
+@using System.Diagnostics.Eventing.Reader
+@inherits ViewAnimalRazor
+
+<div class="top-side">
+	<div class="picture-div">
+		<Img class="picture" src="photo_picture.png" alt="image of uploaded animal"/>
+	</div>
+	<div class="right-side">
+		<table>
+			<tr>
+				<td><b>Animal type</b></td>
+				<td>@AnimalType</td>
+
+			</tr>
+			<tr>
+				<td><b>Animal ID</b></td>
+				<td>@Id</td>
+			</tr>
+			<tr>
+				<td><b>Age</b></td>
+				<td>@Age</td>
+			</tr>
+			<tr>
+				<td><b>Washed</b></td>
+				<td><i class="@WashedIcon"></i></td>
+			</tr>
+			<tr>
+				<td><b>Fed</b></td>
+				<td><i class="@FedIcon"></i></td>
+			</tr>
+			<tr>
+				<td><b>Vaccinated</b></td>
+				<td><i class="@VaccinatedIcon"></i></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="bot-side">
+	<div class="description-div">
+		<text class="description-text"><b>Description: </b></text>
+		<text class="description-area">@Description</text>
+	</div>
+</div>
+<div class="wrap-login-btn" >
+	<div class="login-bgbtn"></div>
+	<button class="login-btn">
+		Adopt
+	</button>
+</div>

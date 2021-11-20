@@ -1,0 +1,41 @@
+﻿@page "/"
+@layout LoginCreateAccountLayout
+@inherits LoginRazor
+
+		<div class="container-login">
+			<div class="wrap-login">
+				
+				<span class="login-title">
+					<b>Login</b>
+				</span>
+
+				<div class="wrap-input">
+					<span class="label-input">Username</span>
+					<input class="input" type="text" name="username" placeholder="Type your username" @bind="Username">
+					<span class='focus-input'></span>
+					<i class="fas fa-user-alt"></i>
+				</div>
+
+				<div class="wrap-input">
+					<span class="label-input">Password</span>
+					<input class="input" type="password" placeholder="Type your password" @bind="Password">
+					<span class="focus-input"></span>
+					<i class="fas fa-lock"></i>
+				</div>
+
+				<div class="wrap-login-btn">
+					<div class="login-bgbtn"></div>
+					<button @onclick="LoadMainPage" class="login-btn">
+						Login
+					</button>
+				</div>
+				
+				<div class="wrap-SignUp">	
+					<a @onclick="LoadCreateAccount" class="signUp" href="#">Sign Up</a>
+				</div>
+
+			</div>
+		</div>
+
+	
+

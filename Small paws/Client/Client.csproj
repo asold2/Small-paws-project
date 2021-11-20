@@ -4,4 +4,25 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="obj\Debug\net5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Model\Employee.cs" />
+      <Compile Update="Pages\ViewSpecificAnimal.razor.cs">
+        <DependentUpon>ViewAnimal.razor</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Pages\AddAnimal.razor.css">
+        <DependentUpon>AddAnimal.razor</DependentUpon>
+      </None>
+      <None Update="Pages\ViewAnimal.razor.css">
+        <DependentUpon>ViewAnimal.razor</DependentUpon>
+      </None>
+      <None Include="wwwroot\photo_picture.png" />
+    </ItemGroup>
+
 </Project>

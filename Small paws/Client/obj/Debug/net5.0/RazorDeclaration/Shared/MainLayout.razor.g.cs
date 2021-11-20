@@ -89,6 +89,7 @@ using Client.Shared;
         {
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

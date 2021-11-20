@@ -1,0 +1,69 @@
+@page "/AddAnimal"
+
+@inherits AddAnimalRazor
+
+				
+<span class="title">
+	<b>Add new animal</b>
+</span>
+<div class="top-side">
+	
+
+	<div class="picture-div">
+		@*<img class="picture" src="photo_picture.png"  alt="image of uploaded animal"/>*@
+		<img class="picture" src="@ShownImage" alt="Upload photo">
+		<InputFile class="picture" src="photo_picture.png" OnChange="@UploadImage" alt="image of uploaded animal"/>
+	</div>
+	<div class="right-side">
+		<table>
+			<tr>
+				<td><b>Animal type</b></td>
+				<td><input class="input" type="text" placeholder="Type animal's type" @bind="AnimalType"></td>
+
+			</tr>
+			<tr>
+				<td><b>Age</b></td>
+				<td><input class="input" type="text" placeholder="Type animal's age" @bind="Age"></td>
+			</tr>
+			<tr>
+				<td><b>Washed</b></td>
+				<td>
+					<div>
+						<input type="radio" @onclick="SetWashedToTrue"> Yes
+						<input type="radio" @onclick="SetWashedToFalse"/> No
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><b>Fed</b></td>
+				<td>
+					<div>
+						<input type="radio" @onclick="SetFedToTrue"> Yes
+						<input type="radio" @onclick="SetFedToFalse"/> No
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><b>Vaccinated</b></td>
+				<td>
+					<div>
+						<input type="radio" @onclick="SetVaccinatedToTrue"> Yes
+						<input type="radio" @onclick="SetVaccinatedToFalse"/> No
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="bot-side">
+	<div class="description-div">
+    	<text class="description-text"><b>Description: </b></text>
+    	<textarea class="description-area" placeholder="Type animal's description" @bind="Description"></textarea>
+    </div>
+	<div class="wrap-login-btn" @onclick="SaveAnimal">
+		<div class="login-bgbtn"></div>
+		<button class="login-btn">
+			Save
+		</button>
+	</div>
+</div>

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Client.Data.Registration;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Routing.Matching;
+using Microsoft.VisualBasic.CompilerServices;
 
 
 namespace Client.Pages
@@ -25,6 +28,11 @@ namespace Client.Pages
         protected string JobTitle;
         protected int Id;
 
+        protected string idError ="";
+        protected string avgIncomeError="";
+        protected string ageError="";
+        protected string error = "";
+
         protected async Task LoadViewAnimals()
         {
             var petOwner = new PetOwner
@@ -43,11 +51,29 @@ namespace Client.Pages
                 JobTitle = JobTitle,
                 Id = Id
             };
+            if (Age < 15 || Age > 130)
+            {
+                ageError = "Age is either too low or too high";
+            }
+            else if (AverageIncome < 0)
+            {
+                avgIncomeError = "Average Income cannot be less than 0";
+            }
+            else if (Id.ToString().Length < 4 || Id.ToString().Length > 9 || Id.ToString()[0] == 0)
+            {
+                idError = "Id cannot be less than 4 digits or bigger than 9 digits, and it cannot start with 0";
+                
+            }
 
-            if (await UserCreateAccountService.CreateUserAsync(petOwner) == 201)
+            else if (await UserCreateAccountService.CreateUserAsync(petOwner) == 201)
             {
                 NavigationManager.NavigateTo("ViewAnimals");
             }
+            else
+            {
+                
+            }
+
         }
         
         

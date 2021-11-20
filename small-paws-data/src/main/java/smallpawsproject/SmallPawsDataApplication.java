@@ -36,9 +36,6 @@ public class SmallPawsDataApplication {
 		this.animalRepository = animalRepository;
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
-
-
-
 	}
 
 

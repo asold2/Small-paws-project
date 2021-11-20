@@ -15,6 +15,8 @@ namespace Client.Pages
         public static string Email { get; protected set; }
         protected string PasswordConfirmation { get; set; }
 
+        protected string passwordError = "";
+
         protected void LoadLogIn()
         {
             NavigationManager.NavigateTo("");
@@ -25,6 +27,10 @@ namespace Client.Pages
             if (Password.Equals(PasswordConfirmation))
             {
                 NavigationManager.NavigateTo("CreateAccountDetails");
+            }
+            else
+            {
+                passwordError = "Repeated password was wrong. Try again.";
             }
         }
     }

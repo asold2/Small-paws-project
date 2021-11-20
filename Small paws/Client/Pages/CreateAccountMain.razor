@@ -30,12 +30,13 @@
 						<span class="focus-input"></span>
 						<i class="fas fa-lock"></i>
 					</div>
-					<div class="wrap-input">
-						<span class="label-input">Password confirmation</span>
-						<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation">
-						<span class="focus-input"></span>
-						<i class="fas fa-lock"></i>
-					</div>
+			<div class="wrap-input">
+				<span class="label-input">Password confirmation</span>
+				<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation">
+				<span class="focus-input"></span>
+				<i class="fas fa-lock"></i>
+			</div>
+			<div style="color: red">@passwordError</div>
 
 				<div class="wrap-login-btn">
 					<div class="login-bgbtn"></div>

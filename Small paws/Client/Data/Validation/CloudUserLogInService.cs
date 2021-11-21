@@ -18,7 +18,7 @@ namespace Client.Data.Validation
         }
 
 
-        public async Task<int> ValidateUserAsync(string username, string password)
+        public async Task<EndUser> ValidateUserAsync(string username, string password)
         {
             var endUser = new EndUser()
             {
@@ -41,8 +41,8 @@ namespace Client.Data.Validation
             }
 
             var message = await responseMessage.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<int>(message);
-            Console.WriteLine(result + "HERE!!!!!!!!!!!!!!!!!!!!");
+            var result = JsonSerializer.Deserialize<EndUser>(message);
+            Console.WriteLine(result.GetType().ToString() + "HERE!!!!!!!!!!!!!!!!!!!!");
             return result;
         }
     }

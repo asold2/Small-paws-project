@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "F:\\SmallPaws\\Small paws\\Client\\Client.csproj": {}
+    "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj": {}
   },
   "projects": {
-    "F:\\SmallPaws\\Small paws\\Client\\Client.csproj": {
+    "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\SmallPaws\\Small paws\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "F:\\SmallPaws\\Small paws\\Client\\Client.csproj",
-        "packagesPath": "C:\\Users\\asold\\.nuget\\packages\\",
-        "outputPath": "F:\\SmallPaws\\Small paws\\Client\\obj\\",
+        "projectPath": "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
+        "packagesPath": "C:\\Users\\Iana Postolachi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
-        ],
         "configFilePaths": [
-          "C:\\Users\\asold\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Iana Postolachi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -27,7 +27,7 @@ private UsersService usersService;
 
   @PostMapping("/account")
   @ResponseBody
-  public int login(@RequestBody EndUser endUser){
+  public EndUser login(@RequestBody EndUser endUser){
     return usersService.check(endUser.getUserName(), endUser.getPassword());
     }
   }

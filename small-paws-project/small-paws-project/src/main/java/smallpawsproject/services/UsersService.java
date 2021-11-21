@@ -7,5 +7,5 @@ import java.util.List;
 public interface UsersService
 {
   List<EndUser> getUsers();
-  int check(String userName, String password);
+  EndUser check(String userName, String password);
 }

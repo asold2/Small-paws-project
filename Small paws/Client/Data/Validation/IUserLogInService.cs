@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using Client.Model;
 
 namespace Client.Data.Validation
 {
     public interface IUserLogInService
     {
-        Task<int> ValidateUserAsync(string username, string password);
+        Task<EndUser> ValidateUserAsync(string username, string password);
     }
 }

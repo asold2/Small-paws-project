@@ -1,11 +1,7 @@
 package smallpawsproject;
 
-import smallpawsproject.dataaccess.DataAccess;
-import smallpawsproject.dataaccess.DataAccessImpl;
-import smallpawsproject.model.AnimalAttendant;
-import smallpawsproject.model.EndUser;
-import smallpawsproject.model.PetOwner;
-import smallpawsproject.model.Veterinarian;
+import smallpawsproject.data_access.DataAccess;
+import smallpawsproject.data_access.DataAccessImpl;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
 import smallpawsproject.rmi.Server;

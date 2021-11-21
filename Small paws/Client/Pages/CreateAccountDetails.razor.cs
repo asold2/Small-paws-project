@@ -21,7 +21,7 @@ namespace Client.Pages
         protected string FamilyStatus;
         protected int AverageIncome;
         protected string Address;
-      //  protected int ZipCode;
+        protected int ZipCode;
         protected string JobTitle;
         protected int Id;
 
@@ -29,7 +29,7 @@ namespace Client.Pages
         {
             var petOwner = new PetOwner
             {
-             //   Email = CreateAccountMain.Email,
+                Email = EndUser.Email,
                 UserName = EndUser.UserName,
                 Password = EndUser.Password,
                 FirstName = FirstName,
@@ -39,7 +39,7 @@ namespace Client.Pages
                 FamilyStatus = FamilyStatus,
                 AvgIncome = AverageIncome,
                 Address = Address,
-              //  ZipCode = ZipCode,
+                ZipCode = ZipCode,
                 JobTitle = JobTitle,
                 Id = Id
             };

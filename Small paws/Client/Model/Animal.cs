@@ -5,7 +5,7 @@ namespace Client.Model
 {
     public class Animal
     {
-        
+        [JsonPropertyName("id")]
         public int Id { get; set; }
 
         [JsonPropertyName("picture")]

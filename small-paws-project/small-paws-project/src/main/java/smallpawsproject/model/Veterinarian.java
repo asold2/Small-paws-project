@@ -6,15 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "Verianarian")
+@Table(name = "Veterinarian")
 @Entity
 public class Veterinarian extends EndUser
 {
 
   @JsonCreator
-  public Veterinarian(String userName, String password)
+  public Veterinarian(String userName, String password, String email)
   {
-    super(userName, password);
+    super(userName, password, email);
   }
   public Veterinarian(){}
 

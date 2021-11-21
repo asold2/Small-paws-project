@@ -6,6 +6,7 @@ using Client.Data;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.JSInterop;
 
 namespace Client.Pages
 {
@@ -13,6 +14,7 @@ namespace Client.Pages
     {
         
         [Inject] private IAnimalService AnimalService { get; set; }
+        [Inject] private IJSRuntime JsRuntime { get; set; }
         
         protected string AnimalType;
         protected int? Age;
@@ -75,7 +77,8 @@ namespace Client.Pages
             };
             await AnimalService.AddAnimalAsync(newAnimal);
         }
-    
+
+
     
     }
 }

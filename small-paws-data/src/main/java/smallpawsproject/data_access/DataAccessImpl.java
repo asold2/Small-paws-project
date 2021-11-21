@@ -1,4 +1,4 @@
-package smallpawsproject.dataaccess;
+package smallpawsproject.data_access;
 
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.Animal;
@@ -31,7 +31,7 @@ public class DataAccessImpl implements DataAccess
 
   @Override public List<Animal> getAnimals()
   {
-    return null;
+    return serviceFactory.getAnimalService().getAnimals();
   }
 
   @Override public List<EndUser> getUsers()

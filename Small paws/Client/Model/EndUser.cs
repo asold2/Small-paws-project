@@ -10,6 +10,7 @@ namespace Client.Model
         [JsonPropertyName("password")]
         public string Password { get; set; }
         
-        //public string Email { get; set; }
+        [JsonPropertyName("email")]
+        public string Email { get; set; }
     }
 }

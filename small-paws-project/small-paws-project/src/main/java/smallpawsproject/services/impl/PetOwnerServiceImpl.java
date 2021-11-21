@@ -71,7 +71,8 @@ public class PetOwnerServiceImpl implements PetOwnerService
     for(int i=0; i<petOwners.size(); i++){
       if(petOwners.get(i).getUserName().equals(petOwner.getUserName())
           || petOwners.get(i).getId() == (petOwner.getId())
-          || (petOwners.get(i).getFirstName().equals(petOwner.getFirstName()) && petOwners.get(i).getLastName().equals(petOwner.getLastName()))){
+          || (petOwners.get(i).getFirstName().equals(petOwner.getFirstName()) && petOwners.get(i).getLastName().equals(petOwner.getLastName()))
+          || petOwners.get(i).getEmail().equals(petOwner.getEmail())){
         return HttpServletResponse.SC_CONFLICT;
       }
     }

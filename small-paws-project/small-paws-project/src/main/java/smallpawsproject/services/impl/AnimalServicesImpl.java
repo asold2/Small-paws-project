@@ -19,9 +19,6 @@ import java.util.List;
 @Service
 public class AnimalServicesImpl implements AnimalServices
 {
-  private JSONArray jsonArray = new JSONArray();
-  private JSONObject jsonObject;
-  JSONParser parser = new JSONParser();
 
   @Autowired
   private final ClientFactory clientFactory;
@@ -56,6 +53,29 @@ public class AnimalServicesImpl implements AnimalServices
 
   @Override public JSONArray GetAnimals()
   {
-return null;
+    var animalsAsJson = new JSONArray();
+
+    try {
+
+    var listOfAnimals = client.getAnimals();
+
+      for (var animal: listOfAnimals)
+      {
+       var jsonObject = new JSONObject();
+       jsonObject.put("id", animal.getId());
+       jsonObject.put("picture", animal.getPicture());
+       jsonObject.put("animalType", animal.getAnimalType());
+       jsonObject.put("age", animal.getAge());
+       jsonObject.put("description", animal.getDescription());
+       jsonObject.put("washed", animal.isWashed());
+       jsonObject.put("fed", animal.isFed());
+       jsonObject.put("vaccinated", animal.isVaccinated());
+       animalsAsJson.add(jsonObject);
+      }
+
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+    return animalsAsJson;
   }
 }

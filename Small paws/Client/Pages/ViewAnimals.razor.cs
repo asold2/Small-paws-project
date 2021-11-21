@@ -12,11 +12,17 @@ namespace Client.Pages
         protected IList<Animal> Animals { get; set; }
         [Inject] protected IAnimalService AnimalService { get; set; }
 
+        protected string ShownImage;
+
         protected override async Task OnInitializedAsync()
         {
             try
             {
-               // Animals = await AnimalService.GetAnimalsAsync();
+                if (await AnimalService.GetAnimalsAsync() != null)
+                {
+                    Animals = await AnimalService.GetAnimalsAsync();
+                    ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(Animals[0].Picture)}";
+                }
             }
             catch (Exception e)
             {

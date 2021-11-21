@@ -1,5 +1,6 @@
 ﻿using Client.Model;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace Client.Pages
 {
@@ -22,6 +23,13 @@ namespace Client.Pages
             if (EndUser.Password.Equals(PasswordConfirmation))
             {
                 NavigationManager.NavigateTo("CreateAccountDetails");
+            }
+        }
+        protected void Enter(KeyboardEventArgs e)
+        {
+            if (e.Code is "Enter" or "NumpadEnter")
+            {
+                LoadCreateAccountDetails();
             }
         }
     }

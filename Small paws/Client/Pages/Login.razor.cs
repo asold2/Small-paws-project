@@ -1,8 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Client.Data.Validation;
-using Client.Model;
 using Microsoft.AspNetCore.Components;
-
+using Microsoft.AspNetCore.Components.Web;
 
 
 namespace Client.Pages
@@ -28,8 +27,14 @@ namespace Client.Pages
     {
         NavigationManager.NavigateTo("CreateAccountMain");
     }
-    
 
+    protected async Task Enter(KeyboardEventArgs e)
+    {
+        if (e.Code is "Enter" or "NumpadEnter")
+        {
+            await LoadMainPage();
+        }
+    }
     }
     
 

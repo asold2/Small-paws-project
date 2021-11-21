@@ -1,6 +1,5 @@
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
@@ -15,49 +14,50 @@ namespace Client.Pages
         
         [Inject] private IAnimalService AnimalService { get; set; }
         [Inject] private IJSRuntime JsRuntime { get; set; }
+        [Inject] private NavigationManager NavigationManager { get; set; }
         
         protected string AnimalType;
         protected int? Age;
-        protected bool Washed;
-        protected bool Fed;
-        protected bool Vaccinated;
-        protected byte[] Picture;
+        private bool _washed;
+        private bool _fed;
+        private bool _vaccinated;
+        private byte[] _picture;
         protected string Description;
         protected string ShownImage = "photo_picture.png";
         protected async Task UploadImage(InputFileChangeEventArgs eventArgs)
         {
             var sourceFile = eventArgs.File;
-            Picture = new byte[sourceFile.Size];
-            await sourceFile.OpenReadStream().ReadAsync(Picture);
+            _picture = new byte[sourceFile.Size];
+            await sourceFile.OpenReadStream().ReadAsync(_picture);
             string imageType = sourceFile.ContentType;
-            ShownImage = $"data:{imageType};base64,{Convert.ToBase64String(Picture)}";
+            ShownImage = $"data:{imageType};base64,{Convert.ToBase64String(_picture)}";
         }
         protected void SetWashedToTrue()
         {
-            Washed = true;
+            _washed = true;
         }
         protected void SetWashedToFalse()
         {
-            Washed = false;
+            _washed = false;
         }    
         
         protected void SetFedToTrue()
         {
-            Fed = true;
+            _fed = true;
         }
         protected void SetFedToFalse()
         {
-            Fed = false;
+            _fed = false;
         }
         
         protected void SetVaccinatedToTrue()
         {
-            Vaccinated = true;
+            _vaccinated = true;
         }
         
         protected void SetVaccinatedToFalse()
         {
-            Vaccinated = false;
+            _vaccinated = false;
         }
 
         protected async Task SaveAnimal()
@@ -68,14 +68,23 @@ namespace Client.Pages
             var newAnimal = new Animal
             {
                 Description = Description,
-                Picture = Picture,
+                Picture = _picture,
                 AnimalType = AnimalType,
                 Age = (int) Age,
-                Washed = Washed,
-                Fed = Fed,
-                Vaccinated = Vaccinated
+                Washed = _washed,
+                Fed = _fed,
+                Vaccinated = _vaccinated
             };
             await AnimalService.AddAnimalAsync(newAnimal);
+        }
+
+        protected async Task Cancel()
+        {
+            if (!await JsRuntime.InvokeAsync<bool>("confirm",$"Are you sure you want do not want to add a new animal?"))
+            {
+                return;
+            }
+            NavigationManager.NavigateTo("ViewAnimals");
         }
 
 

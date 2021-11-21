@@ -202,3 +202,4 @@ C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\n
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewSpecificAnimal.razor.g.cs
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\AddAnimal.razor.rz.scp.css
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewSpecificAnimal.razor.rz.scp.css
+C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewAnimals.razor.rz.scp.css

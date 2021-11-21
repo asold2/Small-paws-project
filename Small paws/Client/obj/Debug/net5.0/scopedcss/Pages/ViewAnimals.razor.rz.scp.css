@@ -1,0 +1,24 @@
+th[b-fi7r9zgcga]{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#description[b-fi7r9zgcga]{
+    font-size: 10pt;
+}
+
+#ageRow[b-fi7r9zgcga]{
+    display: flex;
+    justify-content: center;
+    font-size: 11pt;
+}
+.imageThumbnail[b-fi7r9zgcga]{
+    height: 60%;
+    width: auto;
+}
+.card[b-fi7r9zgcga]{
+    height: 50%;
+    cursor: pointer;
+}

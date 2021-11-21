@@ -13,27 +13,27 @@
 				<div class="createAccount">
 					<div class="wrap-input">
 						<span class="label-input">Firstname</span>
-						<input class="input" type="text" placeholder="Type your firstname" @bind="FirstName">
+						<input class="input" type="text" placeholder="Type your firstname" @bind="FirstName" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>		
 					<div class="wrap-input">
 						<span class="label-input">Lastname</span>
-						<input class="input" type="text" placeholder="Type your lastname" @bind="LastName">
+						<input class="input" type="text" placeholder="Type your lastname" @bind="LastName" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
 						<span class="label-input">Age</span>
-						<input class="input" type="text" placeholder="Type your age" @bind="Age">
+						<input class="input" type="text" placeholder="Type your age" @bind="Age" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
 						<span class="label-input">Sex</span>
-						<input class="input" type="text" placeholder="Type your sex" @bind="Sex">
+						<input class="input" type="text" placeholder="Type your sex" @bind="Sex" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>
 					<div class="wrap-input">
 						<span class="label-input">Family status</span>
-						<input class="input" type="text" placeholder="Type your family status" @bind="FamilyStatus">
+						<input class="input" type="text" placeholder="Type your family status" @bind="FamilyStatus" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>
 				</div>
@@ -41,29 +41,29 @@
 				<div class="createAccount">
 					<div class="wrap-input">
 						<span class="label-input">Average income</span>
-						<input class="input" type="text" placeholder="Type your average income" @bind="AverageIncome">
+						<input class="input" type="text" placeholder="Type your average income" @bind="AverageIncome" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
 						<span class="label-input">Address</span>
-						<input class="input" type="text" placeholder="Type your address" @bind="Address">
+						<input class="input" type="text" placeholder="Type your address" @bind="Address" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>
 					
 					<div class="wrap-input">
 						<span class="label-input">Zip code</span>
-						<input class="input" type="text" placeholder="Type your zip code" @bind="ZipCode">
+						<input class="input" type="text" placeholder="Type your zip code" @bind="ZipCode" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>	
 									
 					<div class="wrap-input">
 						<span class="label-input">Job title</span>
-						<input class="input" type="text" placeholder="Type your job title" @bind="JobTitle">
+						<input class="input" type="text" placeholder="Type your job title" @bind="JobTitle" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 					</div>
 						<div class="wrap-input">
 							<span class="label-input">ID</span>
-							<input class="input" type="text" placeholder="Type your ID" @bind="Id">
+							<input class="input" type="text" placeholder="Type your ID" @bind="Id" @onkeydown="@Enter">
 							<span class="focus-input"></span>
 						</div>
 				</div>

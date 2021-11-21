@@ -2,7 +2,7 @@
 @layout LoginCreateAccountLayout
 @using Client.Model
 @inherits CreateAccountMainRazor
-@inject EndUser endUser
+@inject EndUser _endUser
 
 		<div class="container-login">
 			<div class="wrap-login">
@@ -13,26 +13,26 @@
 			
 				<div class="wrap-input">
 						<span class="label-input">Email</span>
-						<input class="input" type="text" name="username" placeholder="Type your email" @bind="endUser.Email">
+						<input class="input" type="text" name="username" placeholder="Type your email" @bind="_endUser.Email" @onkeydown="@Enter">
 						<span class='focus-input'></span>
 						<i class="fas fa-envelope"></i>
 				</div>	
 									
 					<div class="wrap-input">
 						<span class="label-input">Username</span>
-						<input class="input" type="text" name="username" placeholder="Type your username" @bind="endUser.UserName">
+						<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" @onkeydown="@Enter">
 						<span class='focus-input'></span>
 						<i class="fas fa-user-alt"></i>
 					</div>
 					<div class="wrap-input">
 						<span class="label-input">Password</span>
-						<input class="input" type="password" placeholder="Type your password" @bind="endUser.Password">
+						<input class="input" type="password" placeholder="Type your password" @bind="_endUser.Password" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 						<i class="fas fa-lock"></i>
 					</div>
 					<div class="wrap-input">
 						<span class="label-input">Password confirmation</span>
-						<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation">
+						<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation" @onkeydown="@Enter">
 						<span class="focus-input"></span>
 						<i class="fas fa-lock"></i>
 					</div>

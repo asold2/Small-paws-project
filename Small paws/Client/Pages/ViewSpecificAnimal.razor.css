@@ -1,5 +1,4 @@
 
-
 /*Button styling*/
 
 button {
@@ -122,21 +121,15 @@ th, td {
 /*Description styling end*/
 }
 
-
-.picture-div{
-    float: left;
-    width: 46%;
-    height: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
 .picture{
-    height: 100%;
-    width: 100%;
+    width: 40vw;
+    height: 50vh;
+    float: left;
 }
 .top-side{
     height: 50%;
     width: 100%;
+    
 }
 .bot-side{
     display: flex;

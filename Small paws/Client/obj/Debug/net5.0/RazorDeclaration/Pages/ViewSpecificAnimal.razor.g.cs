@@ -82,14 +82,7 @@ using Client.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\Pages\ViewSpecificAnimal.razor"
-using System.Diagnostics.Eventing.Reader;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/ViewSpecificAnimal")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ViewSpecificAnimal/{Value}")]
     public partial class ViewSpecificAnimal : ViewAnimalRazor
     {
         #pragma warning disable 1998

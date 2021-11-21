@@ -1,5 +1,4 @@
 
-
 /*Button styling*/
 
 button[b-s0je6xt4tp] {
@@ -122,21 +121,15 @@ th[b-s0je6xt4tp], td[b-s0je6xt4tp] {
 /*Description styling end*/
 }
 
-
-.picture-div[b-s0je6xt4tp]{
-    float: left;
-    width: 46%;
-    height: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
 .picture[b-s0je6xt4tp]{
-    height: 100%;
-    width: 100%;
+    width: 40vw;
+    height: 50vh;
+    float: left;
 }
 .top-side[b-s0je6xt4tp]{
     height: 50%;
     width: 100%;
+    
 }
 .bot-side[b-s0je6xt4tp]{
     display: flex;

@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Client.Data.Registration;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 
 namespace Client.Pages
@@ -54,6 +53,14 @@ namespace Client.Pages
         protected void LoadLogIn()
         {
             NavigationManager.NavigateTo("");
+        }
+        
+        protected async Task Enter(KeyboardEventArgs e)
+        {
+            if (e.Code is "Enter" or "NumpadEnter")
+            {
+                await LoadViewAnimals();
+            }
         }
     }
 }

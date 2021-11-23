@@ -42,7 +42,7 @@ public class CreateAccountController
 
     var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
         petOwner.getAddress(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),
-        petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword());
+        petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword(), "PetOwner");
     return petOwnerService.registerPetOwner(petOwnerToCreate);
 
   }

@@ -28,9 +28,9 @@ public class PetOwner extends EndUser
 
   @JsonCreator
   public PetOwner(@JsonProperty("jobTitle") String jobTitle, @JsonProperty("address") String address, @JsonProperty("age") int age,@JsonProperty("avgIncome") int avgIncome, @JsonProperty("familyStatus") String familyStatus, @JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("sex") String sex,
-      @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password)
+      @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password, @JsonProperty("role") String role)
   {
-    super(userName, password);
+    super(userName, password,role);
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -140,5 +140,4 @@ public class PetOwner extends EndUser
   {
     this.id = id;
   }
-
  }

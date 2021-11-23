@@ -15,20 +15,23 @@ public class EndUser implements Serializable
   private int userId;
   private String userName;
   private String password;
+  private String role;
 
 
 public EndUser(){}
 
   @JsonCreator
-  public EndUser(String userName, String password)
+  public EndUser(String userName, String password,String role)
   {
+    this.role = role;
     this.userName = userName;
     this.password = password;
   }
 
 
-  public EndUser(int Id, String userName, String password)
+  public EndUser(int Id, String userName, String password,String role)
   {
+    this.role = role;
     userId = Id;
     this.userName = userName;
     this.password = password;
@@ -62,5 +65,14 @@ public EndUser(){}
     this.password = password;
   }
 
+  public String getRole()
+  {
+    return role;
+  }
+
+  public void setRole(String role)
+  {
+    this.role = role;
+  }
 
 }

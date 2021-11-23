@@ -202,3 +202,79 @@ C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\n
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewSpecificAnimal.razor.g.cs
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\AddAnimal.razor.rz.scp.css
 C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewSpecificAnimal.razor.rz.scp.css
+F:\SmallPaws\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\AddAnimal.razor.g.cs
+F:\SmallPaws\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewSpecificAnimal.razor.g.cs
+F:\SmallPaws\Small paws\Client\obj\Debug\net5.0\Razor\Pages\AddAnimal.razor.g.cs
+F:\SmallPaws\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewSpecificAnimal.razor.g.cs
+F:\SmallPaws\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\AddAnimal.razor.rz.scp.css
+F:\SmallPaws\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewSpecificAnimal.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\appsettings.json
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.StaticWebAssets.xml
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.exe
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.deps.json
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.runtimeconfig.json
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.runtimeconfig.dev.json
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.dll
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\ref\Client.dll
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.pdb
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.Views.dll
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\bin\Debug\net5.0\Client.Views.pdb
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.csproj.AssemblyReference.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.AssemblyInfoInputs.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.AssemblyInfo.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.csproj.CoreCompileInputs.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorComponent.input.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewAnimals.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\AddAnimal.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccountDetails.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccountMain.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ViewSpecificAnimal.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\LoginCreateAccountLayout.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorComponent.output.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\RazorDeclaration\Client.dll
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.TagHelpers.input.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.TagHelpers.output.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorCoreGenerate.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\App.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewAnimals.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\AddAnimal.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\CreateAccountDetails.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\CreateAccountMain.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\ViewSpecificAnimal.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\LoginCreateAccountLayout.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorAssemblyInfo.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorAssemblyInfo.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\staticwebassets\Client.StaticWebAssets.Manifest.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\staticwebassets\Client.StaticWebAssets.xml
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\AddAnimal.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\CreateAccountDetails.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\CreateAccountMain.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\Login.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Pages\ViewSpecificAnimal.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\LoginCreateAccountLayout.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\bundle\Client.styles.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\scopedcss\projectbundle\Client.bundle.scp.css
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorTargetAssemblyInfo.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.RazorTargetAssemblyInfo.cs
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.Views.pdb
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.dll
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\ref\Client.dll
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.pdb
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache
+C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\obj\Debug\net5.0\Client.csproj.CopyComplete

@@ -26,8 +26,8 @@ public class PetOwner extends EndUser
   public PetOwner(){}
 
 
-  public PetOwner(String jobTitle, String address, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password){
-    super(userName, password);
+  public PetOwner(String jobTitle, String address, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password,String role){
+    super(userName, password,role);
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

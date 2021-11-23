@@ -24,6 +24,7 @@
 					<div class="wrap-input">
 						<span class="label-input">Age</span>
 						<input class="input" type="text" placeholder="Type your age" @bind="Age">
+						<div style="color: red">@ageError</div>
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
@@ -42,6 +43,7 @@
 					<div class="wrap-input">
 						<span class="label-input">Average income</span>
 						<input class="input" type="text" placeholder="Type your average income" @bind="AverageIncome">
+						<div style="color: red">@avgIncomeError</div>
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
@@ -64,6 +66,7 @@
 						<div class="wrap-input">
 							<span class="label-input">ID</span>
 							<input class="input" type="text" placeholder="Type your ID" @bind="Id">
+							<div style="color: red">@idError</div>
 							<span class="focus-input"></span>
 						</div>
 				</div>
@@ -74,6 +77,7 @@
 						Create Account
 					</button>
 				</div>
+				<div style="color: red; size: 25px">@error</div>
 				
 				<div class="wrap-SignUp">	
 					<a @onclick="LoadLogIn" class="signUp" href="#">LogIn</a>

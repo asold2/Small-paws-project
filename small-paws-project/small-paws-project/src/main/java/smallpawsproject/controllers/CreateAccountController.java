@@ -1,6 +1,10 @@
 package smallpawsproject.controllers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonObject;
+import org.apache.catalina.valves.JsonErrorReportValve;
 import org.json.JSONPropertyName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +25,15 @@ public class CreateAccountController
     this.petOwnerService = registrationService;
   }
 
+  @PostMapping("/userName")
+  @ResponseBody
+  public int checkUserName(@RequestBody EndUser user)
+  {
+    String text = user.getUserName();
+    return petOwnerService.checkUsername(text);
+  }
+
+
   //public route(without being authorized by spring)
   @PostMapping("/newAccount")
   @ResponseBody
@@ -29,8 +42,8 @@ public class CreateAccountController
 
     var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
         petOwner.getAddress(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),
-        petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword());
-    return petOwnerService.registerPetOwner((PetOwner) petOwnerToCreate);
+        petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword(), "PetOwner");
+    return petOwnerService.registerPetOwner(petOwnerToCreate);
 
   }
 

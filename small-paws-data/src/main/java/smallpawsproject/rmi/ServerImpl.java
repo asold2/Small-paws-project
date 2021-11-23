@@ -20,8 +20,8 @@ public class ServerImpl implements Server
   @Override public void registerPetOwner(PetOwner petOwner)
       throws RemoteException
   {
-    dataAccess.registerPetOwner(petOwner);
     System.out.println("Pet owner sent to dataAccess");
+    dataAccess.registerPetOwner(petOwner);
   }
 
   @Override public List<PetOwner> getPetOwners() throws RemoteException

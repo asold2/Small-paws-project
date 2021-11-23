@@ -43,19 +43,27 @@ public class UserServiceImpl implements UsersService
 
   @Override public List<EndUser> getUsers()
   {
+    try
+    {
+      return client.getUsers();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
     return null;
   }
 
-  @Override public int check(String userName, String password)
+  @Override public EndUser check(String userName, String password)
   {
-    int answer = 0;
+    EndUser answer = new EndUser();
     for(EndUser user : users){
       if(user.getUserName().equals(userName)&&user.getPassword().equals(password)){
-        answer = HttpServletResponse.SC_ACCEPTED;
+        answer = user;
         break;
       }
       else{
-        answer = HttpServletResponse.SC_FORBIDDEN;
+        answer = null;
       }
     }
     return answer;

@@ -34,6 +34,12 @@ namespace Client
             services.AddSingleton<IUserCreateAccountService, CloudUserCreateAccountService>();
             services.AddSingleton<EndUser>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBeVeterinarian", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "Veterinarian"));
+                options.AddPolicy("MustBeAnimalAttendant", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "AnimaAttendant"));
+            });
             // services.AddScoped<IList, >();
         }
 

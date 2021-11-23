@@ -36,6 +36,5 @@ namespace Client.Model
         
         [JsonPropertyName("id")]
         public int Id { get; set; }
-
     }
 }

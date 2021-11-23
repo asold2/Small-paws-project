@@ -90,7 +90,7 @@ using Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\Shared\NavMenu.razor"
+#line 30 "C:\Users\Iana Postolachi\GitHub\Small-paws-project\Small paws\Client\Shared\NavMenu.razor"
        
     private bool _collapseNavMenu = true;
 

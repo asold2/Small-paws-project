@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 public class PetOwner extends EndUser
 {
 
   private static final long serialVersionUID = 663126647076776891L;
+
 
   private int id;
   private String firstName;
@@ -28,9 +30,9 @@ public class PetOwner extends EndUser
 
   @JsonCreator
   public PetOwner(@JsonProperty("jobTitle") String jobTitle, @JsonProperty("address") String address,@JsonProperty("zipcode") int zipcode,  @JsonProperty("age") int age,@JsonProperty("avgIncome") int avgIncome, @JsonProperty("familyStatus") String familyStatus, @JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("sex") String sex,
-      @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password, @JsonProperty("email") String email)
+      @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password, @JsonProperty("email") String email, @JsonProperty("role") String role)
   {
-    super(userName, password, email);
+    super(userName, password, email, role);
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -120,6 +122,7 @@ public class PetOwner extends EndUser
   {
     this.avgIncome = avgIncome;
   }
+
 
 
   public void setAdress(String adress)

@@ -1,5 +1,9 @@
 package smallpawsproject.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+
 import javax.persistence.*;
 @Entity
 public class PetOwner extends EndUser
@@ -23,8 +27,8 @@ public class PetOwner extends EndUser
   public PetOwner(){}
 
 
-  public PetOwner(String jobTitle, String address,int zipcode, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password, String email){
-    super(userName, password, email);
+  public PetOwner(String jobTitle, String address,int zipcode, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password, String email, String role){
+    super(userName, password, email, role);
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

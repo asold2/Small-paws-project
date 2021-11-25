@@ -21,7 +21,7 @@ namespace Client.Authentication
         {
             this.jsRuntime = jsRuntime;
             this.LogInService = logInService;
-            cachedUser = new EndUser();
+            //cachedUser = new EndUser();
         }
         
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
@@ -80,7 +80,7 @@ namespace Client.Authentication
         private ClaimsIdentity SetupClaimsForUser(EndUser endUser)
         {
             List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim("Username",  endUser.UserName));
+            claims.Add(new Claim("Role",  endUser.Role));
             //Add a claim to check for the type of the subclass(EndUser)
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth_type");
             return identity;

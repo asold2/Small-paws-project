@@ -24,18 +24,6 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
 
   }
 
-  @Override public void registerPetOwner(PetOwner petOwner)
-  {
-    try
-    {
-      server.registerPetOwner(petOwner);
-    }
-    catch (RemoteException e)
-    {
-      e.printStackTrace();
-    }
-  }
-
   @Override public void connect()
   {
     try
@@ -43,6 +31,18 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
       server = (Server) registry.lookup("ServerTier3");
     }
     catch (NotBoundException | RemoteException e)
+    {
+      e.printStackTrace();
+    }
+  }
+
+  @Override public void registerPetOwner(PetOwner petOwner)
+  {
+    try
+    {
+      server.registerPetOwner(petOwner);
+    }
+    catch (RemoteException e)
     {
       e.printStackTrace();
     }

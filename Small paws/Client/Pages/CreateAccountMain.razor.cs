@@ -16,10 +16,7 @@ namespace Client.Pages
 
         [Inject]
         private EndUser EndUser { get; set; }
-
-        private string Password { get; set; }
-
-        public static string Email { get; protected set; }
+        
         protected string PasswordConfirmation { get; set; }
 
         protected string passwordError = "";
@@ -33,8 +30,8 @@ namespace Client.Pages
         }
         protected void LoadCreateAccountDetails()
         {
-            Password = EndUser.Password;
-            if (Password.Equals(PasswordConfirmation))
+
+            if (EndUser.Password.Equals(PasswordConfirmation))
             {
                 NavigationManager.NavigateTo("CreateAccountDetails");
             }

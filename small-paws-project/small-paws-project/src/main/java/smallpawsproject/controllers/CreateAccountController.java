@@ -41,9 +41,9 @@ public class CreateAccountController
     System.out.println("Registering pet owner");
 
     var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
-        petOwner.getAddress(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),
-        petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword());
-    return petOwnerService.registerPetOwner(petOwnerToCreate);
+        petOwner.getAddress(), petOwner.getZipcode(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),
+        petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword(), petOwner.getEmail());
+    return petOwnerService.registerPetOwner((PetOwner) petOwnerToCreate);
 
   }
 

@@ -1,4 +1,4 @@
-package smallpawsproject.dataaccess;
+package smallpawsproject.data_access;
 
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.Animal;

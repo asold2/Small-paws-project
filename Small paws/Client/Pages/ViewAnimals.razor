@@ -4,25 +4,33 @@
 
 <table>
     <tr>
-        @*<th>Id</th>*@
+        <th>picture</th>
+        <th>Id</th>
         <th>Age</th>
-        <th>Type of animal</th>
+        <th>Animal type</th>
         <th>Descripition</th>
+        <th>Washed</th>
+        <th>Fed</th>
+        <th>Vaccinated</th>
     </tr>
-    @*
+    
     @if (Animals != null)
     {
         @foreach (var animal in Animals)
         {
             <tr>
-                
+                <td><img src="@ShownImage"></td>
+                <td>@animal.Id</td>
                 <td>@animal.Age</td>
                 <td>@animal.AnimalType</td>
                 <td>@animal.Description</td>
+                <td>@animal.Washed</td>
+                <td>@animal.Fed</td>
+                <td>@animal.Vaccinated</td>
             </tr>
         }
 }
-*@
+
    @* 
 <div class="card-deck">
     @foreach (var  animal in Animals)

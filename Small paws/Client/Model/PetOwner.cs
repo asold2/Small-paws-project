@@ -5,6 +5,8 @@ namespace Client.Model
     public class PetOwner : EndUser
     {
 
+        [JsonPropertyName("id")]
+        public int Id { get; set; }
         
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; }
@@ -33,7 +35,5 @@ namespace Client.Model
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
         
-        [JsonPropertyName("id")]
-        public int Id { get; set; }
     }
 }

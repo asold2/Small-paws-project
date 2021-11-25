@@ -24,7 +24,7 @@ button:hover {
     cursor: pointer;
 }
 
-.wrap-login-btn {
+.wrap-login-btn, .wrap-cancel-btn{
     width: 10%;
     height: 5%;
     display: flex;
@@ -44,6 +44,9 @@ button:hover {
     -webkit-box-shadow: 0 5px 30px 0 rgba(3, 216, 222, 0.2);
     -o-box-shadow: 0 5px 30px 0 rgba(3, 216, 222, 0.2);
     -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+}
+.wrap-cancel-btn{
+    right: 15%;
 }
 .login-bgbtn {
     position: absolute;

@@ -98,7 +98,7 @@ using Client.Model;
         {
         }
         #pragma warning restore 1998
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EndUser endUser { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EndUser _endUser { get; set; }
     }
 }
 #pragma warning restore 1591

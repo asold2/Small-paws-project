@@ -5,6 +5,7 @@ using Client.Model;
 using Microsoft.AspNetCore.Components;
 using Client.Data.Registration;
 
+using Microsoft.AspNetCore.Components.Web;
 
 namespace Client.Pages
 {
@@ -49,6 +50,13 @@ namespace Client.Pages
                 userNameError = "Username already in use";
             }
             else
+            {
+                LoadCreateAccountDetails();
+            }
+        }
+        protected void Enter(KeyboardEventArgs e)
+        {
+            if (e.Code is "Enter" or "NumpadEnter")
             {
                 LoadCreateAccountDetails();
             }

@@ -17,16 +17,16 @@
 						<span class='focus-input'></span>
 						<i class="fas fa-envelope"></i>
 				</div>
+				
 				<div class="wrap-input">
 				<span class="label-input">Username</span>
-				<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" >
+				<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" @onkeydown="@Enter">
 				<span class='focus-input'></span>
 				<i class="fas fa-user-alt"></i>
 			</div>
 			<div style="color: red">@userNameError</div>
 
 				
-						<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" @onkeydown="@Enter">
 					<div class="wrap-input">
 						<span class="label-input">Password</span>
 						<input class="input" type="password" placeholder="Type your password" @bind="_endUser.Password" @onkeydown="@Enter">

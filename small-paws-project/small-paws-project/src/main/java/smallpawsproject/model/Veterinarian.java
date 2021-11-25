@@ -1,21 +1,20 @@
 package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "Verianarian")
+@Table(name = "Veterinarian")
 @Entity
 public class Veterinarian extends EndUser
 {
 
   @JsonCreator
-  public Veterinarian(String userName, String password, String role)
+  public Veterinarian(String userName, String password, String email, String role)
   {
-    super(userName, password, role);
+    super(userName, password, email, role);
   }
   public Veterinarian(){}
 

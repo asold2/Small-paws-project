@@ -1,3 +1,4 @@
+// noinspection JSUnresolvedFunction,EqualityComparisonWithCoercionJS,JSUnresolvedVariable
 
 (function ($) {
     "use strict";
@@ -7,6 +8,7 @@
     [ Focus input ]*/
     $('.input100').each(function(){
         $(this).on('blur', function(){
+            // noinspection EqualityComparisonWithCoercionJS
             if($(this).val().trim() != "") {
                 $(this).addClass('has-val');
             }
@@ -19,12 +21,13 @@
   
     /*==================================================================
     [ Validate ]*/
-    var input = $('.validate-input .input100');
+    const input = $('.validate-input .input100');
 
     $('.validate-form').on('submit',function(){
-        var check = true;
+        let check = true;
 
-        for(var i=0; i<input.length; i++) {
+        for(let i=0; i<input.length; i++) {
+            // noinspection EqualityComparisonWithCoercionJS
             if(validate(input[i]) == false){
                 showValidate(input[i]);
                 check=false;
@@ -43,6 +46,7 @@
 
     function validate (input) {
         if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+            // noinspection RegExpRedundantEscape
             if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
                 return false;
             }
@@ -55,13 +59,13 @@
     }
 
     function showValidate(input) {
-        var thisAlert = $(input).parent();
+        const thisAlert = $(input).parent();
 
         $(thisAlert).addClass('alert-validate');
     }
 
     function hideValidate(input) {
-        var thisAlert = $(input).parent();
+        const thisAlert = $(input).parent();
 
         $(thisAlert).removeClass('alert-validate');
     }

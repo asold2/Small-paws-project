@@ -11,9 +11,9 @@ public class AnimalAttendant extends EndUser
 
 
   @JsonCreator
-  public AnimalAttendant(String userName, String password,String role)
+  public AnimalAttendant(String userName, String password, String email, String role)
   {
-    super(userName, password,role);
+    super(userName, password, email, role);
   }
   public AnimalAttendant(){}
 

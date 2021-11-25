@@ -19,15 +19,16 @@ public class PetOwner extends EndUser
   private String familyStatus;
   private int avgIncome;
   private String address;
-  private String JobTitle;
+  private int zipcode;
+  private String jobTitle;
 
 
 
   public PetOwner(){}
 
 
-  public PetOwner(String jobTitle, String address, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password,String role){
-    super(userName, password,role);
+  public PetOwner(String jobTitle, String address,int zipcode, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password, String email, String role){
+    super(userName, password, email, role);
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -36,7 +37,8 @@ public class PetOwner extends EndUser
     this.familyStatus = familyStatus;
     this.avgIncome = avgIncome;
     this.address = address;
-    this.JobTitle = jobTitle;
+    this.zipcode = zipcode;
+    this.jobTitle = jobTitle;
 
   }
 
@@ -113,12 +115,12 @@ public class PetOwner extends EndUser
 
   public String getJobTitle()
   {
-    return JobTitle;
+    return jobTitle;
   }
 
   public void setJobTitle(String jobTitle)
   {
-    JobTitle = jobTitle;
+    this.jobTitle = jobTitle;
   }
 
 
@@ -130,5 +132,13 @@ public class PetOwner extends EndUser
   public void setAddress(String address)
   {
     this.address = address;
+  }
+
+  public int getZipcode() {
+    return zipcode;
+  }
+
+  public void setZipcode(int zipcode) {
+    this.zipcode = zipcode;
   }
 }

@@ -10,31 +10,37 @@ import java.io.Serializable;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class EndUser implements Serializable
 {
+
+  private static final long serialVersionUID = 663126647076776891L;
+
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int userId;
   private String userName;
   private String password;
   private String role;
+  private String email;
 
 
 public EndUser(){}
 
   @JsonCreator
-  public EndUser(String userName, String password,String role)
+  public EndUser(String userName, String password, String email, String role)
   {
     this.role = role;
     this.userName = userName;
     this.password = password;
+    this.email = email;
   }
 
 
-  public EndUser(int Id, String userName, String password,String role)
+  public EndUser(int Id, String userName, String password, String email, String role)
   {
     this.role = role;
     userId = Id;
     this.userName = userName;
     this.password = password;
+    this.email = email;
   }
 
   public int getUserId() {
@@ -65,6 +71,9 @@ public EndUser(){}
     this.password = password;
   }
 
+  public String getEmail() {
+    return email;
+  }
   public String getRole()
   {
     return role;
@@ -75,4 +84,7 @@ public EndUser(){}
     this.role = role;
   }
 
+  public void setEmail(String email) {
+    this.email = email;
+  }
 }

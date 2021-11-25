@@ -24,7 +24,7 @@ button:hover[b-41e580qbhe] {
     cursor: pointer;
 }
 
-.wrap-login-btn[b-41e580qbhe] {
+.wrap-login-btn[b-41e580qbhe], .wrap-cancel-btn[b-41e580qbhe]{
     width: 10%;
     height: 5%;
     display: flex;
@@ -44,6 +44,9 @@ button:hover[b-41e580qbhe] {
     -webkit-box-shadow: 0 5px 30px 0 rgba(3, 216, 222, 0.2);
     -o-box-shadow: 0 5px 30px 0 rgba(3, 216, 222, 0.2);
     -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+}
+.wrap-cancel-btn[b-41e580qbhe]{
+    right: 15%;
 }
 .login-bgbtn[b-41e580qbhe] {
     position: absolute;

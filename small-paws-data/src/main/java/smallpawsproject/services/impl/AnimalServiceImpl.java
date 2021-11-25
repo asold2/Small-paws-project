@@ -12,7 +12,12 @@ public class AnimalServiceImpl implements AnimalService {
     public AnimalServiceImpl(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
     }
-    public void addAnimal(Animal animal){
+    @Override public void addAnimal(Animal animal){
         animalRepository.save(animal);
+    }
+
+    @Override
+    public List<Animal> getAnimals() {
+        return animalRepository.findAll();
     }
 }

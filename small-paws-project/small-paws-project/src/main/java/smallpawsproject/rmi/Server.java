@@ -13,10 +13,10 @@ public interface Server extends Remote
 {
 
   void registerPetOwner(PetOwner petOwner) throws RemoteException;
-
   List<PetOwner> getPetOwners() throws RemoteException;
   List<EndUser> getAccounts() throws RemoteException;
-  List<Animal> getAnimals() throws RemoteException;
   void addAnimal(Animal animal) throws RemoteException;
+  List<Animal> getAnimals() throws RemoteException;
+
 
 }

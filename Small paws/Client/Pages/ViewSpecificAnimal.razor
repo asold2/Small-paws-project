@@ -1,12 +1,11 @@
-@page "/ViewSpecificAnimal"
+@page "/ViewSpecificAnimal/{Value}"
 
-@using System.Diagnostics.Eventing.Reader
 @inherits ViewAnimalRazor
 
 <div class="top-side">
-	<div class="picture-div">
-		<Img class="picture" src="photo_picture.png" alt="image of uploaded animal"/>
-	</div>
+
+		<Img class="picture" src="@ShownImage" alt="image of the specific animal"/>
+
 	<div class="right-side">
 		<table>
 			<tr>

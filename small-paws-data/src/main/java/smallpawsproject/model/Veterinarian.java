@@ -12,9 +12,9 @@ public class Veterinarian extends EndUser
 
 
   @JsonCreator
-  public Veterinarian(String userName, String password,String role)
+  public Veterinarian(String userName, String password, String email, String role)
   {
-    super(userName, password,role);
+    super(userName, password, email, role);
   }
   public Veterinarian(){}
 

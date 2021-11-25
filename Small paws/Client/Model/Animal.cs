@@ -1,12 +1,11 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Client.Model
 {
     public class Animal
     {
-        
-        public int Id { get; set; }
+        [JsonPropertyName("id")]
+        public int Id { get; init; }
 
         [JsonPropertyName("picture")]
         public byte[] Picture { get; set; }
@@ -15,7 +14,7 @@ namespace Client.Model
         public int Age { get; set; }
         
         [JsonPropertyName("animalType")]
-        public string AnimalType { get; set; }
+        public string AnimalType { get; init; }
         
         [JsonPropertyName("description")]
         public string Description { get; set; }

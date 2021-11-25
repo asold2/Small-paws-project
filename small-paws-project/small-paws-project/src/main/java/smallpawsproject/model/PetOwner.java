@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Entity
 public class PetOwner extends EndUser
 {
+
   private static final long serialVersionUID = 663126647076776891L;
 
 
@@ -20,17 +21,18 @@ public class PetOwner extends EndUser
   private String familyStatus;
   private int avgIncome;
   private String address;
-  private String JobTitle;
+  private int zipcode;
+  private String jobTitle;
 
 
   public PetOwner(){}
 
 
   @JsonCreator
-  public PetOwner(@JsonProperty("jobTitle") String jobTitle, @JsonProperty("address") String address, @JsonProperty("age") int age,@JsonProperty("avgIncome") int avgIncome, @JsonProperty("familyStatus") String familyStatus, @JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("sex") String sex,
-      @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password, @JsonProperty("role") String role)
+  public PetOwner(@JsonProperty("jobTitle") String jobTitle, @JsonProperty("address") String address,@JsonProperty("zipcode") int zipcode,  @JsonProperty("age") int age,@JsonProperty("avgIncome") int avgIncome, @JsonProperty("familyStatus") String familyStatus, @JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("sex") String sex,
+      @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password, @JsonProperty("email") String email, @JsonProperty("role") String role)
   {
-    super(userName, password,role);
+    super(userName, password, email, role);
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -39,7 +41,8 @@ public class PetOwner extends EndUser
     this.familyStatus = familyStatus;
     this.avgIncome = avgIncome;
     this.address = address;
-    this.JobTitle = jobTitle;
+    this.zipcode = zipcode;
+    this.jobTitle = jobTitle;
   }
 
   public String getAddress()
@@ -52,7 +55,13 @@ public class PetOwner extends EndUser
     this.address = address;
   }
 
+  public int getZipcode() {
+    return zipcode;
+  }
 
+  public void setZipcode(int zipcode) {
+    this.zipcode = zipcode;
+  }
 
   public String getFirstName()
   {
@@ -123,12 +132,12 @@ public class PetOwner extends EndUser
 
   public String getJobTitle()
   {
-    return JobTitle;
+    return jobTitle;
   }
 
   public void setJobTitle(String jobTitle)
   {
-    JobTitle = jobTitle;
+    this.jobTitle = jobTitle;
   }
 
   public int getId()
@@ -140,4 +149,5 @@ public class PetOwner extends EndUser
   {
     this.id = id;
   }
+
  }

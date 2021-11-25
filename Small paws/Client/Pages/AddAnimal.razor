@@ -1,8 +1,7 @@
 @page "/AddAnimal"
-
 @inherits AddAnimalRazor
 
-				
+
 <span class="title">
 	<b>Add new animal</b>
 </span>
@@ -10,9 +9,8 @@
 	
 
 	<div class="picture-div">
-		@*<img class="picture" src="photo_picture.png"  alt="image of uploaded animal"/>*@
-		<img class="picture" src="@ShownImage" alt="Upload photo">
-		<InputFile class="picture" src="photo_picture.png" OnChange="@UploadImage" alt="image of uploaded animal"/>
+		<img class="picture" src="@ShownImage" alt="Upload photo" onclick="thisFileUpload()">
+		<InputFile id="file" src="photo_picture.png" OnChange="@UploadImage" alt="image of uploaded animal" style="display: none;"/>
 	</div>
 	<div class="right-side">
 		<table>
@@ -23,7 +21,7 @@
 			</tr>
 			<tr>
 				<td><b>Age</b></td>
-				<td><input class="input" type="text" placeholder="Type animal's age" @bind="Age"></td>
+				<td><input class="input2" type="text" placeholder="Type animal's age" @bind="Age"></td>
 			</tr>
 			<tr>
 				<td><b>Washed</b></td>
@@ -57,9 +55,15 @@
 </div>
 <div class="bot-side">
 	<div class="description-div">
-    	<text class="description-text"><b>Description: </b></text>
-    	<textarea class="description-area" placeholder="Type animal's description" @bind="Description"></textarea>
-    </div>
+		<text class="description-text"><b>Description: </b></text>
+		<textarea class="description-area" placeholder="Type animal's description" @bind="Description"></textarea>
+	</div>
+		<div class="wrap-cancel-btn" @onclick="Cancel">
+    		<div class="login-bgbtn"></div>
+    		<button class="login-btn">
+    			Cancel
+    		</button>
+    	</div>
 	<div class="wrap-login-btn" @onclick="SaveAnimal">
 		<div class="login-bgbtn"></div>
 		<button class="login-btn">
@@ -67,3 +71,6 @@
 		</button>
 	</div>
 </div>
+
+
+

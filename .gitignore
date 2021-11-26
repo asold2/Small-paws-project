@@ -11,5 +11,19 @@
 /Small paws/Client/bin/Debug/net5.0/Client.Views.pdb
 /Small paws/Client/obj/Debug/net5.0/Client.Views.pdb
 /Small paws/Client/bin/.idea/.idea.Small paws/.idea/workspace.xml
+/Small paws/Client/obj/Debug/net5.0/project.assets.json
 *.cshtml.g.cs
 *.razor.g.cs
+*.AssemblyInfo.cs
+*.assets.cache
+*.csproj.FileListAbsolute.txt
+*.csproj.nuget.dgspec.json
+*.csproj.nuget.g.props
+*.GeneratedMSBuildEditorConfig.editorconfig
+*.genruntimeconfig.cache
+*.runtimeconfig.dev.json
+*.staticWebAssets.Manifest.cache
+*.staticWebAssets.xml
+*.packagespec.json
+*.project.restore.info
+

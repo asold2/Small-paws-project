@@ -14,6 +14,7 @@
 /Small paws/Client/obj/Debug/net5.0/project.assets.json
 *.cshtml.g.cs
 *.razor.g.cs
+!/Small paws/Client/obj/Debug/net5.0/RazorDeclaration/*.razor.g.cs
 *.AssemblyInfo.cs
 *.assets.cache
 *.csproj.FileListAbsolute.txt

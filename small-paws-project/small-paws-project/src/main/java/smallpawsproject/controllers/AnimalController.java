@@ -2,6 +2,7 @@ package smallpawsproject.controllers;
 
 
 import net.minidev.json.JSONArray;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,12 +28,15 @@ public class AnimalController
 
   @RequestMapping(method = RequestMethod.PATCH, value="/new_information")
   @ResponseBody
-  public ResponseEntity<Animal> updateAnimal(@RequestBody Animal animal){
-
-    Animal temp = animalServices.updateAnimal(animal);
+//  public ResponseEntity<Animal> updateAnimal(@RequestBody Animal animal){
+  public Animal updateAnimal(@RequestBody Animal animal){
 
     System.out.println("Updating animal");
-    return ResponseEntity.ok(temp);
+
+//    Animal temp = animalServices.updateAnimal(animal);
+
+//    return ResponseEntity.ok(animalServices.updateAnimal(animal));
+  return animalServices.updateAnimal(animal);
   }
 
 
@@ -41,6 +45,7 @@ public class AnimalController
   public void AddAnimal(@RequestBody Animal animal)
   {
     System.out.println("Added animal");
+    System.out.println(animal.toString());
 
     animalServices.AddAnimal(animal);
   }

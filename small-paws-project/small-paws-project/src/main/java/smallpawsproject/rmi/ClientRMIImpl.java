@@ -68,4 +68,9 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
     server.addAnimal(animal);
   }
 
+  @Override
+  public Animal updateAnimal(Animal animal) throws RemoteException {
+    return server.updateAnimal(animal);
+  }
+
 }

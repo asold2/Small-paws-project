@@ -13,4 +13,6 @@ public interface DataAccess
   List<Animal> getAnimals();
   List<EndUser> getUsers();
   void addAnimal(Animal animal);
+
+  Animal updateAnimal(Animal animal);
 }

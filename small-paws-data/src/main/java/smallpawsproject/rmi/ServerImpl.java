@@ -43,4 +43,9 @@ public class ServerImpl implements Server
   public List<Animal> getAnimals() throws RemoteException {
     return dataAccess.getAnimals();
   }
+
+  @Override
+  public Animal updateAnimal(Animal animal) throws RemoteException {
+    return dataAccess.updateAnimal(animal);
+  }
 }

@@ -15,6 +15,10 @@
 	<description>Second tier for Small-Paws</description>
 	<properties>
 		<java.version>11</java.version>
+
+
+
+
 	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.json/json -->

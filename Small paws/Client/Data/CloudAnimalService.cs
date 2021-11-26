@@ -38,7 +38,7 @@ namespace Client.Data
                 Encoding.UTF8,
                 "application/json");
             var responseMessage = await _httpClient.PostAsync(Uri + "/animal", httpContent);
-            
+            Console.WriteLine(animalAsJson);
             if (!responseMessage.IsSuccessStatusCode)
             {
                 throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");

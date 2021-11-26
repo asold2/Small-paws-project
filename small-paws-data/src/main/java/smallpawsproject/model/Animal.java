@@ -2,12 +2,14 @@ package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.jpa.repository.Modifying;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
-
-
-
+@Transactional
+@DynamicUpdate
 @Entity
 public class Animal implements Serializable
 {
@@ -38,6 +40,41 @@ public class Animal implements Serializable
     this.age = age;
     this.description = description;
   }
+
+
+  public void set(int age, String description, boolean washed, boolean fed, boolean vaccinated){
+    this.age = age;
+    this.description = description;
+    this.washed = washed;
+    this.fed = fed;
+    this.vaccinated = vaccinated;
+  }
+
+
+  public boolean isWashed() {
+    return washed;
+  }
+
+  public void setWashed(boolean washed) {
+    this.washed = washed;
+  }
+
+  public boolean isFed() {
+    return fed;
+  }
+
+  public void setFed(boolean fed) {
+    this.fed = fed;
+  }
+
+  public boolean isVaccinated() {
+    return vaccinated;
+  }
+
+  public void setVaccinated(boolean vaccinated) {
+    this.vaccinated = vaccinated;
+  }
+
   public Animal(){}
 
   public int getId()

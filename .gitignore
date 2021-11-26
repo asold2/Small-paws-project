@@ -11,4 +11,5 @@
 /Small paws/Client/bin/Debug/net5.0/Client.Views.pdb
 /Small paws/Client/obj/Debug/net5.0/Client.Views.pdb
 /Small paws/Client/bin/.idea/.idea.Small paws/.idea/workspace.xml
-/Small paws/Client/obj
+/Small paws/Client/obj/*
+!/Small paws/Client/obj/project.assets.json

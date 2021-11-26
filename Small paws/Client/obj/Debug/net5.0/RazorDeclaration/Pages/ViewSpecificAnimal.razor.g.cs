@@ -83,7 +83,7 @@ using Client.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/ViewSpecificAnimal/{Value}")]
-    public partial class ViewSpecificAnimal : ViewAnimalRazor
+    public partial class ViewSpecificAnimal : ViewSpecificAnimalRazor
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

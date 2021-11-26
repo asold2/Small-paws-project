@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace Client.Pages
 {
-    public class ViewAnimalRazor : ComponentBase
+    public class ViewSpecificAnimalRazor : ComponentBase
     {
         [Parameter]
         public string Value { get; set; }
@@ -19,14 +19,16 @@ namespace Client.Pages
         protected string AnimalType;
         protected int? Age;
         protected int? Id;
-        private bool _washed = true;
-        private bool _fed = true;
-        private bool _vaccinated = true;
-        protected byte[] Picture;
+        private bool _washed;
+        private bool _fed;
+        private bool _vaccinated;
         protected string Description;
-        protected string WashedIcon = "fas fa-check";
-        protected string FedIcon = "fas fa-times";
-        protected string VaccinatedIcon = "fas fa-check";
+        // ReSharper disable once UnassignedField.Global
+        protected string WashedIcon;
+        // ReSharper disable once UnassignedField.Global
+        protected string FedIcon;
+        // ReSharper disable once UnassignedField.Global
+        protected string VaccinatedIcon;
 
         protected override async Task OnInitializedAsync()
         {
@@ -39,11 +41,11 @@ namespace Client.Pages
                 Age = Animals[valueInt].Age;
                 Id = Animals[valueInt].Id;
                 _washed = Animals[valueInt].Washed;
-                setIcon(_washed, icon: WashedIcon);
+                SetIcon(_washed, icon: WashedIcon);
                 _fed = Animals[valueInt].Fed;
-                setIcon(_fed, icon: FedIcon);
+                SetIcon(_fed, icon: FedIcon);
                 _vaccinated = Animals[valueInt].Vaccinated;
-                setIcon(_vaccinated, icon: VaccinatedIcon);
+                SetIcon(_vaccinated, icon: VaccinatedIcon);
                 Description = Animals[valueInt].Description;
 
             }
@@ -55,8 +57,11 @@ namespace Client.Pages
             
         }
 
-        private void setIcon(bool state, string icon)
+        // ReSharper disable once UnusedParameter.Local
+        // ReSharper disable once RedundantAssignment
+        private static void SetIcon(bool state, string icon)
         {
+            // ReSharper disable once RedundantAssignment
             icon = state ? "fas fa-check" : "fas fa-times";
         }
     } 

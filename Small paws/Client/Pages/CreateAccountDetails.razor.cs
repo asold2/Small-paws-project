@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Client.Data.Registration;
@@ -19,22 +20,26 @@ namespace Client.Pages
 
         protected string FirstName;
         protected string LastName;
-        protected int Age;
+        protected int? Age;
         protected string Sex;
         protected string FamilyStatus;
-        protected int AverageIncome;
+        protected int? AverageIncome;
         protected string Address;
-        protected int ZipCode;
+        protected int? ZipCode;
         protected string JobTitle;
-        protected int Id;
+        protected int? Id;
 
-        protected string idError ="";
-        protected string avgIncomeError="";
-        protected string ageError="";
-        protected string error = "";
+        protected string IdError ="";
+        protected string AvgIncomeError="";
+        protected string AgeError="";
+        protected string Error = "";
 
         protected async Task LoadViewAnimals()
         {
+            Debug.Assert(Age != null, nameof(Age) + " != null");
+            Debug.Assert(AverageIncome != null, nameof(AverageIncome) + " != null");
+            Debug.Assert(ZipCode != null, nameof(ZipCode) + " != null");
+            Debug.Assert(Id != null, nameof(Id) + " != null");
             var petOwner = new PetOwner
             {
                 Email = EndUser.Email,
@@ -42,26 +47,26 @@ namespace Client.Pages
                 Password = EndUser.Password,
                 FirstName = FirstName,
                 LastName = LastName,
-                Age = Age,
+                Age = (int) Age,
                 Sex = Sex,
                 FamilyStatus = FamilyStatus,
-                AvgIncome = AverageIncome,
+                AvgIncome = (int) AverageIncome,
                 Address = Address,
-                ZipCode = ZipCode,
+                ZipCode = (int) ZipCode,
                 JobTitle = JobTitle,
-                Id = Id
+                Id = (int) Id
             };
             if (Age < 15 || Age > 130)
             {
-                ageError = "Age is either too low or too high";
+                AgeError = "Age is either too low or too high";
             }
             else if (AverageIncome < 0)
             {
-                avgIncomeError = "Average Income cannot be less than 0";
+                AvgIncomeError = "Average Income cannot be less than 0";
             }
             else if (Id.ToString().Length < 4 || Id.ToString().Length > 9 || Id.ToString()[0] == 0)
             {
-                idError = "Id cannot be less than 4 digits or bigger than 9 digits, and it cannot start with 0";
+                IdError = "Id cannot be less than 4 digits or bigger than 9 digits, and it cannot start with 0";
                 
             }
 
@@ -71,7 +76,7 @@ namespace Client.Pages
             }
             else
             {
-                error = UserCreateAccountService.CreateUserAsync(petOwner).Result + " Error message";
+                Error = UserCreateAccountService.CreateUserAsync(petOwner).Result + " Error message";
             }
 
         }

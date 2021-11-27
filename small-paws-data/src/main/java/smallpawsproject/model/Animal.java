@@ -42,7 +42,8 @@ public class Animal implements Serializable
   }
 
 
-  public void set(int age, String description, boolean washed, boolean fed, boolean vaccinated){
+  public void set(byte[] picture,int age, String description, boolean washed, boolean fed, boolean vaccinated){
+    this.picture = picture;
     this.age = age;
     this.description = description;
     this.washed = washed;

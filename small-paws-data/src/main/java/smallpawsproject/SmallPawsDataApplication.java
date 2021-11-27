@@ -35,8 +35,19 @@ public class SmallPawsDataApplication {
 		this.animalRepository = animalRepository;
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
-//		usersRepository.save(new EndUser("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
-//		usersRepository.save(new EndUser("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+
+//		for(int i=1; i<usersRepository.count(); i++){
+//			if(!(usersRepository.getById(i).getUserName().equals("Veterinarian") && usersRepository.getById(i).getUserName().equals("Attendant"))){
+//				usersRepository.save(new EndUser("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+//				usersRepository.save(new EndUser("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+//			}
+//		}
+
+		if(!(usersRepository.getById(2).getUserName().equals("Veterinarian") && usersRepository.getById(3).getUserName().equals("Attendant"))){
+				usersRepository.save(new EndUser("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+				usersRepository.save(new EndUser("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+			}
+
 	}
 
 

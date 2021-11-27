@@ -23,12 +23,9 @@ namespace Client.Pages
         private bool _fed;
         private bool _vaccinated;
         protected string Description;
-        // ReSharper disable once UnassignedField.Global
-        protected string WashedIcon;
-        // ReSharper disable once UnassignedField.Global
-        protected string FedIcon;
-        // ReSharper disable once UnassignedField.Global
-        protected string VaccinatedIcon;
+        protected string WashedIcon = "fas fa-times";
+        protected string FedIcon = "fas fa-times";
+        protected string VaccinatedIcon = "fas fa-times";
 
         protected override async Task OnInitializedAsync()
         {
@@ -41,11 +38,37 @@ namespace Client.Pages
                 Age = Animals[valueInt].Age;
                 Id = Animals[valueInt].Id;
                 _washed = Animals[valueInt].Washed;
-                SetIcon(_washed, icon: WashedIcon);
+                if (_washed)
+                {
+                    WashedIcon = "fas fa-check";
+                }
+                else
+                {
+                    WashedIcon = "fas fa-times";
+                }
+                
                 _fed = Animals[valueInt].Fed;
-                SetIcon(_fed, icon: FedIcon);
+                
+                if (_fed)
+                {
+                    FedIcon = "fas fa-check";
+                }
+                else
+                {
+                    FedIcon = "fas fa-times";
+                }
+                
                 _vaccinated = Animals[valueInt].Vaccinated;
-                SetIcon(_vaccinated, icon: VaccinatedIcon);
+                
+                if (_vaccinated)
+                {
+                    VaccinatedIcon = "fas fa-check";
+                }
+                else
+                {
+                    VaccinatedIcon = "fas fa-times";
+                }
+                
                 Description = Animals[valueInt].Description;
 
             }
@@ -56,13 +79,6 @@ namespace Client.Pages
             }
             
         }
-
-        // ReSharper disable once UnusedParameter.Local
-        // ReSharper disable once RedundantAssignment
-        private static void SetIcon(bool state, string icon)
-        {
-            // ReSharper disable once RedundantAssignment
-            icon = state ? "fas fa-check" : "fas fa-times";
-        }
+        
     } 
 }

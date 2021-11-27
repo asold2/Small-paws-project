@@ -68,3 +68,6 @@
         padding-right: 1.5rem !important;
     }
 }
+.logout{
+    cursor: pointer;
+}

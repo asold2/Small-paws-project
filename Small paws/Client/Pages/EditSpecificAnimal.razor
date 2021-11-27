@@ -1,14 +1,21 @@
-@page "/EditSpecificAnimal"
+@page "/EditSpecificAnimal/{Value}"
 
 @inherits EditSpecificAnimalRazor
 
 <div class="top-side">
-
-			<div class="picture-div">
-        		<img class="picture" src="@ShownImage" alt="Upload photo" onclick="thisFileUpload()">
-        		<InputFile id="file" src="photo_picture.png" OnChange="@UploadImage" alt="image of uploaded animal" style="display: none;"/>
-        	</div>
-
+	<AuthorizeView Policy="MustBeAnimalAttendant">
+		<div class="picture-div">
+			<img class="picture" src="@ShownImage" alt="Upload photo" onclick="thisFileUpload()">
+			<InputFile id="file" src="photo_picture.png" OnChange="@UploadImage" alt="image of uploaded animal" style="display: none;"/>
+		</div>
+	</AuthorizeView>
+	
+	<AuthorizeView Policy="MustBeVeterinarian">
+				<div class="picture-div">
+        			<img class="picture" src="@ShownImage" alt="Upload photo">
+				</div>
+	</AuthorizeView>
+	
 	<div class="right-side">
 		<table>
 			
@@ -19,39 +26,85 @@
 
 			<tr>
 				<td><b>Animal type</b></td>
-				<td><input class="input" type="text" placeholder="Type animal's type" @bind="AnimalType"></td>
+				<td>@AnimalType</td>
 
 			</tr>
 
 			<tr>
 				<td><b>Age</b></td>
-				<td><input class="input2" type="text" placeholder="Type animal's age" @bind="Age"></td>
+				<td><input class="input" type="text" placeholder="Type animal's age" @bind="Age"></td>
 			</tr>
 			<tr>
 				<td><b>Washed</b></td>
-				<td>
-					<div>
-						<input type="radio" @onclick="SetWashedToTrue"> Yes
-						<input type="radio" @onclick="SetWashedToFalse"/> No
-					</div></td>
+				<AuthorizeView Policy="MustBeAnimalAttendant">
+					<td>
+						@if(Washed)
+						{
+						<div>
+							<input type="radio" @onclick="SetWashedToTrue" checked="checked"> Yes
+							<input type="radio" @onclick="SetWashedToFalse"/> No
+						</div>
+						}
+						@if (!Washed)
+						{
+							<div>
+								<input type="radio" @onclick="SetWashedToTrue"> Yes
+								<input type="radio" @onclick="SetWashedToFalse" checked="checked"/> No
+							</div>
+						}
+					</td>
+				</AuthorizeView>
+				<AuthorizeView Policy="MustBeVeterinarian">
+					<td><i class="@WashedIcon"></i></td>
+				</AuthorizeView>
 			</tr>
 			<tr>
 				<td><b>Fed</b></td>
-				<td>
-					<div>
-						<input type="radio" @onclick="SetFedToTrue"> Yes
-						<input type="radio" @onclick="SetFedToFalse"/> No
-					</div>
-				</td>
+				<AuthorizeView Policy="MustBeAnimalAttendant">
+					<td>
+						@if(Fed)
+						{
+						<div>
+							<input type="radio" @onclick="SetFedToTrue" checked="checked"> Yes
+							<input type="radio" @onclick="SetFedToFalse"/> No
+						</div>
+						}
+						@if (!Fed)
+						{
+							<div>
+								<input type="radio" @onclick="SetFedToTrue"> Yes
+								<input type="radio" @onclick="SetFedToFalse" checked="checked"/> No
+							</div>
+						}
+					</td>
+				</AuthorizeView>
+				<AuthorizeView Policy="MustBeVeterinarian">
+					<td><i class="@FedIcon"></i></td>
+				</AuthorizeView>
 			</tr>
 			<tr>
 				<td><b>Vaccinated</b></td>
+				<AuthorizeView Policy="MustBeVeterinarian">
 				<td>
-					<div>
-						<input type="radio" @onclick="SetVaccinatedToTrue"> Yes
-						<input type="radio" @onclick="SetVaccinatedToFalse"/> No
-					</div>
+						@if(Vaccinated)
+						{
+						<div>
+							<input type="radio" @onclick="SetVaccinatedToTrue" checked="checked"> Yes
+							<input type="radio" @onclick="SetVaccinatedToFalse"/> No
+						</div>
+						}
+						@if (!Vaccinated)
+						{
+							<div>
+								<input type="radio" @onclick="SetVaccinatedToTrue"> Yes
+								<input type="radio" @onclick="SetVaccinatedToFalse" checked="checked"/> No
+							</div>
+						}
 				</td>
+				</AuthorizeView>
+				<AuthorizeView Policy="MustBeAnimalAttendant">
+					<td><i class="@VaccinatedIcon"></i></td>
+				</AuthorizeView>
 			</tr>
 		</table>
 	</div>

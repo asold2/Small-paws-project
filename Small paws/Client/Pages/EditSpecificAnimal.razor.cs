@@ -26,26 +26,63 @@ namespace Client.Pages
         protected string AnimalType;
         protected int? Age;
         protected int? Id;
-        private bool _washed;
-        private bool _fed;
-        private bool _vaccinated;
+        protected bool Washed;
+        protected bool Fed;
+        protected bool Vaccinated;
         private byte[] _picture;
         protected string Description;
+        // ReSharper disable once UnassignedField.Global
+        protected string WashedIcon;
+        // ReSharper disable once UnassignedField.Global
+        protected string FedIcon;
+        // ReSharper disable once UnassignedField.Global
+        protected string VaccinatedIcon;
 
         
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                /*
+                
                 var valueInt = Convert.ToInt32(Value) - 1;
                 Animals = await AnimalService.GetAnimalsAsync();
                 ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(Animals[valueInt].Picture)}";
                 AnimalType = Animals[valueInt].AnimalType;
                 Age = Animals[valueInt].Age;
                 Id = Animals[valueInt].Id;
+                Washed = Animals[valueInt].Washed;
+                if (Washed)
+                {
+                    WashedIcon = "fas fa-check";
+                }
+                else
+                {
+                    WashedIcon = "fas fa-times";
+                }
+                
+                Fed = Animals[valueInt].Fed;
+                
+                if (Fed)
+                {
+                    FedIcon = "fas fa-check";
+                }
+                else
+                {
+                    FedIcon = "fas fa-times";
+                }
+                
+                Vaccinated = Animals[valueInt].Vaccinated;
+                
+                if (Vaccinated)
+                {
+                    VaccinatedIcon = "fas fa-check";
+                }
+                else
+                {
+                    VaccinatedIcon = "fas fa-times";
+                }
                 Description = Animals[valueInt].Description;
-                */
+
             }
             catch (Exception e)
             {
@@ -66,30 +103,30 @@ namespace Client.Pages
         
         protected void SetWashedToTrue()
         {
-            _washed = true;
+            Washed = true;
         }
         protected void SetWashedToFalse()
         {
-            _washed = false;
+            Washed = false;
         }    
         
         protected void SetFedToTrue()
         {
-            _fed = true;
+            Fed = true;
         }
         protected void SetFedToFalse()
         {
-            _fed = false;
+            Fed = false;
         }
         
         protected void SetVaccinatedToTrue()
         {
-            _vaccinated = true;
+            Vaccinated = true;
         }
         
         protected void SetVaccinatedToFalse()
         {
-            _vaccinated = false;
+            Vaccinated = false;
         }
 
         protected async Task SaveAnimal()
@@ -104,11 +141,19 @@ namespace Client.Pages
                 Picture = _picture,
                 AnimalType = AnimalType,
                 Age = (int) Age,
-                Washed = _washed,
-                Fed = _fed,
-                Vaccinated = _vaccinated
+                Washed = Washed,
+                Fed = Fed,
+                Vaccinated = Vaccinated
             };
             await AnimalService.AddAnimalAsync(newAnimal);
+        }
+        
+        // ReSharper disable once UnusedParameter.Local
+        // ReSharper disable once RedundantAssignment
+        private static void SetIcon(bool state, string icon)
+        {
+            // ReSharper disable once RedundantAssignment
+            icon = state ? "fas fa-check" : "fas fa-times";
         }
 
         protected async Task Cancel()

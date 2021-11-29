@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace Client.Pages
 {
-    public class ViewAnimalRazor : ComponentBase
+    public class ViewSpecificAnimalRazor : ComponentBase
     {
         [Parameter]
         public string Value { get; set; }
@@ -19,14 +19,13 @@ namespace Client.Pages
         protected string AnimalType;
         protected int? Age;
         protected int? Id;
-        private bool _washed = true;
-        private bool _fed = true;
-        private bool _vaccinated = true;
-        protected byte[] Picture;
+        private bool _washed;
+        private bool _fed;
+        private bool _vaccinated;
         protected string Description;
-        protected string WashedIcon = "fas fa-check";
+        protected string WashedIcon = "fas fa-times";
         protected string FedIcon = "fas fa-times";
-        protected string VaccinatedIcon = "fas fa-check";
+        protected string VaccinatedIcon = "fas fa-times";
 
         protected override async Task OnInitializedAsync()
         {
@@ -39,11 +38,37 @@ namespace Client.Pages
                 Age = Animals[valueInt].Age;
                 Id = Animals[valueInt].Id;
                 _washed = Animals[valueInt].Washed;
-                setIcon(_washed, icon: WashedIcon);
+                if (_washed)
+                {
+                    WashedIcon = "fas fa-check";
+                }
+                else
+                {
+                    WashedIcon = "fas fa-times";
+                }
+                
                 _fed = Animals[valueInt].Fed;
-                setIcon(_fed, icon: FedIcon);
+                
+                if (_fed)
+                {
+                    FedIcon = "fas fa-check";
+                }
+                else
+                {
+                    FedIcon = "fas fa-times";
+                }
+                
                 _vaccinated = Animals[valueInt].Vaccinated;
-                setIcon(_vaccinated, icon: VaccinatedIcon);
+                
+                if (_vaccinated)
+                {
+                    VaccinatedIcon = "fas fa-check";
+                }
+                else
+                {
+                    VaccinatedIcon = "fas fa-times";
+                }
+                
                 Description = Animals[valueInt].Description;
 
             }
@@ -54,10 +79,6 @@ namespace Client.Pages
             }
             
         }
-
-        private void setIcon(bool state, string icon)
-        {
-            icon = state ? "fas fa-check" : "fas fa-times";
-        }
+        
     } 
 }

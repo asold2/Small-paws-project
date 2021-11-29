@@ -1,5 +1,8 @@
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Security.Permissions;
+using System.Text;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
@@ -29,9 +32,10 @@ namespace Client.Pages
             var sourceFile = eventArgs.File;
             _picture = new byte[sourceFile.Size];
             await sourceFile.OpenReadStream().ReadAsync(_picture);
-            string imageType = sourceFile.ContentType;
+            var imageType = sourceFile.ContentType;
             ShownImage = $"data:{imageType};base64,{Convert.ToBase64String(_picture)}";
         }
+        
         protected void SetWashedToTrue()
         {
             _washed = true;
@@ -62,6 +66,7 @@ namespace Client.Pages
 
         protected async Task SaveAnimal()
         {
+            _picture ??= await File.ReadAllBytesAsync(Path.GetFullPath(@"wwwroot/photo_picture.png"));
             Debug.Assert(Age != null, nameof(Age) + " != null");
             
             
@@ -80,7 +85,7 @@ namespace Client.Pages
 
         protected async Task Cancel()
         {
-            if (!await JsRuntime.InvokeAsync<bool>("confirm",$"Are you sure you want do not want to add a new animal?"))
+            if (!await JsRuntime.InvokeAsync<bool>("confirm",$"Are you sure you do not want to add a new animal?"))
             {
                 return;
             }

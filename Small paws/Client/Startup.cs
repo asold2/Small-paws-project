@@ -39,6 +39,8 @@ namespace Client
             {
                 options.AddPolicy("MustBeVeterinarian", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "Veterinarian"));
                 options.AddPolicy("MustBeAnimalAttendant", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "AnimalAttendant"));
+                options.AddPolicy("MustBePetOwner", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "PetOwner"));
+
             });
             // services.AddScoped<IList, >();
         }

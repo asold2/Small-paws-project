@@ -22,20 +22,20 @@ namespace Client.Pages
             try
             {
                 Animals = await AnimalService.GetAnimalsAsync();
-                ShownDescription = new string[Animals.Count];
-                ShownImage = new string[Animals.Count];
-                    for (int i = 0; i < Animals.Count; i++)
+                ShownDescription = new string[Animals.Count+1];
+                ShownImage = new string[Animals.Count+1];
+                    foreach (Animal animal in Animals)
                     {
-                        ShownImage[i] = $"data:image/jpg;base64,{Convert.ToBase64String(Animals[i].Picture)}";
-                        var stringSize = Encoding.ASCII.GetBytes(Animals[i].Description);
+                        ShownImage[animal.Id] = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
+                        var stringSize = Encoding.ASCII.GetBytes(animal.Description);
                         Console.WriteLine(stringSize.Length);
                         if (stringSize.Length > 100)
                         {
-                            ShownDescription[i] = Animals[i].Description.Substring(0, 100) + "...";
+                            ShownDescription[animal.Id] = animal.Description.Substring(0, 100) + "...";
                         }
                         else
                         {
-                            ShownDescription[i] = Animals[i].Description;
+                            ShownDescription[animal.Id] = animal.Description;
                         }
 
                     }

@@ -41,47 +41,58 @@ namespace Client.Pages
         
         protected override async Task OnInitializedAsync()
         {
+           
             try
             {
-                
-                var valueInt = Convert.ToInt32(Value) - 1;
+                var valueInt = Convert.ToInt32(Value);
+                Console.WriteLine(valueInt + "!!!!!!!!!!!!");
                 Animals = await AnimalService.GetAnimalsAsync();
-                ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(Animals[valueInt].Picture)}";
-                AnimalType = Animals[valueInt].AnimalType;
-                Age = Animals[valueInt].Age;
-                Id = Animals[valueInt].Id;
-                Washed = Animals[valueInt].Washed;
-                if (Washed)
+                for (int i = 0; i < Animals.Count; i++)
                 {
-                    WashedIcon = "fas fa-check";
-                }
-                else
-                {
-                    WashedIcon = "fas fa-times";
-                }
+                    Animal animal = Animals[i];
+                    if (animal.Id == valueInt)
+                    {
+                        ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
+                        AnimalType = animal.AnimalType;
+                        Age = animal.Age;
+                        Id = animal.Id;
+                        Washed = animal.Washed;
+                        if (Washed)
+                        {
+                            WashedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            WashedIcon = "fas fa-times";
+                        }
                 
-                Fed = Animals[valueInt].Fed;
+                        Fed = animal.Fed;
                 
-                if (Fed)
-                {
-                    FedIcon = "fas fa-check";
-                }
-                else
-                {
-                    FedIcon = "fas fa-times";
-                }
+                        if (Fed)
+                        {
+                            FedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            FedIcon = "fas fa-times";
+                        }
                 
-                Vaccinated = Animals[valueInt].Vaccinated;
+                        Vaccinated = animal.Vaccinated;
                 
-                if (Vaccinated)
-                {
-                    VaccinatedIcon = "fas fa-check";
+                        if (Vaccinated)
+                        {
+                            VaccinatedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            VaccinatedIcon = "fas fa-times";
+                        }
+                
+                        Description = animal.Description;
+                    }
                 }
-                else
-                {
-                    VaccinatedIcon = "fas fa-times";
-                }
-                Description = Animals[valueInt].Description;
+
+                
 
             }
             catch (Exception e)
@@ -133,10 +144,11 @@ namespace Client.Pages
         {
             _picture ??= await File.ReadAllBytesAsync(Path.GetFullPath(@"wwwroot/photo_picture.png"));
             Debug.Assert(Age != null, nameof(Age) + " != null");
-            
-            
+
+
             var newAnimal = new Animal
             {
+                Id = (int) Id,
                 Description = Description,
                 Picture = _picture,
                 AnimalType = AnimalType,
@@ -145,7 +157,7 @@ namespace Client.Pages
                 Fed = Fed,
                 Vaccinated = Vaccinated
             };
-            await AnimalService.AddAnimalAsync(newAnimal);
+            await AnimalService.UpdateAnimal(newAnimal);
         }
         
         // ReSharper disable once UnusedParameter.Local

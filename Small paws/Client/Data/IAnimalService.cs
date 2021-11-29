@@ -8,5 +8,6 @@ namespace Client.Data
     {
         Task<IList<Animal>> GetAnimalsAsync();
         Task AddAnimalAsync(Animal animal);
+        Task UpdateAnimal(Animal newAnimal);
     }
 }

@@ -44,5 +44,20 @@ namespace Client.Data
                 throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
             } 
         }
+
+        public async Task UpdateAnimal(Animal newAnimal)
+        {
+            Console.WriteLine(newAnimal.Id + "  Animal Id here!!!");
+            var animalAsJson = JsonSerializer.Serialize(newAnimal);
+            HttpContent httpContent = new StringContent(
+                animalAsJson,
+                Encoding.UTF8,
+                "application/json");
+            await _httpClient.PatchAsync(Uri + "/new_information", httpContent);
+            // if (!responseMessage.IsSuccessStatusCode)
+            // {
+            //     throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            // } 
+        }
     }
 }

@@ -31,45 +31,55 @@ namespace Client.Pages
         {
             try
             {
-                var valueInt = Convert.ToInt32(Value) - 1;
+                var valueInt = Convert.ToInt32(Value);
+                Console.WriteLine(valueInt + "!!!!!!!!!!!!");
                 Animals = await AnimalService.GetAnimalsAsync();
-                ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(Animals[valueInt].Picture)}";
-                AnimalType = Animals[valueInt].AnimalType;
-                Age = Animals[valueInt].Age;
-                Id = Animals[valueInt].Id;
-                _washed = Animals[valueInt].Washed;
-                if (_washed)
+                for (int i = 0; i < Animals.Count; i++)
                 {
-                    WashedIcon = "fas fa-check";
-                }
-                else
-                {
-                    WashedIcon = "fas fa-times";
-                }
+                    Animal animal = Animals[i];
+                    if (animal.Id == valueInt)
+                    {
+                        ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
+                        AnimalType = animal.AnimalType;
+                        Age = animal.Age;
+                        Id = animal.Id;
+                        _washed = animal.Washed;
+                        if (_washed)
+                        {
+                            WashedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            WashedIcon = "fas fa-times";
+                        }
                 
-                _fed = Animals[valueInt].Fed;
+                        _fed = animal.Fed;
                 
-                if (_fed)
-                {
-                    FedIcon = "fas fa-check";
-                }
-                else
-                {
-                    FedIcon = "fas fa-times";
-                }
+                        if (_fed)
+                        {
+                            FedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            FedIcon = "fas fa-times";
+                        }
                 
-                _vaccinated = Animals[valueInt].Vaccinated;
+                        _vaccinated = animal.Vaccinated;
                 
-                if (_vaccinated)
-                {
-                    VaccinatedIcon = "fas fa-check";
-                }
-                else
-                {
-                    VaccinatedIcon = "fas fa-times";
-                }
+                        if (_vaccinated)
+                        {
+                            VaccinatedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            VaccinatedIcon = "fas fa-times";
+                        }
                 
-                Description = Animals[valueInt].Description;
+                        Description = animal.Description;
+                    }
+                }
+
+                
 
             }
             catch (Exception e)

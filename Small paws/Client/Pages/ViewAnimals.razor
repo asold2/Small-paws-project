@@ -1,4 +1,5 @@
 ﻿@page "/ViewAnimals"
+@using Client.Model
 @inherits ViewAnimalsRazor
 
 <AuthorizeView Policy="MustBePetOwner">
@@ -7,21 +8,21 @@
 
             @if (Animals != null)
             {
-                @for (int i = 0; i < Animals.Count; i++)
+                @foreach (Animal animal in Animals)
                 {
                     
-                    <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenSpecificAnimal(i)">
-                        <img class="card-img-top imageThumbnail" src="@ShownImage[i]" alt="image thumbnail"/>
+                    <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenSpecificAnimal(animal.Id)">
+                        <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
 
                         <tr>
-                            <th><b>@Animals[i].AnimalType</b></th>
+                            <th><b>@animal.AnimalType</b></th>
                         </tr>
                         <tr id="ageRow">
-                            <td >@Animals[i].Age years old</td>
+                            <td >@animal.Age years old</td>
                         </tr>
                         <tr><td><b>Description:</b></td></tr>
                         <tr>
-                            <td id="description">@ShownDescription[i]</td>
+                            <td id="description">@ShownDescription[@animal.Id]</td>
                         </tr>
                     </div>
                 }
@@ -36,20 +37,21 @@
 
             @if (Animals != null)
             {
-                @for (int i = 0; i < Animals.Count; i++)
+                @foreach (Animal animal in Animals)
                 {
-                    <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(i)">
-                        <img class="card-img-top imageThumbnail" src="@ShownImage[i]" alt="image thumbnail"/>
+                    
+                    <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(animal.Id)">
+                        <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
 
                         <tr>
-                            <th><b>@Animals[i].AnimalType</b></th>
+                            <th><b>@animal.AnimalType</b></th>
                         </tr>
                         <tr id="ageRow">
-                            <td >@Animals[i].Age years old</td>
+                            <td >@animal.Age years old</td>
                         </tr>
                         <tr><td><b>Description:</b></td></tr>
                         <tr>
-                            <td id="description">@ShownDescription[i]</td>
+                            <td id="description">@ShownDescription[@animal.Id]</td>
                         </tr>
                     </div>
                 }
@@ -64,22 +66,23 @@
 
         @if (Animals != null)
         {
-            @for (int i = 0; i < Animals.Count; i++)
+            @foreach (Animal animal in Animals)
             {
-                <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(i)">
-                            <img class="card-img-top imageThumbnail" src="@ShownImage[i]" alt="image thumbnail"/>
+                    
+                <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(animal.Id)">
+                    <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
 
-                            <tr>
-                                <th><b>@Animals[i].AnimalType</b></th>
-                            </tr>
-                            <tr id="ageRow">
-                                <td >@Animals[i].Age years old</td>
-                            </tr>
-                            <tr><td><b>Description:</b></td></tr>
-                            <tr>
-                                <td id="description">@ShownDescription[i]</td>
-                            </tr>
-                        </div>
+                    <tr>
+                        <th><b>@animal.AnimalType</b></th>
+                    </tr>
+                    <tr id="ageRow">
+                        <td >@animal.Age years old</td>
+                    </tr>
+                    <tr><td><b>Description:</b></td></tr>
+                    <tr>
+                        <td id="description">@ShownDescription[@animal.Id]</td>
+                    </tr>
+                </div>
             }
         }
     </div>

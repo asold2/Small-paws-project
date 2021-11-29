@@ -51,6 +51,19 @@ public class AnimalServicesImpl implements AnimalServices
     }
   }
 
+  @Override public Animal updateAnimal(Animal animal)
+  {
+    try
+    {
+      return client.updateAnimal(animal);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
   @Override public JSONArray GetAnimals()
   {
     var animalsAsJson = new JSONArray();

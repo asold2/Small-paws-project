@@ -1,6 +1,6 @@
 /*Title styling*/
 
-.title{
+.title[b-ro3c4skgv1]{
     display: block;
     font-family: 'Poppins', sans-serif;
     font-size: 39px;
@@ -14,17 +14,17 @@
 
 /*Button styling*/
 
-button {
+button[b-ro3c4skgv1] {
     outline: none !important;
     border: none;
     background: transparent;
 }
 
-button:hover {
+button:hover[b-ro3c4skgv1] {
     cursor: pointer;
 }
 
-.wrap-login-btn, .wrap-cancel-btn{
+.wrap-login-btn[b-ro3c4skgv1], .wrap-cancel-btn[b-ro3c4skgv1]{
     width: 10%;
     height: 5%;
     display: flex;
@@ -45,10 +45,10 @@ button:hover {
     -o-box-shadow: 0 5px 30px 0 rgba(3, 216, 222, 0.2);
     -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
 }
-.wrap-cancel-btn{
+.wrap-cancel-btn[b-ro3c4skgv1]{
     right: 15%;
 }
-.login-bgbtn {
+.login-bgbtn[b-ro3c4skgv1] {
     position: absolute;
     z-index: -1;
     width: 300%;
@@ -67,7 +67,7 @@ button:hover {
     transition: all 0.4s;
 }
 
-.login-btn {
+.login-btn[b-ro3c4skgv1] {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     color: #fff;
@@ -86,7 +86,7 @@ button:hover {
     height: 60%;
 }
 
-.wrap-login-btn:hover .login-bgbtn {
+.wrap-login-btn:hover .login-bgbtn[b-ro3c4skgv1] {
     left: 0;
 }
 
@@ -94,30 +94,30 @@ button:hover {
 
 /*Table styling*/
 
-table{
+table[b-ro3c4skgv1]{
     width: 100%;
     height: 100%;
 
 }
-tr:nth-child(even) {
+tr:nth-child(even)[b-ro3c4skgv1] {
     background-color: #f2f2f2;
 }
-td:nth-child(odd) {
+td:nth-child(odd)[b-ro3c4skgv1] {
     width: 40%;
 }
-td:first-child {
+td:first-child[b-ro3c4skgv1] {
     width: 40%;
 }
 
 
-th, td {
+th[b-ro3c4skgv1], td[b-ro3c4skgv1] {
     padding: 2%;
     align-items: center;
     border-bottom: 1px solid #ddd;
     font-size: 18pt;
 }
 
-.right-side{
+.right-side[b-ro3c4skgv1]{
     float: right;
     width: 46%;
     height: 100%;
@@ -127,11 +127,11 @@ th, td {
     border-style: outset;
     border-color: grey;
 }
-.input{
+.input[b-ro3c4skgv1]{
     border-style: none;
     outline: none;
 }
-.input2
+.input2[b-ro3c4skgv1]
 {
     background-color: #f2f2f2;
     border-style: none;
@@ -142,7 +142,7 @@ th, td {
 /*Table styling end*/
 
 /*Description styling*/
-.description-div{
+.description-div[b-ro3c4skgv1]{
     margin-top: 3%;
     display: flex;
     flex-direction: column;
@@ -151,33 +151,36 @@ th, td {
     margin-left: 2%;
     margin-right: 2%;
 }
-.description-text{
+.description-text[b-ro3c4skgv1]{
 
 }
-.description-area{
+.description-area[b-ro3c4skgv1]{
     width: 100%;
     height: 20vh;
+    border-width: 5px;
+    border-style: outset;
+    border-color: grey;
     box-sizing: border-box;
     resize: none;
 }
 /*Description styling end*/
 
-.picture-div{
+.picture-div[b-ro3c4skgv1]{
     float: left;
     width: 46%;
     height: 100%;
     margin-left: 2%;
     margin-right: 2%;
 }
-.picture{
+.picture[b-ro3c4skgv1]{
     height: 100%;
     width: 100%;
 }
-.top-side{
+.top-side[b-ro3c4skgv1]{
     height: 50%;
     width: 100%;
 }
-.bot-side{
+.bot-side[b-ro3c4skgv1]{
     display: flex;
     flex-direction: column;
     height: 50%;

@@ -9,7 +9,7 @@
 }
 
 .sidebar[b-ocnk4r8tjs] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background: linear-gradient(225deg, rgba(255,0,172,1) 0%, rgba(69,23,142,1) 50%, rgba(0,212,255,1) 100%);
 }
 
 .top-row[b-ocnk4r8tjs] {
@@ -67,4 +67,7 @@
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
+}
+.logout[b-ocnk4r8tjs]{
+    cursor: pointer;
 }

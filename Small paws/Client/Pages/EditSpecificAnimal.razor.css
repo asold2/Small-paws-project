@@ -157,6 +157,9 @@ th, td {
 .description-area{
     width: 100%;
     height: 20vh;
+    border-width: 5px;
+    border-style: outset;
+    border-color: grey;
     box-sizing: border-box;
     resize: none;
 }

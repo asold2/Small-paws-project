@@ -16,9 +16,9 @@ th{
 }
 .imageThumbnail{
     height: 60%;
-    width: auto;
+    width: 100%;
 }
 .card{
-    height: 50%;
+    height: 90%;
     cursor: pointer;
 }

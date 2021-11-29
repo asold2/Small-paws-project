@@ -19,4 +19,5 @@ public interface Server extends Remote
   List<Animal> getAnimals() throws RemoteException;
 
 
+  Animal updateAnimal(Animal animal) throws RemoteException;
 }

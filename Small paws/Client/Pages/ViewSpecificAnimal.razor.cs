@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace Client.Pages
 {
-    public class ViewAnimalRazor : ComponentBase
+    public class ViewSpecificAnimalRazor : ComponentBase
     {
         [Parameter]
         public string Value { get; set; }
@@ -19,32 +19,67 @@ namespace Client.Pages
         protected string AnimalType;
         protected int? Age;
         protected int? Id;
-        private bool _washed = true;
-        private bool _fed = true;
-        private bool _vaccinated = true;
-        protected byte[] Picture;
+        private bool _washed;
+        private bool _fed;
+        private bool _vaccinated;
         protected string Description;
-        protected string WashedIcon = "fas fa-check";
+        protected string WashedIcon = "fas fa-times";
         protected string FedIcon = "fas fa-times";
-        protected string VaccinatedIcon = "fas fa-check";
+        protected string VaccinatedIcon = "fas fa-times";
 
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                var valueInt = Convert.ToInt32(Value) - 1;
+                var valueInt = Convert.ToInt32(Value);
+                Console.WriteLine(valueInt + "!!!!!!!!!!!!");
                 Animals = await AnimalService.GetAnimalsAsync();
-                ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(Animals[valueInt].Picture)}";
-                AnimalType = Animals[valueInt].AnimalType;
-                Age = Animals[valueInt].Age;
-                Id = Animals[valueInt].Id;
-                _washed = Animals[valueInt].Washed;
-                setIcon(_washed, icon: WashedIcon);
-                _fed = Animals[valueInt].Fed;
-                setIcon(_fed, icon: FedIcon);
-                _vaccinated = Animals[valueInt].Vaccinated;
-                setIcon(_vaccinated, icon: VaccinatedIcon);
-                Description = Animals[valueInt].Description;
+                for (int i = 0; i < Animals.Count; i++)
+                {
+                    Animal animal = Animals[i];
+                    if (animal.Id == valueInt)
+                    {
+                        ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
+                        AnimalType = animal.AnimalType;
+                        Age = animal.Age;
+                        Id = animal.Id;
+                        _washed = animal.Washed;
+                        if (_washed)
+                        {
+                            WashedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            WashedIcon = "fas fa-times";
+                        }
+                
+                        _fed = animal.Fed;
+                
+                        if (_fed)
+                        {
+                            FedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            FedIcon = "fas fa-times";
+                        }
+                
+                        _vaccinated = animal.Vaccinated;
+                
+                        if (_vaccinated)
+                        {
+                            VaccinatedIcon = "fas fa-check";
+                        }
+                        else
+                        {
+                            VaccinatedIcon = "fas fa-times";
+                        }
+                
+                        Description = animal.Description;
+                    }
+                }
+
+                
 
             }
             catch (Exception e)
@@ -54,10 +89,6 @@ namespace Client.Pages
             }
             
         }
-
-        private void setIcon(bool state, string icon)
-        {
-            icon = state ? "fas fa-check" : "fas fa-times";
-        }
+        
     } 
 }

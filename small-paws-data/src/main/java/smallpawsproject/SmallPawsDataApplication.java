@@ -1,7 +1,9 @@
 package smallpawsproject;
 
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import smallpawsproject.data_access.DataAccess;
 import smallpawsproject.data_access.DataAccessImpl;
+import smallpawsproject.model.EndUser;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
 import smallpawsproject.rmi.Server;
@@ -18,6 +20,7 @@ import java.rmi.RemoteException;
 
 @EnableJpaRepositories
 @SpringBootApplication
+//@EnableTransactionManagement
 public class SmallPawsDataApplication {
 		private final PetOwnerRepository petOwnerRepository;
 		private final UsersRepository usersRepository;
@@ -32,6 +35,19 @@ public class SmallPawsDataApplication {
 		this.animalRepository = animalRepository;
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
+
+//		for(int i=1; i<usersRepository.count(); i++){
+//			if(!(usersRepository.getById(i).getUserName().equals("Veterinarian") && usersRepository.getById(i).getUserName().equals("Attendant"))){
+//				usersRepository.save(new EndUser("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+//				usersRepository.save(new EndUser("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+//			}
+//		}
+
+		if(!(usersRepository.getById(2).getUserName().equals("Veterinarian") && usersRepository.getById(3).getUserName().equals("Attendant"))){
+				usersRepository.save(new EndUser("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+				usersRepository.save(new EndUser("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+			}
+
 	}
 
 

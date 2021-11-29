@@ -16,9 +16,9 @@ th[b-fi7r9zgcga]{
 }
 .imageThumbnail[b-fi7r9zgcga]{
     height: 60%;
-    width: auto;
+    width: 100%;
 }
 .card[b-fi7r9zgcga]{
-    height: 50%;
+    height: 90%;
     cursor: pointer;
 }

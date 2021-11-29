@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
@@ -13,16 +14,30 @@ namespace Client.Pages
         [Inject] protected IAnimalService AnimalService { get; set; }
         [Inject] private NavigationManager NavigationManager { get; set; }
         protected string[] ShownImage;
+        protected string[] ShownDescription { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
+            
             try
             {
                 Animals = await AnimalService.GetAnimalsAsync();
-                ShownImage = new string[Animals.Count];
-                    for (int i = 0; i < Animals.Count; i++)
+                ShownDescription = new string[Animals.Count+1];
+                ShownImage = new string[Animals.Count+1];
+                    foreach (Animal animal in Animals)
                     {
-                        ShownImage[i] = $"data:image/jpg;base64,{Convert.ToBase64String(Animals[i].Picture)}";    
+                        ShownImage[animal.Id] = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
+                        var stringSize = Encoding.ASCII.GetBytes(animal.Description);
+                        Console.WriteLine(stringSize.Length);
+                        if (stringSize.Length > 100)
+                        {
+                            ShownDescription[animal.Id] = animal.Description.Substring(0, 100) + "...";
+                        }
+                        else
+                        {
+                            ShownDescription[animal.Id] = animal.Description;
+                        }
+
                     }
             }
             catch (Exception e)
@@ -37,5 +52,12 @@ namespace Client.Pages
         {
             NavigationManager.NavigateTo($"ViewSpecificAnimal/{i}");
         }
+
+        protected void OpenEditSpecificAnimal(int i)
+        {
+            NavigationManager.NavigateTo($"EditSpecificAnimal/{i}");
+        }
+        
+    
     }
 }

@@ -1,28 +1,32 @@
+@using Client.Authentication
 @inherits LayoutComponentBase
 @inject NavigationManager _navigationManager
-@if(_navigationManager.Uri.Contains("Login" )|| _navigationManager.Uri.Contains("CreateAccountMain")|| _navigationManager.Uri.Contains("CreateAccountDetails"))
-{
+@inject AuthenticationStateProvider _authenticationStateProvider
+
 <div class="page">
-    @Body    
-</div>
-}
-else
-{ 
-    <div class="page">
-    
-        <div class="sidebar">
-            <NavMenu/>
-        </div>
 
-        <div class="main">
-            <div class="top-row px-4">
-                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-            </div>
-
-            <div class="content px-4">
-                @Body
-            </div>
-        </div>
-
+    <div class="sidebar">
+        <NavMenu/>
     </div>
+
+    <div class="main">
+        <div class="top-row px-4">
+            <a class="logout" @onclick="@LogOut">LogOut</a>
+        </div>
+
+        <div class="content px-4">
+            @Body
+        </div>
+    </div>
+
+</div>
+
+
+@code
+{
+    private async Task LogOut()
+    {
+        await ((CustomAuthenticationStateProvider) _authenticationStateProvider).Logout();
+        _navigationManager.NavigateTo("");
+    }
 }

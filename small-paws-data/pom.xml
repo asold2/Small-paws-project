@@ -15,6 +15,10 @@
 	<description>Tier 3 containing the data</description>
 	<properties>
 		<java.version>11</java.version>
+
+
+
+
 	</properties>
 	<dependencies>
 		<dependency>

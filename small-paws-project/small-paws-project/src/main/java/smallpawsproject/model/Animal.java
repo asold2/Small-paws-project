@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 
 //@Table(name="animals")
+@Transactional
 @Entity
 public class Animal implements Serializable
 {
@@ -32,6 +34,26 @@ public class Animal implements Serializable
     this.picture = picture;
     this.washed = washed;
     this.fed = fed;
+    this.vaccinated = vaccinated;
+  }
+
+  public void set(int age, String description, boolean washed, boolean fed, boolean vaccinated){
+    this.age = age;
+    this.description = description;
+    this.washed = washed;
+    this.fed = fed;
+    this.vaccinated = vaccinated;
+  }
+
+  public void setWashed(boolean washed) {
+    this.washed = washed;
+  }
+
+  public void setFed(boolean fed) {
+    this.fed = fed;
+  }
+
+  public void setVaccinated(boolean vaccinated) {
     this.vaccinated = vaccinated;
   }
 

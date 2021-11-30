@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Client.Data;
@@ -22,23 +23,23 @@ namespace Client.Pages
             try
             {
                 Animals = await AnimalService.GetAnimalsAsync();
-                ShownDescription = new string[Animals.Count+1];
-                ShownImage = new string[Animals.Count+1];
-                    foreach (Animal animal in Animals)
+                ShownImage = new string[Animals.Max(a => a.Id)+1];
+                ShownDescription = new string[Animals.Max(a => a.Id)+1];
+                foreach (Animal animal in Animals)
+                {
+                    ShownImage[animal.Id] = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
+                    var stringSize = Encoding.ASCII.GetBytes(animal.Description);
+                    Console.WriteLine(stringSize.Length);
+                    if (stringSize.Length > 100)
                     {
-                        ShownImage[animal.Id] = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
-                        var stringSize = Encoding.ASCII.GetBytes(animal.Description);
-                        Console.WriteLine(stringSize.Length);
-                        if (stringSize.Length > 100)
-                        {
-                            ShownDescription[animal.Id] = animal.Description.Substring(0, 100) + "...";
-                        }
-                        else
-                        {
-                            ShownDescription[animal.Id] = animal.Description;
-                        }
-
+                        ShownDescription[animal.Id] = animal.Description.Substring(0, 100) + "...";
                     }
+                    else
+                    {
+                        ShownDescription[animal.Id] = animal.Description;
+                    }
+
+                }
             }
             catch (Exception e)
             {

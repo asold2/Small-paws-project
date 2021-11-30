@@ -158,6 +158,7 @@ namespace Client.Pages
                 Vaccinated = Vaccinated
             };
             await AnimalService.UpdateAnimal(newAnimal);
+            NavigationManager.NavigateTo("/ViewAnimals");
         }
         
         // ReSharper disable once UnusedParameter.Local

@@ -55,6 +55,7 @@ public class AnimalController
   public JSONArray getAnimals()
   {
     System.out.println("Animals are out");
+
     return animalServices.GetAnimals();
   }
 }

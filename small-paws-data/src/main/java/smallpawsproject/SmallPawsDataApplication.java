@@ -3,7 +3,9 @@ package smallpawsproject;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import smallpawsproject.data_access.DataAccess;
 import smallpawsproject.data_access.DataAccessImpl;
+import smallpawsproject.model.AnimalAttendant;
 import smallpawsproject.model.EndUser;
+import smallpawsproject.model.Veterinarian;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
 import smallpawsproject.rmi.Server;
@@ -44,8 +46,8 @@ public class SmallPawsDataApplication {
 //		}
 
 		if(!(usersRepository.getById(2).getUserName().equals("Veterinarian") && usersRepository.getById(3).getUserName().equals("Attendant"))){
-				usersRepository.save(new EndUser("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
-				usersRepository.save(new EndUser("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+				usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+				usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
 			}
 
 	}

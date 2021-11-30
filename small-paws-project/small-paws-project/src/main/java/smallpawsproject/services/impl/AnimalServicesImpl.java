@@ -40,6 +40,8 @@ public class AnimalServicesImpl implements AnimalServices
 
   @Override public void AddAnimal(Animal animal)
   {
+    animal.setHealthNotes("Nothing to note about the animal's health");
+
     try
     {
       client.addAnimal(animal);
@@ -83,6 +85,7 @@ public class AnimalServicesImpl implements AnimalServices
        jsonObject.put("washed", animal.isWashed());
        jsonObject.put("fed", animal.isFed());
        jsonObject.put("vaccinated", animal.isVaccinated());
+       jsonObject.put("healthNotes", animal.getHealthNotes());
        animalsAsJson.add(jsonObject);
       }
 

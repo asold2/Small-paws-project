@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
@@ -28,29 +29,40 @@ public class Animal implements Serializable
   private boolean washed;
   private boolean fed;
   private boolean vaccinated;
+  private String healthNotes;
+
 
   @JsonCreator
-  public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age,@JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated)
+  public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age,@JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated, @JsonProperty("healthNotes") String healthNotes)
   {
-    this.picture = picture;
-    this.washed = washed;
-    this.fed = fed;
-    this.vaccinated = vaccinated;
     this.animalType = animalType;
     this.age = age;
     this.description = description;
+    this.picture = picture;
+    this.washed = washed;
+    this.fed = fed;
+    this.vaccinated = vaccinated;
+    this.healthNotes = healthNotes;
   }
 
-
-  public void set(byte[] picture,int age, String description, boolean washed, boolean fed, boolean vaccinated){
+  public void set(byte[] picture,int age, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
     this.picture = picture;
     this.age = age;
     this.description = description;
     this.washed = washed;
     this.fed = fed;
     this.vaccinated = vaccinated;
+    this.healthNotes = healthNotes;
   }
 
+
+  public String getHealthNotes() {
+    return healthNotes;
+  }
+
+  public void setHealthNotes(String healthNotes) {
+    this.healthNotes = healthNotes;
+  }
 
   public boolean isWashed() {
     return washed;

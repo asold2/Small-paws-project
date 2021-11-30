@@ -27,5 +27,7 @@ namespace Client.Model
         
         [JsonPropertyName("vaccinated")]
         public bool Vaccinated { get; set; }
+
+        [JsonPropertyName("healthNotes")] public string healthNotes { get; set; }
     }
 }

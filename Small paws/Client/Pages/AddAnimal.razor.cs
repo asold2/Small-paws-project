@@ -81,6 +81,7 @@ namespace Client.Pages
                 Vaccinated = _vaccinated
             };
             await AnimalService.AddAnimalAsync(newAnimal);
+            NavigationManager.NavigateTo("/ViewAnimals");
         }
 
         protected async Task Cancel()

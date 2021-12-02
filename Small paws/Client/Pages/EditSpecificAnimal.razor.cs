@@ -31,6 +31,7 @@ namespace Client.Pages
         protected bool Vaccinated;
         private byte[] _picture;
         protected string Description;
+        protected string healthNotes;
         // ReSharper disable once UnassignedField.Global
         protected string WashedIcon;
         // ReSharper disable once UnassignedField.Global
@@ -89,6 +90,7 @@ namespace Client.Pages
                         }
                 
                         Description = animal.Description;
+                        healthNotes = healthNotes;
                     }
                 }
 
@@ -150,6 +152,7 @@ namespace Client.Pages
             {
                 Id = (int) Id,
                 Description = Description,
+                healthNotes = healthNotes,
                 Picture = _picture,
                 AnimalType = AnimalType,
                 Age = (int) Age,

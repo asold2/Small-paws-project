@@ -23,6 +23,7 @@ namespace Client.Pages
         private bool _fed;
         private bool _vaccinated;
         protected string Description;
+        protected string healthNotes;
         protected string WashedIcon = "fas fa-times";
         protected string FedIcon = "fas fa-times";
         protected string VaccinatedIcon = "fas fa-times";
@@ -76,6 +77,7 @@ namespace Client.Pages
                         }
                 
                         Description = animal.Description;
+                        healthNotes = animal.healthNotes;
                     }
                 }
 

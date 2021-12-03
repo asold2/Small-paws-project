@@ -1,6 +1,7 @@
 package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,7 +16,7 @@ public class EndUser implements Serializable
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int userId;
+  private Integer userId;
   private String userName;
   private String password;
   private String role;
@@ -25,7 +26,7 @@ public class EndUser implements Serializable
 public EndUser(){}
 
   @JsonCreator
-  public EndUser(String userName, String password, String email, String role)
+  public EndUser(@JsonProperty("userName") String userName,@JsonProperty("password") String password,@JsonProperty("email") String email,@JsonProperty("role") String role)
   {
     this.role = role;
     this.userName = userName;
@@ -34,7 +35,7 @@ public EndUser(){}
   }
 
 
-  public EndUser(int Id, String userName, String password, String email, String role)
+  public EndUser( Integer Id, String userName, String password, String email, String role)
   {
     this.role = role;
     userId = Id;
@@ -43,11 +44,11 @@ public EndUser(){}
     this.email = email;
   }
 
-  public int getUserId() {
+  public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(int userId) {
+  public void setUserId(Integer userId) {
     this.userId = userId;
   }
 

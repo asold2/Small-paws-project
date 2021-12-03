@@ -53,6 +53,7 @@ namespace Client.Data
                 animalAsJson,
                 Encoding.UTF8,
                 "application/json");
+            Console.WriteLine(newAnimal.healthNotes);    
             await _httpClient.PatchAsync(Uri + "/new_information", httpContent);
             // if (!responseMessage.IsSuccessStatusCode)
             // {

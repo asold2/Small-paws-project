@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class PetOwner extends EndUser
@@ -13,7 +15,7 @@ public class PetOwner extends EndUser
   private static final long serialVersionUID = 663126647076776891L;
 
 
-  private int id;
+  private Integer id;
   private String firstName;
   private String lastName;
   private int age;
@@ -24,13 +26,16 @@ public class PetOwner extends EndUser
   private int zipcode;
   private String jobTitle;
 
+  @OneToMany(mappedBy = "userId")
+  private List<AdoptionRequest> myRequests;
+
 
   public PetOwner(){}
 
 
   @JsonCreator
   public PetOwner(@JsonProperty("jobTitle") String jobTitle, @JsonProperty("address") String address,@JsonProperty("zipcode") int zipcode,  @JsonProperty("age") int age,@JsonProperty("avgIncome") int avgIncome, @JsonProperty("familyStatus") String familyStatus, @JsonProperty("firstName") String firstName,@JsonProperty("lastName") String lastName,@JsonProperty("sex") String sex,
-      @JsonProperty("id") int id, @JsonProperty("userName") String userName, @JsonProperty("password") String password, @JsonProperty("email") String email, @JsonProperty("role") String role)
+      @JsonProperty("id") Integer id, @JsonProperty("userName") String userName, @JsonProperty("password") String password, @JsonProperty("email") String email, @JsonProperty("role") String role)
   {
     super(userName, password, email, role);
     this.id = id;
@@ -43,6 +48,7 @@ public class PetOwner extends EndUser
     this.address = address;
     this.zipcode = zipcode;
     this.jobTitle = jobTitle;
+    myRequests = new ArrayList<>();
   }
 
   public String getAddress()
@@ -140,12 +146,12 @@ public class PetOwner extends EndUser
     this.jobTitle = jobTitle;
   }
 
-  public int getId()
+  public Integer getId()
   {
     return id;
   }
 
-  public void setId(int id)
+  public void setId(Integer id)
   {
     this.id = id;
   }

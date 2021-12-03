@@ -16,7 +16,7 @@ public class EndUser implements Serializable
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int userId;
+  private Integer userId;
   private String userName;
   private String password;
   private String role;
@@ -34,7 +34,7 @@ public EndUser(){}
   }
 
 
-  public EndUser(int Id, String userName, String password,String role)
+  public EndUser(Integer Id, String userName, String password,String role)
   {
     userId = Id;
     this.userName = userName;
@@ -42,11 +42,11 @@ public EndUser(){}
     this.role = role;
   }
 
-  public int getUserId() {
+  public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(int userId) {
+  public void setUserId(Integer userId) {
     this.userId = userId;
   }
 

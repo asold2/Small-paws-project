@@ -7,6 +7,8 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 //@Table(name="animals")
 @Transactional
@@ -17,7 +19,7 @@ public class Animal implements Serializable
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer animalId;
   private byte[] picture;
   private String animalType;
   private int age;
@@ -26,6 +28,10 @@ public class Animal implements Serializable
   private boolean fed;
   private boolean vaccinated;
   private String healthNotes;
+
+  @OneToMany( mappedBy = "animalId")
+  private List<AdoptionRequest> myHopes;
+
 
   @JsonCreator
   public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age,@JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated, @JsonProperty("healthNotes") String healthNotes)
@@ -38,6 +44,7 @@ public class Animal implements Serializable
     this.fed = fed;
     this.vaccinated = vaccinated;
     this.healthNotes = healthNotes;
+    myHopes = new ArrayList<>();
   }
 
   public void set(int age, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
@@ -69,14 +76,14 @@ public class Animal implements Serializable
     this.vaccinated = vaccinated;
   }
 
-  public int getId()
+  public Integer getId()
   {
-    return id;
+    return animalId;
   }
 
-  public void setId(int id)
+  public void setId(Integer id)
   {
-    this.id = id;
+    this.animalId = id;
   }
 
   public byte[] getPicture() {

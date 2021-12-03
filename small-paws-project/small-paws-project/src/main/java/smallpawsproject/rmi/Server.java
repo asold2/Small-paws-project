@@ -1,5 +1,6 @@
 package smallpawsproject.rmi;
 
+import smallpawsproject.model.AdoptionRequest;
 import smallpawsproject.model.Animal;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
@@ -20,4 +21,9 @@ public interface Server extends Remote
 
 
   Animal updateAnimal(Animal animal) throws RemoteException;
+
+  void makeNewRequest(AdoptionRequest adoptionRequest) throws RemoteException;
+  List<AdoptionRequest> getAdoptionRequests() throws RemoteException;
+
+
 }

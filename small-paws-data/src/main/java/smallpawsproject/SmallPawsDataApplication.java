@@ -6,6 +6,7 @@ import smallpawsproject.data_access.DataAccessImpl;
 import smallpawsproject.model.AnimalAttendant;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.Veterinarian;
+import smallpawsproject.repositories.AdoptionRequestRepository;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
 import smallpawsproject.rmi.Server;
@@ -27,15 +28,17 @@ public class SmallPawsDataApplication {
 		private final PetOwnerRepository petOwnerRepository;
 		private final UsersRepository usersRepository;
 		private final AnimalRepository animalRepository;
+		private final AdoptionRequestRepository adoptionRequestRepository;
 
 		private ServiceFactory serviceFactory;
 		private DataAccess dataAccess;
 
-	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository){
+	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository, AdoptionRequestRepository adoptionRequestRepository){
 		this.petOwnerRepository = petOwnerRepository;
 		this.usersRepository = usersRepository;
 		this.animalRepository = animalRepository;
-		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository);
+		this.adoptionRequestRepository = adoptionRequestRepository;
+		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository, adoptionRequestRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
 
 //		for(int i=1; i<usersRepository.count(); i++){

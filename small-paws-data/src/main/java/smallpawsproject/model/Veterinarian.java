@@ -3,12 +3,19 @@ package smallpawsproject.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.*;
 
 @Table(name = "Verianarian")
 @Entity
 public class Veterinarian extends EndUser
 {
+
+  @OneToMany(mappedBy = "veterinarianId")
+  private List<AdoptionRequest> myDecisions;
+
 
 
   @JsonCreator
@@ -17,6 +24,8 @@ public class Veterinarian extends EndUser
     super(userName, password, email, role);
   }
   public Veterinarian(){}
+
+
 
 
 }

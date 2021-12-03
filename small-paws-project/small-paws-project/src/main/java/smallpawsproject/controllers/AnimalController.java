@@ -33,9 +33,6 @@ public class AnimalController
 
     System.out.println("Updating animal");
 
-//    Animal temp = animalServices.updateAnimal(animal);
-
-//    return ResponseEntity.ok(animalServices.updateAnimal(animal));
   return animalServices.updateAnimal(animal);
   }
 

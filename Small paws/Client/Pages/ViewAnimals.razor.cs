@@ -43,8 +43,8 @@ namespace Client.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                // Console.WriteLine(e);
+                // throw;
             }
             
         }

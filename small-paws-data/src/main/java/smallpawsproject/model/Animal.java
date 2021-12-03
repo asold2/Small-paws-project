@@ -9,9 +9,13 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.*;
+
 @Transactional
 @DynamicUpdate
 @Entity
+@Table(name="animal")
 public class Animal implements Serializable
 {
 
@@ -19,7 +23,7 @@ public class Animal implements Serializable
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer animalId;
   private byte[] picture;
   private String animalType;
   private int age;
@@ -30,6 +34,11 @@ public class Animal implements Serializable
   private boolean fed;
   private boolean vaccinated;
   private String healthNotes;
+
+
+  @OneToMany( mappedBy = "animalId")
+  private List<AdoptionRequest> myHopes;
+
 
 
   @JsonCreator
@@ -43,6 +52,7 @@ public class Animal implements Serializable
     this.fed = fed;
     this.vaccinated = vaccinated;
     this.healthNotes = healthNotes;
+    myHopes = new ArrayList<>();
   }
 
   public void set(byte[] picture,int age, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
@@ -90,14 +100,14 @@ public class Animal implements Serializable
 
   public Animal(){}
 
-  public int getId()
+  public Integer getId()
   {
-    return id;
+    return animalId;
   }
 
-  public void setId(int id)
+  public void setId(Integer id)
   {
-    this.id = id;
+    this.animalId = id;
   }
 
   public String getAnimalType()

@@ -18,5 +18,8 @@ namespace Client.Model
         [JsonPropertyName("approve")]
         public bool Approve { get; set; }
 
+        [JsonPropertyName("animalName")]
+        public string AnimalName { get; set; }
+
     }
 }

@@ -28,20 +28,30 @@ public class AdoptionRequest implements Serializable {
 
 
     private boolean approve;
+    private String animalName;
 
     @JsonCreator
-    public AdoptionRequest(@JsonProperty("date") Date date,@JsonProperty("animalId") Animal animalId,@JsonProperty("userId") PetOwner userId,@JsonProperty("veterinarianId") Veterinarian veterinarianId,@JsonProperty("approve") boolean approve) {
+    public AdoptionRequest(@JsonProperty("date") Date date,@JsonProperty("animalId") Animal animalId,@JsonProperty("userId") PetOwner userId,@JsonProperty("veterinarianId") Veterinarian veterinarianId,@JsonProperty("approve") boolean approve, @JsonProperty("animalName") String animalName) {
 
         this.date = date;
         this.animalId = animalId;
         this.userId = userId;
         this.veterinarianId = veterinarianId;
         this.approve = approve;
+        this.animalName = animalName;
     }
     public AdoptionRequest(){}
 
     public Integer getRequestid() {
         return requestId;
+    }
+
+    public String getAnimalName() {
+        return animalName;
+    }
+
+    public void setAnimalName(String animalName) {
+        this.animalName = animalName;
     }
 
     public void setRequestid(Integer requestid) {

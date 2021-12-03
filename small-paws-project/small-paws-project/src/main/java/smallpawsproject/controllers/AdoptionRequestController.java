@@ -27,7 +27,7 @@ public class AdoptionRequestController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/newRequest")
     public void makeNewRequest( @RequestBody AdoptionRequest adoptionRequest){
-        AdoptionRequest temp = new AdoptionRequest( adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(),  adoptionRequest.getVeterinarianId(), false);
+        AdoptionRequest temp = new AdoptionRequest( adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(),  adoptionRequest.getVeterinarianId(), false, adoptionRequest.getAnimalName());
         System.out.println(temp.getUserId() + " " + temp.getRequestid() + " " + temp.getAnimalId());
 
         adoptionRequestService.makeNewRequest(temp);

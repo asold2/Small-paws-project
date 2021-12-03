@@ -7,13 +7,14 @@ using Microsoft.AspNetCore.Components;
 using Client.Authentication;
 using Client.Data.AdoptionRequest;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace Client.Pages
 {
     public class ViewSpecificAnimalRazor : ComponentBase
     {
         protected  Animal cachedAnimal;
-        public static CustomAuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        [Inject]private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [Inject] private IAdoptionRequestService _adoptionRequestService { get; set; }
 
         protected EndUser cachedUser = new PetOwner();
@@ -40,6 +41,9 @@ namespace Client.Pages
         protected string WashedIcon = "fas fa-times";
         protected string FedIcon = "fas fa-times";
         protected string VaccinatedIcon = "fas fa-times";
+        protected Animal animalTemp;
+
+        protected string AnimalName;
 
         protected override async Task OnInitializedAsync()
         {
@@ -51,7 +55,9 @@ namespace Client.Pages
                 Animals = await AnimalService.GetAnimalsAsync();
                 for (int i = 0; i < Animals.Count; i++)
                 {
+                    
                     Animal animal = Animals[i];
+                    animalTemp = animal;
                     cachedAnimal = animal;
                     if (animal.Id == valueInt)
                     {
@@ -106,20 +112,37 @@ namespace Client.Pages
             }
             
         }
-        public void MakeAdoptionRequest()
+        public async Task MakeAdoptionRequest()
         {
-            cachedUser = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).getCachedUser();
-            Request.AnimalId = cachedAnimal;
-            Request.VeterinarianId = null;
-            Request.UserId = (PetOwner) cachedUser;
-            Request.DateTime = new DateTime();
-            Request.Approve = false;
-            _adoptionRequestService.MakeNewRequestAsync(Request);
+            var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).getCachedUser();
+            var animalId = Convert.ToInt32(Value);
+            var tempAnimal = new Animal();
 
-
-
-
+            foreach (var animal in Animals)
+            {
+                if (animal.Id == animalId)
+                {
+                    tempAnimal = animal;
+                }
+            }
+            var adoptRequest = new AdoptionRequest
+            {
+                UserId = (PetOwner) user,
+                AnimalId = animalTemp,
+                DateTime = DateTime.Now,
+                AnimalName = AnimalName,
+                Approve = false
+            };
+            await _adoptionRequestService.MakeNewRequestAsync(adoptRequest);
+            
         }
         
+        protected async Task Enter(KeyboardEventArgs e)
+        {
+            if (e.Code is "Enter" or "NumpadEnter")
+            {
+                await MakeAdoptionRequest();
+            }
+        }
     } 
 }

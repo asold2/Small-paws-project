@@ -36,16 +36,27 @@ public class AdoptionRequest implements Serializable {
     private Veterinarian veterinarianId;
 
     private boolean approve;
+    private String animalName;
 
 
-    public AdoptionRequest( Date date, Animal animalId, PetOwner userId, Veterinarian veterinarianId, boolean approve) {
+    public AdoptionRequest( Date date, Animal animalId, PetOwner userId, Veterinarian veterinarianId, boolean approve, String animalName) {
         this.date = date;
         this.animalId = animalId;
         this.userId = userId;
         this.veterinarianId = veterinarianId;
         this.approve = false;
+        this.animalName = animalName;
     }
     public AdoptionRequest(){}
+
+
+    public String getAnimalName() {
+        return animalName;
+    }
+
+    public void setAnimalName(String animalName) {
+        this.animalName = animalName;
+    }
 
     public Integer getRequestId() {
         return requestId;

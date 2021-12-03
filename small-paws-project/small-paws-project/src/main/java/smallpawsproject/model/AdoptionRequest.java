@@ -18,19 +18,19 @@ public class AdoptionRequest implements Serializable {
     private Date date;
 
 
-    private Integer animalId;
+    private Animal animalId;
 
 
-    private Integer userId;
+    private PetOwner userId;
 
 
-    private Integer veterinarianId;
+    private Veterinarian veterinarianId;
 
 
     private boolean approve;
 
     @JsonCreator
-    public AdoptionRequest(@JsonProperty("date") Date date,@JsonProperty("animalId") Integer animalId,@JsonProperty("userId") Integer userId,@JsonProperty("veterinarianId") Integer veterinarianId,@JsonProperty("approved") boolean approve) {
+    public AdoptionRequest(@JsonProperty("date") Date date,@JsonProperty("animalId") Animal animalId,@JsonProperty("userId") PetOwner userId,@JsonProperty("veterinarianId") Veterinarian veterinarianId,@JsonProperty("approve") boolean approve) {
 
         this.date = date;
         this.animalId = animalId;
@@ -56,27 +56,35 @@ public class AdoptionRequest implements Serializable {
         this.date = date;
     }
 
-    public Integer getAnimalId() {
+    public Integer getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(Integer requestId) {
+        this.requestId = requestId;
+    }
+
+    public Animal getAnimalId() {
         return animalId;
     }
 
-    public void setAnimalId(Integer animalId) {
+    public void setAnimalId(Animal animalId) {
         this.animalId = animalId;
     }
 
-    public Integer getUserId() {
+    public PetOwner getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(PetOwner userId) {
         this.userId = userId;
     }
 
-    public Integer getVeterinarianId() {
+    public Veterinarian getVeterinarianId() {
         return veterinarianId;
     }
 
-    public void setVeterinarianId(Integer veterinarianId) {
+    public void setVeterinarianId(Veterinarian veterinarianId) {
         this.veterinarianId = veterinarianId;
     }
 

@@ -25,20 +25,20 @@ public class AdoptionRequest implements Serializable {
 
     @ManyToOne(targetEntity = Animal.class)
     @JoinColumn(name = "animalId")
-    private Integer animalId;
+    private Animal animalId;
 
     @ManyToOne(targetEntity = PetOwner.class)
     @JoinColumn(name = "userId", nullable = false)
-    private Integer userId;
+    private PetOwner userId;
 
     @ManyToOne(targetEntity = Veterinarian.class)
-    @JoinColumn(name = "veterinarianId", nullable = false)
-    private Integer veterinarianId;
+    @JoinColumn(name = "veterinarianId", nullable = true)
+    private Veterinarian veterinarianId;
 
     private boolean approve;
 
 
-    public AdoptionRequest( Date date, Integer animalId, Integer userId, Integer veterinarianId, boolean approve) {
+    public AdoptionRequest( Date date, Animal animalId, PetOwner userId, Veterinarian veterinarianId, boolean approve) {
         this.date = date;
         this.animalId = animalId;
         this.userId = userId;
@@ -63,27 +63,27 @@ public class AdoptionRequest implements Serializable {
         this.date = date;
     }
 
-    public Integer getAnimalId() {
+    public Animal getAnimalId() {
         return animalId;
     }
 
-    public void setAnimalId(Integer animalId) {
+    public void setAnimalId(Animal animalId) {
         this.animalId = animalId;
     }
 
-    public Integer getUserId() {
+    public PetOwner getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(PetOwner userId) {
         this.userId = userId;
     }
 
-    public Integer getVeterinarianId() {
+    public Veterinarian getVeterinarianId() {
         return veterinarianId;
     }
 
-    public void setVeterinarianId(Integer veterinarianId) {
+    public void setVeterinarianId(Veterinarian veterinarianId) {
         this.veterinarianId = veterinarianId;
     }
 

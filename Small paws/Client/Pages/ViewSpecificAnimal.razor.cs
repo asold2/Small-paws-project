@@ -4,11 +4,24 @@ using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
+using Client.Authentication;
+using Client.Data.AdoptionRequest;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Client.Pages
 {
     public class ViewSpecificAnimalRazor : ComponentBase
     {
+        protected  Animal cachedAnimal;
+        public static CustomAuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        [Inject] private IAdoptionRequestService _adoptionRequestService { get; set; }
+
+        protected EndUser cachedUser = new PetOwner();
+        protected AdoptionRequest Request { get; set; }
+
+
+
+
         [Parameter]
         public string Value { get; set; }
 
@@ -30,6 +43,7 @@ namespace Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
+
             try
             {
                 var valueInt = Convert.ToInt32(Value);
@@ -38,6 +52,7 @@ namespace Client.Pages
                 for (int i = 0; i < Animals.Count; i++)
                 {
                     Animal animal = Animals[i];
+                    cachedAnimal = animal;
                     if (animal.Id == valueInt)
                     {
                         ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
@@ -90,6 +105,20 @@ namespace Client.Pages
                 throw;
             }
             
+        }
+        public void MakeAdoptionRequest()
+        {
+            cachedUser = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).getCachedUser();
+            Request.AnimalId = cachedAnimal;
+            Request.VeterinarianId = null;
+            Request.UserId = (PetOwner) cachedUser;
+            Request.DateTime = new DateTime();
+            Request.Approve = false;
+            _adoptionRequestService.MakeNewRequestAsync(Request);
+
+
+
+
         }
         
     } 

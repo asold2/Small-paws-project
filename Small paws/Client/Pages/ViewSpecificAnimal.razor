@@ -1,5 +1,6 @@
 @page "/ViewSpecificAnimal/{Value}"
 
+@using Client.Model
 @inherits ViewSpecificAnimalRazor
 
 <div class="top-side">
@@ -50,7 +51,7 @@
 		<text class="description-area">@healthNotes</text>
 	</div>
 </div>
-<div class="wrap-login-btn" >
+<div class="wrap-login-btn" @onclick="MakeAdoptionRequest">
 	<div class="login-bgbtn"></div>
 	<button class="login-btn">
 		Adopt

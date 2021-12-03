@@ -77,6 +77,11 @@ namespace Client.Authentication
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
         }
 
+        public EndUser getCachedUser()
+        {
+            return cachedUser;
+        }
+
         private ClaimsIdentity SetupClaimsForUser(EndUser endUser)
         {
             List<Claim> claims = new List<Claim>();

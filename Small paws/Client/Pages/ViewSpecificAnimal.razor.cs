@@ -25,6 +25,8 @@ namespace Client.Pages
 
         [Parameter]
         public string Value { get; set; }
+        
+        
 
         private IList<Animal> Animals { get; set; }
         [Inject] protected IAnimalService AnimalService { get; set; }
@@ -114,6 +116,7 @@ namespace Client.Pages
         }
         public async Task MakeAdoptionRequest()
         {
+            
             var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).getCachedUser();
             
             var animalId = Convert.ToInt32(Value);
@@ -138,6 +141,8 @@ namespace Client.Pages
             await _adoptionRequestService.MakeNewRequestAsync(adoptRequest);
             
         }
+        
+  
         
         protected async Task Enter(KeyboardEventArgs e)
         {

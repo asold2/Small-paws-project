@@ -1,7 +1,10 @@
 @page "/ViewSpecificAnimal/{Value}"
 
 @using Client.Model
+
 @inherits ViewSpecificAnimalRazor
+
+
 
 <div class="top-side">
 
@@ -51,14 +54,15 @@
 		<text class="description-area">@healthNotes</text>
 	</div>
 </div>
-<div class="wrap-login-btn"  @onclick="MakeAdoptionRequest">
+<div class="wrap-login-btn" >
 	<div class="login-bgbtn"></div>
-	<button class="login-btn" data-toggle="modal" data-target="#AdoptAnimalPopUpWindow">
+	<button class="login-btn" data-toggle="modal" data-target="#AdoptAnimaPopUpWindow" >
 		Adopt
-
+	</button>
+</div>
 
 @*Pop up window*@
-<div class="modal fade" id="AdoptAnimalPopUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="AdoptAnimaPopUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -78,6 +82,3 @@
 		</div>
 	</div>
 </div>
-	</button>
-</div>
-

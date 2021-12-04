@@ -31,8 +31,8 @@ public class AdoptionRequest implements Serializable {
     @JoinColumn(name = "userId", nullable = false)
     private PetOwner userId;
 
-    @ManyToOne(targetEntity = Veterinarian.class)
-    @JoinColumn(name = "veterinarianId", nullable = true)
+    @ManyToOne(targetEntity = Veterinarian.class, optional = true)
+    @JoinColumn( columnDefinition="integer", name = "veterinarianId", nullable = true)
     private Veterinarian veterinarianId;
 
     private boolean approve;

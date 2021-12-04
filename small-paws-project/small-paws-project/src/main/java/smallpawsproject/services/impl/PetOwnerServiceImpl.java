@@ -108,4 +108,18 @@ public class PetOwnerServiceImpl implements PetOwnerService
     return answer;
   }
 
+  @Override
+  public PetOwner getUserById(int id) {
+    PetOwner temp = null;
+    for(PetOwner petOwner:petOwners){
+      if(petOwner.getId()==id){
+        temp = petOwner;
+        break;
+      }
+    }
+
+
+    return temp;
+  }
+
 }

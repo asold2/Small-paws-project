@@ -3,6 +3,7 @@ package smallpawsproject;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import smallpawsproject.data_access.DataAccess;
 import smallpawsproject.data_access.DataAccessImpl;
+import smallpawsproject.model.AdoptionRequest;
 import smallpawsproject.model.AnimalAttendant;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.Veterinarian;
@@ -20,6 +21,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.remoting.rmi.RmiServiceExporter;
 
 import java.rmi.RemoteException;
+import java.util.Date;
 
 @EnableJpaRepositories
 @SpringBootApplication
@@ -41,6 +43,8 @@ public class SmallPawsDataApplication {
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository, adoptionRequestRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
 
+		adoptionRequestRepository.save(new AdoptionRequest(new Date(), animalRepository.getById(2), petOwnerRepository.getById(1), null, false, "Max"));
+
 //		for(int i=1; i<usersRepository.count(); i++){
 //			if(!(usersRepository.getById(i).getUserName().equals("Veterinarian") && usersRepository.getById(i).getUserName().equals("Attendant"))){
 //				usersRepository.save(new EndUser("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
@@ -48,10 +52,10 @@ public class SmallPawsDataApplication {
 //			}
 //		}
 
-		if(!(usersRepository.getById(2).getUserName().equals("Veterinarian") && usersRepository.getById(3).getUserName().equals("Attendant"))){
-				usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
-				usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
-			}
+//		if(!(usersRepository.getById(2).getUserName().equals("Veterinarian") && usersRepository.getById(3).getUserName().equals("Attendant"))){
+//				usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+//				usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+//			}
 
 	}
 

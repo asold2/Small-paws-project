@@ -21,6 +21,7 @@ namespace Client.Data.AdoptionRequest
 
         public async Task MakeNewRequestAsync(Model.AdoptionRequest adoptionRequest)
         {
+            Console.WriteLine("Making new Adoption request");
             Console.WriteLine(adoptionRequest.AnimalId.Id + " " + adoptionRequest.UserId + " " + adoptionRequest.RequestId);
             var requestAsJson = JsonSerializer.Serialize(adoptionRequest);
             HttpContent httpContent = new StringContent(

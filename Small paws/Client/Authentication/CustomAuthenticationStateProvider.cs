@@ -16,7 +16,7 @@ namespace Client.Authentication
         private readonly IUserLogInService LogInService;
 
         private EndUser cachedUser;
-        
+
         public CustomAuthenticationStateProvider(IJSRuntime jsRuntime, IUserLogInService logInService)
         {
             this.jsRuntime = jsRuntime;

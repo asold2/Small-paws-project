@@ -115,6 +115,7 @@ namespace Client.Pages
         public async Task MakeAdoptionRequest()
         {
             var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).getCachedUser();
+            
             var animalId = Convert.ToInt32(Value);
             var tempAnimal = new Animal();
 
@@ -127,12 +128,13 @@ namespace Client.Pages
             }
             var adoptRequest = new AdoptionRequest
             {
-                UserId = (PetOwner) user,
+                UserId = await _adoptionRequestService.GetPetOwnerByIdAsync(user.Id),
                 AnimalId = animalTemp,
                 DateTime = DateTime.Now,
                 AnimalName = AnimalName,
                 Approve = false
             };
+            Console.WriteLine(adoptRequest.UserId.Id);
             await _adoptionRequestService.MakeNewRequestAsync(adoptRequest);
             
         }

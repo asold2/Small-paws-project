@@ -42,9 +42,7 @@ public class AdoptionRequest implements Serializable {
     }
     public AdoptionRequest(){}
 
-    public Integer getRequestid() {
-        return requestId;
-    }
+
 
     public String getAnimalName() {
         return animalName;

@@ -30,6 +30,7 @@ namespace Client
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            
             services.AddSingleton<IAnimalService, CloudAnimalService>();
             services.AddSingleton<IUserLogInService, CloudUserLogInService>();
             services.AddSingleton<IUserCreateAccountService, CloudUserCreateAccountService>();

@@ -81,7 +81,14 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
 
   @Override
   public void makeNewRequest(AdoptionRequest adoptionRequest) throws RemoteException {
+
       server.makeNewRequest(adoptionRequest);
+    System.out.println("getting request over the tiers");
+  }
+
+  @Override
+  public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException {
+    return server.updateAdoptionRequest(adoptionRequest);
   }
 
 }

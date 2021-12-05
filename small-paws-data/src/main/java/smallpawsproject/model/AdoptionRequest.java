@@ -12,6 +12,7 @@ import java.util.Date;
 @Transactional
 @DynamicUpdate
 @Table (name= "requests")
+//uniqueConstraints = {@UniqueConstraint(columnNames = {"animalId", "userId"})}
 public class AdoptionRequest implements Serializable {
 
     private static final long serialVersionUID = 4521576984820142625L;
@@ -35,8 +36,11 @@ public class AdoptionRequest implements Serializable {
     @JoinColumn( columnDefinition="integer", name = "veterinarianId", nullable = true)
     private Veterinarian veterinarianId;
 
+//    @Column(nullable = true)
     private boolean approve;
     private String animalName;
+
+
 
 
     public AdoptionRequest( Date date, Animal animalId, PetOwner userId, Veterinarian veterinarianId, boolean approve, String animalName) {
@@ -47,6 +51,14 @@ public class AdoptionRequest implements Serializable {
         this.approve = false;
         this.animalName = animalName;
     }
+
+    public void set(boolean approve, Veterinarian veterinarianId, Date date){
+        this.approve = approve;
+        this.veterinarianId = veterinarianId;
+        this.date = date;
+    }
+
+
     public AdoptionRequest(){}
 
 

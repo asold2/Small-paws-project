@@ -24,4 +24,7 @@ public interface ClientRMI extends Remote
   List<AdoptionRequest> getAdoptionRequests() throws RemoteException;
 
   void makeNewRequest(AdoptionRequest adoptionRequest) throws RemoteException;
+  AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException;
+
+
 }

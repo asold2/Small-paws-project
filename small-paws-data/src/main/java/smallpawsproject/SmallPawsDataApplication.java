@@ -43,7 +43,7 @@ public class SmallPawsDataApplication {
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository, adoptionRequestRepository);
 		dataAccess = new DataAccessImpl(serviceFactory);
 
-		adoptionRequestRepository.save(new AdoptionRequest(new Date(), animalRepository.getById(2), petOwnerRepository.getById(1), null, false, "Max"));
+//		adoptionRequestRepository.save(new AdoptionRequest(new Date(), animalRepository.getById(2), petOwnerRepository.getById(1), null, false, "Max"));
 
 //		for(int i=1; i<usersRepository.count(); i++){
 //			if(!(usersRepository.getById(i).getUserName().equals("Veterinarian") && usersRepository.getById(i).getUserName().equals("Attendant"))){

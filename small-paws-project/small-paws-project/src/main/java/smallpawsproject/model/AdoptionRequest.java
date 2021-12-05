@@ -3,6 +3,7 @@ package smallpawsproject.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 public class AdoptionRequest implements Serializable {
 
     private static final long serialVersionUID = 4521576984820142625L;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,6 +44,11 @@ public class AdoptionRequest implements Serializable {
     }
     public AdoptionRequest(){}
 
+    public void set(boolean approve, Veterinarian veterinarianId, Date date){
+        this.approve = approve;
+        this.veterinarianId = veterinarianId;
+        this.date = date;
+    }
 
 
     public String getAnimalName() {

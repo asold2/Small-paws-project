@@ -53,10 +53,16 @@ public class ServerImpl implements Server
   @Override
   public void makeNewRequest(AdoptionRequest adoptionRequest) throws RemoteException {
     dataAccess.makeNewRequest(adoptionRequest);
+    System.out.println("Sending to dataAccess");
   }
 
   @Override
   public List<AdoptionRequest> getAdoptionRequests() throws RemoteException {
     return dataAccess.getAdoptionRequests();
+  }
+
+  @Override
+  public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) {
+    return dataAccess.updateAdoptionRequest(adoptionRequest);
   }
 }

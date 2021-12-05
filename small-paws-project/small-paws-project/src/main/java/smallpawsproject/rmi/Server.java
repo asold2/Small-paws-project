@@ -25,5 +25,7 @@ public interface Server extends Remote
   void makeNewRequest(AdoptionRequest adoptionRequest) throws RemoteException;
   List<AdoptionRequest> getAdoptionRequests() throws RemoteException;
 
+  AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException;
+
 
 }

@@ -26,7 +26,7 @@ public class PetOwner extends EndUser
   private int zipcode;
   private String jobTitle;
 
-  @OneToMany(mappedBy = "userId")
+  @OneToMany(mappedBy = "userId", cascade = CascadeType.REMOVE)
   private List<AdoptionRequest> myRequests;
 
 

@@ -60,4 +60,9 @@ public class DataAccessImpl implements DataAccess
   public void makeNewRequest(AdoptionRequest adoptionRequest) {
       serviceFactory.getAdoptionRequestService().makeNewRequest(adoptionRequest);
   }
+
+  @Override
+  public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) {
+    return serviceFactory.getAdoptionRequestService().updateAdoptionRequest(adoptionRequest);
+  }
 }

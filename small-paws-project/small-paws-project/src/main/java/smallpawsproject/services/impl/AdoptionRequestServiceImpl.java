@@ -36,8 +36,10 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
     @Override
     public void makeNewRequest(AdoptionRequest adoptionRequest) {
+
         try {
             client.makeNewRequest(adoptionRequest);
+            System.out.println("Sent request through client");
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -46,7 +48,18 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
     @Override
     public List<AdoptionRequest> getAdoptionRequests() {
         try {
+            System.out.println("Adoption Requsts from client in service");
             return client.getAdoptionRequests();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) {
+        try {
+            return client.updateAdoptionRequest(adoptionRequest);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

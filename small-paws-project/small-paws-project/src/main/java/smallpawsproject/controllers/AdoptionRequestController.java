@@ -32,18 +32,17 @@ public class AdoptionRequestController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/newRequest")
     public void makeNewRequest( @RequestBody AdoptionRequest adoptionRequest){
-        System.out.println(adoptionRequest.getUserId().getId() + "!!!!!!");
+        System.out.println("Making new request");
         PetOwner tem = getPetOwnerById(adoptionRequest.getUserId().getId());
-        System.out.println(tem.getUserName());
-        AdoptionRequest temp = new AdoptionRequest( adoptionRequest.getDate(), adoptionRequest.getAnimalId(), tem,  adoptionRequest.getVeterinarianId(), false, adoptionRequest.getAnimalName());
-//        System.out.println(temp.getUserId().getUserId() + "!!!! " + temp.getRequestId() + " " + temp.getAnimalId());
 
+        AdoptionRequest temp = new AdoptionRequest( adoptionRequest.getDate(), adoptionRequest.getAnimalId(), tem,  adoptionRequest.getVeterinarianId(), false, adoptionRequest.getAnimalName());
+        System.out.println(temp);
         adoptionRequestService.makeNewRequest(temp);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/requests")
     @ResponseBody
-    public List<AdoptionRequest> getAdoptionrequests(){
+    public List<AdoptionRequest> getAdoptionRequests(){
         return adoptionRequestService.getAdoptionRequests();
     }
 
@@ -52,6 +51,14 @@ public class AdoptionRequestController {
     public PetOwner getPetOwnerById(@PathVariable int id)
     {
         return petOwnerService.getUserById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.PATCH, value="/request_decision")
+    @ResponseBody
+    public AdoptionRequest updateAdoptionrequest(AdoptionRequest adoptionRequest){
+
+        return adoptionRequestService.updateAdoptionRequest(adoptionRequest);
+
     }
 
 }

@@ -36,7 +36,7 @@ public class Animal implements Serializable
   private String healthNotes;
 
 
-  @OneToMany( mappedBy = "animalId")
+  @OneToMany( mappedBy = "animalId", cascade = CascadeType.REMOVE)
   private List<AdoptionRequest> myHopes;
 
 
@@ -54,6 +54,8 @@ public class Animal implements Serializable
     this.healthNotes = healthNotes;
     myHopes = new ArrayList<>();
   }
+
+
 
   public void set(byte[] picture,int age, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
     this.picture = picture;

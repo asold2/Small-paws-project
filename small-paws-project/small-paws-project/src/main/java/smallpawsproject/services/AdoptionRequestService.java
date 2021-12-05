@@ -8,4 +8,5 @@ import java.util.List;
 public interface AdoptionRequestService {
     void makeNewRequest(AdoptionRequest adoptionRequest);
     List<AdoptionRequest> getAdoptionRequests();
+    AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest);
 }

@@ -46,6 +46,7 @@ public class Animal implements Serializable
     this.healthNotes = healthNotes;
     myHopes = new ArrayList<>();
   }
+  public Animal(){}
 
   public void set(int age, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
     this.age = age;

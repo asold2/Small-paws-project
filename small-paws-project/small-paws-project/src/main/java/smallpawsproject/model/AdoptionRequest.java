@@ -33,7 +33,7 @@ public class AdoptionRequest implements Serializable {
     private String animalName;
 
     @JsonCreator
-    public AdoptionRequest(@JsonProperty("requestId") Integer requestId ,@JsonProperty("date") Date date,@JsonProperty("animalId") Animal animalId,@JsonProperty("userId") PetOwner userId,@JsonProperty("veterinarianId") Veterinarian veterinarianId,@JsonProperty("approve") boolean approve, @JsonProperty("animalName") String animalName) {
+    public AdoptionRequest(@JsonProperty("date") Date date,@JsonProperty("animalId") Animal animalId,@JsonProperty("userId") PetOwner userId,@JsonProperty("veterinarianId") Veterinarian veterinarianId,@JsonProperty("approve") boolean approve, @JsonProperty("animalName") String animalName) {
 
         this.date = date;
         this.animalId = animalId;

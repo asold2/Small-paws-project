@@ -7,7 +7,7 @@ namespace Client.Model
     public class AdoptionRequest
     {
         [JsonPropertyName("requestId")] 
-        public int RequestId { get;  }
+        public int RequestId { get; set; }
         [JsonPropertyName("date")]
         public DateTime DateTime { get; set; }
         [JsonPropertyName("animalId")]

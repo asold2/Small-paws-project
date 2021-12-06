@@ -8,6 +8,7 @@ import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.AdoptionRequestService;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class AdoptionRequestServiceImpl implements AdoptionRequestService {
@@ -36,7 +37,6 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
     @Override
     public void makeNewRequest(AdoptionRequest adoptionRequest) {
-
         try {
             client.makeNewRequest(adoptionRequest);
             System.out.println("Sent request through client");
@@ -47,13 +47,14 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
     @Override
     public List<AdoptionRequest> getAdoptionRequests() {
+        List<AdoptionRequest> requests = new ArrayList<>();
         try {
-            System.out.println("Adoption Requsts from client in service");
-            return client.getAdoptionRequests();
+            System.out.println("Adoption Requests from client in service");
+            requests = client.getAdoptionRequests();
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-        return null;
+        return requests;
     }
 
     @Override

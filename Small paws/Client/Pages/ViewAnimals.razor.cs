@@ -29,7 +29,7 @@ namespace Client.Pages
                 {
                     ShownImage[animal.Id] = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
                     var stringSize = Encoding.ASCII.GetBytes(animal.Description);
-                    Console.WriteLine(stringSize.Length);
+                    // Console.WriteLine(stringSize.Length);
                     if (stringSize.Length > 100)
                     {
                         ShownDescription[animal.Id] = animal.Description.Substring(0, 100) + "...";

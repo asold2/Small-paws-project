@@ -62,14 +62,16 @@ namespace Client.Data.Registration
 
 
         public async Task<int> CreateUserAsync(PetOwner petOwner)
-        { 
-           
+        {
+            Console.WriteLine(petOwner.Id + "id to create");
             var userAsJson = JsonSerializer.Serialize(petOwner);
+            Console.WriteLine(userAsJson);
             HttpContent httpContent = new StringContent(
                 userAsJson,
                 Encoding.UTF8,
                 "application/json");
             var responseMessage = await _httpClient.PostAsync(Uri + "/newAccount", httpContent);
+            
             
             if (!responseMessage.IsSuccessStatusCode)
             {

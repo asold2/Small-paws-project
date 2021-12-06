@@ -131,13 +131,16 @@ namespace Client.Pages
             }
             var adoptRequest = new AdoptionRequest
             {
-                UserId = await _adoptionRequestService.GetPetOwnerByIdAsync(user.Id),
-                AnimalId = animalTemp,
                 DateTime = DateTime.Now,
-                AnimalName = AnimalName,
-                Approve = false
+                AnimalId = animalTemp,
+                UserId = await _adoptionRequestService.GetPetOwnerByIdAsync(user.userId),
+                Approve = false,
+                AnimalName = AnimalName
+                
             };
-            Console.WriteLine(adoptRequest.UserId.Id);
+            Console.WriteLine(adoptRequest.UserId+ "!!!!!!!!!!") ;
+            
+           
             await _adoptionRequestService.MakeNewRequestAsync(adoptRequest);
             
         }

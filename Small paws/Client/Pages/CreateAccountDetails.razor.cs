@@ -56,6 +56,7 @@ namespace Client.Pages
                 JobTitle = JobTitle,
                 Id = (int) Id
             };
+            Console.WriteLine(petOwner.Id);
             if (Age < 15 || Age > 130)
             {
                 AgeError = "Age is either too low or too high";
@@ -72,7 +73,7 @@ namespace Client.Pages
 
             else if (await UserCreateAccountService.CreateUserAsync(petOwner) == 201)
             {
-                NavigationManager.NavigateTo("ViewAnimals");
+                NavigationManager.NavigateTo("");
             }
             else
             {

@@ -90,7 +90,7 @@ using Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "F:\SmallPaws\Small paws\Client\Shared\NavMenu.razor"
+#line 42 "F:\SmallPaws\Small paws\Client\Shared\NavMenu.razor"
        
     private bool _collapseNavMenu = true;
 

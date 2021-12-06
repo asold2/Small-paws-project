@@ -9,5 +9,7 @@ namespace Client.Data.AdoptionRequest
         Task MakeNewRequestAsync (Model.AdoptionRequest adoptionRequest);
         Task<List<Model.AdoptionRequest>> GetAdoptionRequestsAsync();
          Task<PetOwner> GetPetOwnerByIdAsync(int id);
+         Task<Veterinarian> GetVeterinarianByIdAsync(int id);
+         Task UpdateAdoptionRequest(Model.AdoptionRequest adoptRequest);
     }
 }

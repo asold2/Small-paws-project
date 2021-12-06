@@ -3,6 +3,7 @@ package smallpawsproject.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smallpawsproject.model.EndUser;
+import smallpawsproject.model.Veterinarian;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.UsersService;
@@ -68,5 +69,18 @@ public class UserServiceImpl implements UsersService
       }
     }
     return answer;
+  }
+
+  @Override
+  public Veterinarian getUserById(int id) {
+    EndUser temp = new Veterinarian();
+    for(EndUser e : users){
+      if(e.getUserId()==id){
+        temp = e;
+        break;
+      }
+    }
+
+    return (Veterinarian) temp;
   }
 }

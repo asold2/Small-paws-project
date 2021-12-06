@@ -3,7 +3,9 @@ package smallpawsproject.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import smallpawsproject.model.AdoptionRequest;
+import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
+import smallpawsproject.model.Veterinarian;
 import smallpawsproject.services.AdoptionRequestService;
 import smallpawsproject.services.AnimalServices;
 import smallpawsproject.services.PetOwnerService;
@@ -32,10 +34,9 @@ public class AdoptionRequestController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/newRequest")
     public void makeNewRequest( @RequestBody AdoptionRequest adoptionRequest){
-        System.out.println("Making new request");
-        PetOwner tem = getPetOwnerById(adoptionRequest.getUserId().getId());
+        System.out.println(adoptionRequest.getUserId() + "!!!!!!!!");
 
-        AdoptionRequest temp = new AdoptionRequest( adoptionRequest.getDate(), adoptionRequest.getAnimalId(), tem,  adoptionRequest.getVeterinarianId(), false, adoptionRequest.getAnimalName());
+        var temp = new AdoptionRequest( adoptionRequest.getRequestId(),adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(),  null, false, adoptionRequest.getAnimalName());
         System.out.println(temp);
         adoptionRequestService.makeNewRequest(temp);
     }
@@ -43,6 +44,8 @@ public class AdoptionRequestController {
     @RequestMapping(method = RequestMethod.GET, value = "/requests")
     @ResponseBody
     public List<AdoptionRequest> getAdoptionRequests(){
+        System.out.println(adoptionRequestService.getAdoptionRequests().get(0).getRequestId() + "Heeeeeeereeeeeee");
+
         return adoptionRequestService.getAdoptionRequests();
     }
 
@@ -50,14 +53,31 @@ public class AdoptionRequestController {
     @ResponseBody
     public PetOwner getPetOwnerById(@PathVariable int id)
     {
+        System.out.println(petOwnerService.getUserById(id));
         return petOwnerService.getUserById(id);
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/veterinarian/{id}" )
+    @ResponseBody
+    public Veterinarian getVeterinarianById(@PathVariable int id)
+    {
+
+        return usersService.getUserById(id);
+    }
+
+
+
+
 
     @RequestMapping(method = RequestMethod.PATCH, value="/request_decision")
     @ResponseBody
     public AdoptionRequest updateAdoptionrequest(AdoptionRequest adoptionRequest){
+        System.out.println(adoptionRequest+"<<<<<<<<<<<<");
 
-        return adoptionRequestService.updateAdoptionRequest(adoptionRequest);
+
+        var temp = new AdoptionRequest(adoptionRequest.getRequestId(), adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(), adoptionRequest.getVeterinarianId(), false, adoptionRequest.getAnimalName());
+
+        return adoptionRequestService.updateAdoptionRequest(temp);
 
     }
 

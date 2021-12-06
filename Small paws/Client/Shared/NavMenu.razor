@@ -20,6 +20,21 @@
                 </NavLink>
             </li>
         </AuthorizeView>
+        <AuthorizeView Policy="MustBeVeterinarian">
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="AdoptionRequestList">
+                            <span class="oi oi-plus" aria-hidden="true"></span> AdoptionRequestList
+                        </NavLink>
+                    </li>
+                </AuthorizeView>
+        <AuthorizeView Policy="MustBePetOwner">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="AdoptionRequestList">
+                    <span class="oi oi-plus" aria-hidden="true"></span> AdoptionRequestList
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        
 
     </ul>
 </div>

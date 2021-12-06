@@ -4,8 +4,8 @@ namespace Client.Model
 {
     public class EndUser
     {
-        [JsonPropertyName("id")]
-        public int Id { get; set; }
+        [JsonPropertyName("userId")]
+        public int userId { get; set; }
         [JsonPropertyName("userName")]
         public string UserName { get; set; }
         [JsonPropertyName("password")]

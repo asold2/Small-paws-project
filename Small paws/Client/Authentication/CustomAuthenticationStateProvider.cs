@@ -79,6 +79,7 @@ namespace Client.Authentication
 
         public EndUser getCachedUser()
         {
+            // Console.WriteLine(cachedUser.Id +" id in authentication");
             return cachedUser;
         }
 

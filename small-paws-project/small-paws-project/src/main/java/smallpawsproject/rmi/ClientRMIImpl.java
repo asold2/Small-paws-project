@@ -22,7 +22,6 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
   public ClientRMIImpl() throws RemoteException
   {
     super();
-
   }
 
   @Override public void connect()

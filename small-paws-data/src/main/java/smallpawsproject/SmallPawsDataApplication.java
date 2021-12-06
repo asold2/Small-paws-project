@@ -53,8 +53,8 @@ public class SmallPawsDataApplication {
 //		}
 
 //		if(!(usersRepository.getById(2).getUserName().equals("Veterinarian") && usersRepository.getById(3).getUserName().equals("Attendant"))){
-				usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
-				usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+//				usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+//				usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
 //			}
 
 	}

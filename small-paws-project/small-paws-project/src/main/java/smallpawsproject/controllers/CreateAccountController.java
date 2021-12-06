@@ -20,9 +20,9 @@ public class CreateAccountController
   @Autowired
   private final PetOwnerService petOwnerService;
 
-  public CreateAccountController(PetOwnerService registrationService)
+  public CreateAccountController(PetOwnerService petOwnerService)
   {
-    this.petOwnerService = registrationService;
+    this.petOwnerService = petOwnerService;
   }
 
   @PostMapping("/userName")

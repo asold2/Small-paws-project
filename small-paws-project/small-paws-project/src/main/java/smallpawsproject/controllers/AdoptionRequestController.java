@@ -36,7 +36,7 @@ public class AdoptionRequestController {
     public void makeNewRequest( @RequestBody AdoptionRequest adoptionRequest){
         System.out.println(adoptionRequest.getUserId() + "!!!!!!!!");
 
-        var temp = new AdoptionRequest( adoptionRequest.getRequestId(),adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(),  null, false, adoptionRequest.getAnimalName());
+        var temp = new AdoptionRequest(adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(),  null, false, adoptionRequest.getAnimalName());
         System.out.println(temp);
         adoptionRequestService.makeNewRequest(temp);
     }
@@ -71,13 +71,15 @@ public class AdoptionRequestController {
 
     @RequestMapping(method = RequestMethod.PATCH, value="/request_decision")
     @ResponseBody
-    public AdoptionRequest updateAdoptionrequest(AdoptionRequest adoptionRequest){
-        System.out.println(adoptionRequest+"<<<<<<<<<<<<");
+    public void updateAdoptionrequest(@RequestBody AdoptionRequest adoptionRequest){
+        System.out.println(adoptionRequest.getVeterinarianId()+"<<<<<<<<<<<<");
+//        System.out.println(adoptionRequest.getRequestId()+"<<<<<<<<<<<<");
+        System.out.println(adoptionRequest.getAnimalName()+"<<<<<<<<<<<<");
 
 
-        var temp = new AdoptionRequest(adoptionRequest.getRequestId(), adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(), adoptionRequest.getVeterinarianId(), false, adoptionRequest.getAnimalName());
+//        var temp = new AdoptionRequest(adoptionRequest.getRequestId(), adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(), adoptionRequest.getVeterinarianId(), adoptionRequest.isApprove(), adoptionRequest.getAnimalName());
 
-        return adoptionRequestService.updateAdoptionRequest(temp);
+        adoptionRequestService.updateAdoptionRequest(adoptionRequest);
 
     }
 

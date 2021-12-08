@@ -15,7 +15,7 @@ public class EndUser implements Serializable
   private static final long serialVersionUID = 663126647076776891L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.TABLE)
   private Integer userId;
   private String userName;
   private String password;

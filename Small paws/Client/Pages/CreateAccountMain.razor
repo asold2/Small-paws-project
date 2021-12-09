@@ -13,7 +13,9 @@
 			
 				<div class="wrap-input">
 						<span class="label-input">Email</span>
-						<input class="input" type="text" name="username" placeholder="Type your email" @bind="_endUser.Email" @onkeyup="@Enter">
+					<input class="input" type="text" name="username" placeholder="Type your email" @bind="_endUser.Email" @onkeyup="@Enter">
+					<div style="color: red">@emailError</div>
+
 						<span class='focus-input'></span>
 						<i class="fas fa-envelope"></i>
 				</div>

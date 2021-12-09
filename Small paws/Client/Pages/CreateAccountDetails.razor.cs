@@ -33,6 +33,9 @@ namespace Client.Pages
         protected string AvgIncomeError="";
         protected string AgeError="";
         protected string Error = "";
+        protected string firstNameError = "";
+        protected string lastNameError = "";
+        protected string familyStatusNameError = "";
 
         protected async Task LoadViewAnimals()
         {

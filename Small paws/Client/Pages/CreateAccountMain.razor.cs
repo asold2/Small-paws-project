@@ -16,13 +16,15 @@ namespace Client.Pages
         [Inject] private NavigationManager NavigationManager { get; set; }
 
         [Inject]
-        private EndUser EndUser { get; set; }
+        protected EndUser EndUser { get; set; }
         
         protected string PasswordConfirmation { get; set; }
 
         protected string passwordError = "";
 
         protected string userNameError = "";
+
+        protected string emailError = "";
         // private IList<EndUser> users = null;
 
         protected void LoadLogIn()
@@ -32,7 +34,8 @@ namespace Client.Pages
         protected void LoadCreateAccountDetails()
         {
 
-            if (EndUser.Password.Equals(PasswordConfirmation))
+            
+            if (EndUser.Password.Equals(PasswordConfirmation) && EndUser.Email.Length!=0)
             {
                 NavigationManager.NavigateTo("CreateAccountDetails");
             }

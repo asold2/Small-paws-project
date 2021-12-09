@@ -15,6 +15,7 @@ public class PetOwner extends EndUser
 
   private static final long serialVersionUID = 663126647076776891L;
 
+  @Column(unique = true)
   private Integer id;
   private String firstName;
   private String lastName;

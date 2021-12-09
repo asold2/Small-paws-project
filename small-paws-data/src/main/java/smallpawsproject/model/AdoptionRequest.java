@@ -20,7 +20,7 @@ public class AdoptionRequest implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer requestId;
     private Date date;
 

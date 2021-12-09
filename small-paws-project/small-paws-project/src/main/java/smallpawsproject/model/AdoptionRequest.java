@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+@SuppressWarnings("unused")
 @Entity
 public class AdoptionRequest implements Serializable {
 
@@ -57,10 +58,6 @@ public class AdoptionRequest implements Serializable {
 
     public void setAnimalName(String animalName) {
         this.animalName = animalName;
-    }
-
-    public void setRequestid(Integer requestid) {
-        this.requestId = requestid;
     }
 
     public Date getDate() {

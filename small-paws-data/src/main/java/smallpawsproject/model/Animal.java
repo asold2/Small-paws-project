@@ -3,8 +3,6 @@ package smallpawsproject.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
@@ -12,6 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.*;
 
+@SuppressWarnings("unused")
 @Transactional
 @DynamicUpdate
 @Entity

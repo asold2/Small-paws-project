@@ -7,8 +7,6 @@ import smallpawsproject.model.Veterinarian;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.UsersService;
-
-import javax.servlet.http.HttpServletResponse;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +15,8 @@ import java.util.List;
 public class UserServiceImpl implements UsersService
 {
   @Autowired
-  private ClientFactory clientFactory;
-  private ClientRMI client;
+  private final ClientFactory clientFactory;
+  private final ClientRMI client;
   private List<EndUser> users = new ArrayList<>();
 
   public UserServiceImpl(){

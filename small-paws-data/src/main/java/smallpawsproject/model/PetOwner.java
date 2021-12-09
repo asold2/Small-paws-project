@@ -1,14 +1,9 @@
 package smallpawsproject.model;
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
-
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.*;
 
+@SuppressWarnings("unused")
 @Entity
 public class PetOwner extends EndUser
 {
@@ -150,10 +145,7 @@ public class PetOwner extends EndUser
   public void setZipcode(int zipcode) {
     this.zipcode = zipcode;
   }
-//
-//  public void setId(Integer id) {
-//    this.id = id;
-//  }
+
 
   public List<AdoptionRequest> getMyRequests() {
     return myRequests;

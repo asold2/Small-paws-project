@@ -30,7 +30,7 @@ public class PetOwnerTesting {
         List<PetOwner> petOwners = petOwnerRepository.findAll();
 
         for (var temp: petOwners) {
-            if (temp.getId() == petOwner.getId())
+            if (temp.getId().equals(petOwner.getId()))
                 petOwner.setUserId(temp.getUserId());
         }
         PetOwner foundPetOwner = petOwnerRepository.findById(petOwner.getUserId()).orElse(null);
@@ -40,9 +40,8 @@ public class PetOwnerTesting {
         }
         assertNotNull(foundPetOwner);
         assertEquals(petOwner.getId(), foundPetOwner.getId());
-        if (foundPetOwner != null)
-        {
-            petOwnerRepository.deleteById(foundPetOwner.getUserId());
-        }
+
+        //deleting saved pet owner from database
+        petOwnerRepository.deleteById(foundPetOwner.getUserId());
     }
 }

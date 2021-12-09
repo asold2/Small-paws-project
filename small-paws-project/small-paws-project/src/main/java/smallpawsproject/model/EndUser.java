@@ -2,10 +2,10 @@ package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "end_user")
 @Inheritance(strategy = InheritanceType.JOINED)

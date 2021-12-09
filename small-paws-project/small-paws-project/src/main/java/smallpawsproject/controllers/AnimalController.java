@@ -21,11 +21,10 @@ public class AnimalController
 
   @RequestMapping(method = RequestMethod.PATCH, value="/new_information")
   @ResponseBody
-  public Animal updateAnimal(@RequestBody Animal animal){
+  public void updateAnimal(@RequestBody Animal animal){
 
     System.out.println("Updating animal");
-
-  return animalServices.updateAnimal(animal);
+    animalServices.updateAnimal(animal);
   }
 
 

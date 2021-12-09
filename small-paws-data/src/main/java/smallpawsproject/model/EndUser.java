@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "end_user")
 @Inheritance(strategy = InheritanceType.JOINED)

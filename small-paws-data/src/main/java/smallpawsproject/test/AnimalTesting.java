@@ -9,9 +9,7 @@ import smallpawsproject.SmallPawsDataApplication;
 import smallpawsproject.model.Animal;
 import smallpawsproject.repositories.AnimalRepository;
 
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SmallPawsDataApplication.class)
@@ -22,25 +20,25 @@ public class AnimalTesting {
     @Test
     public void WhenSaveAndRetrieveAnimal_thenOK()
     {
-        Animal animal = animalRepository.save(new Animal("bird", 3, "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
+        Animal animal = animalRepository.save(new Animal("bird", 3, "Male", "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
         Animal foundAnimal = animalRepository.findById(animal.getId()).orElse(null);
         assertNotNull(foundAnimal);
         assertEquals(animal.getId(), foundAnimal.getId());
-        if (foundAnimal != null)
-        {
-            animalRepository.deleteById(animal.getId());
-        }
+
+        //deleting saved animal from database
+        animalRepository.deleteById(animal.getId());
     }
 
     @Test
     public void UpdateAnimal()
     {
-        Animal animal = animalRepository.save(new Animal("bird", 3, "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
+        Animal animal = animalRepository.save(new Animal("bird", 3, "Male", "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
 
         //updating age
         animal.setAge(5);
         animalRepository.save(animal);
         Animal foundAnimal = animalRepository.findById(animal.getId()).orElse(null);
+        assert foundAnimal != null;
         assertEquals(foundAnimal.getAge(), 5);
 
 
@@ -49,29 +47,31 @@ public class AnimalTesting {
         animal.setDescription(newDescription);
         animalRepository.save(animal);
         foundAnimal = animalRepository.findById(animal.getId()).orElse(null);
+        assert foundAnimal != null;
         assertEquals(foundAnimal.getDescription(), newDescription);
 
         //updating fed status
         animal.setFed(false);
         animalRepository.save(animal);
         foundAnimal = animalRepository.findById(animal.getId()).orElse(null);
-        assertEquals(foundAnimal.isFed(), false);
+        assert foundAnimal != null;
+        assertFalse(foundAnimal.isFed());
 
         //updating washed status
         animal.setWashed(true);
         animalRepository.save(animal);
         foundAnimal = animalRepository.findById(animal.getId()).orElse(null);
-        assertEquals(foundAnimal.isWashed(), true);
+        assert foundAnimal != null;
+        assertTrue(foundAnimal.isWashed());
 
         //updating vaccinated status
         animal.setVaccinated(true);
         animalRepository.save(animal);
         foundAnimal = animalRepository.findById(animal.getId()).orElse(null);
-        assertEquals(foundAnimal.isVaccinated(), true);
+        assert foundAnimal != null;
+        assertTrue(foundAnimal.isVaccinated());
 
-        if (foundAnimal != null)
-        {
-            animalRepository.deleteById(animal.getId());
-        }
+        //deleting saved animal from database
+        animalRepository.deleteById(animal.getId());
     }
 }

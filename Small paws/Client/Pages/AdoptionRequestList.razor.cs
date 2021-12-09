@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Client.Authentication;
 using Client.Model;
-using Client.Data;
 using Client.Data.AdoptionRequest;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -26,13 +25,13 @@ namespace Client.Pages
             StatusText = new string[AdoptRequests.Count];
             if (AdoptRequests.Any())
             {
-                for (int i = 0; i < AdoptRequests.Count; i++)
+                for (var i = 0; i < AdoptRequests.Count; i++)
                 {
                     if (AdoptRequests[i].VeterinarianId == null)
                     {
                         StatusText[i] = "Awaiting";
                     }
-                    else if (AdoptRequests[i].Approve == true)
+                    else if (AdoptRequests[i].Approve)
                     {
                         StatusText[i] = "Approved";
                     }
@@ -48,10 +47,10 @@ namespace Client.Pages
         protected async Task AcceptRequest(AdoptionRequest adoptRequest)
         {
             adoptRequest.Approve = true;
-            var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).getCachedUser();
-            Console.WriteLine(user.userId + "User's id here");
+            var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser();
+            Console.WriteLine(user.UserId + "User's id here");
 
-            Veterinarian vet = await AdoptionRequestService.GetVeterinarianByIdAsync(user.userId);
+            var vet = await AdoptionRequestService.GetVeterinarianByIdAsync(user.UserId);
             adoptRequest.VeterinarianId = vet;
             Console.WriteLine(vet.Email + "HERE");
             await AdoptionRequestService.UpdateAdoptionRequest(adoptRequest);
@@ -61,9 +60,9 @@ namespace Client.Pages
         protected async Task RejectRequest(AdoptionRequest adoptRequest)
         {
             adoptRequest.Approve = false;
-            var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).getCachedUser();
+            var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser();
 
-            Veterinarian vet = await AdoptionRequestService.GetVeterinarianByIdAsync(user.userId);
+            var vet = await AdoptionRequestService.GetVeterinarianByIdAsync(user.UserId);
             adoptRequest.VeterinarianId = vet;
 
             await AdoptionRequestService.UpdateAdoptionRequest(adoptRequest);

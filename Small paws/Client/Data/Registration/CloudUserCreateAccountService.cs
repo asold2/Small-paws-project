@@ -18,7 +18,7 @@ namespace Client.Data.Registration
             _httpClient = new HttpClient();
         }
 
-        public async Task<IList<EndUser>> getUsersAsync()
+        public async Task<IList<EndUser>> GetUsersAsync()
         {
             var responseMessage = await _httpClient.GetAsync(Uri + "/users");
             if (!responseMessage.IsSuccessStatusCode)
@@ -31,7 +31,7 @@ namespace Client.Data.Registration
             return result;
         }
 
-        public async Task<int> checkUserName(string userName)
+        public async Task<int> CheckUserName(string userName)
         {
             Console.WriteLine("Checking username");
             

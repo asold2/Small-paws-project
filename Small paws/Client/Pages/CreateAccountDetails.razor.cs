@@ -1,14 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Client.Data.Registration;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Routing.Matching;
-using Microsoft.VisualBasic.CompilerServices;
-
 
 namespace Client.Pages
 {
@@ -33,9 +28,12 @@ namespace Client.Pages
         protected string AvgIncomeError="";
         protected string AgeError="";
         protected string Error = "";
-        protected string firstNameError = "";
-        protected string lastNameError = "";
-        protected string familyStatusNameError = "";
+        // ReSharper disable once UnusedMember.Global
+        protected string FirstNameError = "";
+        // ReSharper disable once UnusedMember.Global
+        protected string LastNameError = "";
+        // ReSharper disable once UnusedMember.Global
+        protected string FamilyStatusNameError = "";
 
         protected async Task LoadViewAnimals()
         {

@@ -1,6 +1,5 @@
 
 @page "/AdoptionRequestList"
-@using Client.Model
 @using Client.Authentication
 @inherits AdoptRequestListRazor
 @inject AuthenticationStateProvider _authenticationStateProvider
@@ -16,6 +15,7 @@
             <th>Animal name</th>
             <th>Status</th>
         </tr>
+        @* ReSharper disable once InvertIf *@
         @if (AdoptRequests != null)
         {
             @foreach(var adoptRequest in AdoptRequests)
@@ -54,17 +54,18 @@
         {
             @for (var i = 0; i < AdoptRequests.Count; i++)
             {
-                if (((CustomAuthenticationStateProvider)_authenticationStateProvider).getCachedUser().userId == AdoptRequests[i].UserId.userId)
+                if (((CustomAuthenticationStateProvider) _authenticationStateProvider).GetCachedUser().UserId != AdoptRequests[i].UserId.UserId)
                 {
-                    <tr>
-                        <td>@AdoptRequests[i].RequestId</td>
-                        <td>@AdoptRequests[i].VeterinarianId</td>
-                        <td>@AdoptRequests[i].AnimalId</td>
-                        <td>@AdoptRequests[i].DateTime</td>
-                        <td>@AdoptRequests[i].AnimalName</td>
-                        <td>@StatusText[i]</td>
-                    </tr>
+                    continue;
                 }
+                <tr>
+                    <td>@AdoptRequests[i].RequestId</td>
+                    <td>@AdoptRequests[i].VeterinarianId</td>
+                    <td>@AdoptRequests[i].AnimalId</td>
+                    <td>@AdoptRequests[i].DateTime</td>
+                    <td>@AdoptRequests[i].AnimalName</td>
+                    <td>@StatusText[i]</td>
+                </tr>
             }
         }        
     </table>

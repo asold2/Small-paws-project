@@ -14,12 +14,10 @@ public interface DataAccess
   List<PetOwner> getPetOwners();
   List<Animal> getAnimals();
   List<EndUser> getUsers();
-
   void addAnimal(Animal animal);
-  Animal updateAnimal(Animal animal);
-
+  void updateAnimal(Animal animal);
   List<AdoptionRequest> getAdoptionRequests();
   void makeNewRequest(AdoptionRequest adoptionRequest);
-  AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest);
+  void updateAdoptionRequest(AdoptionRequest adoptionRequest);
   void setServicefactory(ServiceFactory serviceFactory);
 }

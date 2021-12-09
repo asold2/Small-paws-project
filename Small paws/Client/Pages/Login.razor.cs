@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Client.Data.Validation;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Client.Authentication;
@@ -12,25 +11,25 @@ namespace Client.Pages
     public class LoginRazor : ComponentBase
     {
         [Inject] private NavigationManager NavigationManager { get; set; }
-    [Inject] private AuthenticationStateProvider AuthenticationStateProvider{ get; set; }
+        [Inject] private AuthenticationStateProvider AuthenticationStateProvider{ get; set; }
     
 
-    protected string Username;
-    protected string Password;
-    protected string errorMessage;
+        protected string Username;
+        protected string Password;
+        protected string ErrorMessage;
 
     protected async Task LoadMainPage()
     {
-        errorMessage = "";
+        ErrorMessage = "";
 
         try
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(Username, Password);
             NavigationManager.NavigateTo("ViewAnimals");
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            errorMessage = "Username or Password are incorrect. Please, Try again.";
+            ErrorMessage = "Username or Password are incorrect. Please, Try again.";
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
+// ReSharper disable PropertyCanBeMadeInitOnly.Global
 
 namespace Client.Model
 {

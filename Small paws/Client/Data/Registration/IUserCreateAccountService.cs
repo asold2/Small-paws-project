@@ -7,7 +7,7 @@ namespace Client.Data.Registration
     public interface IUserCreateAccountService
     {
         Task<int> CreateUserAsync(PetOwner petOwner);
-        Task<IList<EndUser>> getUsersAsync();
-        Task<int> checkUserName(string userName);
+        Task<IList<EndUser>> GetUsersAsync();
+        Task<int> CheckUserName(string userName);
     }
 }

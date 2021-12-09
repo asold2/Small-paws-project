@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
 using Client.Data.Registration;
@@ -20,11 +18,12 @@ namespace Client.Pages
         
         protected string PasswordConfirmation { get; set; }
 
-        protected string passwordError = "";
+        protected string PasswordError = "";
 
-        protected string userNameError = "";
+        protected string UserNameError = "";
 
-        protected string emailError = "";
+        protected const string EmailError = "";
+
         // private IList<EndUser> users = null;
 
         protected void LoadLogIn()
@@ -41,16 +40,16 @@ namespace Client.Pages
             }
             else
             {
-                passwordError = "Repeated password was wrong. Try again.";
+                PasswordError = "Repeated password was wrong. Try again.";
             }
         }
 
         protected async Task CheckUserName()
         {
             
-            if (await UserCreateAccountService.checkUserName(EndUser.UserName) ==403)
+            if (await UserCreateAccountService.CheckUserName(EndUser.UserName) ==403)
             {
-                userNameError = "Username already in use";
+                UserNameError = "Username already in use";
             }
             else
             {

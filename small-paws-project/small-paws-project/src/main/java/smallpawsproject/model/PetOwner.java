@@ -2,12 +2,11 @@ package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 @Entity
 public class PetOwner extends EndUser
 {
@@ -156,11 +155,4 @@ public class PetOwner extends EndUser
     this.id = id;
   }
 
-//  public List<AdoptionRequest> getMyRequests() {
-//    return myRequests;
-//  }
-//
-//  public void setMyRequests(List<AdoptionRequest> myRequests) {
-//    this.myRequests = myRequests;
-//  }
 }

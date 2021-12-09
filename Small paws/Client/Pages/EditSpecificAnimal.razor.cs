@@ -48,51 +48,27 @@ namespace Client.Pages
                 var valueInt = Convert.ToInt32(Value);
                 Console.WriteLine(valueInt + "!!!!!!!!!!!!");
                 Animals = await AnimalService.GetAnimalsAsync();
-                for (int i = 0; i < Animals.Count; i++)
+                foreach (var animal in Animals)
                 {
-                    Animal animal = Animals[i];
-                    if (animal.Id == valueInt)
-                    {
-                        ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
-                        AnimalType = animal.AnimalType;
-                        Age = animal.Age;
-                        Id = animal.Id;
-                        Washed = animal.Washed;
-                        if (Washed)
-                        {
-                            WashedIcon = "fas fa-check";
-                        }
-                        else
-                        {
-                            WashedIcon = "fas fa-times";
-                        }
+                    if (animal.Id != valueInt) continue;
+                    ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
+                    AnimalType = animal.AnimalType;
+                    Age = animal.Age;
+                    Id = animal.Id;
+                    Washed = animal.Washed;
+                    WashedIcon = Washed ? "fas fa-check" : "fas fa-times";
                 
-                        Fed = animal.Fed;
+                    Fed = animal.Fed;
                 
-                        if (Fed)
-                        {
-                            FedIcon = "fas fa-check";
-                        }
-                        else
-                        {
-                            FedIcon = "fas fa-times";
-                        }
+                    FedIcon = Fed ? "fas fa-check" : "fas fa-times";
                 
-                        Vaccinated = animal.Vaccinated;
+                    Vaccinated = animal.Vaccinated;
                 
-                        if (Vaccinated)
-                        {
-                            VaccinatedIcon = "fas fa-check";
-                        }
-                        else
-                        {
-                            VaccinatedIcon = "fas fa-times";
-                        }
+                    VaccinatedIcon = Vaccinated ? "fas fa-check" : "fas fa-times";
                 
-                        Description = animal.Description;
-                        HealthNotes = animal.healthNotes;
-                        _picture = animal.Picture;
-                    }
+                    Description = animal.Description;
+                    HealthNotes = animal.HealthNotes;
+                    _picture = animal.Picture;
                 }
 
                 
@@ -151,9 +127,10 @@ namespace Client.Pages
 
             var newAnimal = new Animal
             {
+                // ReSharper disable once PossibleInvalidOperationException
                 Id = (int) Id,
                 Description = Description,
-                healthNotes = HealthNotes,
+                HealthNotes = HealthNotes,
                 Picture = _picture,
                 AnimalType = AnimalType,
                 Age = (int) Age,
@@ -163,14 +140,6 @@ namespace Client.Pages
             };
             await AnimalService.UpdateAnimal(newAnimal);
             NavigationManager.NavigateTo("/ViewAnimals");
-        }
-        
-        // ReSharper disable once UnusedParameter.Local
-        // ReSharper disable once RedundantAssignment
-        private static void SetIcon(bool state, string icon)
-        {
-            // ReSharper disable once RedundantAssignment
-            icon = state ? "fas fa-check" : "fas fa-times";
         }
 
         protected async Task Cancel()

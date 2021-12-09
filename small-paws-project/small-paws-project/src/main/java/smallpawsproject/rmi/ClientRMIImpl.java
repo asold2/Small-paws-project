@@ -5,7 +5,6 @@ import smallpawsproject.model.AdoptionRequest;
 import smallpawsproject.model.Animal;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
-
 import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -69,8 +68,8 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
   }
 
   @Override
-  public Animal updateAnimal(Animal animal) throws RemoteException {
-    return server.updateAnimal(animal);
+  public void updateAnimal(Animal animal) throws RemoteException {
+    server.updateAnimal(animal);
   }
 
   @Override
@@ -86,8 +85,8 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
   }
 
   @Override
-  public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException {
-    return server.updateAdoptionRequest(adoptionRequest);
+  public void updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException {
+    server.updateAdoptionRequest(adoptionRequest);
   }
 
 }

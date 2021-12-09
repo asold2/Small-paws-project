@@ -1,9 +1,6 @@
 package smallpawsproject.services;
 
 import smallpawsproject.model.AdoptionRequest;
-
-
-import java.util.ArrayList;
 import java.util.*;
 
 public interface AdoptionRequestService {

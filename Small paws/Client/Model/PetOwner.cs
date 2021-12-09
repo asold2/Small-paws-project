@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Client.Model
 {
@@ -36,8 +35,6 @@ namespace Client.Model
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
         
-
-        // public List<AdoptionRequest> myRequests { get; set; }
 
     }
 }

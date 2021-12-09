@@ -8,7 +8,7 @@
 
             @if (Animals != null)
             {
-                @foreach (Animal animal in Animals)
+                @foreach (var animal in Animals)
                 {
                     
                     <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenSpecificAnimal(animal.Id)">

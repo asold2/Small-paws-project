@@ -2,28 +2,22 @@ package smallpawsproject.services.impl;
 
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
-import net.minidev.json.parser.JSONParser;
-import net.minidev.json.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smallpawsproject.model.Animal;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.AnimalServices;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.*;
 import java.rmi.RemoteException;
-import java.util.List;
 
 @Service
 public class AnimalServicesImpl implements AnimalServices
 {
 
   @Autowired
-  private  ClientFactory clientFactory;
+  private final ClientFactory clientFactory;
 
-  private  ClientRMI client;
+  private final ClientRMI client;
 
   public AnimalServicesImpl() {
 
@@ -53,17 +47,16 @@ public class AnimalServicesImpl implements AnimalServices
     }
   }
 
-  @Override public Animal updateAnimal(Animal animal)
+  @Override public void updateAnimal(Animal animal)
   {
     try
     {
-      return client.updateAnimal(animal);
+      client.updateAnimal(animal);
     }
     catch (RemoteException e)
     {
       e.printStackTrace();
     }
-    return null;
   }
 
   @Override public JSONArray GetAnimals()

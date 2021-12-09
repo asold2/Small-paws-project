@@ -32,16 +32,11 @@ public class CreateAccountController
   public int registerPetOwner(@RequestBody PetOwner petOwner){
     System.out.println("Registering pet owner");
 
-
     var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
         petOwner.getAddress(), petOwner.getZipcode(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),
         petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword(), petOwner.getEmail(), "PetOwner");
 
-    System.out.println(petOwnerToCreate.getUserId());
-    System.out.println(petOwnerToCreate.getId());
-
-
-    return petOwnerService.registerPetOwner((PetOwner) petOwnerToCreate);
+    return petOwnerService.registerPetOwner(petOwnerToCreate);
 
   }
 

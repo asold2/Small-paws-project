@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ServerImpl implements Server
 {
-  private DataAccess dataAccess;
+  private final DataAccess dataAccess;
 
   public ServerImpl(DataAccess dataAccess){
     this.dataAccess = dataAccess;
@@ -46,8 +46,8 @@ public class ServerImpl implements Server
   }
 
   @Override
-  public Animal updateAnimal(Animal animal) throws RemoteException {
-    return dataAccess.updateAnimal(animal);
+  public void updateAnimal(Animal animal) throws RemoteException {
+    dataAccess.updateAnimal(animal);
   }
 
   @Override
@@ -62,7 +62,7 @@ public class ServerImpl implements Server
   }
 
   @Override
-  public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) {
-    return dataAccess.updateAdoptionRequest(adoptionRequest);
+  public void updateAdoptionRequest(AdoptionRequest adoptionRequest) {
+    dataAccess.updateAdoptionRequest(adoptionRequest);
   }
 }

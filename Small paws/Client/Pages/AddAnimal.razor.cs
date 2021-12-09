@@ -1,14 +1,13 @@
 using System;
-using System.Diagnostics;
+
 using System.IO;
-using System.Security.Permissions;
-using System.Text;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
+#pragma warning disable 8632
 
 namespace Client.Pages
 {
@@ -28,7 +27,7 @@ namespace Client.Pages
         private byte[] _picture;
         protected string Description;
         protected string ShownImage = "photo_picture.png";
-        protected string creationError = "";
+        protected string CreationError = "";
         protected async Task UploadImage(InputFileChangeEventArgs eventArgs)
         {
             var sourceFile = eventArgs.File;
@@ -76,6 +75,7 @@ namespace Client.Pages
                     Description = Description,
                     Picture = _picture,
                     AnimalType = AnimalType,
+                    // ReSharper disable once PossibleInvalidOperationException
                     Age = (int) Age,
                     Sex = Sex,
                     Washed = _washed,
@@ -89,7 +89,7 @@ namespace Client.Pages
             }
             else
             {
-                creationError = "There is some data about the animal that has not been filled out!";
+                CreationError = "There is some data about the animal that has not been filled out!";
             }
         }
 

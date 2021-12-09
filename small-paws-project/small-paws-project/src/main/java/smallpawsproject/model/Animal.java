@@ -2,7 +2,6 @@ package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
@@ -10,7 +9,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Table(name="animals")
+
+@SuppressWarnings("unused")
 @Transactional
 @Entity
 public class Animal implements Serializable

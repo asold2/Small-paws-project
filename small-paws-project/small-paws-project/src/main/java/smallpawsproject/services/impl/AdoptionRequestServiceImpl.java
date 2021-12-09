@@ -6,17 +6,17 @@ import smallpawsproject.model.AdoptionRequest;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.AdoptionRequestService;
-
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
     @Autowired
-    private  ClientFactory clientFactory;
+    private final ClientFactory clientFactory;
 
-    private  ClientRMI client;
+    private final ClientRMI client;
     private ArrayList<AdoptionRequest> existentRequests;
 
     public AdoptionRequestServiceImpl() {
@@ -37,7 +37,6 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-//        System.out.println(existentRequests.get(0).getAnimalId());
     }
 
 
@@ -48,15 +47,15 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
     public void makeNewRequest(AdoptionRequest adoptionRequest) {
         System.out.println(adoptionRequest.getAnimalId().getId() + " this animal id");
         boolean makeOrNotMake = true;
-        for(int i=0; i<existentRequests.size(); i++){
-            System.out.println(existentRequests.get(i).getAnimalId().getId() + "All the animals that have been requested!!!");
-            if(adoptionRequest.getUserId().getUserId().equals(existentRequests.get(i).getUserId().getUserId())
-                    && adoptionRequest.getAnimalId().getId().equals(existentRequests.get(i).getAnimalId().getId())
-            ){
-                if( adoptionRequest.getAnimalId().getId().equals(existentRequests.get(i).getAnimalId().getId())){
+        for (AdoptionRequest existentRequest : existentRequests) {
+            System.out.println(existentRequest.getAnimalId().getId() + "All the animals that have been requested!!!");
+            if (adoptionRequest.getUserId().getUserId().equals(existentRequest.getUserId().getUserId())
+                    && adoptionRequest.getAnimalId().getId().equals(existentRequest.getAnimalId().getId())
+            ) {
+                if (adoptionRequest.getAnimalId().getId().equals(existentRequest.getAnimalId().getId())) {
                     System.out.println("There is such a request already");
-                  makeOrNotMake = false;
-                  break;
+                    makeOrNotMake = false;
+                    break;
                 }
             }
         }
@@ -85,12 +84,11 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
     }
 
     @Override
-    public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) {
+    public void updateAdoptionRequest(AdoptionRequest adoptionRequest) {
         try {
-            return client.updateAdoptionRequest(adoptionRequest);
+            client.updateAdoptionRequest(adoptionRequest);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-        return null;
     }
 }

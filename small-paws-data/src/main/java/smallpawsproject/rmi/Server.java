@@ -9,6 +9,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public interface Server extends Remote
 {
   void registerPetOwner(PetOwner petOwner) throws RemoteException;
@@ -16,11 +17,11 @@ public interface Server extends Remote
   List<EndUser> getAccounts() throws RemoteException;
   void addAnimal(Animal animal) throws RemoteException;
   List<Animal> getAnimals() throws RemoteException;
-  Animal updateAnimal(Animal animal) throws RemoteException;
+  void updateAnimal(Animal animal) throws RemoteException;
 
   void makeNewRequest(AdoptionRequest adoptionRequest) throws RemoteException;
   List<AdoptionRequest> getAdoptionRequests() throws RemoteException;
-  AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException;
+  void updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException;
 
 
 }

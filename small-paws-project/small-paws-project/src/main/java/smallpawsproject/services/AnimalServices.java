@@ -11,6 +11,5 @@ public interface AnimalServices
 {
   JSONArray GetAnimals();
   void AddAnimal(Animal animal);
-  Animal updateAnimal(Animal animal);
-//  Animal findAnimalbyId()
+  void updateAnimal(Animal animal);
 }

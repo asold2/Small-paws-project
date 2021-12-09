@@ -15,8 +15,7 @@ import smallpawsproject.repositories.UsersRepository;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SmallPawsDataApplication.class)
@@ -37,7 +36,7 @@ public class AdoptionRequestTesting {
     @Test
     public void WhenSaveAndRetrieveAdoptRequest_thenOK()
     {
-        Animal animal = animalRepository.save(new Animal("bird", 3, "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
+        Animal animal = animalRepository.save(new Animal("bird", 3,"Male", "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
         PetOwner petOwner = petOwnerRepository.save(new PetOwner("student", "Hoarseness", 2355,
                 25, 65555, "single", "Chris", "White", "M", 12,
                 "Whitos", "password123", "WhiteChris@gmail.com", "PetOwner"));
@@ -49,22 +48,20 @@ public class AdoptionRequestTesting {
                 veterinarian = (Veterinarian) user;
             }
         }
-        AdoptionRequest adoptionRequest = adoptionRequestRepository.save(new AdoptionRequest(new Date(), animal, petOwner, veterinarian, false, "Cookie"));
+        AdoptionRequest adoptionRequest = adoptionRequestRepository.save(new AdoptionRequest(new Date(), animal, petOwner, veterinarian, "Cookie"));
         AdoptionRequest foundAdoptionRequest = adoptionRequestRepository.findById(adoptionRequest.getRequestId()).orElse(null);
         assertNotNull(foundAdoptionRequest);
         assertEquals(adoptionRequest.getRequestId(), foundAdoptionRequest.getRequestId());
 
-        if (foundAdoptionRequest != null)
-        {
-            animalRepository.deleteById(animal.getId());
-        }
+        //removing tested animal and pet owner from database
+        animalRepository.deleteById(animal.getId());
         petOwnerRepository.deleteById(petOwner.getUserId());
     }
 
     @Test
     public void UpdateAdoptionRequest()
     {
-        Animal animal = animalRepository.save(new Animal("bird", 3, "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
+        Animal animal = animalRepository.save(new Animal("bird", 3,"Male", "Tropical bird from South America.", new byte[30], true, false, false, "healhy"));
         PetOwner petOwner = petOwnerRepository.save(new PetOwner("student", "Hoarseness", 2355,
                 25, 65555, "single", "Chris", "White", "M", 12,
                 "Whitos", "password123", "WhiteChris@gmail.com", "PetOwner"));
@@ -76,18 +73,17 @@ public class AdoptionRequestTesting {
                 veterinarian = (Veterinarian) user;
             }
         }
-        AdoptionRequest adoptionRequest = adoptionRequestRepository.save(new AdoptionRequest(new Date(), animal, petOwner, veterinarian, false, "Cookie"));
+        AdoptionRequest adoptionRequest = adoptionRequestRepository.save(new AdoptionRequest(new Date(), animal, petOwner, veterinarian, "Cookie"));
 
         //updating request status
         adoptionRequest.setApprove(true);
         adoptionRequestRepository.save(adoptionRequest);
         AdoptionRequest foundAdoptionRequest = adoptionRequestRepository.findById(adoptionRequest.getRequestId()).orElse(null);
-        assertEquals(foundAdoptionRequest.isApprove(), true);
+        assert foundAdoptionRequest != null;
+        assertTrue(foundAdoptionRequest.isApprove());
 
-        if (foundAdoptionRequest != null)
-        {
-            animalRepository.deleteById(animal.getId());
-        }
+        //removing tested animal and pet owner from database
+        animalRepository.deleteById(animal.getId());
         petOwnerRepository.deleteById(petOwner.getUserId());
     }
 }

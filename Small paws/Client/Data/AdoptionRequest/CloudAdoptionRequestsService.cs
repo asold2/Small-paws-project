@@ -5,7 +5,6 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Client.Model;
-using Microsoft.AspNetCore.Http;
 
 namespace Client.Data.AdoptionRequest
 {
@@ -40,7 +39,6 @@ namespace Client.Data.AdoptionRequest
 
         public async Task<PetOwner> GetPetOwnerByIdAsync(int id)
         {
-            string message;
             PetOwner result = null;
             var petOwnerAsJson = await _httpClient.GetAsync(Uri + "/user/" + id);
             if (!petOwnerAsJson.IsSuccessStatusCode)
@@ -51,7 +49,7 @@ namespace Client.Data.AdoptionRequest
             Console.WriteLine(petOwnerAsJson + " problem here");
             try
             {
-                message = await petOwnerAsJson.Content.ReadAsStringAsync();
+                var message = await petOwnerAsJson.Content.ReadAsStringAsync();
                 Console.WriteLine(message + " Message here");
             
                 result = JsonSerializer.Deserialize<PetOwner>(message);
@@ -61,11 +59,7 @@ namespace Client.Data.AdoptionRequest
             {
                 Console.WriteLine(e.Message);
             }
-
-            // message = await petOwnerAsJson.Content.ReadAsStringAsync();
-            // Console.WriteLine(message + " Message here");
-            //
-            // result = JsonSerializer.Deserialize<PetOwner>(message);
+            
             return result;
         }
 
@@ -108,7 +102,6 @@ namespace Client.Data.AdoptionRequest
 
             var message = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<List<Model.AdoptionRequest>>(message);
-            // Console.WriteLine(result[0].RequestId + "Id of first request from list");
             return result;
         }
     }

@@ -1,18 +1,17 @@
 package smallpawsproject.model;
 
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Date;
 
+@SuppressWarnings("unused")
 @Entity
 @Transactional
 @DynamicUpdate
 @Table (name= "requests")
-//uniqueConstraints = {@UniqueConstraint(columnNames = {"animalId", "userId"})}
 public class AdoptionRequest implements Serializable {
 
     private static final long serialVersionUID = 4521576984820142625L;
@@ -32,18 +31,18 @@ public class AdoptionRequest implements Serializable {
     @JoinColumn(name = "userId", nullable = false)
     private PetOwner userId;
 
-    @ManyToOne(targetEntity = Veterinarian.class, optional = true)
-    @JoinColumn( columnDefinition="integer", name = "veterinarianId", nullable = true)
+    @ManyToOne(targetEntity = Veterinarian.class)
+    @JoinColumn( columnDefinition="integer", name = "veterinarianId")
     private Veterinarian veterinarianId;
 
-//    @Column(nullable = true)
+
     private boolean approve;
     private String animalName;
 
 
 
 
-    public AdoptionRequest( Date date, Animal animalId, PetOwner userId, Veterinarian veterinarianId, boolean approve, String animalName) {
+    public AdoptionRequest(Date date, Animal animalId, PetOwner userId, Veterinarian veterinarianId, String animalName) {
         this.date = date;
         this.animalId = animalId;
         this.userId = userId;

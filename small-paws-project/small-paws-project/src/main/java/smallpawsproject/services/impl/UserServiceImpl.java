@@ -10,6 +10,7 @@ import smallpawsproject.services.UsersService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,10 +19,10 @@ public class UserServiceImpl implements UsersService
   @Autowired
   private ClientFactory clientFactory;
   private ClientRMI client;
-  private List<EndUser> users;
+  private List<EndUser> users = new ArrayList<>();
 
-  public UserServiceImpl(ClientFactory clientFactory){
-    this.clientFactory = clientFactory;
+  public UserServiceImpl(){
+    this.clientFactory = new ClientFactory();
     client = clientFactory.getClient();
     try
     {
@@ -34,6 +35,8 @@ public class UserServiceImpl implements UsersService
 
     try
     {
+      System.out.println(client.getUsers() + "!!!!!!!!!!!!!!!");
+
       users = client.getUsers();
     }
     catch (RemoteException e)

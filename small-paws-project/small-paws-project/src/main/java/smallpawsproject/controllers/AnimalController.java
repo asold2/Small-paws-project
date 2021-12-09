@@ -18,17 +18,10 @@ import java.util.ArrayList;
 public class AnimalController
 {
   @Autowired
-  private final AnimalServices animalServices;
-
-
-  public AnimalController(AnimalServices animalServices)
-  {
-    this.animalServices = animalServices;
-  }
+  private  AnimalServices animalServices;
 
   @RequestMapping(method = RequestMethod.PATCH, value="/new_information")
   @ResponseBody
-//  public ResponseEntity<Animal> updateAnimal(@RequestBody Animal animal){
   public Animal updateAnimal(@RequestBody Animal animal){
 
     System.out.println("Updating animal");

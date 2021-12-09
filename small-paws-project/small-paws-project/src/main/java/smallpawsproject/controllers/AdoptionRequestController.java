@@ -17,20 +17,17 @@ import java.util.*;
 public class AdoptionRequestController {
 
     @Autowired
-    private final AdoptionRequestService adoptionRequestService;
+    private  AdoptionRequestService adoptionRequestService;
     @Autowired
-    private final AnimalServices animalServices;
+    private  AnimalServices animalServices;
     @Autowired
-    private final UsersService usersService;
+    private UsersService usersService;
     @Autowired
-    private final PetOwnerService petOwnerService;
+    private PetOwnerService petOwnerService;
 
-    public AdoptionRequestController(AdoptionRequestService adoptionRequestService, AnimalServices animalServices, UsersService usersService, PetOwnerService petOwnerService) {
-        this.adoptionRequestService = adoptionRequestService;
-        this.animalServices = animalServices;
-        this.usersService = usersService;
-        this.petOwnerService = petOwnerService;
-    }
+
+
+
 
     @RequestMapping(method = RequestMethod.POST, value = "/newRequest")
     public void makeNewRequest( @RequestBody AdoptionRequest adoptionRequest){
@@ -44,7 +41,7 @@ public class AdoptionRequestController {
     @RequestMapping(method = RequestMethod.GET, value = "/requests")
     @ResponseBody
     public List<AdoptionRequest> getAdoptionRequests(){
-        System.out.println(adoptionRequestService.getAdoptionRequests().get(0).getRequestId() + "Heeeeeeereeeeeee");
+//        System.out.println(adoptionRequestService.getAdoptionRequests().get(0).getRequestId() + "Heeeeeeereeeeeee");
 
         return adoptionRequestService.getAdoptionRequests();
     }
@@ -53,7 +50,7 @@ public class AdoptionRequestController {
     @ResponseBody
     public PetOwner getPetOwnerById(@PathVariable int id)
     {
-        System.out.println(petOwnerService.getUserById(id));
+//        System.out.println(petOwnerService.getUserById(id).getMyRequests());
         return petOwnerService.getUserById(id);
     }
 
@@ -61,7 +58,6 @@ public class AdoptionRequestController {
     @ResponseBody
     public Veterinarian getVeterinarianById(@PathVariable int id)
     {
-
         return usersService.getUserById(id);
     }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Client.Authentication;
 using Client.Model;
@@ -23,21 +24,24 @@ namespace Client.Pages
         {
             AdoptRequests = await AdoptionRequestService.GetAdoptionRequestsAsync();
             StatusText = new string[AdoptRequests.Count];
-            for (int i = 0; i < AdoptRequests.Count; i++)
+            if (AdoptRequests.Any())
             {
-                if (AdoptRequests[i].Approve)
+                for (int i = 0; i < AdoptRequests.Count; i++)
                 {
-                    StatusText[i] = "Awaiting";
-                }
-                else if (AdoptRequests[i].Approve == true)
-                {
-                    StatusText[i] = "Approved";
-                }
-                else
-                {
-                    StatusText[i] = "Rejected";
-                }
+                    if (AdoptRequests[i].VeterinarianId == null)
+                    {
+                        StatusText[i] = "Awaiting";
+                    }
+                    else if (AdoptRequests[i].Approve == true)
+                    {
+                        StatusText[i] = "Approved";
+                    }
+                    else
+                    {
+                        StatusText[i] = "Rejected";
+                    }
 
+                }
             }
         }
 

@@ -12,11 +12,23 @@ import java.util.List;
 public class DataAccessImpl implements DataAccess
 {
   @Autowired
-  private final ServiceFactory serviceFactory;
+  private ServiceFactory serviceFactory;
+  private static DataAccess dataAccessInstance = null;
 
-  public DataAccessImpl(ServiceFactory serviceFactory)
-  {
+  public void setServicefactory(ServiceFactory serviceFactory){
     this.serviceFactory = serviceFactory;
+  }
+
+
+  private DataAccessImpl()
+  {
+  }
+
+  public static synchronized DataAccess dataAccess(){
+    if(dataAccessInstance==null){
+      dataAccessInstance = new DataAccessImpl();
+    }
+    return dataAccessInstance;
   }
 
   @Override public void registerPetOwner(PetOwner petOwner)
@@ -37,6 +49,7 @@ public class DataAccessImpl implements DataAccess
 
   @Override public List<EndUser> getUsers()
   {
+    System.out.println("In method to get users");
     return serviceFactory.getUserService().getUsers();
 
   }

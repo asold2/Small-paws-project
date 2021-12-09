@@ -13,11 +13,9 @@ namespace Client.Pages
 {
     public class ViewSpecificAnimalRazor : ComponentBase
     {
-        protected  Animal cachedAnimal;
         [Inject]private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [Inject] private IAdoptionRequestService _adoptionRequestService { get; set; }
 
-        protected EndUser cachedUser = new PetOwner();
         protected AdoptionRequest Request { get; set; }
 
 
@@ -43,7 +41,6 @@ namespace Client.Pages
         protected string WashedIcon = "fas fa-times";
         protected string FedIcon = "fas fa-times";
         protected string VaccinatedIcon = "fas fa-times";
-        protected Animal animalTemp;
 
         protected string AnimalName;
 
@@ -59,8 +56,7 @@ namespace Client.Pages
                 {
                     
                     Animal animal = Animals[i];
-                    animalTemp = animal;
-                    cachedAnimal = animal;
+                 
                     if (animal.Id == valueInt)
                     {
                         ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
@@ -132,7 +128,7 @@ namespace Client.Pages
             var adoptRequest = new AdoptionRequest
             {
                 DateTime = DateTime.Now,
-                AnimalId = animalTemp,
+                AnimalId = tempAnimal,
                 UserId = await _adoptionRequestService.GetPetOwnerByIdAsync(user.userId),
                 Approve = false,
                 AnimalName = AnimalName

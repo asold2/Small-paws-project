@@ -150,4 +150,11 @@ public class Animal implements Serializable
     this.picture = picture;
   }
 
+  public List<AdoptionRequest> getMyHopes() {
+    return myHopes;
+  }
+
+  public void setMyHopes(List<AdoptionRequest> myHopes) {
+    this.myHopes = myHopes;
+  }
 }

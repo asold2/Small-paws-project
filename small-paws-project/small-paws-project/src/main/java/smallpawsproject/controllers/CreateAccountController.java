@@ -18,12 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 public class CreateAccountController
 {
   @Autowired
-  private final PetOwnerService petOwnerService;
+  private  PetOwnerService petOwnerService;
 
-  public CreateAccountController(PetOwnerService registrationService)
-  {
-    this.petOwnerService = registrationService;
-  }
+
 
   @PostMapping("/userName")
   @ResponseBody
@@ -34,14 +31,11 @@ public class CreateAccountController
   }
 
 
-  //public route(without being authorized by spring)
   @PostMapping("/newAccount")
   @ResponseBody
   public int registerPetOwner(@RequestBody PetOwner petOwner){
     System.out.println("Registering pet owner");
-//    System.out.println(petOwner.getId());
-//    System.out.println(petOwner.getUserId());
-//    System.out.println();
+
 
     var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
         petOwner.getAddress(), petOwner.getZipcode(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),

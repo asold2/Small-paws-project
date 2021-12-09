@@ -34,14 +34,14 @@ import java.io.File;
 public class PetOwnerServiceImpl implements PetOwnerService
 {
   @Autowired
-  private final ClientFactory clientFactory;
+  private  ClientFactory clientFactory;
 
-  private final ClientRMI client;
+  private  ClientRMI client;
   private List<PetOwner> petOwners;
 
 
-  public PetOwnerServiceImpl (ClientFactory clientFactory){
-    this.clientFactory = clientFactory;
+  public PetOwnerServiceImpl (){
+    this.clientFactory = new ClientFactory();
     client = clientFactory.getClient();
     try
     {
@@ -55,8 +55,6 @@ public class PetOwnerServiceImpl implements PetOwnerService
     try
     {
      petOwners = client.getPetOwners();
-
-
 
     }
     catch (RemoteException e)

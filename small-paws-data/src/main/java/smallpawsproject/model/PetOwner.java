@@ -149,4 +149,16 @@ public class PetOwner extends EndUser
   public void setZipcode(int zipcode) {
     this.zipcode = zipcode;
   }
+//
+//  public void setId(Integer id) {
+//    this.id = id;
+//  }
+
+  public List<AdoptionRequest> getMyRequests() {
+    return myRequests;
+  }
+
+  public void setMyRequests(List<AdoptionRequest> myRequests) {
+    this.myRequests = myRequests;
+  }
 }

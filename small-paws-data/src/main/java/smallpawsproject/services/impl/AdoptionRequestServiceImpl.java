@@ -20,18 +20,8 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
     @Override
     public void makeNewRequest(AdoptionRequest adoptionRequest) {
-//        AdoptionRequest temp = null;
-//        for(AdoptionRequest ar : adoptionRequestRepository.findAll()){
-//            if(adoptionRequest.getAnimalId().getId()==ar.getAnimalId().getId() && adoptionRequest.getUserId().getUserId()==ar.getUserId().getUserId()){
-//                System.out.println("Matching requests");
-//                return;
-//            }else{
-//                temp=adoptionRequest;
-//                adoptionRequestRepository.save(temp);
-//                break;
-//            }
-//        }
         adoptionRequestRepository.save(adoptionRequest);
+
     }
 
     @Override

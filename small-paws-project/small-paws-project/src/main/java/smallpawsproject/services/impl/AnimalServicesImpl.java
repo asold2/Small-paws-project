@@ -21,13 +21,13 @@ public class AnimalServicesImpl implements AnimalServices
 {
 
   @Autowired
-  private final ClientFactory clientFactory;
+  private  ClientFactory clientFactory;
 
-  private final ClientRMI client;
+  private  ClientRMI client;
 
-  public AnimalServicesImpl(ClientFactory clientFactory) {
+  public AnimalServicesImpl() {
 
-    this.clientFactory = clientFactory;
+    clientFactory = new ClientFactory();
     client = clientFactory.getClient();
 
     try {

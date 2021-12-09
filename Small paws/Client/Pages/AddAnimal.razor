@@ -54,12 +54,20 @@
 		</table>
 	</div>
 </div>
+@* <div class="form-group" > *@
+@* 	<p> *@
+@* 		<em>Fill in all the required information!</em> *@
+@* 	</p> *@
+@* </div> *@
 <div class="bot-side">
 	<div class="description-div">
 		<text class="description-text"><b>Description: </b></text>
 		<textarea class="description-area" placeholder="Type animal's description" @bind="Description"></textarea>
 	</div>
-		<div class="wrap-cancel-btn" @onclick="Cancel">
+	
+			<div style="color: red; size: 20em">@creationError</div>
+
+	<div class="wrap-cancel-btn" @onclick="Cancel">
     		<div class="login-bgbtn"></div>
     		<button class="login-btn">
     			Cancel

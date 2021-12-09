@@ -1,5 +1,6 @@
 package smallpawsproject.services;
 
+import org.springframework.stereotype.Component;
 import smallpawsproject.repositories.AdoptionRequestRepository;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
@@ -9,6 +10,7 @@ import smallpawsproject.services.impl.AnimalServiceImpl;
 import smallpawsproject.services.impl.UsersServiceImpl;
 import smallpawsproject.services.impl.PetOwnerServiceImpl;
 
+@Component
 public class ServiceFactory
 {
   private PetOwnerService petOwnerService;

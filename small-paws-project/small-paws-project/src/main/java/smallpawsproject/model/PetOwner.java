@@ -156,4 +156,11 @@ public class PetOwner extends EndUser
     this.id = id;
   }
 
- }
+//  public List<AdoptionRequest> getMyRequests() {
+//    return myRequests;
+//  }
+//
+//  public void setMyRequests(List<AdoptionRequest> myRequests) {
+//    this.myRequests = myRequests;
+//  }
+}

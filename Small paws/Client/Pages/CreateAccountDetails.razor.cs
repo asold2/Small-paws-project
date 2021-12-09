@@ -57,13 +57,18 @@ namespace Client.Pages
                 Id = (int) Id
             };
             Console.WriteLine(petOwner.Id);
-            if (Age < 15 || Age > 130)
+            if (Age < 18 || Age > 130)
             {
                 AgeError = "Age is either too low or too high";
             }
             else if (AverageIncome < 0)
             {
                 AvgIncomeError = "Average Income cannot be less than 0";
+            }
+            else if (Id.ToString().Length < 4 || Id.ToString().Length > 9 || Id.ToString()[0] == 0)
+            {
+                IdError = "Id cannot be less than 4 digits or bigger than 9 digits, and it cannot start with 0";
+                
             }
             else if (Id.ToString().Length < 4 || Id.ToString().Length > 9 || Id.ToString()[0] == 0)
             {

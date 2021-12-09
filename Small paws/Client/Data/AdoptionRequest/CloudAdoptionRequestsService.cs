@@ -29,6 +29,7 @@ namespace Client.Data.AdoptionRequest
                 requestAsJson,
                 Encoding.UTF8,
                 "application/json");
+            Console.WriteLine(requestAsJson);
             var responseMessage = await _httpClient.PostAsync(Uri + "/newRequest", httpContent);
             Console.WriteLine(responseMessage);
             if (!responseMessage.IsSuccessStatusCode)
@@ -107,7 +108,7 @@ namespace Client.Data.AdoptionRequest
 
             var message = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<List<Model.AdoptionRequest>>(message);
-            Console.WriteLine(result[0].RequestId + "Id of first request from list");
+            // Console.WriteLine(result[0].RequestId + "Id of first request from list");
             return result;
         }
     }

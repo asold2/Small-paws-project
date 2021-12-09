@@ -1,12 +1,7 @@
 package smallpawsproject;
 
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import smallpawsproject.data_access.DataAccess;
 import smallpawsproject.data_access.DataAccessImpl;
-import smallpawsproject.model.AdoptionRequest;
-import smallpawsproject.model.AnimalAttendant;
-import smallpawsproject.model.EndUser;
-import smallpawsproject.model.Veterinarian;
 import smallpawsproject.repositories.AdoptionRequestRepository;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
@@ -21,7 +16,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.remoting.rmi.RmiServiceExporter;
 
 import java.rmi.RemoteException;
-import java.util.Date;
 
 @EnableJpaRepositories
 @SpringBootApplication
@@ -35,13 +29,16 @@ public class SmallPawsDataApplication {
 		private ServiceFactory serviceFactory;
 		private DataAccess dataAccess;
 
+
 	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository, AdoptionRequestRepository adoptionRequestRepository){
 		this.petOwnerRepository = petOwnerRepository;
 		this.usersRepository = usersRepository;
 		this.animalRepository = animalRepository;
 		this.adoptionRequestRepository = adoptionRequestRepository;
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository, adoptionRequestRepository);
-		dataAccess = new DataAccessImpl(serviceFactory);
+		dataAccess = DataAccessImpl.dataAccess();
+		dataAccess.setServicefactory(serviceFactory);
+
 
 //		adoptionRequestRepository.save(new AdoptionRequest(new Date(), animalRepository.getById(2), petOwnerRepository.getById(1), null, false, "Max"));
 

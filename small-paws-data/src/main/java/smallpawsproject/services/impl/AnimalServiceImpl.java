@@ -25,7 +25,7 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public Animal updateAnimal(Animal animal) {
         Animal temp = animalRepository.getById(animal.getId());
-        temp.set(animal.getPicture(),animal.getAge(), animal.getDescription(), animal.isWashed(), animal.isFed(), animal.isVaccinated(), animal.getHealthNotes());
+        temp.set(animal.getPicture(),animal.getAge(),animal.getSex(), animal.getDescription(), animal.isWashed(), animal.isFed(), animal.isVaccinated(), animal.getHealthNotes());
         animalRepository.save(temp);
         return temp;
 

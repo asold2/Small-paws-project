@@ -23,6 +23,7 @@ public class Animal implements Serializable
   private byte[] picture;
   private String animalType;
   private int age;
+  private String sex;
   private String description;
   private boolean washed;
   private boolean fed;
@@ -34,10 +35,11 @@ public class Animal implements Serializable
 
 
   @JsonCreator
-  public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age,@JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated, @JsonProperty("healthNotes") String healthNotes)
+  public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age, @JsonProperty("sex") String sex,@JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated, @JsonProperty("healthNotes") String healthNotes)
   {
     this.animalType = animalType;
     this.age = age;
+    this.sex = sex;
     this.description = description;
     this.picture = picture;
     this.washed = washed;
@@ -48,7 +50,7 @@ public class Animal implements Serializable
   }
   public Animal(){}
 
-  public void set(int age, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
+  public void set(int age, String sex, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
     this.age = age;
     this.description = description;
     this.washed = washed;
@@ -63,6 +65,16 @@ public class Animal implements Serializable
 
   public void setHealthNotes( String healthNotes) {
     this.healthNotes = healthNotes;
+  }
+
+  public String getSex()
+  {
+    return sex;
+  }
+
+  public void setSex(String sex)
+  {
+    this.sex = sex;
   }
 
   public void setWashed(boolean washed) {

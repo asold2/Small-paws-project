@@ -21,6 +21,7 @@ namespace Client.Pages
         
         protected string AnimalType;
         protected int? Age;
+        protected string? Sex;
         private bool _washed;
         private bool _fed;
         private bool _vaccinated;
@@ -76,6 +77,7 @@ namespace Client.Pages
                     Picture = _picture,
                     AnimalType = AnimalType,
                     Age = (int) Age,
+                    Sex = Sex,
                     Washed = _washed,
                     Fed = _fed,
                     Vaccinated = _vaccinated

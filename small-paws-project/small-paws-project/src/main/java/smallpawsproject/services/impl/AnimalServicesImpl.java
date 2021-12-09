@@ -81,6 +81,7 @@ public class AnimalServicesImpl implements AnimalServices
        jsonObject.put("picture", animal.getPicture());
        jsonObject.put("animalType", animal.getAnimalType());
        jsonObject.put("age", animal.getAge());
+       jsonObject.put("sex", animal.getSex());
        jsonObject.put("description", animal.getDescription());
        jsonObject.put("washed", animal.isWashed());
        jsonObject.put("fed", animal.isFed());

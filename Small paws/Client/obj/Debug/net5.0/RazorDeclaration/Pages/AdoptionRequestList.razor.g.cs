@@ -84,13 +84,6 @@ using Client.Shared;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\Pages\AdoptionRequestList.razor"
-using Client.Model;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\Pages\AdoptionRequestList.razor"
 using Client.Authentication;
 
 #line default

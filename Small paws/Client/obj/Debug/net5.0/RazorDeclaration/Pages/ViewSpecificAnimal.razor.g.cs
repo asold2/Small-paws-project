@@ -82,13 +82,6 @@ using Client.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\hansl\Documents\GitHub\Small-paws-project\Small paws\Client\Pages\ViewSpecificAnimal.razor"
-using Client.Model;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/ViewSpecificAnimal/{Value}")]
     public partial class ViewSpecificAnimal : ViewSpecificAnimalRazor
     {

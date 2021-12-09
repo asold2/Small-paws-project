@@ -3,7 +3,6 @@ package smallpawsproject.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import smallpawsproject.model.AdoptionRequest;
-import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.model.Veterinarian;
 import smallpawsproject.services.AdoptionRequestService;
@@ -16,17 +15,18 @@ import java.util.*;
 @RestController
 public class AdoptionRequestController {
 
-    @Autowired
-    private  AdoptionRequestService adoptionRequestService;
-    @Autowired
-    private  AnimalServices animalServices;
-    @Autowired
-    private UsersService usersService;
-    @Autowired
-    private PetOwnerService petOwnerService;
+    private  final AdoptionRequestService adoptionRequestService;
+    private final AnimalServices animalServices;
+    private final UsersService usersService;
+    private final PetOwnerService petOwnerService;
 
-
-
+    @Autowired
+    public AdoptionRequestController(AdoptionRequestService adoptionRequestService, AnimalServices animalServices, UsersService usersService, PetOwnerService petOwnerService) {
+        this.adoptionRequestService = adoptionRequestService;
+        this.animalServices = animalServices;
+        this.usersService = usersService;
+        this.petOwnerService = petOwnerService;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/newRequest")

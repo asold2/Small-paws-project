@@ -2,23 +2,22 @@ package smallpawsproject.controllers;
 
 
 import net.minidev.json.JSONArray;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import smallpawsproject.model.Animal;
 import smallpawsproject.services.AnimalServices;
-
-import java.util.ArrayList;
 
 @RestController
 public class AnimalController
 {
+
+  private final AnimalServices animalServices;
+
   @Autowired
-  private  AnimalServices animalServices;
+  public AnimalController(AnimalServices animalServices) {
+    this.animalServices = animalServices;
+  }
 
   @RequestMapping(method = RequestMethod.PATCH, value="/new_information")
   @ResponseBody

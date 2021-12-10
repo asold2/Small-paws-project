@@ -14,11 +14,11 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UsersService
 {
-  @Autowired
   private final ClientFactory clientFactory;
-  private final ClientRMI client;
+  private  ClientRMI client;
   private List<EndUser> users = new ArrayList<>();
 
+  @Autowired
   public UserServiceImpl(){
     this.clientFactory = new ClientFactory();
     client = clientFactory.getClient();

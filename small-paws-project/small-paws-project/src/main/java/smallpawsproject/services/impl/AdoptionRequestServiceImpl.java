@@ -13,12 +13,13 @@ import java.util.List;
 @Service
 public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
-    @Autowired
+
     private final ClientFactory clientFactory;
 
-    private final ClientRMI client;
+    private ClientRMI client;
     private ArrayList<AdoptionRequest> existentRequests;
 
+    @Autowired
     public AdoptionRequestServiceImpl() {
         clientFactory = new ClientFactory();
 

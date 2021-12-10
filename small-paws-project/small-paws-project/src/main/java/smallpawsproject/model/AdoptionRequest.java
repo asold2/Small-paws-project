@@ -16,7 +16,7 @@ public class AdoptionRequest implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer requestId;
     private Date date;
 

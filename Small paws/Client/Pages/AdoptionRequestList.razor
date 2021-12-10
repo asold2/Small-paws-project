@@ -24,8 +24,8 @@
                 {
                     <tr>
                         <td>@adoptRequest.RequestId</td>
-                        <td>@adoptRequest.UserId</td>
-                        <td>@adoptRequest.AnimalId</td>
+                        <td>@adoptRequest.UserId.Id</td>
+                        <td>@adoptRequest.AnimalId.Id</td>
                         <td>@adoptRequest.DateTime</td>
                         <td>@adoptRequest.AnimalName</td>
                         <td class="AcceptReject">
@@ -60,8 +60,15 @@
                 }
                 <tr>
                     <td>@AdoptRequests[i].RequestId</td>
-                    <td>@AdoptRequests[i].VeterinarianId</td>
-                    <td>@AdoptRequests[i].AnimalId</td>
+                    @if (AdoptRequests[i].VeterinarianId == null)
+                    {
+                        <td>@AdoptRequests[i].VeterinarianId</td>
+                    }
+                    else
+                    {
+                        <td>@AdoptRequests[i].VeterinarianId.UserId</td>
+                    }
+                    <td>@AdoptRequests[i].AnimalId.Id</td>
                     <td>@AdoptRequests[i].DateTime</td>
                     <td>@AdoptRequests[i].AnimalName</td>
                     <td>@StatusText[i]</td>

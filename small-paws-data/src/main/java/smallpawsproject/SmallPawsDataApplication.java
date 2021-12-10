@@ -2,6 +2,8 @@ package smallpawsproject;
 
 import smallpawsproject.data_access.DataAccess;
 import smallpawsproject.data_access.DataAccessImpl;
+import smallpawsproject.model.AnimalAttendant;
+import smallpawsproject.model.Veterinarian;
 import smallpawsproject.repositories.AdoptionRequestRepository;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.repositories.UsersRepository;
@@ -30,7 +32,7 @@ public class SmallPawsDataApplication {
 		private final DataAccess dataAccess;
 
 
-	@SuppressWarnings("CommentedOutCode")
+//	@SuppressWarnings("CommentedOutCode")
 	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository, AdoptionRequestRepository adoptionRequestRepository){
 		this.petOwnerRepository = petOwnerRepository;
 		this.usersRepository = usersRepository;
@@ -50,10 +52,11 @@ public class SmallPawsDataApplication {
 			}
 		}
 		if(!(usersRepository.getById(2).getUserName().equals("Veterinarian") && usersRepository.getById(3).getUserName().equals("Attendant"))){
-				usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
-				usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+
 			}
 */
+		usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+		usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
 
 	}
 

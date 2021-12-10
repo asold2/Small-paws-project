@@ -18,7 +18,7 @@ public class Animal implements Serializable
   private static final long serialVersionUID = 663126647076776891L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.TABLE)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer animalId;
   private byte[] picture;
   private String animalType;

@@ -29,5 +29,5 @@
 *.staticWebAssets.xml
 *.packagespec.json
 *.project.restore.info
-/small-paws-data/src/main/resources/application.properties
+
 

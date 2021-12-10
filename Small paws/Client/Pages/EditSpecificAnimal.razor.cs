@@ -25,6 +25,7 @@ namespace Client.Pages
         protected string ShownImage;
         protected string AnimalType;
         protected int? Age;
+        protected string? Sex;
         protected int? Id;
         protected bool Washed;
         protected bool Fed;
@@ -54,6 +55,7 @@ namespace Client.Pages
                     ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
                     AnimalType = animal.AnimalType;
                     Age = animal.Age;
+                    Sex = animal.Sex;
                     Id = animal.Id;
                     Washed = animal.Washed;
                     WashedIcon = Washed ? "fas fa-check" : "fas fa-times";
@@ -134,6 +136,7 @@ namespace Client.Pages
                 Picture = _picture,
                 AnimalType = AnimalType,
                 Age = (int) Age,
+                Sex = Sex,
                 Washed = Washed,
                 Fed = Fed,
                 Vaccinated = Vaccinated

@@ -14,7 +14,7 @@
 
 /*Button styling*/
 
-.login-btn[b-s0je6xt4tp] {
+button[b-s0je6xt4tp] {
     outline: none !important;
     border: none;
     background: transparent;
@@ -97,7 +97,6 @@ button:hover[b-s0je6xt4tp] {
 table[b-s0je6xt4tp]{
     width: 100%;
     height: 100%;
-
 }
 tr:nth-child(even)[b-s0je6xt4tp] {
     background-color: #f2f2f2;
@@ -114,30 +113,7 @@ th[b-s0je6xt4tp], td[b-s0je6xt4tp] {
     padding: 2%;
     align-items: center;
     border-bottom: 1px solid #ddd;
-    font-size: 18pt;
 }
-
-.right-side[b-s0je6xt4tp]{
-    float: right;
-    width: 46%;
-    height: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-width: 5px;
-    border-style: outset;
-    border-color: grey;
-}
-.input[b-s0je6xt4tp]{
-    border-style: none;
-    outline: none;
-}
-.input2[b-s0je6xt4tp]
-{
-    background-color: #f2f2f2;
-    border-style: none;
-    outline: none;
-}
-
 
 /*Table styling end*/
 
@@ -148,27 +124,18 @@ th[b-s0je6xt4tp], td[b-s0je6xt4tp] {
     flex-direction: column;
     width: 96%;
     height: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
 }
 .description-text[b-s0je6xt4tp]{
-
+    margin-bottom: 1%;
 }
 .description-area[b-s0je6xt4tp]{
     width: 100%;
     height: 20vh;
-    box-sizing: border-box;
     resize: none;
 }
 /*Description styling end*/
 
-.picture-div[b-s0je6xt4tp]{
-    float: left;
-    width: 46%;
-    height: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
+
 .picture[b-s0je6xt4tp]{
     height: 100%;
     width: 100%;
@@ -183,4 +150,54 @@ th[b-s0je6xt4tp], td[b-s0je6xt4tp] {
     height: 50%;
     width: 100%;
 }
+.buttons[b-s0je6xt4tp]{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
 
+@media (max-width: 1000px){
+    .picture-div[b-s0je6xt4tp]{
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        width: 100%;
+    }
+
+    .right-side[b-s0je6xt4tp]{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3%;
+        height: 50%;
+        width: 100%;
+        border-width: 5px;
+        border-style: outset;
+        border-color: grey;
+    }
+}
+
+
+
+@media(min-width: 1000px) {
+    .right-side[b-s0je6xt4tp]{
+        float: right;
+        width: 46%;
+        height: 100%;
+        margin-left: 2%;
+        margin-right: 2%;
+        border-width: 5px;
+        border-style: outset;
+        border-color: grey;
+    }
+    .picture-div[b-s0je6xt4tp]{
+        float: left;
+        width: 46%;
+        height: 100%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .bot-side[b-s0je6xt4tp]{
+        margin-left: 2%;
+    }
+}

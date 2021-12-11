@@ -1,6 +1,5 @@
 package smallpawsproject.services.impl;
 
-import org.hibernate.Session;
 import smallpawsproject.model.Animal;
 import smallpawsproject.repositories.AnimalRepository;
 import smallpawsproject.services.AnimalService;
@@ -23,12 +22,10 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public Animal updateAnimal(Animal animal) {
+    public void updateAnimal(Animal animal) {
         Animal temp = animalRepository.getById(animal.getId());
-        temp.set(animal.getPicture(),animal.getAge(), animal.getDescription(), animal.isWashed(), animal.isFed(), animal.isVaccinated());
+        temp.set(animal.getPicture(),animal.getAge(),animal.getSex(), animal.getDescription(), animal.isWashed(), animal.isFed(), animal.isVaccinated(), animal.getHealthNotes());
         animalRepository.save(temp);
-        return temp;
-
 
     }
 }

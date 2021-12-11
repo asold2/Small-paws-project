@@ -1,14 +1,13 @@
 using System;
-using System.Diagnostics;
+
 using System.IO;
-using System.Security.Permissions;
-using System.Text;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
+#pragma warning disable 8632
 
 namespace Client.Pages
 {
@@ -21,12 +20,14 @@ namespace Client.Pages
         
         protected string AnimalType;
         protected int? Age;
+        protected string? Sex;
         private bool _washed;
         private bool _fed;
         private bool _vaccinated;
         private byte[] _picture;
         protected string Description;
         protected string ShownImage = "photo_picture.png";
+        protected string CreationError = "";
         protected async Task UploadImage(InputFileChangeEventArgs eventArgs)
         {
             var sourceFile = eventArgs.File;
@@ -67,20 +68,29 @@ namespace Client.Pages
         protected async Task SaveAnimal()
         {
             _picture ??= await File.ReadAllBytesAsync(Path.GetFullPath(@"wwwroot/photo_picture.png"));
-            Debug.Assert(Age != null, nameof(Age) + " != null");
-            
-            
-            var newAnimal = new Animal
+            if (Age.ToString().Length!=0 && AnimalType.Length!=0 && Description.Length!=0 && _picture.Length!=0)
             {
-                Description = Description,
-                Picture = _picture,
-                AnimalType = AnimalType,
-                Age = (int) Age,
-                Washed = _washed,
-                Fed = _fed,
-                Vaccinated = _vaccinated
-            };
-            await AnimalService.AddAnimalAsync(newAnimal);
+                var newAnimal = new Animal
+                {
+                    Description = Description,
+                    Picture = _picture,
+                    AnimalType = AnimalType,
+                    // ReSharper disable once PossibleInvalidOperationException
+                    Age = (int) Age,
+                    Sex = Sex,
+                    Washed = _washed,
+                    Fed = _fed,
+                    Vaccinated = _vaccinated
+                };
+        
+
+                await AnimalService.AddAnimalAsync(newAnimal);
+                NavigationManager.NavigateTo("/ViewAnimals");
+            }
+            else
+            {
+                CreationError = "There is some data about the animal that has not been filled out!";
+            }
         }
 
         protected async Task Cancel()

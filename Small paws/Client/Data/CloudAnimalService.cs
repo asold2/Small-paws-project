@@ -38,7 +38,6 @@ namespace Client.Data
                 Encoding.UTF8,
                 "application/json");
             var responseMessage = await _httpClient.PostAsync(Uri + "/animal", httpContent);
-            Console.WriteLine(animalAsJson);
             if (!responseMessage.IsSuccessStatusCode)
             {
                 throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
@@ -47,17 +46,13 @@ namespace Client.Data
 
         public async Task UpdateAnimal(Animal newAnimal)
         {
-            Console.WriteLine(newAnimal.Id + "  Animal Id here!!!");
             var animalAsJson = JsonSerializer.Serialize(newAnimal);
             HttpContent httpContent = new StringContent(
                 animalAsJson,
                 Encoding.UTF8,
                 "application/json");
             await _httpClient.PatchAsync(Uri + "/new_information", httpContent);
-            // if (!responseMessage.IsSuccessStatusCode)
-            // {
-            //     throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
-            // } 
+     
         }
     }
 }

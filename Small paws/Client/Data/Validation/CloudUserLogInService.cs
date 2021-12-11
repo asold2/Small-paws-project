@@ -42,7 +42,7 @@ namespace Client.Data.Validation
 
             var message = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<EndUser>(message);
-            Console.WriteLine(result.GetType().ToString() + "HERE!!!!!!!!!!!!!!!!!!!!");
+           
             return result;
         }
     }

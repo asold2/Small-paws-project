@@ -35,5 +35,6 @@ namespace Client.Model
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
         
+
     }
 }

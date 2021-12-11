@@ -13,7 +13,7 @@
 				<div class="wrap-input">
 					<span class="label-input">Username</span>
 					<input class="input" type="text" name="username" placeholder="Type your username" @bind="Username" @onkeyup="@Enter">
-					<span class='focus-input'></span>
+					<span class="focus-input"></span>
 					<i class="fas fa-user-alt"></i>
 				</div>
 
@@ -30,7 +30,7 @@
 				Login
 			</button>
 		</div>
-		<div style="color:red">@errorMessage</div>
+		<div style="color:red">@ErrorMessage</div>
 				
 		<div class="wrap-SignUp">	
 			<a @onclick="LoadCreateAccount" class="signUp" href="#">Sign Up</a>

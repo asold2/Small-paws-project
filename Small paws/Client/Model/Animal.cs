@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+// ReSharper disable PropertyCanBeMadeInitOnly.Global
 
 namespace Client.Model
 {
@@ -12,6 +13,9 @@ namespace Client.Model
         
         [JsonPropertyName("age")]
         public int Age { get; set; }
+        
+        [JsonPropertyName("sex")]
+        public string Sex { get; set; }
         
         [JsonPropertyName("animalType")]
         public string AnimalType { get; init; }
@@ -27,5 +31,7 @@ namespace Client.Model
         
         [JsonPropertyName("vaccinated")]
         public bool Vaccinated { get; set; }
+
+        [JsonPropertyName("healthNotes")] public string HealthNotes { get; set; }
     }
 }

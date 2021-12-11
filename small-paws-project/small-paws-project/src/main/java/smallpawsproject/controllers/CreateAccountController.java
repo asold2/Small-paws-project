@@ -1,29 +1,22 @@
 package smallpawsproject.controllers;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonObject;
-import org.apache.catalina.valves.JsonErrorReportValve;
-import org.json.JSONPropertyName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.services.PetOwnerService;
 
-import javax.servlet.http.HttpServletResponse;
-
 @RestController
 public class CreateAccountController
 {
-  @Autowired
-  private final PetOwnerService petOwnerService;
 
-  public CreateAccountController(PetOwnerService registrationService)
-  {
-    this.petOwnerService = registrationService;
+  private  final PetOwnerService petOwnerService;
+
+  @Autowired
+  public CreateAccountController(PetOwnerService petOwnerService) {
+    this.petOwnerService = petOwnerService;
   }
+
 
   @PostMapping("/userName")
   @ResponseBody
@@ -34,7 +27,6 @@ public class CreateAccountController
   }
 
 
-  //public route(without being authorized by spring)
   @PostMapping("/newAccount")
   @ResponseBody
   public int registerPetOwner(@RequestBody PetOwner petOwner){
@@ -43,7 +35,8 @@ public class CreateAccountController
     var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
         petOwner.getAddress(), petOwner.getZipcode(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),
         petOwner.getLastName(), petOwner.getSex(), petOwner.getId(), petOwner.getUserName(), petOwner.getPassword(), petOwner.getEmail(), "PetOwner");
-    return petOwnerService.registerPetOwner((PetOwner) petOwnerToCreate);
+
+    return petOwnerService.registerPetOwner(petOwnerToCreate);
 
   }
 

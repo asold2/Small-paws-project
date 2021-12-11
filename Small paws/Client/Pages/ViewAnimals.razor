@@ -8,7 +8,7 @@
 
             @if (Animals != null)
             {
-                @foreach (Animal animal in Animals)
+                @foreach (var animal in Animals)
                 {
                     
                     <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenSpecificAnimal(animal.Id)">
@@ -26,7 +26,12 @@
                         </tr>
                     </div>
                 }
-            }
+            }else
+                         {
+                             <p>
+                                 <em> No animals to show</em>
+                             </p>
+                         }
         </div>
     </div>
 </AuthorizeView>
@@ -56,6 +61,12 @@
                     </div>
                 }
             }
+            else
+            {
+                <p>
+                    <em> No animals to show</em>
+                </p>
+            }
         </div>
     </div>
 </AuthorizeView>
@@ -84,7 +95,12 @@
                     </tr>
                 </div>
             }
-        }
+        }else
+                     {
+                         <p>
+                             <em> No animals to show</em>
+                         </p>
+                     }
     </div>
 </div>
 </AuthorizeView>

@@ -1,8 +1,6 @@
 package smallpawsproject.rmi;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-
 import java.rmi.RemoteException;
 
 @Component

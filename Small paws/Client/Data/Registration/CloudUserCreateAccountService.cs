@@ -18,7 +18,7 @@ namespace Client.Data.Registration
             _httpClient = new HttpClient();
         }
 
-        public async Task<IList<EndUser>> getUsersAsync()
+        public async Task<IList<EndUser>> GetUsersAsync()
         {
             var responseMessage = await _httpClient.GetAsync(Uri + "/users");
             if (!responseMessage.IsSuccessStatusCode)
@@ -31,7 +31,7 @@ namespace Client.Data.Registration
             return result;
         }
 
-        public async Task<int> checkUserName(string userName)
+        public async Task<int> CheckUserName(string userName)
         {
             Console.WriteLine("Checking username");
             
@@ -62,14 +62,16 @@ namespace Client.Data.Registration
 
 
         public async Task<int> CreateUserAsync(PetOwner petOwner)
-        { 
-           
+        {
+            Console.WriteLine(petOwner.Id + "id to create");
             var userAsJson = JsonSerializer.Serialize(petOwner);
+            Console.WriteLine(userAsJson);
             HttpContent httpContent = new StringContent(
                 userAsJson,
                 Encoding.UTF8,
                 "application/json");
             var responseMessage = await _httpClient.PostAsync(Uri + "/newAccount", httpContent);
+            
             
             if (!responseMessage.IsSuccessStatusCode)
             {

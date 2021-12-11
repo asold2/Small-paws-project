@@ -3,14 +3,18 @@ package smallpawsproject.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.data.jpa.repository.Modifying;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.*;
+
+@SuppressWarnings("unused")
 @Transactional
 @DynamicUpdate
 @Entity
+@Table(name="animal")
 public class Animal implements Serializable
 {
 
@@ -18,39 +22,71 @@ public class Animal implements Serializable
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer animalId;
   private byte[] picture;
   private String animalType;
   private int age;
+  private String sex;
   @Column(columnDefinition = "TEXT")
   @Lob
   private String description;
   private boolean washed;
   private boolean fed;
   private boolean vaccinated;
+  private String healthNotes;
+
+
+  @OneToMany( mappedBy = "animalId", cascade = CascadeType.REMOVE)
+  private List<AdoptionRequest> myHopes;
+
+
 
   @JsonCreator
-  public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age,@JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated)
+  public Animal(@JsonProperty("animalType") String animalType, @JsonProperty("age") int age,  @JsonProperty("sex") String sex, @JsonProperty("description") String description, @JsonProperty("picture") byte[] picture,@JsonProperty("fed") boolean fed, @JsonProperty("washed") boolean washed, @JsonProperty("vaccinated") boolean vaccinated, @JsonProperty("healthNotes") String healthNotes)
   {
-    this.picture = picture;
-    this.washed = washed;
-    this.fed = fed;
-    this.vaccinated = vaccinated;
     this.animalType = animalType;
     this.age = age;
+    this.sex = sex;
     this.description = description;
+    this.picture = picture;
+    this.washed = washed;
+    this.fed = fed;
+    this.vaccinated = vaccinated;
+    this.healthNotes = healthNotes;
+    myHopes = new ArrayList<>();
   }
 
 
-  public void set(byte[] picture,int age, String description, boolean washed, boolean fed, boolean vaccinated){
+
+  public void set(byte[] picture,int age, String sex, String description, boolean washed, boolean fed, boolean vaccinated, String healthNotes){
     this.picture = picture;
     this.age = age;
+    this.sex = sex;
     this.description = description;
     this.washed = washed;
     this.fed = fed;
     this.vaccinated = vaccinated;
+    this.healthNotes = healthNotes;
   }
 
+
+  public String getHealthNotes() {
+    return healthNotes;
+  }
+
+  public void setHealthNotes(String healthNotes) {
+    this.healthNotes = healthNotes;
+  }
+
+  public String getSex()
+  {
+    return sex;
+  }
+
+  public void setSex(String sex)
+  {
+    this.sex = sex;
+  }
 
   public boolean isWashed() {
     return washed;
@@ -78,14 +114,14 @@ public class Animal implements Serializable
 
   public Animal(){}
 
-  public int getId()
+  public Integer getId()
   {
-    return id;
+    return animalId;
   }
 
-  public void setId(int id)
+  public void setId(Integer id)
   {
-    this.id = id;
+    this.animalId = id;
   }
 
   public String getAnimalType()
@@ -126,4 +162,11 @@ public class Animal implements Serializable
     this.picture = picture;
   }
 
+  public List<AdoptionRequest> getMyHopes() {
+    return myHopes;
+  }
+
+  public void setMyHopes(List<AdoptionRequest> myHopes) {
+    this.myHopes = myHopes;
+  }
 }

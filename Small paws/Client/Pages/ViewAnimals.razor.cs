@@ -25,11 +25,11 @@ namespace Client.Pages
                 Animals = await AnimalService.GetAnimalsAsync();
                 ShownImage = new string[Animals.Max(a => a.Id)+1];
                 ShownDescription = new string[Animals.Max(a => a.Id)+1];
-                foreach (Animal animal in Animals)
+                foreach (var animal in Animals)
                 {
                     ShownImage[animal.Id] = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
                     var stringSize = Encoding.ASCII.GetBytes(animal.Description);
-                    Console.WriteLine(stringSize.Length);
+                    // Console.WriteLine(stringSize.Length);
                     if (stringSize.Length > 100)
                     {
                         ShownDescription[animal.Id] = animal.Description.Substring(0, 100) + "...";
@@ -41,12 +41,10 @@ namespace Client.Pages
 
                 }
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine(e);
-                throw;
+                // ignored
             }
-            
         }
 
         protected void OpenSpecificAnimal(int i)

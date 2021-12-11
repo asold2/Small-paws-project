@@ -12,33 +12,32 @@ namespace Client.Authentication
 {
     public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {
-        private readonly IJSRuntime jsRuntime;
-        private readonly IUserLogInService LogInService;
+        private readonly IJSRuntime _jsRuntime;
+        private readonly IUserLogInService _logInService;
 
-        private EndUser cachedUser;
-        
+        private EndUser _cachedUser;
+
         public CustomAuthenticationStateProvider(IJSRuntime jsRuntime, IUserLogInService logInService)
         {
-            this.jsRuntime = jsRuntime;
-            this.LogInService = logInService;
-            //cachedUser = new EndUser();
+            _jsRuntime = jsRuntime;
+            _logInService = logInService;
         }
         
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
             var identity = new ClaimsIdentity();
-            if (cachedUser == null)
+            if (_cachedUser == null)
             {
-                string userAsJson = await jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
+                var userAsJson = await _jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
                 if (!string.IsNullOrEmpty(userAsJson))
                 {
-                    cachedUser = JsonSerializer.Deserialize<EndUser>(userAsJson);
-                    identity = SetupClaimsForUser(cachedUser);
+                    _cachedUser = JsonSerializer.Deserialize<EndUser>(userAsJson);
+                    identity = SetupClaimsForUser(_cachedUser);
                 }
             }
             else
             {
-                identity = SetupClaimsForUser(cachedUser);
+                identity = SetupClaimsForUser(_cachedUser);
             }
 
             ClaimsPrincipal cachedClaimsPrincipal = new ClaimsPrincipal(identity);
@@ -50,20 +49,12 @@ namespace Client.Authentication
             Console.WriteLine("Validating log in");
             if (string.IsNullOrEmpty(username)) throw new Exception("Enter username");
             if (string.IsNullOrEmpty(password)) throw new Exception("Enter password");
-            ClaimsIdentity identity = new ClaimsIdentity();
-            try
-            {
-                EndUser user = await LogInService.ValidateUserAsync(username, password);
-                identity = SetupClaimsForUser(user);
+            var user = await _logInService.ValidateUserAsync(username, password);
+            var identity = SetupClaimsForUser(user);
                 
-                string serialisedData = JsonSerializer.Serialize(user);
-                await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serialisedData);
-                cachedUser = user;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            var serialisedData = JsonSerializer.Serialize(user);
+            await _jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serialisedData);
+            _cachedUser = user;
 
             NotifyAuthenticationStateChanged(
                 Task.FromResult(new AuthenticationState(new ClaimsPrincipal(identity))));
@@ -71,18 +62,22 @@ namespace Client.Authentication
         
         public async Task Logout()
         {
-            cachedUser = null;
+            _cachedUser = null;
             var user = new ClaimsPrincipal(new ClaimsIdentity());
-            await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", "");
+            await _jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", "");
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
+        }
+
+        public EndUser GetCachedUser()
+        {
+            return _cachedUser;
         }
 
         private ClaimsIdentity SetupClaimsForUser(EndUser endUser)
         {
-            List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim("Role",  endUser.Role));
+            var claims = new List<Claim> {new("Role",  endUser.Role)};
             //Add a claim to check for the type of the subclass(EndUser)
-            ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth_type");
+            var identity = new ClaimsIdentity(claims, "apiauth_type");
             return identity;
         }
     }

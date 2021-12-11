@@ -2,6 +2,8 @@
 
 @inherits ViewSpecificAnimalRazor
 
+
+
 <div class="top-side">
 
 	<div class="picture-div">
@@ -44,9 +46,37 @@
 		<text class="description-area">@Description</text>
 	</div>
 </div>
+<div class="bot-side">
+	<div class="description-div">
+		<text class="description-text"><b>Health Notes: </b></text>
+		<text class="description-area">@HealthNotes</text>
+	</div>
+</div>
 <div class="wrap-login-btn" >
 	<div class="login-bgbtn"></div>
-	<button class="login-btn">
+	<button class="login-btn" data-toggle="modal" data-target="#AdoptAnimaPopUpWindow" >
 		Adopt
 	</button>
+</div>
+
+@*Pop up window*@
+<div class="modal fade" id="AdoptAnimaPopUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Animal name</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Type in animal's new name:
+				<input type="text" @bind="@AnimalName" @onkeyup="@Enter"/>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary"  data-dismiss="modal" @onclick="MakeAdoptionRequest">Adopt</button>
+			</div>
+		</div>
+	</div>
 </div>

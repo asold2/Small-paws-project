@@ -1,9 +1,8 @@
 package smallpawsproject.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
 @Entity
 public class AnimalAttendant extends EndUser
 {
@@ -14,6 +13,7 @@ public class AnimalAttendant extends EndUser
   {
     super(userName, password, email, role);
   }
+  @SuppressWarnings("unused")
   public AnimalAttendant(){}
 
 }

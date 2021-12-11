@@ -31,6 +31,11 @@
 			</tr>
 
 			<tr>
+				<td><b>Sex</b></td>
+				<td><input class="input" type="text" placeholder="Type animal's sex" @bind="Sex"></td>
+			</tr>
+			
+			<tr>
 				<td><b>Age</b></td>
 				<td><input class="input" type="text" placeholder="Type animal's age" @bind="Age"></td>
 			</tr>
@@ -115,9 +120,18 @@
 		<textarea class="description-area" placeholder="Type animal's description" @bind="Description"></textarea>
 	</div>
 </div>
+<AuthorizeView Policy="MustBeVeterinarian">
+<div class="bot-side">
+	<div class="description-div">
+		<text class="description-text"><b>Health Notes</b></text>
+		<textarea class="description-area" placeholder="Type animal's description" @bind="HealthNotes"></textarea>
+	</div>
+</div>
+</AuthorizeView>
 
 <div class="wrap-cancel-btn" @onclick="Cancel">
-    <div class="login-bgbtn"></div>
+    <!--suppress SpellCheckingInspection -->
+<div class="login-bgbtn"></div>
     <button class="login-btn">
     	Cancel
     </button>

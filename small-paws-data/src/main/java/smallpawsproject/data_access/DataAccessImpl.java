@@ -1,5 +1,6 @@
 package smallpawsproject.data_access;
 
+import smallpawsproject.model.AdoptionRequest;
 import smallpawsproject.model.EndUser;
 import smallpawsproject.model.Animal;
 import smallpawsproject.model.PetOwner;
@@ -11,11 +12,23 @@ import java.util.List;
 public class DataAccessImpl implements DataAccess
 {
   @Autowired
-  private final ServiceFactory serviceFactory;
+  private ServiceFactory serviceFactory;
+  private static DataAccess dataAccessInstance = null;
 
-  public DataAccessImpl(ServiceFactory serviceFactory)
-  {
+  public void setServicefactory(ServiceFactory serviceFactory){
     this.serviceFactory = serviceFactory;
+  }
+
+
+  private DataAccessImpl()
+  {
+  }
+
+  public static synchronized DataAccess dataAccess(){
+    if(dataAccessInstance==null){
+      dataAccessInstance = new DataAccessImpl();
+    }
+    return dataAccessInstance;
   }
 
   @Override public void registerPetOwner(PetOwner petOwner)
@@ -36,6 +49,7 @@ public class DataAccessImpl implements DataAccess
 
   @Override public List<EndUser> getUsers()
   {
+    System.out.println("In method to get users");
     return serviceFactory.getUserService().getUsers();
 
   }
@@ -46,7 +60,22 @@ public class DataAccessImpl implements DataAccess
   }
 
   @Override
-  public Animal updateAnimal(Animal animal) {
-    return serviceFactory.getAnimalService().updateAnimal(animal);
+  public void updateAnimal(Animal animal) {
+    serviceFactory.getAnimalService().updateAnimal(animal);
+  }
+
+  @Override
+  public List<AdoptionRequest> getAdoptionRequests() {
+    return serviceFactory.getAdoptionRequestService().getAdoptionRequests();
+  }
+
+  @Override
+  public void makeNewRequest(AdoptionRequest adoptionRequest) {
+      serviceFactory.getAdoptionRequestService().makeNewRequest(adoptionRequest);
+  }
+
+  @Override
+  public void updateAdoptionRequest(AdoptionRequest adoptionRequest) {
+    serviceFactory.getAdoptionRequestService().updateAdoptionRequest(adoptionRequest);
   }
 }

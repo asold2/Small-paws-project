@@ -54,6 +54,7 @@ namespace Client.Pages
             adoptRequest.VeterinarianId = vet;
             Console.WriteLine(vet.Email + "HERE");
             await AdoptionRequestService.UpdateAdoptionRequest(adoptRequest);
+            
             NavigationManager.NavigateTo("AdoptRequestList");
         }
 

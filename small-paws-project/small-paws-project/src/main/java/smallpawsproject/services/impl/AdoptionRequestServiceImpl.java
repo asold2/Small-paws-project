@@ -17,7 +17,7 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
     private final ClientFactory clientFactory;
 
     private ClientRMI client;
-    private ArrayList<AdoptionRequest> existentRequests;
+    private List<AdoptionRequest> existentRequests;
 
     @Autowired
     public AdoptionRequestServiceImpl() {
@@ -34,7 +34,7 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
 
         try {
-            existentRequests = (ArrayList<AdoptionRequest>) client.getAdoptionRequests();
+            existentRequests = client.getAdoptionRequests();
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -46,26 +46,26 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
     @Override
     public void makeNewRequest(AdoptionRequest adoptionRequest) {
-        System.out.println(adoptionRequest.getAnimalId().getId() + " this animal id");
+//        System.out.println(adoptionRequest.getAnimalId().getId() + " this animal id");
         boolean makeOrNotMake = true;
         for (AdoptionRequest existentRequest : existentRequests) {
-            System.out.println(existentRequest.getAnimalId().getId() + "All the animals that have been requested!!!");
+//            System.out.println(existentRequest.getAnimalId().getId() + "All the animals that have been requested!!!");
             if (adoptionRequest.getUserId().getUserId().equals(existentRequest.getUserId().getUserId())
                     && adoptionRequest.getAnimalId().getId().equals(existentRequest.getAnimalId().getId())
             ) {
                 if (adoptionRequest.getAnimalId().getId().equals(existentRequest.getAnimalId().getId())) {
-                    System.out.println("There is such a request already");
+//                    System.out.println("There is such a request already");
                     makeOrNotMake = false;
                     break;
                 }
             }
         }
         if(makeOrNotMake){
-            System.out.println(adoptionRequest.getAnimalId());
+//            System.out.println(adoptionRequest.getAnimalId());
             try {
                 client.makeNewRequest(adoptionRequest);
                 existentRequests.add(adoptionRequest);
-                System.out.println("Request saved");
+//                System.out.println("Request saved");
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -91,5 +91,10 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void setClient(ClientRMI clientRMI) {
+        this.client=clientRMI;
     }
 }

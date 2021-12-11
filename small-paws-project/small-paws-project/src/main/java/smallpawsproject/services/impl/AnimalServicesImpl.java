@@ -17,7 +17,7 @@ public class AnimalServicesImpl implements AnimalServices
   @Autowired
   private final ClientFactory clientFactory;
 
-  private final ClientRMI client;
+  private ClientRMI client;
 
   public AnimalServicesImpl() {
 
@@ -57,6 +57,11 @@ public class AnimalServicesImpl implements AnimalServices
     {
       e.printStackTrace();
     }
+  }
+
+  @Override
+  public void setClient(ClientRMI clientRMI) {
+    this.client = clientRMI;
   }
 
   @Override public JSONArray GetAnimals()

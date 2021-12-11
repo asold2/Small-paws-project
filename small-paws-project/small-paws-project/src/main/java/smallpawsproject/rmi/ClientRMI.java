@@ -19,6 +19,7 @@ public interface ClientRMI extends Remote
   List<Animal> getAnimals() throws RemoteException;
   void addAnimal(Animal animal) throws RemoteException;
   void updateAnimal(Animal animal) throws RemoteException;
+  void setServer(Server server) throws RemoteException;
 
 
   List<AdoptionRequest> getAdoptionRequests() throws RemoteException;

@@ -14,6 +14,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UsersService
 {
+  @Autowired
   private final ClientFactory clientFactory;
   private  ClientRMI client;
   private List<EndUser> users = new ArrayList<>();
@@ -59,6 +60,7 @@ public class UserServiceImpl implements UsersService
   @Override public EndUser check(String userName, String password)
   {
     users = getUsers();
+//    EndUser answer = null;//set to null for testing purposes
     EndUser answer = new EndUser();
     for(EndUser user : users){
       if(user.getUserName().equals(userName)&&user.getPassword().equals(password)){
@@ -83,5 +85,10 @@ public class UserServiceImpl implements UsersService
     }
 
     return (Veterinarian) temp;
+  }
+
+  @Override
+  public void setClient(ClientRMI clientRMI) {
+    this.client = clientRMI;
   }
 }

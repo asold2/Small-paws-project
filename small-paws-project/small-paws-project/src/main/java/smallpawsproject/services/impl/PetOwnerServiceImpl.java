@@ -16,10 +16,10 @@ public class PetOwnerServiceImpl implements PetOwnerService
   @Autowired
   private final ClientFactory clientFactory;
 
-  private final ClientRMI client;
+  private ClientRMI client;
   private List<PetOwner> petOwners;
 
-
+  @Autowired
   public PetOwnerServiceImpl (){
     this.clientFactory = new ClientFactory();
     client = clientFactory.getClient();
@@ -94,7 +94,7 @@ public class PetOwnerServiceImpl implements PetOwnerService
       e.printStackTrace();
     }
     System.out.println(id + "the correct id");
-    PetOwner temp = null;
+    PetOwner temp = new PetOwner();
     for(PetOwner petOwner:petOwners){
       if(petOwner.getUserId()==id){
         temp = petOwner;
@@ -106,4 +106,12 @@ public class PetOwnerServiceImpl implements PetOwnerService
     return temp;
   }
 
+  @Override
+  public void setClient(ClientRMI clientRMI) {
+    this.client = clientRMI;
+  }
+
+  public List<PetOwner> getPetOwners() {
+    return petOwners;
+  }
 }

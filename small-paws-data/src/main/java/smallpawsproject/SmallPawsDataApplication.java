@@ -55,8 +55,8 @@ public class SmallPawsDataApplication {
 
 			}
 */
-		usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
-		usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
+//		usersRepository.save(new Veterinarian("Veterinarian", "veterinarian", "veterinarian@gmail.com", "Veterinarian"));
+//		usersRepository.save(new AnimalAttendant("Attendant", "attendant", "animal_attendant@gmail.com", "AnimalAttendant"));
 
 	}
 

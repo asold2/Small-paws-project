@@ -73,6 +73,11 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
   }
 
   @Override
+  public void setServer(Server server) throws RemoteException {
+    this.server = server;
+  }
+
+  @Override
   public List<AdoptionRequest> getAdoptionRequests() throws RemoteException {
     return server.getAdoptionRequests();
   }

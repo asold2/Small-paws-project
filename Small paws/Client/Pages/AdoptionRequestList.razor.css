@@ -17,9 +17,6 @@ th, td {
     align-items: center;
     align-content: center;
 }
-.accept{
-    height: 100%;
-}
-.reject{
-    height: 100%;
+.petOwnerId{
+    cursor: pointer;
 }

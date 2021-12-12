@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,6 +20,15 @@ namespace Client.Pages
 
         protected string [] StatusText;
 
+        protected string FirstName;
+        protected string LastName;
+        protected int? Age;
+        protected string Sex;
+        protected string FamilyStatus;
+        protected int? AvgIncome;
+        protected string Address;
+        protected int Zipcode;
+        protected string JobTitle;
         protected override async Task OnInitializedAsync()
         {
             AdoptRequests = await AdoptionRequestService.GetAdoptionRequestsAsync();
@@ -70,6 +80,18 @@ namespace Client.Pages
             NavigationManager.NavigateTo("AdoptRequestList");
         }
 
+        protected void OpenPopUpWindow(AdoptionRequest adoptionRequest)
+        {
+            FirstName = adoptionRequest.UserId.FirstName;
+            LastName = adoptionRequest.UserId.LastName;
+            Age = adoptionRequest.UserId.Age;
+            Sex = adoptionRequest.UserId.Sex;
+            FamilyStatus = adoptionRequest.UserId.FamilyStatus;
+            AvgIncome = adoptionRequest.UserId.AvgIncome;
+            Address = adoptionRequest.UserId.Address;
+            Zipcode = adoptionRequest.UserId.ZipCode;
+            JobTitle = adoptionRequest.UserId.JobTitle;
+        }
 
     }
 }

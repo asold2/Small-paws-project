@@ -1,106 +1,77 @@
 ﻿@page "/ViewAnimals"
-@using Client.Model
 @inherits ViewAnimalsRazor
 
 <AuthorizeView Policy="MustBePetOwner">
     <div class="card-deck">
-        <div class="card-deck">
-
-            @if (Animals != null)
-            {
-                @foreach (var animal in Animals)
-                {
-                    
-                    <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenSpecificAnimal(animal.Id)">
-                        <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
-
-                        <tr>
-                            <th><b>@animal.AnimalType</b></th>
-                        </tr>
-                        <tr id="ageRow">
-                            <td >@animal.Age years old</td>
-                        </tr>
-                        <tr><td><b>Description:</b></td></tr>
-                        <tr>
-                            <td id="description">@ShownDescription[@animal.Id]</td>
-                        </tr>
-                    </div>
-                }
-            }else
-                         {
-                             <p>
-                                 <em> No animals to show</em>
-                             </p>
-                         }
-        </div>
-    </div>
-</AuthorizeView>
-
-<AuthorizeView Policy="MustBeAnimalAttendant">
-    <div class="card-deck">
-        <div class="card-deck">
-
-            @if (Animals != null)
-            {
-                @foreach (Animal animal in Animals)
-                {
-                    
-                    <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(animal.Id)">
-                        <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
-
-                        <tr>
-                            <th><b>@animal.AnimalType</b></th>
-                        </tr>
-                        <tr id="ageRow">
-                            <td >@animal.Age years old</td>
-                        </tr>
-                        <tr><td><b>Description:</b></td></tr>
-                        <tr>
-                            <td id="description">@ShownDescription[@animal.Id]</td>
-                        </tr>
-                    </div>
-                }
-            }
-            else
-            {
-                <p>
-                    <em> No animals to show</em>
-                </p>
-            }
-        </div>
-    </div>
-</AuthorizeView>
-
-<AuthorizeView Policy="MustBeVeterinarian">
-<div class="card-deck">
-    <div class="card-deck">
-
         @if (Animals != null)
         {
-            @foreach (Animal animal in Animals)
+            @foreach (var animal in Animals)
             {
-                    
-                <div class="card m-3" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(animal.Id)">
+                <div class="card" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenSpecificAnimal(animal.Id)">
                     <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
-
-                    <tr>
-                        <th><b>@animal.AnimalType</b></th>
-                    </tr>
-                    <tr id="ageRow">
-                        <td >@animal.Age years old</td>
-                    </tr>
-                    <tr><td><b>Description:</b></td></tr>
-                    <tr>
-                        <td id="description">@ShownDescription[@animal.Id]</td>
-                    </tr>
+                    <div class="card-body">
+                        <h5 class="card-title"><b>@animal.AnimalType</b></h5>
+                        <p class="card-text" id="ageRow">@animal.Age years old</p>
+                        <p class="card-text"><b>Description:</b></p>
+                        <p class="card-text">@ShownDescription[@animal.Id]</p>
+                    </div>
                 </div>
             }
         }else
-                     {
-                         <p>
-                             <em> No animals to show</em>
-                         </p>
-                     }
+        {
+            <p>
+                <em> No animals to show</em>
+            </p>
+        }
+        </div>
+</AuthorizeView>
+
+<AuthorizeView Policy="MustBeAnimalAttendant">
+ <div class="card-deck">
+        @if (Animals != null)
+        {
+            @foreach (var animal in Animals)
+            {
+                <div class="card" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(animal.Id)">
+                    <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
+                    <div class="card-body">
+                        <h5 class="card-title"><b>@animal.AnimalType</b></h5>
+                        <p class="card-text" id="ageRow">@animal.Age years old</p>
+                        <p class="card-text"><b>Description:</b></p>
+                        <p class="card-text">@ShownDescription[@animal.Id]</p>
+                    </div>
+                </div>
+            }
+        }else
+        {
+            <p>
+                <em> No animals to show</em>
+            </p>
+        }
+        </div>
+</AuthorizeView>
+
+<AuthorizeView Policy="MustBeVeterinarian">
+     <div class="card-deck">
+        @if (Animals != null)
+        {
+            @foreach (var animal in Animals)
+            {
+                <div class="card" style="min-width: 18rem; max-width: 30.5%;" @onclick="() => OpenEditSpecificAnimal(animal.Id)">
+                    <img class="card-img-top imageThumbnail" src="@ShownImage[animal.Id]" alt="image thumbnail"/>
+                    <div class="card-body">
+                        <h5 class="card-title"><b>@animal.AnimalType</b></h5>
+                        <p class="card-text" id="ageRow">@animal.Age years old</p>
+                        <p class="card-text"><b>Description:</b></p>
+                        <p class="card-text">@ShownDescription[@animal.Id]</p>
+                    </div>
+                </div>
+            }
+        }else
+        {
+            <p>
+                <em> No animals to show</em>
+            </p>
+        }
     </div>
-</div>
 </AuthorizeView>

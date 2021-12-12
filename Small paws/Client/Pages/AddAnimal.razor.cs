@@ -1,6 +1,7 @@
 using System;
-
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
@@ -21,9 +22,9 @@ namespace Client.Pages
         protected string AnimalType;
         protected int? Age;
         protected string? Sex;
-        private bool _washed;
-        private bool _fed;
-        private bool _vaccinated;
+        protected bool? Washed;
+        protected bool? Fed;
+        protected bool? Vaccinated;
         private byte[] _picture;
         protected string Description;
         protected string ShownImage = "photo_picture.png";
@@ -39,48 +40,54 @@ namespace Client.Pages
         
         protected void SetWashedToTrue()
         {
-            _washed = true;
+            Washed = true;
         }
         protected void SetWashedToFalse()
         {
-            _washed = false;
+            Washed = false;
         }    
         
         protected void SetFedToTrue()
         {
-            _fed = true;
+            Fed = true;
         }
         protected void SetFedToFalse()
         {
-            _fed = false;
+            Fed = false;
         }
         
         protected void SetVaccinatedToTrue()
         {
-            _vaccinated = true;
+            Vaccinated = true;
         }
         
         protected void SetVaccinatedToFalse()
         {
-            _vaccinated = false;
+            Vaccinated = false;
         }
 
         protected async Task SaveAnimal()
         {
             _picture ??= await File.ReadAllBytesAsync(Path.GetFullPath(@"wwwroot/photo_picture.png"));
-            if (Age.ToString().Length!=0 && AnimalType.Length!=0 && Description.Length!=0 && _picture.Length!=0)
+            
+            if (Age.ToString().All(char.IsDigit) && Age != null &&
+                AnimalType != null && AnimalType.All(char.IsLetter) &&
+                Sex != null && Sex.All(char.IsLetter) &&
+                Washed != null && Fed != null && Vaccinated != null &&
+                Description != null && _picture.Length!=0)
             {
+                
                 var newAnimal = new Animal
                 {
                     Description = Description,
                     Picture = _picture,
                     AnimalType = AnimalType,
-                    // ReSharper disable once PossibleInvalidOperationException
+                    
                     Age = (int) Age,
                     Sex = Sex,
-                    Washed = _washed,
-                    Fed = _fed,
-                    Vaccinated = _vaccinated
+                    Washed = Washed != null && (bool) Washed,
+                    Fed = Fed != null && (bool) Fed,
+                    Vaccinated = Vaccinated != null && (bool) Vaccinated
                 };
         
 
@@ -89,7 +96,8 @@ namespace Client.Pages
             }
             else
             {
-                CreationError = "There is some data about the animal that has not been filled out!";
+                CreationError = "There is some data about the animal that has not been filled out," +
+                                "or has not been filled correctly!";
             }
         }
 

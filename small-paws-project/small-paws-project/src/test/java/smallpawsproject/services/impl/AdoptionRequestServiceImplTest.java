@@ -13,9 +13,11 @@ import smallpawsproject.model.PetOwner;
 import smallpawsproject.model.Veterinarian;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
+import smallpawsproject.rmi.ClientRMIImpl;
 import smallpawsproject.rmi.Server;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -26,13 +28,9 @@ import java.util.List;
 
 class AdoptionRequestServiceImplTest {
 
-    @Spy//Spy, because we need the server, clientRMI and clientFactory to "act" as if in the normal environment
-    private ClientFactory clientFactory;
-    @Spy
+
     private ClientRMI clientRMI;
-    @Spy
-    private Server server;
-    @Mock
+
     private List<AdoptionRequest> requests;
     AdoptionRequestServiceImpl adoptionRequestService;
 
@@ -43,14 +41,10 @@ class AdoptionRequestServiceImplTest {
 
     @BeforeEach
     private void setUp(){
-        clientRMI = clientFactory.getClient();
 
-        try {
-            clientRMI.setServer(server);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+
         adoptionRequestService = new AdoptionRequestServiceImpl();
+        clientRMI = mock(ClientRMIImpl.class);
         adoptionRequestService.setClient(clientRMI);
         requests = new ArrayList<>();
 

@@ -82,7 +82,7 @@ using Client.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ViewSpecificAnimal/{Value}")]
     public partial class ViewSpecificAnimal : ViewSpecificAnimalRazor
     {
         #pragma warning disable 1998

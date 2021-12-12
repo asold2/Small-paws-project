@@ -76,10 +76,11 @@
 			<div class="modal-body">
 				Type in animal's new name:
 				<input type="text" @bind="@AnimalName" @onkeyup="@Enter"/>
+				<div style="color: red; size: 20em">@AnimalNameError</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary"  data-dismiss="modal" @onclick="MakeAdoptionRequest">Adopt</button>
+				<button type="button" class="btn btn-primary" @onclick="MakeAdoptionRequest">Adopt</button>
 			</div>
 		</div>
 	</div>

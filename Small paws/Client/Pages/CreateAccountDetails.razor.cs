@@ -31,11 +31,8 @@ namespace Client.Pages
         protected string AgeError="";
         protected string SexError = "";
         protected string AddressError = "";
-        // ReSharper disable once UnusedMember.Global
         protected string FirstNameError = "";
-        // ReSharper disable once UnusedMember.Global
         protected string LastNameError = "";
-        // ReSharper disable once UnusedMember.Global
         protected string FamilyStatusNameError = "";
         protected string ZipCodeError = "";
         protected string JobTitleError = "";

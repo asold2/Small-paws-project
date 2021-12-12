@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
@@ -44,6 +45,7 @@ namespace Client.Pages
         protected string VaccinatedIcon = "fas fa-times";
 
         protected string AnimalName;
+        protected string AnimalNameError = "";
 
         protected override async Task OnInitializedAsync()
         {
@@ -107,18 +109,32 @@ namespace Client.Pages
                 DateTime = DateTime.Now,
                 AnimalId = tempAnimal,
                 UserId = await AdoptionRequestService.GetPetOwnerByIdAsync(user.UserId),
-                Approve = false,
-                AnimalName = AnimalName
-                
+                Approve = false
             };
-            Console.WriteLine(adoptRequest.UserId+ "!!!!!!!!!!") ;
+            if (string.IsNullOrEmpty(AnimalName))
+            {
+                AnimalNameError = "Fill out animal's name";
+            }
+            else
+            {
+                adoptRequest.AnimalName = AnimalName;
+                
+            }
+
+            if (!IsAnyPropertyNullOrEmpty(adoptRequest))
+            {
+                await AdoptionRequestService.MakeNewRequestAsync(adoptRequest);
+                AnimalNameError = "Successfully sent adoption request, you can close the window";
+            }
             
-           
-            await AdoptionRequestService.MakeNewRequestAsync(adoptRequest);
             
         }
         
-  
+        private static bool IsAnyPropertyNullOrEmpty(AdoptionRequest adoptionRequest)
+        {
+            return (from pi in adoptionRequest.GetType().GetProperties() where pi.PropertyType == typeof(string) select
+                (string) pi.GetValue(adoptionRequest)).Any(string.IsNullOrEmpty);
+        }
         
         protected async Task Enter(KeyboardEventArgs e)
         {

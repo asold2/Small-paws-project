@@ -17,7 +17,6 @@
 button {
     outline: none !important;
     border: none;
-    background: transparent;
 }
 
 button:hover {
@@ -68,6 +67,7 @@ button:hover {
 }
 
 .login-btn {
+    background: transparent;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     color: #fff;

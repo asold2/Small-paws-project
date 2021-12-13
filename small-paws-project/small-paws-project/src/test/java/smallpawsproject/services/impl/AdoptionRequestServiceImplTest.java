@@ -75,14 +75,35 @@ class AdoptionRequestServiceImplTest {
     }
 
     @Test
-    void getAdoptionRequests() {
+    void getAdoptionRequests() throws RemoteException
+    {
+        AdoptionRequest adoptionRequest = new AdoptionRequest(new Date(), animal, petOwner, veterinarian, false, "animal");
+        List<AdoptionRequest> adoptionRequests = new ArrayList<>();
+        adoptionRequests.add(adoptionRequest);
+        Mockito.when(clientRMI.getAdoptionRequests()).thenReturn(adoptionRequests);//mocking the clientRMI to get the list of users from a mocked Server
+        List<AdoptionRequest> gottenAdoptionRequests = adoptionRequestService.getAdoptionRequests();
+        assertTrue(adoptionRequestService.getAdoptionRequests().size()>0);
     }
 
     @Test
-    void updateAdoptionRequest() {
+    void updateAdoptionRequest() throws RemoteException
+    {
+        AdoptionRequest oldAdoptionRequest = new AdoptionRequest(new Date(), animal, petOwner, veterinarian, false, "animal");
+        adoptionRequestService.makeNewRequest(oldAdoptionRequest);
+        requests.add(oldAdoptionRequest);
+
+
+        AdoptionRequest newAdoptionRequest = oldAdoptionRequest;
+        newAdoptionRequest.set(true,veterinarian,new Date());
+        adoptionRequestService.updateAdoptionRequest(newAdoptionRequest);
+
+        Mockito.when(clientRMI.getAdoptionRequests()).thenReturn(requests);
+        List<AdoptionRequest> returnedRequests = adoptionRequestService.getAdoptionRequests();
+        assertNotNull(adoptionRequestService.getAdoptionRequests());
     }
 
     @Test
     void setClient() {
+        assertNotNull(clientRMI);
     }
 }

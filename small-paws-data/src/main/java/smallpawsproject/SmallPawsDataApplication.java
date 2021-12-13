@@ -2,14 +2,9 @@ package smallpawsproject;
 
 import smallpawsproject.data_access.DataAccess;
 import smallpawsproject.data_access.DataAccessImpl;
-import smallpawsproject.model.AnimalAttendant;
-import smallpawsproject.model.Veterinarian;
-import smallpawsproject.repositories.AdoptionRequestRepository;
-import smallpawsproject.repositories.AnimalRepository;
-import smallpawsproject.repositories.UsersRepository;
+import smallpawsproject.repositories.*;
 import smallpawsproject.rmi.Server;
 import smallpawsproject.rmi.ServerImpl;
-import smallpawsproject.repositories.PetOwnerRepository;
 import smallpawsproject.services.ServiceFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,6 +19,7 @@ import java.rmi.RemoteException;
 @SpringBootApplication
 public class SmallPawsDataApplication {
 		private final PetOwnerRepository petOwnerRepository;
+		private final CertificateRepository certificateRepository;
 		private final UsersRepository usersRepository;
 		private final AnimalRepository animalRepository;
 		private final AdoptionRequestRepository adoptionRequestRepository;
@@ -33,12 +29,13 @@ public class SmallPawsDataApplication {
 
 
 //	@SuppressWarnings("CommentedOutCode")
-	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository, AdoptionRequestRepository adoptionRequestRepository){
+	public SmallPawsDataApplication(PetOwnerRepository petOwnerRepository, CertificateRepository certificateRepository, UsersRepository usersRepository, AnimalRepository animalRepository, AdoptionRequestRepository adoptionRequestRepository){
 		this.petOwnerRepository = petOwnerRepository;
+		this.certificateRepository = certificateRepository;
 		this.usersRepository = usersRepository;
 		this.animalRepository = animalRepository;
 		this.adoptionRequestRepository = adoptionRequestRepository;
-		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository, adoptionRequestRepository);
+		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository, certificateRepository, adoptionRequestRepository);
 		dataAccess = DataAccessImpl.dataAccess();
 		dataAccess.setServicefactory(serviceFactory);
 

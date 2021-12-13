@@ -1,9 +1,6 @@
 package smallpawsproject.data_access;
 
-import smallpawsproject.model.AdoptionRequest;
-import smallpawsproject.model.EndUser;
-import smallpawsproject.model.Animal;
-import smallpawsproject.model.PetOwner;
+import smallpawsproject.model.*;
 import smallpawsproject.services.ServiceFactory;
 
 import java.util.List;
@@ -20,4 +17,8 @@ public interface DataAccess
   void makeNewRequest(AdoptionRequest adoptionRequest);
   void updateAdoptionRequest(AdoptionRequest adoptionRequest);
   void setServicefactory(ServiceFactory serviceFactory);
+  void addCertificate(Certificate certificate);
+  List<Certificate> getCertificates();
+
+
 }

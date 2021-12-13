@@ -1,9 +1,6 @@
 package smallpawsproject.data_access;
 
-import smallpawsproject.model.AdoptionRequest;
-import smallpawsproject.model.EndUser;
-import smallpawsproject.model.Animal;
-import smallpawsproject.model.PetOwner;
+import smallpawsproject.model.*;
 import smallpawsproject.services.ServiceFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,6 +15,8 @@ public class DataAccessImpl implements DataAccess
   public void setServicefactory(ServiceFactory serviceFactory){
     this.serviceFactory = serviceFactory;
   }
+
+
 
 
   private DataAccessImpl()
@@ -78,4 +77,16 @@ public class DataAccessImpl implements DataAccess
   public void updateAdoptionRequest(AdoptionRequest adoptionRequest) {
     serviceFactory.getAdoptionRequestService().updateAdoptionRequest(adoptionRequest);
   }
+
+  @Override
+  public void addCertificate(Certificate certificate) {
+    serviceFactory.getCertificateService().addCertificate(certificate);
+  }
+
+  @Override
+  public List<Certificate> getCertificates() {
+    return serviceFactory.getCertificateService().getCertificates();
+  }
+
+
 }

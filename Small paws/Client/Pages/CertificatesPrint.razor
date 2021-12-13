@@ -1,0 +1,39 @@
+@page "/Certificates"
+@inherits CertificatesPrintRazor
+
+
+<h3>Certificates</h3>
+
+<AuthorizeView Policy="MustBePetOwner">
+    <table>
+        <tr>
+            <th> Certificate ID</th>
+            <th>Pet owner ID</th>
+            <th>Animal Name</th>
+            <th>Document</th>
+        </tr>
+
+        @* ReSharper disable once InvertIf *@
+        @if (Certificates != null)
+        {
+            @foreach(var certificate in Certificates)
+            {
+                
+                    <tr>
+                        <td>@certificate.Id</td>
+                        <td>@certificate.PetOwnerId.Id</td>
+                        <td>@certificate.RequestId.AnimalName</td>
+                        @* <td>@GetDocumentFromByteArray(certificate.Document)</td> *@
+                        <td>
+                            <button @onclick="() => OpenPdf(certificate.Document)">OpenPdf</button>
+                        </td>
+                        @* <td class="AcceptReject"> *@
+                        @*     <td class="accept"><i class="fas fa-check" @onclick="() => AcceptRequest(adoptRequest)"></i></td> *@
+                        @*     <td class="reject"><i class="fas fa-times" @onclick="() => RejectRequest(adoptRequest)"></i></td> *@
+                        @* </td> *@
+                    </tr>
+                    }
+                    
+        }        
+    </table>
+</AuthorizeView>

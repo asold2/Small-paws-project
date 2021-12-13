@@ -27,11 +27,11 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
     }
 
     @Override
-    public AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest) {
+    public void updateAdoptionRequest(AdoptionRequest adoptionRequest) {
         AdoptionRequest temp = adoptionRequestRepository.getById(adoptionRequest.getRequestId());
         temp.set(adoptionRequest.isApprove(), adoptionRequest.getVeterinarianId(), adoptionRequest.getDate());
         adoptionRequestRepository.save(temp);
-        return temp;
+
     }
 
 

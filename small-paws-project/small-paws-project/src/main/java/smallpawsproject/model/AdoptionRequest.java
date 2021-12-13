@@ -28,6 +28,8 @@ public class AdoptionRequest implements Serializable {
 
 
     private Veterinarian veterinarianId;
+//    @OneToOne(mappedBy = "requestId")
+//    private Certificate certificate;
 
 
     private boolean approve;
@@ -106,5 +108,27 @@ public class AdoptionRequest implements Serializable {
 
     public void setApprove(boolean approve) {
         this.approve = approve;
+    }
+
+    @Override
+    public String toString() {
+        if(veterinarianId!=null){
+
+            return "Certificate of Adoption:" +
+                    "Request  Id = " + requestId +
+                    " Date of request = " + date +
+                    " Animal Id=" + animalId.getId() +
+                    " Pet Owner's first name=" + userId.getFirstName() +
+                    " Pet Owner's last name=" + userId.getLastName() +
+                    " Pet Owner's address =" + userId.getAddress() +
+                    " Approved by =" + veterinarianId.getUserId() +
+                    " Animal's Name='" + animalName + '\'' +
+                    '}';
+        }
+        else{
+            return "";
+        }
+
+
     }
 }

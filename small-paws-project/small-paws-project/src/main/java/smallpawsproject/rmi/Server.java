@@ -1,9 +1,7 @@
 package smallpawsproject.rmi;
 
-import smallpawsproject.model.AdoptionRequest;
-import smallpawsproject.model.Animal;
-import smallpawsproject.model.EndUser;
-import smallpawsproject.model.PetOwner;
+import smallpawsproject.model.*;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
@@ -24,6 +22,9 @@ public interface Server extends Remote
   List<AdoptionRequest> getAdoptionRequests() throws RemoteException;
 
   void updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException;
+
+  void addCertificate(Certificate certificate) throws RemoteException;
+  List<Certificate> getCertificates() throws RemoteException;
 
 
 }

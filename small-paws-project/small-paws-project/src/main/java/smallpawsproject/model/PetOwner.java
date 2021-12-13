@@ -27,6 +27,10 @@ public class PetOwner extends EndUser
 
   @OneToMany(mappedBy = "userId")
   private List<AdoptionRequest> myRequests;
+  @OneToMany(mappedBy = "petOwnerId")
+
+  private List<Certificate> myCertificates;
+
 
 
   public PetOwner(){}
@@ -48,6 +52,7 @@ public class PetOwner extends EndUser
     this.zipcode = zipcode;
     this.jobTitle = jobTitle;
     myRequests = new ArrayList<>();
+    myCertificates = new ArrayList<>();
   }
 
   public String getAddress()
@@ -155,4 +160,19 @@ public class PetOwner extends EndUser
     this.id = id;
   }
 
+//  public List<AdoptionRequest> getMyRequests() {
+//    return myRequests;
+//  }
+//
+//  public void setMyRequests(List<AdoptionRequest> myRequests) {
+//    this.myRequests = myRequests;
+//  }
+//
+//  public List<Certificate> getMyCertificates() {
+//    return myCertificates;
+//  }
+//
+//  public void setMyCertificates(List<Certificate> myCertificates) {
+//    this.myCertificates = myCertificates;
+//  }
 }

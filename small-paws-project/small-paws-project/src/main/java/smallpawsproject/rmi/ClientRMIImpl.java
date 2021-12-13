@@ -1,10 +1,8 @@
 package smallpawsproject.rmi;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import smallpawsproject.model.AdoptionRequest;
-import smallpawsproject.model.Animal;
-import smallpawsproject.model.EndUser;
-import smallpawsproject.model.PetOwner;
+import smallpawsproject.model.*;
+
 import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -92,6 +90,16 @@ public class ClientRMIImpl extends UnicastRemoteObject implements ClientRMI
   @Override
   public void updateAdoptionRequest(AdoptionRequest adoptionRequest) throws RemoteException {
     server.updateAdoptionRequest(adoptionRequest);
+  }
+
+  @Override
+  public void addCertificate(Certificate certificate) throws RemoteException {
+    server.addCertificate(certificate);
+  }
+
+  @Override
+  public List<Certificate> getCertificates() throws RemoteException {
+    return server.getCertificates();
   }
 
 }

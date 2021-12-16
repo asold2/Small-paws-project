@@ -1,6 +1,7 @@
 using Client.Authentication;
 using Client.Data;
 using Client.Data.AdoptionRequest;
+using Client.Data.Certificate;
 using Client.Data.Registration;
 using Client.Data.Validation;
 using Client.Model;
@@ -30,6 +31,7 @@ namespace Client
             services.AddServerSideBlazor();
             
             services.AddSingleton<IAnimalService, CloudAnimalService>();
+            services.AddSingleton<ICertificateService, CloudCertificateService>();
             services.AddSingleton<IUserLogInService, CloudUserLogInService>();
             services.AddSingleton<IUserCreateAccountService, CloudUserCreateAccountService>();
             services.AddSingleton<IAdoptionRequestService, CloudAdoptionRequestsService>();

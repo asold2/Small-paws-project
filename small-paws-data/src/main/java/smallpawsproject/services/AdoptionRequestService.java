@@ -6,5 +6,5 @@ import java.util.*;
 public interface AdoptionRequestService {
     void makeNewRequest(AdoptionRequest adoptionRequest);
     List<AdoptionRequest> getAdoptionRequests();
-    AdoptionRequest updateAdoptionRequest(AdoptionRequest adoptionRequest);
+    void updateAdoptionRequest(AdoptionRequest adoptionRequest);
 }

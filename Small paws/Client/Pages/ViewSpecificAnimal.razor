@@ -22,6 +22,10 @@
 				<td>@Id</td>
 			</tr>
 			<tr>
+				<td><b>Sex</b></td>
+				<td>@Sex</td>
+			</tr>
+			<tr>
 				<td><b>Age</b></td>
 				<td>@Age</td>
 			</tr>
@@ -54,13 +58,13 @@
 </div>
 <div class="wrap-login-btn" >
 	<div class="login-bgbtn"></div>
-	<button class="login-btn" data-toggle="modal" data-target="#AdoptAnimaPopUpWindow" >
+	<button class="login-btn" data-toggle="modal" data-target="#AdoptAnimalPopUpWindow" >
 		Adopt
 	</button>
 </div>
 
 @*Pop up window*@
-<div class="modal fade" id="AdoptAnimaPopUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="AdoptAnimalPopUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -72,10 +76,12 @@
 			<div class="modal-body">
 				Type in animal's new name:
 				<input type="text" @bind="@AnimalName" @onkeyup="@Enter"/>
+				<div style="color: red; size: 20em">@AnimalNameError</div>
+				<div style="color: limegreen; size: 20em">@AnimalNameSuccess</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary"  data-dismiss="modal" @onclick="MakeAdoptionRequest">Adopt</button>
+				<button type="button" class="btn btn-primary" @onclick="MakeAdoptionRequest">Adopt</button>
 			</div>
 		</div>
 	</div>

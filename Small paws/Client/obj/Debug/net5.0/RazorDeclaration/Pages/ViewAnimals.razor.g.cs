@@ -82,13 +82,6 @@ using Client.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "F:\SmallPaws\Small paws\Client\Pages\ViewAnimals.razor"
-using Client.Model;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/ViewAnimals")]
     public partial class ViewAnimals : ViewAnimalsRazor
     {

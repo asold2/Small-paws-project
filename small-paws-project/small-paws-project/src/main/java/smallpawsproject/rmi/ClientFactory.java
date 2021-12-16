@@ -8,8 +8,6 @@ public class ClientFactory
 {
   private ClientRMI client;
 
-
-
   public ClientRMI getClient(){
     if(client==null){
       try

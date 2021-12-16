@@ -21,7 +21,6 @@ public class PetOwnerServiceImpl implements PetOwnerService
 
   @Override public void registerPetOwner(PetOwner petOwner)
   {
-    System.out.println("In pet owner service at register");
     petOwnerRepository.save(petOwner);
   }
 

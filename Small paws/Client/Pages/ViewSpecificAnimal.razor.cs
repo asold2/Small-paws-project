@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Client.Data;
 using Client.Model;
@@ -31,8 +32,9 @@ namespace Client.Pages
         
         protected string ShownImage;
         protected string AnimalType;
-        protected int? Age;
-        protected int? Id;
+        protected string Sex;
+        protected int Age;
+        protected int Id;
         private bool _washed;
         private bool _fed;
         private bool _vaccinated;
@@ -43,6 +45,8 @@ namespace Client.Pages
         protected string VaccinatedIcon = "fas fa-times";
 
         protected string AnimalName;
+        protected string AnimalNameError = "";
+        protected string AnimalNameSuccess = "";
 
         protected override async Task OnInitializedAsync()
         {
@@ -50,13 +54,13 @@ namespace Client.Pages
             try
             {
                 var valueInt = Convert.ToInt32(Value);
-                Console.WriteLine(valueInt + "!!!!!!!!!!!!");
                 Animals = await AnimalService.GetAnimalsAsync();
                 foreach (var animal in Animals)
                 {
                     if (animal.Id != valueInt) continue;
                     ShownImage = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
                     AnimalType = animal.AnimalType;
+                    Sex = animal.Sex;
                     Age = animal.Age;
                     Id = animal.Id;
                     _washed = animal.Washed;
@@ -105,18 +109,32 @@ namespace Client.Pages
                 DateTime = DateTime.Now,
                 AnimalId = tempAnimal,
                 UserId = await AdoptionRequestService.GetPetOwnerByIdAsync(user.UserId),
-                Approve = false,
-                AnimalName = AnimalName
-                
+                Approve = false
             };
-            Console.WriteLine(adoptRequest.UserId+ "!!!!!!!!!!") ;
+            if (string.IsNullOrEmpty(AnimalName))
+            {
+                AnimalNameError = "Fill out animal's name";
+            }
+            else
+            {
+                adoptRequest.AnimalName = AnimalName;
+                
+            }
+
+            if (!IsAnyPropertyNullOrEmpty(adoptRequest))
+            {
+                await AdoptionRequestService.MakeNewRequestAsync(adoptRequest);
+                AnimalNameSuccess = "Successfully sent adoption request, you can close the window";
+            }
             
-           
-            await AdoptionRequestService.MakeNewRequestAsync(adoptRequest);
             
         }
         
-  
+        private static bool IsAnyPropertyNullOrEmpty(AdoptionRequest adoptionRequest)
+        {
+            return (from pi in adoptionRequest.GetType().GetProperties() where pi.PropertyType == typeof(string) select
+                (string) pi.GetValue(adoptionRequest)).Any(string.IsNullOrEmpty);
+        }
         
         protected async Task Enter(KeyboardEventArgs e)
         {

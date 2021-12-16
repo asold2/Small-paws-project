@@ -30,7 +30,6 @@ public class CreateAccountController
   @PostMapping("/newAccount")
   @ResponseBody
   public int registerPetOwner(@RequestBody PetOwner petOwner){
-    System.out.println("Registering pet owner");
 
     var petOwnerToCreate = new PetOwner(petOwner.getJobTitle(),
         petOwner.getAddress(), petOwner.getZipcode(), petOwner.getAge(), petOwner.getAvgIncome(), petOwner.getFamilyStatus(), petOwner.getFirstName(),

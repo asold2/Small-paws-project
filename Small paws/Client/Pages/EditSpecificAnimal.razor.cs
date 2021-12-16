@@ -47,7 +47,6 @@ namespace Client.Pages
             try
             {
                 var valueInt = Convert.ToInt32(Value);
-                Console.WriteLine(valueInt + "!!!!!!!!!!!!");
                 Animals = await AnimalService.GetAnimalsAsync();
                 foreach (var animal in Animals)
                 {

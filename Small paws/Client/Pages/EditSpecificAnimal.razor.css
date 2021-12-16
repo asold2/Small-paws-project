@@ -171,6 +171,22 @@ th, td {
     height: 100%;
     width: 100%;
 }
+.healthNotes-div{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    height: 100%;
+}
+.healthNotes-text{
+    margin-bottom: 1%;
+}
+.healthNotes-area{
+    width: 100%;
+    height: 20vh;
+    box-sizing: border-box;
+    resize: none;
+}
 
 @media (max-width: 1000px){
     .picture-div{

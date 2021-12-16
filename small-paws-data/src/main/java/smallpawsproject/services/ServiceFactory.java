@@ -1,14 +1,8 @@
 package smallpawsproject.services;
 
 import org.springframework.stereotype.Component;
-import smallpawsproject.repositories.AdoptionRequestRepository;
-import smallpawsproject.repositories.AnimalRepository;
-import smallpawsproject.repositories.UsersRepository;
-import smallpawsproject.repositories.PetOwnerRepository;
-import smallpawsproject.services.impl.AdoptionRequestServiceImpl;
-import smallpawsproject.services.impl.AnimalServiceImpl;
-import smallpawsproject.services.impl.UsersServiceImpl;
-import smallpawsproject.services.impl.PetOwnerServiceImpl;
+import smallpawsproject.repositories.*;
+import smallpawsproject.services.impl.*;
 
 @Component
 public class ServiceFactory
@@ -17,18 +11,20 @@ public class ServiceFactory
   private UsersService usersService;
   private AnimalService animalService;
   private AdoptionRequestService adoptionRequestService;
-
+  private CertificateService certificateService;
 
 
   private final UsersRepository usersRepository;
   private final PetOwnerRepository petOwnerRepository;
   private final AnimalRepository animalRepository;
+  private final CertificateRepository certificateRepository;
   private final AdoptionRequestRepository adoptionRequestRepository;
-  public ServiceFactory(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository, AdoptionRequestRepository adoptionRequestRepository)
+  public ServiceFactory(PetOwnerRepository petOwnerRepository, UsersRepository usersRepository, AnimalRepository animalRepository, CertificateRepository certificateRepository, AdoptionRequestRepository adoptionRequestRepository)
   {
     this.petOwnerRepository = petOwnerRepository;
     this.usersRepository = usersRepository;
     this.animalRepository = animalRepository;
+    this.certificateRepository = certificateRepository;
     this.adoptionRequestRepository = adoptionRequestRepository;
   }
   public UsersService getUserService(){
@@ -59,6 +55,13 @@ public class ServiceFactory
       adoptionRequestService = new AdoptionRequestServiceImpl(adoptionRequestRepository);
     }
     return  adoptionRequestService;
+  }
+
+  public CertificateService getCertificateService(){
+    if(certificateService==null){
+      certificateService = new CertificateServiceImpl(certificateRepository);
+    }
+    return certificateService;
   }
 
 }

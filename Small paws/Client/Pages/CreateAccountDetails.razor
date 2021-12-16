@@ -14,11 +14,13 @@
 					<div class="wrap-input">
 						<span class="label-input">Firstname</span>
 						<input class="input" type="text" placeholder="Type your firstname" @bind="FirstName">
+						<div style="color: red">@FirstNameError</div>
 						<span class="focus-input"></span>
 					</div>		
 					<div class="wrap-input">
 						<span class="label-input">Lastname</span>
 						<input class="input" type="text" placeholder="Type your lastname" @bind="LastName">
+						<div style="color: red">@LastNameError</div>
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
@@ -30,11 +32,13 @@
 					<div class="wrap-input">
 						<span class="label-input">Sex</span>
 						<input class="input" type="text" placeholder="Type your sex" @bind="Sex">
+						<div style="color: red">@SexError</div>
 						<span class="focus-input"></span>
 					</div>
 					<div class="wrap-input">
 						<span class="label-input">Family status</span>
 						<input class="input" type="text" placeholder="Type your family status" @bind="FamilyStatus">
+						<div style="color: red">@FamilyStatusNameError</div>
 						<span class="focus-input"></span>
 					</div>
 				</div>
@@ -49,18 +53,21 @@
 					<div class="wrap-input">
 						<span class="label-input">Address</span>
 						<input class="input" type="text" placeholder="Type your address" @bind="Address">
+						<div style="color: red">@AddressError</div>
 						<span class="focus-input"></span>
 					</div>
 					
 					<div class="wrap-input">
 						<span class="label-input">Zip code</span>
 						<input class="input" type="text" placeholder="Type your zip code" @bind="ZipCode">
+						<div style="color: red">@ZipCodeError</div>
 						<span class="focus-input"></span>
 					</div>	
 									
 					<div class="wrap-input">
 						<span class="label-input">Job title</span>
 						<input class="input" type="text" placeholder="Type your job title" @bind="JobTitle">
+						<div style="color: red">@JobTitleError</div>
 						<span class="focus-input"></span>
 					</div>
 						<div class="wrap-input">

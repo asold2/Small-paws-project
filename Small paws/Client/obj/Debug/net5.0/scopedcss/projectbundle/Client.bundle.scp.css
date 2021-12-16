@@ -239,10 +239,33 @@ th[b-usjncqfocu], td[b-usjncqfocu] {
     align-items: center;
     align-content: center;
 }
-.accept[b-usjncqfocu]{
+.petOwnerId[b-usjncqfocu]{
+    cursor: pointer;
+}
+/* _content/Client/Pages/CertificatesPrint.razor.rz.scp.css */
+table[b-k4s8f2wul2]{
+    width: 100%;
+}
+tr:nth-child(even)[b-k4s8f2wul2] {
+    background-color: #f2f2f2;
+}
+
+th[b-k4s8f2wul2], td[b-k4s8f2wul2] {
+    padding: 2%;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+.AcceptReject[b-k4s8f2wul2]{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.accept[b-k4s8f2wul2]{
     height: 100%;
 }
-.reject[b-usjncqfocu]{
+.reject[b-k4s8f2wul2]{
     height: 100%;
 }
 /* _content/Client/Pages/CreateAccountDetails.razor.rz.scp.css */
@@ -892,6 +915,22 @@ th[b-ro3c4skgv1], td[b-ro3c4skgv1] {
     height: 100%;
     width: 100%;
 }
+.healthNotes-div[b-ro3c4skgv1]{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    height: 100%;
+}
+.healthNotes-text[b-ro3c4skgv1]{
+    margin-bottom: 1%;
+}
+.healthNotes-area[b-ro3c4skgv1]{
+    width: 100%;
+    height: 20vh;
+    box-sizing: border-box;
+    resize: none;
+}
 
 @media (max-width: 1000px){
     .picture-div[b-ro3c4skgv1]{
@@ -1172,29 +1211,31 @@ button:hover[b-qqczw58t74] {
     font-size: smaller;
 }
 /* _content/Client/Pages/ViewAnimals.razor.rz.scp.css */
-th[b-fi7r9zgcga]{
-    display: flex;
-    justify-content: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
+.card-title[b-fi7r9zgcga]{
+    text-align: center;
 }
-
-#description[b-fi7r9zgcga]{
-    font-size: 10pt;
-}
-
 #ageRow[b-fi7r9zgcga]{
-    display: flex;
-    justify-content: center;
+    text-align: center;
     font-size: 11pt;
+    margin-bottom: 0 !important;
 }
 .imageThumbnail[b-fi7r9zgcga]{
     height: 60%;
     width: 100%;
 }
 .card[b-fi7r9zgcga]{
-    height: 90%;
     cursor: pointer;
+}
+.card-title[b-fi7r9zgcga]{
+    margin-bottom: -.7%;
+}
+.card-text[b-fi7r9zgcga]{
+    margin-bottom: -.7%;
+}
+@media (max-width: 641px) {
+    .card[b-fi7r9zgcga]{
+        margin-bottom: 10%;
+    }
 }
 /* _content/Client/Pages/ViewSpecificAnimal.razor.rz.scp.css */
 /*Title styling*/
@@ -1216,7 +1257,6 @@ th[b-fi7r9zgcga]{
 button[b-s0je6xt4tp] {
     outline: none !important;
     border: none;
-    background: transparent;
 }
 
 button:hover[b-s0je6xt4tp] {
@@ -1267,6 +1307,7 @@ button:hover[b-s0je6xt4tp] {
 }
 
 .login-btn[b-s0je6xt4tp] {
+    background: transparent;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     color: #fff;
@@ -1421,13 +1462,16 @@ th[b-s0je6xt4tp], td[b-s0je6xt4tp] {
     background: linear-gradient(225deg, rgba(255,0,172,1) 0%, rgba(69,23,142,1) 50%, rgba(0,212,255,1) 100%);
 }
 
+
 .top-row[b-ocnk4r8tjs] {
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
+    
     height: 3.5rem;
     display: flex;
     align-items: center;
+    justify-content: right;
+ 
 }
 
     .top-row[b-ocnk4r8tjs]  a, .top-row .btn-link[b-ocnk4r8tjs] {
@@ -1442,8 +1486,9 @@ th[b-s0je6xt4tp], td[b-s0je6xt4tp] {
 
 @media (max-width: 641px) {
     .top-row:not(.auth)[b-ocnk4r8tjs] {
-        display: none;
+        justify-content: center;
     }
+
 
     .top-row.auth[b-ocnk4r8tjs] {
         justify-content: space-between;

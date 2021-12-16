@@ -22,21 +22,19 @@ namespace Client.Pages
 
         protected string UserNameError = "";
 
-        protected const string EmailError = "";
-
-        // private IList<EndUser> users = null;
+        protected string EmailError = "";
 
         protected void LoadLogIn()
         {
             NavigationManager.NavigateTo("");
         }
-        protected void LoadCreateAccountDetails()
-        {
 
-            
-            if (EndUser.Password.Equals(PasswordConfirmation) && EndUser.Email.Length!=0)
+        private void LoadCreateAccountDetails()
+        {
+            if (EndUser.Password.Equals(PasswordConfirmation))
             {
                 NavigationManager.NavigateTo("CreateAccountDetails");
+                PasswordError = "";
             }
             else
             {
@@ -46,21 +44,28 @@ namespace Client.Pages
 
         protected async Task CheckUserName()
         {
-            
-            if (await UserCreateAccountService.CheckUserName(EndUser.UserName) ==403)
+            if (string.IsNullOrEmpty(EndUser.Email))
             {
+                EmailError = "Email must be filled out";
+                UserNameError = "";
+            }
+            else if (await UserCreateAccountService.CheckUserName(EndUser.UserName) ==403)
+            {
+                EmailError = "";
                 UserNameError = "Username already in use";
             }
             else
             {
+                EmailError = "";
+                UserNameError = "";
                 LoadCreateAccountDetails();
             }
         }
-        protected void Enter(KeyboardEventArgs e)
+        protected async Task Enter(KeyboardEventArgs e)
         {
             if (e.Code is "Enter" or "NumpadEnter")
             {
-                LoadCreateAccountDetails();
+                await CheckUserName();
             }
         }
     }

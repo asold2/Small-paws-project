@@ -17,9 +17,6 @@ th[b-usjncqfocu], td[b-usjncqfocu] {
     align-items: center;
     align-content: center;
 }
-.accept[b-usjncqfocu]{
-    height: 100%;
-}
-.reject[b-usjncqfocu]{
-    height: 100%;
+.petOwnerId[b-usjncqfocu]{
+    cursor: pointer;
 }

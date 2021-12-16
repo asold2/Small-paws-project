@@ -19,17 +19,13 @@ namespace Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            
-            try
-            {
-                Animals = await AnimalService.GetAnimalsAsync();
+            Animals = await AnimalService.GetAnimalsAsync();
                 ShownImage = new string[Animals.Max(a => a.Id)+1];
                 ShownDescription = new string[Animals.Max(a => a.Id)+1];
                 foreach (var animal in Animals)
                 {
                     ShownImage[animal.Id] = $"data:image/jpg;base64,{Convert.ToBase64String(animal.Picture)}";
                     var stringSize = Encoding.ASCII.GetBytes(animal.Description);
-                    // Console.WriteLine(stringSize.Length);
                     if (stringSize.Length > 100)
                     {
                         ShownDescription[animal.Id] = animal.Description.Substring(0, 100) + "...";
@@ -38,13 +34,7 @@ namespace Client.Pages
                     {
                         ShownDescription[animal.Id] = animal.Description;
                     }
-
                 }
-            }
-            catch
-            {
-                // ignored
-            }
         }
 
         protected void OpenSpecificAnimal(int i)

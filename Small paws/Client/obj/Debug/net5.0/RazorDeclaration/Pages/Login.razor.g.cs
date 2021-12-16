@@ -83,7 +83,7 @@ using Client.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.LayoutAttribute(typeof(LoginCreateAccountLayout))]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Login")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Login : LoginRazor
     {
         #pragma warning disable 1998

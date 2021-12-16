@@ -21,7 +21,7 @@
 				</div>
 				<div class="wrap-input">
 				<span class="label-input">Username</span>
-				<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" >
+				<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" @onkeyup="@Enter" >
 				<span class='focus-input'></span>
 				<i class="fas fa-user-alt"></i>
 			</div>
@@ -36,7 +36,7 @@
 					</div>
 			<div class="wrap-input">
 				<span class="label-input">Password confirmation</span>
-				<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation">
+				<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation" @onkeyup="@Enter">
 				<span class="focus-input"></span>
 				<i class="fas fa-lock"></i>
 			</div>

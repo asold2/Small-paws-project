@@ -27,6 +27,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
 
 //@ExtendWith(MockitoExtension.class)
 //@ExtendWith(SpringExtension.class)
@@ -34,22 +35,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class UserServiceImplTest {
 
-    @Spy//Spy, because we need the clientRMI and clientFactory to "act" as if in the normal environment
-    private ClientFactory clientFactory;
-    @Spy
+
     private ClientRMI clientRMI;
-    @Spy
-    private Server server;
+
     UserServiceImpl usersService;
 
     @BeforeEach
     public void setUp(){
-        clientRMI = clientFactory.getClient();
-        try {
-            clientRMI.setServer(server);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+        clientRMI = mock(ClientRMIImpl.class);
         usersService = new UserServiceImpl();
         usersService.setClient(clientRMI);
     }

@@ -24,6 +24,9 @@ public class PetOwner extends EndUser
 
   @OneToMany(mappedBy = "userId", cascade = CascadeType.REMOVE)
   private List<AdoptionRequest> myRequests;
+  @OneToMany(mappedBy = "petOwnerId", cascade = CascadeType.REMOVE)
+  private List<Certificate> myCertificates;
+
 
 
 
@@ -43,6 +46,7 @@ public class PetOwner extends EndUser
     this.zipcode = zipcode;
     this.jobTitle = jobTitle;
     myRequests = new ArrayList<>();
+    myCertificates = new ArrayList<>();
 
   }
 
@@ -153,5 +157,13 @@ public class PetOwner extends EndUser
 
   public void setMyRequests(List<AdoptionRequest> myRequests) {
     this.myRequests = myRequests;
+  }
+
+  public List<Certificate> getMyCertificates() {
+    return myCertificates;
+  }
+
+  public void setMyCertificates(List<Certificate> myCertificates) {
+    this.myCertificates = myCertificates;
   }
 }

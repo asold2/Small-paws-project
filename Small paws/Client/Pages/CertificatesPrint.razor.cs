@@ -6,7 +6,7 @@ using Client.Authentication;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using Client.Data.Certificate;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Windows.Forms.PdfViewer;
@@ -64,28 +64,7 @@ namespace Client.Pages
         //
         // }
 
-        protected async Task OpenPdf(byte[] document)
-        {
-            PdfLoadedDocument loadedDocument = new PdfLoadedDocument(document, true);
-            PdfPageBase page = loadedDocument.Pages.Add();
-            // var graphics = page.Graphics;
-            // PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
-            // graphics.DrawString("Certifiate", font, Black , new PointF(1,1));
-            loadedDocument.Save("Certificate.pdf");
-            loadedDocument.Close();
-            
-            PdfDocumentView viewer = new PdfDocumentView();
-            viewer.Load("Certificate.pdf");
-            PrintDialog dialog = new PrintDialog();
-            dialog.AllowPrintToFile = true;
-            dialog.AllowSelection = true;
-            dialog.AllowSomePages = true;
-            dialog.AllowCurrentPage = true;
-            
-            dialog.Document = viewer.PrintDocument;
-            dialog.Document.Print();
-            viewer.Dispose();
-            
+        
             
             
             
@@ -99,7 +78,7 @@ namespace Client.Pages
             // Response.ContentType = "application/octet-stream";
             // Response.BinaryWrite(fileByteArray);
 
-        }
+//        }
 
     }
 }

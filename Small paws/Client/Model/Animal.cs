@@ -3,6 +3,10 @@
 
 namespace Client.Model
 {
+    /// <summary>
+    /// An animal model class.
+    /// Each property has a JsonPropertyName specifying how exactly it should look when being send as a json
+    /// </summary>
     public class Animal
     {
         [JsonPropertyName("id")]

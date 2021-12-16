@@ -9,15 +9,24 @@ namespace Client.Data.Certificate
 {
     public class CloudCertificateService : ICertificateService
     {
-        
+        /// <summary>
+        /// Uri of the 2nd tier server.
+        /// </summary>
         private const string Uri = "http://localhost:8090";
+        /// <summary>
+        /// HttpClient used for making http requests to the 2nd tier server.
+        /// </summary>
         private readonly HttpClient _httpClient;
 
+        /// <summary>
+        /// Constructor dependency injection.
+        /// </summary>
         public CloudCertificateService()
         {
             this._httpClient = new HttpClient();
         }
-
+        
+        /// <inheritdoc />
         public async Task<IList<Model.Certificate>> GetCertificatesByUserId(int id)
         {
             var responseMessage = await _httpClient.GetAsync(Uri + "/certificates/"+id);

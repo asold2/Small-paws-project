@@ -19,6 +19,7 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
     private ClientRMI client;
     private List<AdoptionRequest> existentRequests;
 
+
     @Autowired
     public AdoptionRequestServiceImpl() {
         clientFactory = new ClientFactory();
@@ -41,7 +42,11 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
     }
 
 
-
+    /**
+     * This method is checking if there is not already an adoptionRequest with same information as this new one
+     * and further deciding if it will be created
+     * @param adoptionRequest is object of AdoptionRequest
+     */
 
 
     @Override
@@ -79,6 +84,11 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
         return requests;
     }
 
+    /**
+     * Method for updating adoptionRequest
+     * @param adoptionRequest is object of AdoptionRequest
+     */
+
     @Override
     public void updateAdoptionRequest(AdoptionRequest adoptionRequest) {
         try {
@@ -87,6 +97,7 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public void setClient(ClientRMI clientRMI) {

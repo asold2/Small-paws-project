@@ -21,6 +21,14 @@ public class AdoptionRequestController {
     private final PetOwnerService petOwnerService;
     private final CertificateService certificateService;
 
+    /**
+     * AdoptionRequestController constructor
+     * @param adoptionRequestService is object of AdoptionRequestService
+     * @param usersService is object of UsersService
+     * @param petOwnerService is object of PetOwnerService
+     * @param certificateService is object of CertificateService
+     */
+
     @Autowired
     public AdoptionRequestController(AdoptionRequestService adoptionRequestService, UsersService usersService, PetOwnerService petOwnerService, CertificateService certificateService) {
         this.adoptionRequestService = adoptionRequestService;
@@ -29,6 +37,10 @@ public class AdoptionRequestController {
         this.certificateService = certificateService;
     }
 
+    /**
+     * Method for making new AdoptionRequest object
+     * @param adoptionRequest is object of new AdoptionRequest with all its information
+     */
 
     @RequestMapping(method = RequestMethod.POST, value = "/newRequest")
     public void makeNewRequest( @RequestBody AdoptionRequest adoptionRequest){
@@ -56,6 +68,11 @@ public class AdoptionRequestController {
     {
         return usersService.getUserById(id);
     }
+
+    /**
+     * This method updates information about the state of the request (approved,denied)
+     * @param adoptionRequest is object of AdoptionRequest
+     */
 
     @RequestMapping(method = RequestMethod.PATCH, value="/request_decision")
     @ResponseBody

@@ -2,6 +2,12 @@
 
 namespace Client.Model
 {
+    /// <summary>
+    /// A certificate model class.
+    /// Each property has a JsonPropertyName specifying how exactly it should look when being send as a json
+    /// </summary>
+    
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class Certificate
     {
         [JsonPropertyName("id")]

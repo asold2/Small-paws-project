@@ -57,6 +57,14 @@ public class UserServiceImpl implements UsersService
     return null;
   }
 
+  /**
+   * This method checks if any users username and password matched the sent ones.
+   * @param userName is passed from 1st tier
+   * @param password is passed from 1st tier
+   * @return Method returns specific user if he matched the sent username and password
+   * if no user matches these parameters it will return null
+   */
+
   @Override public EndUser check(String userName, String password)
   {
     users = getUsers();
@@ -73,6 +81,12 @@ public class UserServiceImpl implements UsersService
     return answer;
   }
 
+  /**
+   * This method gets user according to its specific id
+   * @param id indicates the user that the functionality must be used upon
+   * @return Method returns specific petOwner according to the id
+   */
+
   @Override
   public Veterinarian getUserById(int id) {
     EndUser temp = new Veterinarian();
@@ -85,6 +99,7 @@ public class UserServiceImpl implements UsersService
 
     return (Veterinarian) temp;
   }
+
 
   @Override
   public void setClient(ClientRMI clientRMI) {

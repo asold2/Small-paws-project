@@ -2,6 +2,10 @@
 
 namespace Client.Model
 {
+    /// <summary>
+    /// A pet owner model class extending an end user super class.
+    /// Each property has a JsonPropertyName specifying how exactly it should look when being send as a json
+    /// </summary>
     public class PetOwner : EndUser
     {
 

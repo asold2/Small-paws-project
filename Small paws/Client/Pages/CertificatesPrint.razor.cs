@@ -1,28 +1,42 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Client.Authentication;
 using Client.Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using System.Windows.Forms;
 using Client.Data.Certificate;
-using Syncfusion.Pdf.Parsing;
-using Syncfusion.Windows.Forms.PdfViewer;
-using PdfPageBase = Syncfusion.Pdf.PdfPageBase;
 
 namespace Client.Pages
 {
+    /// <summary>
+    /// C# code for viewing certificates page.
+    /// </summary>
     public class CertificatesPrintRazor : ComponentBase
     {
+        /// <summary>
+        /// A list of certificates.
+        /// </summary>
         protected IList<Certificate> Certificates { get; set; }
-        [Inject] private NavigationManager NavigationManager { get; set; }
-        [Inject] private ICertificateService CertificateService { get; set; }
-        [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         
+        /// <summary>
+        /// Injected NavigationManager for navigating through pages.
+        /// </summary>
+        [Inject] private NavigationManager NavigationManager { get; set; }
+        
+        /// <summary>
+        /// Injected certificate service for getting certificates.
+        /// </summary>
+        [Inject] private ICertificateService CertificateService { get; set; }
+        
+        /// <summary>
+        /// Injected AuthenticationStateProvider for getting user's id.
+        /// </summary>
+        [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
 
+        /// <summary>
+        /// Method used for getting certificates for logged in user when page is loaded.
+        /// </summary>
         protected override async Task OnInitializedAsync()
         {
             var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser();
@@ -64,42 +78,15 @@ namespace Client.Pages
         //
         // }
 
-        protected async Task OpenPdf(byte[] document)
-        {
-            PdfLoadedDocument loadedDocument = new PdfLoadedDocument(document, true);
-            PdfPageBase page = loadedDocument.Pages.Add();
-            // var graphics = page.Graphics;
-            // PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
-            // graphics.DrawString("Certifiate", font, Black , new PointF(1,1));
-            loadedDocument.Save("Certificate.pdf");
-            loadedDocument.Close();
-            
-            PdfDocumentView viewer = new PdfDocumentView();
-            viewer.Load("Certificate.pdf");
-            PrintDialog dialog = new PrintDialog();
-            dialog.AllowPrintToFile = true;
-            dialog.AllowSelection = true;
-            dialog.AllowSomePages = true;
-            dialog.AllowCurrentPage = true;
-            
-            dialog.Document = viewer.PrintDocument;
-            dialog.Document.Print();
-            viewer.Dispose();
-            
-            
-            
-            
-            
-            
-            // // loadedDocument.Save();
-            // // Console.WriteLine("Saved the document");
-            // // loadedDocument.Close();
-            // byte[] fileByteArray = File.ReadAllBytes(Path.Combine(System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath, "MyPDF.pdf"));
-            // Response.AddHeader("Content-disposition", String.Format("attachment; filename={0}.pdf", "MyTestFile"));
-            // Response.ContentType = "application/octet-stream";
-            // Response.BinaryWrite(fileByteArray);
 
-        }
+        // // loadedDocument.Save();
+        // // Console.WriteLine("Saved the document");
+        // // loadedDocument.Close();
+        // byte[] fileByteArray = File.ReadAllBytes(Path.Combine(System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath, "MyPDF.pdf"));
+        // Response.AddHeader("Content-disposition", String.Format("attachment; filename={0}.pdf", "MyTestFile"));
+        // Response.ContentType = "application/octet-stream";
+        // Response.BinaryWrite(fileByteArray);
 
+//        }
     }
 }

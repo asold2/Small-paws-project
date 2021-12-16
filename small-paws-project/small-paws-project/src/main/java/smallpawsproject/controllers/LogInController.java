@@ -10,18 +10,32 @@ import smallpawsproject.services.*;
 public class LogInController
 {
 
-private final UsersService usersService;
+  private final UsersService usersService;
+
+  /**
+   * LogInController constructor
+   * @param usersService is object of UserService
+   */
 
   @Autowired
-  public LogInController(UsersService usersService) {
+    public LogInController(UsersService usersService) {
     this.usersService = usersService;
-  }
+    }
+
+    /**
+    * Method for checking users Username and Password
+    * @param endUser is object of EndUser
+    * @return
+    */
 
 
-  @PostMapping("/account")
-  @ResponseBody
-  public EndUser login(@RequestBody EndUser endUser){
+    @PostMapping("/account")
+    @ResponseBody
+    public EndUser login(@RequestBody EndUser endUser){
     return usersService.check(endUser.getUserName(), endUser.getPassword());
     }
-  }
+
+}
+
+
 

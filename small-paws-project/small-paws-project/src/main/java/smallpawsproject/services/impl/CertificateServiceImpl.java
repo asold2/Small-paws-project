@@ -38,6 +38,11 @@ public class CertificateServiceImpl implements CertificateService {
 
     }
 
+    /**
+     * Method for adding new certificate
+     * @param certificate is object of Certificate
+     */
+
     @Override
     public void addCertificate(Certificate certificate) {
         try {
@@ -48,8 +53,19 @@ public class CertificateServiceImpl implements CertificateService {
 
     }
 
+    /**
+     * Method for getting certificates by users ID
+     * @param id is a parameter from user
+     * @return Method returns list of certificates from user with specific ID
+     */
+
     @Override
     public List<Certificate> getCertificatesByUserId(int id) {
+        try {
+            certificates = client.getCertificates();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         List<Certificate> temp = new ArrayList<>();
         for(Certificate certificate:certificates){
             if(certificate.getPetOwnerId().getUserId().equals(id)){

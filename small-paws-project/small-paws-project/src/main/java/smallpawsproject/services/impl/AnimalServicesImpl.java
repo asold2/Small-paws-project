@@ -32,6 +32,11 @@ public class AnimalServicesImpl implements AnimalServices
     }
   }
 
+  /**
+   * Method for adding new animal to the system
+   * @param animal is object of Animal
+   */
+
   @Override public void AddAnimal(Animal animal)
   {
     animal.setHealthNotes("Nothing to note about the animal's health");
@@ -39,13 +44,17 @@ public class AnimalServicesImpl implements AnimalServices
     try
     {
       client.addAnimal(animal);
-      System.out.println("Sending to server");
     }
     catch (RemoteException e)
     {
       e.printStackTrace();
     }
   }
+
+  /**
+   * Method for updating information about animal
+   * @param animal is object of Animal
+   */
 
   @Override public void updateAnimal(Animal animal)
   {

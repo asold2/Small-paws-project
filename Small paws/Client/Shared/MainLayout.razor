@@ -24,6 +24,9 @@
 
 @code
 {
+    /// <summary>
+    /// Method used for logout function.
+    /// </summary>
     private async Task LogOut()
     {
         await ((CustomAuthenticationStateProvider) _authenticationStateProvider).Logout();

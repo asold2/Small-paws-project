@@ -1,17 +1,17 @@
 package smallpawsproject.model;
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
-
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.*;
+
+@SuppressWarnings("unused")
 @Entity
 public class PetOwner extends EndUser
 {
 
   private static final long serialVersionUID = 663126647076776891L;
 
-  private int id;
+  @Column(unique = true)
+  private Integer id;
   private String firstName;
   private String lastName;
   private int age;
@@ -22,12 +22,18 @@ public class PetOwner extends EndUser
   private int zipcode;
   private String jobTitle;
 
+  @OneToMany(mappedBy = "userId", cascade = CascadeType.REMOVE)
+  private List<AdoptionRequest> myRequests;
+  @OneToMany(mappedBy = "petOwnerId", cascade = CascadeType.REMOVE)
+  private List<Certificate> myCertificates;
+
+
 
 
   public PetOwner(){}
 
 
-  public PetOwner(String jobTitle, String address,int zipcode, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, int id,String userName, String password, String email, String role){
+  public PetOwner(String jobTitle, String address,int zipcode, int age, int avgIncome, String familyStatus, String firstName, String lastName, String sex, Integer id,String userName, String password, String email, String role){
     super(userName, password, email, role);
     this.id = id;
     this.firstName = firstName;
@@ -39,6 +45,8 @@ public class PetOwner extends EndUser
     this.address = address;
     this.zipcode = zipcode;
     this.jobTitle = jobTitle;
+    myRequests = new ArrayList<>();
+    myCertificates = new ArrayList<>();
 
   }
 
@@ -103,12 +111,12 @@ public class PetOwner extends EndUser
     this.avgIncome = avgIncome;
   }
 
-  public int getId()
+  public Integer getId()
   {
     return id;
   }
 
-  public void setId(int id)
+  public void Integer(int id)
   {
     this.id = id;
   }
@@ -140,5 +148,22 @@ public class PetOwner extends EndUser
 
   public void setZipcode(int zipcode) {
     this.zipcode = zipcode;
+  }
+
+
+  public List<AdoptionRequest> getMyRequests() {
+    return myRequests;
+  }
+
+  public void setMyRequests(List<AdoptionRequest> myRequests) {
+    this.myRequests = myRequests;
+  }
+
+  public List<Certificate> getMyCertificates() {
+    return myCertificates;
+  }
+
+  public void setMyCertificates(List<Certificate> myCertificates) {
+    this.myCertificates = myCertificates;
   }
 }

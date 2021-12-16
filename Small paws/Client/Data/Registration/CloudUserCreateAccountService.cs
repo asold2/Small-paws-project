@@ -10,15 +10,25 @@ namespace Client.Data.Registration
 {
     public class CloudUserCreateAccountService : IUserCreateAccountService
     {
+        /// <summary>
+        /// HttpClient used for making http requests to the 2nd tier server.
+        /// </summary>
         private readonly HttpClient _httpClient;
+        /// <summary>
+        /// Uri of the 2nd tier server.
+        /// </summary>
         private const string Uri = "http://localhost:8090";
 
+        /// <summary>
+        /// Constructor dependency injection.
+        /// </summary>
         public CloudUserCreateAccountService()
         {
             _httpClient = new HttpClient();
         }
 
-        public async Task<IList<EndUser>> getUsersAsync()
+        /// <inheritdoc />
+        public async Task<IList<EndUser>> GetUsersAsync()
         {
             var responseMessage = await _httpClient.GetAsync(Uri + "/users");
             if (!responseMessage.IsSuccessStatusCode)
@@ -31,7 +41,8 @@ namespace Client.Data.Registration
             return result;
         }
 
-        public async Task<int> checkUserName(string userName)
+        /// <inheritdoc />
+        public async Task<int> CheckUserName(string userName)
         {
             Console.WriteLine("Checking username");
             
@@ -61,15 +72,18 @@ namespace Client.Data.Registration
         }
 
 
+        /// <inheritdoc />
         public async Task<int> CreateUserAsync(PetOwner petOwner)
-        { 
-           
+        {
+            Console.WriteLine(petOwner.Id + "id to create");
             var userAsJson = JsonSerializer.Serialize(petOwner);
+            Console.WriteLine(userAsJson);
             HttpContent httpContent = new StringContent(
                 userAsJson,
                 Encoding.UTF8,
                 "application/json");
             var responseMessage = await _httpClient.PostAsync(Uri + "/newAccount", httpContent);
+            
             
             if (!responseMessage.IsSuccessStatusCode)
             {

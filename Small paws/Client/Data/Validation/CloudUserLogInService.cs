@@ -9,15 +9,24 @@ namespace Client.Data.Validation
 {
     public class CloudUserLogInService : IUserLogInService
     {
+        /// <summary>
+        /// Uri of the 2nd tier server.
+        /// </summary>
         private const string Uri = "http://localhost:8090";
+        /// <summary>
+        /// HttpClient used for making http requests to the 2nd tier server.
+        /// </summary>
         private readonly HttpClient _httpClient;
         
+        /// <summary>
+        /// Constructor dependency injection.
+        /// </summary>
         public CloudUserLogInService()
         {
             _httpClient = new HttpClient();
         }
 
-
+        /// <inheritdoc />
         public async Task<EndUser> ValidateUserAsync(string username, string password)
         {
             var endUser = new EndUser()
@@ -42,7 +51,7 @@ namespace Client.Data.Validation
 
             var message = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<EndUser>(message);
-            Console.WriteLine(result.GetType().ToString() + "HERE!!!!!!!!!!!!!!!!!!!!");
+           
             return result;
         }
     }

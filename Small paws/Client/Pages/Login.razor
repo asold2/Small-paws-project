@@ -12,14 +12,14 @@
 
 				<div class="wrap-input">
 					<span class="label-input">Username</span>
-					<input class="input" type="text" name="username" placeholder="Type your username" @bind="Username" @onkeydown="@Enter">
-					<span class='focus-input'></span>
+					<input class="input" type="text" name="username" placeholder="Type your username" @bind="Username" @onkeyup="@Enter">
+					<span class="focus-input"></span>
 					<i class="fas fa-user-alt"></i>
 				</div>
 
 				<div class="wrap-input">
 					<span class="label-input">Password</span>
-					<input class="input" type="password" placeholder="Type your password" @bind="Password" @onkeydown="@Enter">
+					<input class="input" type="password" placeholder="Type your password" @bind="Password" @onkeyup="@Enter">
 					<span class="focus-input"></span>
 					<i class="fas fa-lock"></i>
 				</div>
@@ -30,7 +30,7 @@
 				Login
 			</button>
 		</div>
-		<div style="color:red">@errorMessage</div>
+		<div style="color:red">@ErrorMessage</div>
 				
 		<div class="wrap-SignUp">	
 			<a @onclick="LoadCreateAccount" class="signUp" href="#">Sign Up</a>

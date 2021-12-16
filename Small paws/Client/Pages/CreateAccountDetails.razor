@@ -14,27 +14,31 @@
 					<div class="wrap-input">
 						<span class="label-input">Firstname</span>
 						<input class="input" type="text" placeholder="Type your firstname" @bind="FirstName">
+						<div style="color: red">@FirstNameError</div>
 						<span class="focus-input"></span>
 					</div>		
 					<div class="wrap-input">
 						<span class="label-input">Lastname</span>
 						<input class="input" type="text" placeholder="Type your lastname" @bind="LastName">
+						<div style="color: red">@LastNameError</div>
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
 						<span class="label-input">Age</span>
 						<input class="input" type="text" placeholder="Type your age" @bind="Age">
-						<div style="color: red">@ageError</div>
+						<div style="color: red">@AgeError</div>
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
 						<span class="label-input">Sex</span>
 						<input class="input" type="text" placeholder="Type your sex" @bind="Sex">
+						<div style="color: red">@SexError</div>
 						<span class="focus-input"></span>
 					</div>
 					<div class="wrap-input">
 						<span class="label-input">Family status</span>
 						<input class="input" type="text" placeholder="Type your family status" @bind="FamilyStatus">
+						<div style="color: red">@FamilyStatusNameError</div>
 						<span class="focus-input"></span>
 					</div>
 				</div>
@@ -43,30 +47,33 @@
 					<div class="wrap-input">
 						<span class="label-input">Average income</span>
 						<input class="input" type="text" placeholder="Type your average income" @bind="AverageIncome">
-						<div style="color: red">@avgIncomeError</div>
+						<div style="color: red">@AvgIncomeError</div>
 						<span class="focus-input"></span>
 					</div>					
 					<div class="wrap-input">
 						<span class="label-input">Address</span>
 						<input class="input" type="text" placeholder="Type your address" @bind="Address">
+						<div style="color: red">@AddressError</div>
 						<span class="focus-input"></span>
 					</div>
 					
 					<div class="wrap-input">
 						<span class="label-input">Zip code</span>
 						<input class="input" type="text" placeholder="Type your zip code" @bind="ZipCode">
+						<div style="color: red">@ZipCodeError</div>
 						<span class="focus-input"></span>
 					</div>	
 									
 					<div class="wrap-input">
 						<span class="label-input">Job title</span>
 						<input class="input" type="text" placeholder="Type your job title" @bind="JobTitle">
+						<div style="color: red">@JobTitleError</div>
 						<span class="focus-input"></span>
 					</div>
 						<div class="wrap-input">
 							<span class="label-input">ID</span>
 							<input class="input" type="text" placeholder="Type your ID" @bind="Id">
-							<div style="color: red">@idError</div>
+							<div style="color: red">@IdError</div>
 							<span class="focus-input"></span>
 						</div>
 				</div>
@@ -77,7 +84,7 @@
 						Create Account
 					</button>
 				</div>
-				<div style="color: red; size: 25px">@error</div>
+				<div style="color: red; size: 25px">@Error</div>
 				
 				<div class="wrap-SignUp">	
 					<a @onclick="LoadLogIn" class="signUp" href="#">LogIn</a>

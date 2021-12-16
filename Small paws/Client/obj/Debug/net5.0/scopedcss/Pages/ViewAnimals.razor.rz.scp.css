@@ -1,24 +1,26 @@
-th[b-fi7r9zgcga]{
-    display: flex;
-    justify-content: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
+.card-title[b-fi7r9zgcga]{
+    text-align: center;
 }
-
-#description[b-fi7r9zgcga]{
-    font-size: 10pt;
-}
-
 #ageRow[b-fi7r9zgcga]{
-    display: flex;
-    justify-content: center;
+    text-align: center;
     font-size: 11pt;
+    margin-bottom: 0 !important;
 }
 .imageThumbnail[b-fi7r9zgcga]{
     height: 60%;
-    width: auto;
+    width: 100%;
 }
 .card[b-fi7r9zgcga]{
-    height: 50%;
     cursor: pointer;
+}
+.card-title[b-fi7r9zgcga]{
+    margin-bottom: -.7%;
+}
+.card-text[b-fi7r9zgcga]{
+    margin-bottom: -.7%;
+}
+@media (max-width: 641px) {
+    .card[b-fi7r9zgcga]{
+        margin-bottom: 10%;
+    }
 }

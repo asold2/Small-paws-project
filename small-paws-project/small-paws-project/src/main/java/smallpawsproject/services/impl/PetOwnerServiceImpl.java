@@ -1,34 +1,14 @@
 package smallpawsproject.services.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import net.minidev.json.JSONArray;
-import net.minidev.json.JSONObject;
-import net.minidev.json.parser.JSONParser;
-import net.minidev.json.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.core.userdetails.UserDetails;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
-
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.PetOwnerService;
-
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.rmi.RemoteException;
-import java.util.*;
-import java.util.Collection;
 import java.util.List;
-import java.io.File;
 
 @Service
 public class PetOwnerServiceImpl implements PetOwnerService
@@ -36,12 +16,12 @@ public class PetOwnerServiceImpl implements PetOwnerService
   @Autowired
   private final ClientFactory clientFactory;
 
-  private final ClientRMI client;
+  private ClientRMI client;
   private List<PetOwner> petOwners;
 
-
-  public PetOwnerServiceImpl (ClientFactory clientFactory){
-    this.clientFactory = clientFactory;
+  @Autowired
+  public PetOwnerServiceImpl (){
+    this.clientFactory = new ClientFactory();
     client = clientFactory.getClient();
     try
     {
@@ -56,8 +36,6 @@ public class PetOwnerServiceImpl implements PetOwnerService
     {
      petOwners = client.getPetOwners();
 
-
-
     }
     catch (RemoteException e)
     {
@@ -65,15 +43,19 @@ public class PetOwnerServiceImpl implements PetOwnerService
     }
   }
 
+  /**
+   * This method checks if petOwner with same ID, Username or email already exists
+   * and if not it will create a new object of PetOwner
+   * @param petOwner is object of PetOwner
+   * @return Method return message according to if new petOwner was created or not
+   */
 
   @Override public int registerPetOwner(PetOwner petOwner)
   {
-    System.out.println("At the beggining of method");
-    for(int i=0; i<petOwners.size(); i++){
-      if(petOwners.get(i).getUserName().equals(petOwner.getUserName())
-          || petOwners.get(i).getId() == (petOwner.getId())
-          || (petOwners.get(i).getFirstName().equals(petOwner.getFirstName()) && petOwners.get(i).getLastName().equals(petOwner.getLastName()))
-          || petOwners.get(i).getEmail().equals(petOwner.getEmail())){
+    for (PetOwner owner : petOwners) {
+      if (owner.getUserName().equals(petOwner.getUserName())
+              || owner.getId().equals(petOwner.getId())
+              || owner.getEmail().equals(petOwner.getEmail())) {
         return HttpServletResponse.SC_CONFLICT;
       }
     }
@@ -81,16 +63,20 @@ public class PetOwnerServiceImpl implements PetOwnerService
     try
     {
       client.registerPetOwner(petOwner);
-      System.out.println("Sending to server");
     }
     catch (RemoteException e)
     {
       e.printStackTrace();
     }
-    System.out.println("Pet owner sent to server");
-
+    petOwners.add(petOwner);
     return HttpServletResponse.SC_CREATED;
   }
+
+  /**
+   * This method is used to check if there is already User with same username
+   * @param userName is passed from 1st tier
+   * @return This method returns different message according to if username is already existing or not
+   */
 
   @Override public int checkUsername(String userName)
   {
@@ -108,4 +94,37 @@ public class PetOwnerServiceImpl implements PetOwnerService
     return answer;
   }
 
+  /**
+   * This method gets user according to its specific id
+   * @param id indicates the user that the functionality must be used upon
+   * @return Method returns specific petOwner according to the id
+   */
+
+  @Override
+  public PetOwner getUserById(int id) {
+    try {
+      petOwners = client.getPetOwners();
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+    PetOwner temp = new PetOwner();
+    for(PetOwner petOwner:petOwners){
+      if(petOwner.getUserId()==id){
+        temp = petOwner;
+        break;
+      }
+    }
+
+
+    return temp;
+  }
+
+  @Override
+  public void setClient(ClientRMI clientRMI) {
+    this.client = clientRMI;
+  }
+
+  public List<PetOwner> getPetOwners() {
+    return petOwners;
+  }
 }

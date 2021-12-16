@@ -1,24 +1,26 @@
-th{
-    display: flex;
-    justify-content: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
+.card-title{
+    text-align: center;
 }
-
-#description{
-    font-size: 10pt;
-}
-
 #ageRow{
-    display: flex;
-    justify-content: center;
+    text-align: center;
     font-size: 11pt;
+    margin-bottom: 0 !important;
 }
 .imageThumbnail{
     height: 60%;
-    width: auto;
+    width: 100%;
 }
 .card{
-    height: 50%;
     cursor: pointer;
+}
+.card-title{
+    margin-bottom: -.7%;
+}
+.card-text{
+    margin-bottom: -.7%;
+}
+@media (max-width: 641px) {
+    .card{
+        margin-bottom: 10%;
+    }
 }

@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "end_user")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -15,8 +16,8 @@ public class EndUser implements Serializable
   private static final long serialVersionUID = 663126647076776891L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int userId;
+  @GeneratedValue( strategy = GenerationType.IDENTITY)
+  private Integer userId;
   private String userName;
   private String password;
   private String role;
@@ -34,7 +35,7 @@ public EndUser(){}
   }
 
 
-  public EndUser(int Id, String userName, String password,String role)
+  public EndUser(Integer Id, String userName, String password,String role)
   {
     userId = Id;
     this.userName = userName;
@@ -42,11 +43,11 @@ public EndUser(){}
     this.role = role;
   }
 
-  public int getUserId() {
+  public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(int userId) {
+  public void setUserId(Integer userId) {
     this.userId = userId;
   }
 

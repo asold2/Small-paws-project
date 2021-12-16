@@ -14,14 +14,22 @@ public class PetOwnerServiceImpl implements PetOwnerService
   @Autowired
   private final PetOwnerRepository petOwnerRepository;
 
+  /**
+   * This is the constructor that initializes the repository for the database.
+   * @param petOwnerRepository
+   */
   public PetOwnerServiceImpl(PetOwnerRepository petOwnerRepository)
   {
     this.petOwnerRepository = petOwnerRepository;
   }
 
+  /**
+   * This is the method to that saves the new object
+   * of PetOwner with information introduced by the user on the First tier.
+   * @param petOwner
+   */
   @Override public void registerPetOwner(PetOwner petOwner)
   {
-    System.out.println("In pet owner service at register");
     petOwnerRepository.save(petOwner);
   }
 

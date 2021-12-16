@@ -13,32 +13,34 @@
 			
 				<div class="wrap-input">
 						<span class="label-input">Email</span>
-						<input class="input" type="text" name="username" placeholder="Type your email" @bind="_endUser.Email" @onkeydown="@Enter">
+					<input class="input" type="text" name="username" placeholder="Type your email" @bind="_endUser.Email" @onkeyup="@Enter">
+					<div style="color: red">@EmailError</div>
+
 						<span class='focus-input'></span>
 						<i class="fas fa-envelope"></i>
 				</div>
 				<div class="wrap-input">
 				<span class="label-input">Username</span>
-				<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" >
+				<input class="input" type="text" name="username" placeholder="Type your username" @bind="_endUser.UserName" @onkeyup="@Enter" >
 				<span class='focus-input'></span>
 				<i class="fas fa-user-alt"></i>
 			</div>
-			<div style="color: red">@userNameError</div>
+			<div style="color: red">@UserNameError</div>
 
 				
 					<div class="wrap-input">
 						<span class="label-input">Password</span>
-						<input class="input" type="password" placeholder="Type your password" @bind="_endUser.Password" @onkeydown="@Enter">
+						<input class="input" type="password" placeholder="Type your password" @bind="_endUser.Password" @onkeyup="@Enter">
 						<span class="focus-input"></span>
 						<i class="fas fa-lock"></i>
 					</div>
 			<div class="wrap-input">
 				<span class="label-input">Password confirmation</span>
-				<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation">
+				<input class="input" type="password" placeholder="Confirm your password" @bind="PasswordConfirmation" @onkeyup="@Enter">
 				<span class="focus-input"></span>
 				<i class="fas fa-lock"></i>
 			</div>
-			<div style="color: red">@passwordError</div>
+			<div style="color: red">@PasswordError</div>
 
 				<div class="wrap-login-btn">
 					<div class="login-bgbtn"></div>

@@ -1,10 +1,10 @@
-using System.Collections;
 using Client.Authentication;
 using Client.Data;
+using Client.Data.AdoptionRequest;
+using Client.Data.Certificate;
 using Client.Data.Registration;
 using Client.Data.Validation;
 using Client.Model;
-using Client.Pages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -29,16 +29,21 @@ namespace Client
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            
             services.AddSingleton<IAnimalService, CloudAnimalService>();
+            services.AddSingleton<ICertificateService, CloudCertificateService>();
             services.AddSingleton<IUserLogInService, CloudUserLogInService>();
             services.AddSingleton<IUserCreateAccountService, CloudUserCreateAccountService>();
+            services.AddSingleton<IAdoptionRequestService, CloudAdoptionRequestsService>();
             services.AddSingleton<EndUser>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("MustBeVeterinarian", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "Veterinarian"));
-                options.AddPolicy("MustBeAnimalAttendant", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "AnimaAttendant"));
+                options.AddPolicy("MustBeAnimalAttendant", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "AnimalAttendant"));
+                options.AddPolicy("MustBePetOwner", a=> a.RequireAuthenticatedUser().RequireClaim("Role", "PetOwner"));
+
             });
             // services.AddScoped<IList, >();
         }

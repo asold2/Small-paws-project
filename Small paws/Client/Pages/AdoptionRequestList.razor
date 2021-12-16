@@ -1,0 +1,136 @@
+
+@page "/AdoptionRequestList"
+@using Client.Authentication
+@inherits AdoptRequestListRazor
+@inject AuthenticationStateProvider _authenticationStateProvider
+
+
+<AuthorizeView Policy="MustBeVeterinarian">
+    <table>
+        <tr>
+            <th>Request ID</th>
+            <th>Pet owner ID</th>
+            <th>Animal ID</th>
+            <th>Date</th>
+            <th>Animal name</th>
+            <th>Status</th>
+        </tr>
+        @* ReSharper disable once InvertIf *@
+        @if (AdoptRequests != null)
+        {
+            @foreach(var adoptRequest in AdoptRequests)
+            {
+                if (adoptRequest.Approve==false)
+                {
+                    <tr>
+                        <td>@adoptRequest.RequestId</td>
+                        <td class="petOwnerId" data-toggle="modal" data-target="#PetOwnerInfoPopUpWindow" @onclick="() => OpenPopUpWindow(adoptRequest)"><b>@adoptRequest.UserId.Id</b></td>
+                        <td>@adoptRequest.AnimalId.Id</td>
+                        <td>@adoptRequest.DateTime</td>
+                        <td>@adoptRequest.AnimalName</td>
+                        <td class="AcceptReject">
+                            <a class="accept"><i class="fas fa-check" @onclick="() => AcceptRequest(adoptRequest)"></i></a>
+                            <a class="reject"><i class="fas fa-times" @onclick="() => RejectRequest(adoptRequest)"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+        }        
+    </table>
+    
+    
+    @*Pop up window*@
+    <div class="modal fade" id="PetOwnerInfoPopUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    	<div class="modal-dialog modal-dialog-centered" role="document">
+    		<div class="modal-content">
+    			<div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Pet owner information</b></h5>
+    				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    					<span aria-hidden="true">&times;</span>
+    				</button>
+    			</div>
+    			<div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>First name: </td>
+                            <td>@FirstName</td>
+                        </tr>
+                        <tr>
+                            <td>Last name: </td>
+                            <td>@LastName</td>
+                        </tr>
+                        <tr>
+                            <td>Age: </td>
+                            <td>@Age</td>
+                        </tr>
+                        <tr>
+                            <td>Sex: </td>
+                            <td>@Sex</td>
+                        </tr>
+                        <tr>
+                            <td>Family status: </td>
+                            <td>@FamilyStatus</td>
+                        </tr>
+                        <tr>
+                            <td>Income: </td>
+                            <td>@AvgIncome</td>
+                        </tr>
+                        <tr>
+                            <td>Address: </td>
+                            <td>@Address</td>
+                        </tr>
+                        <tr>
+                            <td>Zipcode: </td>
+                            <td>@Zipcode</td>
+                        </tr>
+                        <tr>
+                            <td>Job title: </td>
+                            <td>@JobTitle</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    	</div>
+    </div>
+
+</AuthorizeView>
+
+<AuthorizeView Policy="MustBePetOwner">
+    <table>
+        <tr>
+            <th>Request ID</th>
+            <th>Veterinarian ID</th>
+            <th>Animal ID</th>
+            <th>Date</th>
+            <th>Animal name</th>
+            <th>Status</th>
+        </tr>
+    
+        @if (AdoptRequests != null)
+        {
+            @for (var i = 0; i < AdoptRequests.Count; i++)
+            {
+                if (((CustomAuthenticationStateProvider) _authenticationStateProvider).GetCachedUser().UserId != AdoptRequests[i].UserId.UserId)
+                {
+                    continue;
+                }
+                <tr>
+                    <td>@AdoptRequests[i].RequestId</td>
+                    @if (AdoptRequests[i].VeterinarianId == null)
+                    {
+                        <td>@AdoptRequests[i].VeterinarianId</td>
+                    }
+                    else
+                    {
+                        <td>@AdoptRequests[i].VeterinarianId.UserId</td>
+                    }
+                    <td>@AdoptRequests[i].AnimalId.Id</td>
+                    <td>@AdoptRequests[i].DateTime</td>
+                    <td>@AdoptRequests[i].AnimalName</td>
+                    <td>@StatusText[i]</td>
+                </tr>
+            }
+        }        
+    </table>
+</AuthorizeView>
+

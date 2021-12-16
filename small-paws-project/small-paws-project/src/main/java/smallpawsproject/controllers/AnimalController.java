@@ -5,30 +5,42 @@ import net.minidev.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import smallpawsproject.model.Animal;
 import smallpawsproject.services.AnimalServices;
-
-import java.util.ArrayList;
 
 @RestController
 public class AnimalController
 {
-  @Autowired
+
   private final AnimalServices animalServices;
 
+  /**
+   * AnimalController constructor
+   * @param animalServices is object of AnimalServices
+   */
 
-  public AnimalController(AnimalServices animalServices)
-  {
+  @Autowired
+  public AnimalController(AnimalServices animalServices) {
     this.animalServices = animalServices;
   }
+
+  /**
+   * Method for updating information about specific animal
+   * @param animal is objject of Animal
+   */
+
+  @RequestMapping(method = RequestMethod.PATCH, value="/new_information")
+  @ResponseBody
+  public void updateAnimal(@RequestBody Animal animal){
+
+    animalServices.updateAnimal(animal);
+  }
+
 
   @RequestMapping(method = RequestMethod.POST, value = "/animal")
   @ResponseBody
   public void AddAnimal(@RequestBody Animal animal)
   {
-    System.out.println("Added animal");
 
     animalServices.AddAnimal(animal);
   }
@@ -37,7 +49,7 @@ public class AnimalController
   @ResponseBody
   public JSONArray getAnimals()
   {
-    System.out.println("Animals are out");
+
     return animalServices.GetAnimals();
   }
 }

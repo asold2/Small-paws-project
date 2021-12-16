@@ -1,0 +1,8 @@
+smallpawsproject
+smallpawsproject.data_access
+smallpawsproject.model
+smallpawsproject.repositories
+smallpawsproject.rmi
+smallpawsproject.services
+smallpawsproject.services.impl
+smallpawsproject.test

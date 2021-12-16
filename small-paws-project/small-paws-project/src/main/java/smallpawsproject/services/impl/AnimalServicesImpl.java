@@ -2,19 +2,13 @@ package smallpawsproject.services.impl;
 
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
-import net.minidev.json.parser.JSONParser;
-import net.minidev.json.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smallpawsproject.model.Animal;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
 import smallpawsproject.services.AnimalServices;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.*;
 import java.rmi.RemoteException;
-import java.util.List;
 
 @Service
 public class AnimalServicesImpl implements AnimalServices
@@ -23,11 +17,11 @@ public class AnimalServicesImpl implements AnimalServices
   @Autowired
   private final ClientFactory clientFactory;
 
-  private final ClientRMI client;
+  private ClientRMI client;
 
-  public AnimalServicesImpl(ClientFactory clientFactory) {
+  public AnimalServicesImpl() {
 
-    this.clientFactory = clientFactory;
+    clientFactory = new ClientFactory();
     client = clientFactory.getClient();
 
     try {
@@ -38,17 +32,45 @@ public class AnimalServicesImpl implements AnimalServices
     }
   }
 
+  /**
+   * Method for adding new animal to the system
+   * @param animal is object of Animal
+   */
+
   @Override public void AddAnimal(Animal animal)
   {
+    animal.setHealthNotes("Nothing to note about the animal's health");
+
     try
     {
       client.addAnimal(animal);
-      System.out.println("Sending to server");
     }
     catch (RemoteException e)
     {
       e.printStackTrace();
     }
+  }
+
+  /**
+   * Method for updating information about animal
+   * @param animal is object of Animal
+   */
+
+  @Override public void updateAnimal(Animal animal)
+  {
+    try
+    {
+      client.updateAnimal(animal);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void setClient(ClientRMI clientRMI) {
+    this.client = clientRMI;
   }
 
   @Override public JSONArray GetAnimals()
@@ -66,10 +88,12 @@ public class AnimalServicesImpl implements AnimalServices
        jsonObject.put("picture", animal.getPicture());
        jsonObject.put("animalType", animal.getAnimalType());
        jsonObject.put("age", animal.getAge());
+       jsonObject.put("sex", animal.getSex());
        jsonObject.put("description", animal.getDescription());
        jsonObject.put("washed", animal.isWashed());
        jsonObject.put("fed", animal.isFed());
        jsonObject.put("vaccinated", animal.isVaccinated());
+       jsonObject.put("healthNotes", animal.getHealthNotes());
        animalsAsJson.add(jsonObject);
       }
 

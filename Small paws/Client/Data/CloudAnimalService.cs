@@ -10,13 +10,24 @@ namespace Client.Data
 {
     public class CloudAnimalService : IAnimalService
     {
+        /// <summary>
+        /// Uri of the 2nd tier server.
+        /// </summary>
         private const string Uri = "http://localhost:8090";
+        /// <summary>
+        /// HttpClient used for making http requests to the 2nd tier server.
+        /// </summary>
         private readonly HttpClient _httpClient;
+        
+        /// <summary>
+        /// Constructor dependency injection.
+        /// </summary>
         public CloudAnimalService()
         {
             _httpClient = new HttpClient();
         }
 
+        /// <inheritdoc />
         public async Task<IList<Animal>> GetAnimalsAsync()
         {
             var responseMessage = await _httpClient.GetAsync(Uri + "/animals");
@@ -30,6 +41,7 @@ namespace Client.Data
             return result;
         }
 
+        /// <inheritdoc />
         public async Task AddAnimalAsync(Animal animal)
         {
             var animalAsJson = JsonSerializer.Serialize(animal);
@@ -44,9 +56,10 @@ namespace Client.Data
             } 
         }
 
-        public async Task UpdateAnimal(Animal newAnimal)
+        /// <inheritdoc />
+        public async Task UpdateAnimal(Animal animal)
         {
-            var animalAsJson = JsonSerializer.Serialize(newAnimal);
+            var animalAsJson = JsonSerializer.Serialize(animal);
             HttpContent httpContent = new StringContent(
                 animalAsJson,
                 Encoding.UTF8,

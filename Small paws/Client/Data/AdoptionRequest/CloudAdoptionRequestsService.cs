@@ -8,17 +8,29 @@ using Client.Model;
 
 namespace Client.Data.AdoptionRequest
 {
+    /// <summary>
+    /// Service handling http requests for adoptions.
+    /// </summary>
     public class CloudAdoptionRequestsService : IAdoptionRequestService
     {
+        /// <summary>
+        /// Uri of the 2nd tier server.
+        /// </summary>
         private const string Uri = "http://localhost:8090";
+        /// <summary>
+        /// HttpClient used for making http requests to the 2nd tier server.
+        /// </summary>
         private readonly HttpClient _httpClient;
 
+        /// <summary>
+        /// Constructor dependency injection.
+        /// </summary>
         public CloudAdoptionRequestsService()
         {
             _httpClient = new HttpClient();
         }
 
-
+        /// <inheritdoc />
         public async Task MakeNewRequestAsync(Model.AdoptionRequest adoptionRequest)
         {
             Console.WriteLine("Making new Adoption request");
@@ -37,6 +49,7 @@ namespace Client.Data.AdoptionRequest
             } 
         }
 
+        /// <inheritdoc />
         public async Task<PetOwner> GetPetOwnerByIdAsync(int id)
         {
             PetOwner result = null;
@@ -63,6 +76,7 @@ namespace Client.Data.AdoptionRequest
             return result;
         }
 
+        /// <inheritdoc />
         public async Task<Veterinarian> GetVeterinarianByIdAsync(int id)
         {
             var veterinarianAsJson = await _httpClient.GetAsync(Uri + "/veterinarian/" + id);
@@ -76,6 +90,7 @@ namespace Client.Data.AdoptionRequest
             return result;
         }
 
+        /// <inheritdoc />
         public async Task UpdateAdoptionRequest(Model.AdoptionRequest adoptionRequest)
         {
             Console.WriteLine(adoptionRequest.VeterinarianId.Email + " here");
@@ -91,6 +106,7 @@ namespace Client.Data.AdoptionRequest
           
         }
 
+        /// <inheritdoc />
         public async Task<List<Model.AdoptionRequest>> GetAdoptionRequestsAsync()
         {
             Console.WriteLine("getting them from second tier");

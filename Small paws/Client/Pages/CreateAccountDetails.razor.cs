@@ -128,7 +128,7 @@ namespace Client.Pages
             {
                 if (await UserCreateAccountService.CreateUserAsync(petOwner) == 201)
                 {
-                    NavigationManager.NavigateTo("/");
+                    NavigationManager.NavigateTo("");
                 }
                 else
                 {

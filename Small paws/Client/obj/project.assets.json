@@ -4138,24 +4138,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Iana Postolachi\\.nuget\\packages\\": {}
+    "C:\\Users\\asold\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
+      "projectUniqueName": "F:\\SmallPaws\\Small paws\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\Iana Postolachi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Iana Postolachi\\GitHub\\Small-paws-project\\Small paws\\Client\\obj\\",
+      "projectPath": "F:\\SmallPaws\\Small paws\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\asold\\.nuget\\packages\\",
+      "outputPath": "F:\\SmallPaws\\Small paws\\Client\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Iana Postolachi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\asold\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4219,7 +4226,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

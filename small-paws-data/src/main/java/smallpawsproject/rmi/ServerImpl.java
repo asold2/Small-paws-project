@@ -6,6 +6,12 @@ import smallpawsproject.model.*;
 
 import java.rmi.RemoteException;
 import java.util.List;
+
+/**
+ * This is the server that accepts the clients and communicates
+ * with them to pass the information to the DataAccess class
+ * that will be stored or taken from the database.
+ */
 public class ServerImpl implements Server
 {
   private final DataAccess dataAccess;

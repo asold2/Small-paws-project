@@ -10,11 +10,18 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
 
     private final AdoptionRequestRepository adoptionRequestRepository;
 
+    /**
+     * @param adoptionRequestRepository
+     * The constructor is used to initialize the repository.
+     */
     public AdoptionRequestServiceImpl(AdoptionRequestRepository adoptionRequestRepository) {
         this.adoptionRequestRepository = adoptionRequestRepository;
     }
 
-
+    /**
+     * This method is saving the request that was made for an adoption in the database.
+     * @param adoptionRequest
+     */
     @Override
     public void makeNewRequest(AdoptionRequest adoptionRequest) {
         adoptionRequestRepository.save(adoptionRequest);
@@ -26,6 +33,10 @@ public class AdoptionRequestServiceImpl implements AdoptionRequestService {
         return adoptionRequestRepository.findAll();
     }
 
+    /**
+     * This method is setting the request that has to be updated to the new values that were sent from the user.
+     * @param adoptionRequest
+     */
     @Override
     public void updateAdoptionRequest(AdoptionRequest adoptionRequest) {
         AdoptionRequest temp = adoptionRequestRepository.getById(adoptionRequest.getRequestId());

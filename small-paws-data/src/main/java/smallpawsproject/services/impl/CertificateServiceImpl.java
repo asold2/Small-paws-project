@@ -24,6 +24,11 @@ public class CertificateServiceImpl implements CertificateService {
         this.certificateRepository = certificateRepository;
     }
 
+    /**
+     * This is the method that creates a new certificate which
+     * consists of the document that has some parts that are set here.
+     * @param certificate
+     */
     @Override
     public void addCertificate(Certificate certificate)  {
         PDDocument document = new PDDocument();

@@ -32,10 +32,8 @@ public class AdoptionRequestController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/newRequest")
     public void makeNewRequest( @RequestBody AdoptionRequest adoptionRequest){
-        System.out.println(adoptionRequest.getUserId() + "!!!!!!!!");
 
         var temp = new AdoptionRequest(adoptionRequest.getDate(), adoptionRequest.getAnimalId(), adoptionRequest.getUserId(),  null, false, adoptionRequest.getAnimalName());
-        System.out.println(temp);
         adoptionRequestService.makeNewRequest(temp);
     }
 
@@ -63,7 +61,6 @@ public class AdoptionRequestController {
     @ResponseBody
     public void updateAdoptionRequest(@RequestBody AdoptionRequest adoptionRequest){
         if(adoptionRequest.isApprove()){
-            System.out.println("It was approved");
             certificateService.addCertificate(new Certificate(adoptionRequest, null));
         }
 

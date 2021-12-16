@@ -25,12 +25,12 @@
                         <td>@certificate.RequestId.AnimalName</td>
                         @* <td>@GetDocumentFromByteArray(certificate.Document)</td> *@
                         <td>
-                            <button @onclick="() => OpenPdf(certificate.Document)">OpenPdf</button>
+                            <button 
+                                @* @onclick="() =>OpenPdf(certificate.Document)" *@
+                                >
+                            OpenPdf</button>
                         </td>
-                        @* <td class="AcceptReject"> *@
-                        @*     <td class="accept"><i class="fas fa-check" @onclick="() => AcceptRequest(adoptRequest)"></i></td> *@
-                        @*     <td class="reject"><i class="fas fa-times" @onclick="() => RejectRequest(adoptRequest)"></i></td> *@
-                        @* </td> *@
+               
                     </tr>
                     }
                     

@@ -58,11 +58,9 @@ namespace Client.Pages
         {
             adoptRequest.Approve = true;
             var user = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser();
-            Console.WriteLine(user.UserId + "User's id here");
 
             var vet = await AdoptionRequestService.GetVeterinarianByIdAsync(user.UserId);
             adoptRequest.VeterinarianId = vet;
-            Console.WriteLine(vet.Email + "HERE");
             await AdoptionRequestService.UpdateAdoptionRequest(adoptRequest);
             
             NavigationManager.NavigateTo("AdoptRequestList");

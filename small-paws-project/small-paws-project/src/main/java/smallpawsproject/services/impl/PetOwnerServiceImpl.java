@@ -93,7 +93,6 @@ public class PetOwnerServiceImpl implements PetOwnerService
     } catch (RemoteException e) {
       e.printStackTrace();
     }
-    System.out.println(id + "the correct id");
     PetOwner temp = new PetOwner();
     for(PetOwner petOwner:petOwners){
       if(petOwner.getUserId()==id){

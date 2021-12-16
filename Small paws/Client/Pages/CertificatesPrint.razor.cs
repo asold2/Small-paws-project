@@ -4,32 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Client.Authentication;
 using Client.Model;
-using Client.Data.AdoptionRequest;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Runtime.InteropServices.ComTypes;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Aspose.Pdf;
-using Client.Authentication;
 using Client.Data.Certificate;
-using Client.Authentication;
-using Client.Model;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
-using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.Windows.Forms.PdfViewer;
-using static Syncfusion.Pdf.Graphics.PdfBrushes;
-using PdfFont = Syncfusion.PdfExport.PdfFont;
-using PdfFontFamily = Syncfusion.PdfExport.PdfFontFamily;
 using PdfPageBase = Syncfusion.Pdf.PdfPageBase;
-using PdfStandardFont = Syncfusion.PdfExport.PdfStandardFont;
 
 namespace Client.Pages
 {

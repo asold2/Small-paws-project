@@ -60,7 +60,6 @@ public class UserServiceImpl implements UsersService
   @Override public EndUser check(String userName, String password)
   {
     users = getUsers();
-//    EndUser answer = null;//set to null for testing purposes
     EndUser answer = new EndUser();
     for(EndUser user : users){
       if(user.getUserName().equals(userName)&&user.getPassword().equals(password)){

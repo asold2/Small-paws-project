@@ -46,6 +46,7 @@ namespace Client.Pages
 
         protected string AnimalName;
         protected string AnimalNameError = "";
+        protected string AnimalNameSuccess = "";
 
         protected override async Task OnInitializedAsync()
         {
@@ -53,7 +54,6 @@ namespace Client.Pages
             try
             {
                 var valueInt = Convert.ToInt32(Value);
-                Console.WriteLine(valueInt + "!!!!!!!!!!!!");
                 Animals = await AnimalService.GetAnimalsAsync();
                 foreach (var animal in Animals)
                 {
@@ -124,7 +124,7 @@ namespace Client.Pages
             if (!IsAnyPropertyNullOrEmpty(adoptRequest))
             {
                 await AdoptionRequestService.MakeNewRequestAsync(adoptRequest);
-                AnimalNameError = "Successfully sent adoption request, you can close the window";
+                AnimalNameSuccess = "Successfully sent adoption request, you can close the window";
             }
             
             

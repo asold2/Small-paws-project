@@ -23,7 +23,6 @@ public class AnimalController
   @ResponseBody
   public void updateAnimal(@RequestBody Animal animal){
 
-    System.out.println("Updating animal");
     animalServices.updateAnimal(animal);
   }
 
@@ -32,8 +31,6 @@ public class AnimalController
   @ResponseBody
   public void AddAnimal(@RequestBody Animal animal)
   {
-    System.out.println("Added animal");
-    System.out.println(animal.toString());
 
     animalServices.AddAnimal(animal);
   }
@@ -42,7 +39,6 @@ public class AnimalController
   @ResponseBody
   public JSONArray getAnimals()
   {
-    System.out.println("Animals are out");
 
     return animalServices.GetAnimals();
   }

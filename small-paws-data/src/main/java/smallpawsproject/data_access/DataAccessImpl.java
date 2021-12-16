@@ -48,7 +48,6 @@ public class DataAccessImpl implements DataAccess
 
   @Override public List<EndUser> getUsers()
   {
-    System.out.println("In method to get users");
     return serviceFactory.getUserService().getUsers();
 
   }

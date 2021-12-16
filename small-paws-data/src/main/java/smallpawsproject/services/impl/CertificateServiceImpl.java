@@ -26,7 +26,6 @@ public class CertificateServiceImpl implements CertificateService {
 
     @Override
     public void addCertificate(Certificate certificate)  {
-        System.out.println("Certificate reached here " + certificate);
         PDDocument document = new PDDocument();
         PDPage page = new PDPage();
 
@@ -48,7 +47,6 @@ public class CertificateServiceImpl implements CertificateService {
             e.printStackTrace();
         }
         certificate.setDocument(out.toByteArray());
-        System.out.println(certificate.getDocument() + "!!!!!!!!!!!!!!!!!!!");
         certificateRepository.save(certificate);
 
 
@@ -59,12 +57,5 @@ public class CertificateServiceImpl implements CertificateService {
         return certificateRepository.findAll();
     }
 
-//
-//    public byte[] getFileAsByteArray(PDDocument document){
-//        ByteArrayOutputStream out = new ByteArrayOutputStream();
-//        try{
-//
-//
-//        }
-//    }
+
 }

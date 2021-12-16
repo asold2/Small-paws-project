@@ -12,13 +12,11 @@ public class ServerImpl implements Server
 
   public ServerImpl(DataAccess dataAccess){
     this.dataAccess = dataAccess;
-    System.out.println("Server started");
   }
 
   @Override public void registerPetOwner(PetOwner petOwner)
       throws RemoteException
   {
-    System.out.println("Pet owner sent to dataAccess");
     dataAccess.registerPetOwner(petOwner);
   }
 
@@ -50,7 +48,6 @@ public class ServerImpl implements Server
   @Override
   public void makeNewRequest(AdoptionRequest adoptionRequest) throws RemoteException {
     dataAccess.makeNewRequest(adoptionRequest);
-    System.out.println("Sending to dataAccess");
   }
 
   @Override

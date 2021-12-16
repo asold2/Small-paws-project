@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Client.Data.Registration;
 using Client.Model;
@@ -25,6 +22,7 @@ namespace Client.Pages
         protected int? ZipCode;
         protected string JobTitle;
         protected int? Id;
+        private bool statement = true;
 
         protected string IdError ="";
         protected string AvgIncomeError="";
@@ -42,48 +40,58 @@ namespace Client.Pages
         {
             var petOwner = GetPetOwnerAfterCheckingValues(FirstName, LastName, Age, Sex, FamilyStatus, AverageIncome,
                 Address, ZipCode, JobTitle, Id);
-
-            if (!IsAnyPropertyNullOrEmpty(petOwner))
+            petOwner.Email = EndUser.Email;
+            petOwner.Password = EndUser.Password;
+            petOwner.UserName = EndUser.UserName;
+            if (statement)
             {
                 if (await UserCreateAccountService.CreateUserAsync(petOwner) == 201)
                 {
-                    NavigationManager.NavigateTo("");
+                    NavigationManager.NavigateTo("/");
                 }
                 else
                 {
                     Error = UserCreateAccountService.CreateUserAsync(petOwner).Result + " Error message";
                 }   
             }
+
+      
+            
         }
 
-        private static bool IsAnyPropertyNullOrEmpty(PetOwner petOwner)
-        {
-            return (from pi in petOwner.GetType().GetProperties() where pi.PropertyType == typeof(string) select
-                (string) pi.GetValue(petOwner)).Any(string.IsNullOrEmpty);
-        }
+  
         private PetOwner GetPetOwnerAfterCheckingValues(string fName, string lName, int? age, string sex, string familyStatus, int? averageIncome, string address, int? zipCode,
             string jobTitle, int? id)
         {
             var petOwner = new PetOwner();
             if (string.IsNullOrEmpty(fName))
             {
+                statement = false;
                 FirstNameError = "First name must be filled out";
             }
             else
             {
+                statement = true;
+
                 petOwner.FirstName = fName;
             }
 
             if (string.IsNullOrEmpty(lName))
             {
+                statement = false;
+
                 LastNameError = "Last name must be filled out";
             }
             else
             {
+                statement = true;
+
                 petOwner.LastName = lName;
             }
             if (age == null || !age.ToString().All(char.IsDigit))
             {
+                statement = false;
+
                 AgeError = "Age is not filled out, or is not a number";
                 if (Age is < 18 or > 130)
                 {
@@ -92,28 +100,40 @@ namespace Client.Pages
             }
             else
             {
+                statement = true;
+
                 petOwner.Age = (int)age;
             }
 
             if (sex == null || !sex.All(char.IsLetter))
             {
+                statement = false;
+
                 SexError = "Sex should be filled out";
             }
             else
             {
+                statement = true;
+
                 petOwner.Sex = sex;
             }
 
             if (string.IsNullOrEmpty(familyStatus) || !familyStatus.All(char.IsLetter))
             {
+                statement = false;
+
                 FamilyStatusNameError = "Family status must be filled out";
             }
             else
             {
+                statement = true;
+
                 petOwner.FamilyStatus = familyStatus;
             }
             if (averageIncome == null || !averageIncome.ToString().All(char.IsDigit))
             {
+                statement = false;
+
                 AvgIncomeError = "Average income is not filled out, or is not a number";
                 if (averageIncome < 0)
                 {
@@ -122,37 +142,53 @@ namespace Client.Pages
             }
             else
             {
+                statement = true;
+
                 petOwner.AvgIncome = (int)averageIncome;
             }
 
             if (string.IsNullOrEmpty(address))
             {
+                statement = false;
+
                 AddressError = "Address must be filled out";
             }
             else
             {
+                statement = true;
+
                 petOwner.Address = address;
             }
 
             if (zipCode == null || !zipCode.ToString().All(char.IsDigit))
             {
+                statement = false;
+
                 ZipCodeError = "Zip code must be filled out";
             }
             else
             {
+                statement = true;
+
                 petOwner.ZipCode = (int)zipCode;
             }
 
             if (string.IsNullOrEmpty(jobTitle))
             {
+                statement = false;
+
                 JobTitleError = "Job title must be filled out";
             }
             else
             {
+                statement = true;
+
                 petOwner.JobTitle = jobTitle;
             }
             if(id == null || !id.ToString().All(char.IsDigit))
             {
+                statement = false;
+
                 IdError = "Id is not filled out, or is not a number";
                 if (id.ToString().Length is < 4 or > 9 || id.ToString()[0] == 0)
                 {
@@ -161,6 +197,8 @@ namespace Client.Pages
             }
             else
             {
+                statement = true;
+
                 petOwner.Id = (int)id;
             }
             return petOwner;

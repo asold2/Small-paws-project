@@ -43,14 +43,18 @@ public class PetOwnerServiceImpl implements PetOwnerService
     }
   }
 
+  /**
+   * This method checks if petOwner with same ID, Username or email already exists
+   * and if not it will create a new object of PetOwner
+   * @param petOwner is object of PetOwner
+   * @return Method return message according to if new petOwner was created or not
+   */
 
   @Override public int registerPetOwner(PetOwner petOwner)
   {
-    System.out.println("At the beginning of method");
     for (PetOwner owner : petOwners) {
       if (owner.getUserName().equals(petOwner.getUserName())
               || owner.getId().equals(petOwner.getId())
-              || (owner.getFirstName().equals(petOwner.getFirstName()) && owner.getLastName().equals(petOwner.getLastName()))
               || owner.getEmail().equals(petOwner.getEmail())) {
         return HttpServletResponse.SC_CONFLICT;
       }
@@ -59,16 +63,20 @@ public class PetOwnerServiceImpl implements PetOwnerService
     try
     {
       client.registerPetOwner(petOwner);
-      System.out.println("Sending to server");
     }
     catch (RemoteException e)
     {
       e.printStackTrace();
     }
-    System.out.println("Pet owner sent to server");
     petOwners.add(petOwner);
     return HttpServletResponse.SC_CREATED;
   }
+
+  /**
+   * This method is used to check if there is already User with same username
+   * @param userName is passed from 1st tier
+   * @return This method returns different message according to if username is already existing or not
+   */
 
   @Override public int checkUsername(String userName)
   {
@@ -85,6 +93,12 @@ public class PetOwnerServiceImpl implements PetOwnerService
     }
     return answer;
   }
+
+  /**
+   * This method gets user according to its specific id
+   * @param id indicates the user that the functionality must be used upon
+   * @return Method returns specific petOwner according to the id
+   */
 
   @Override
   public PetOwner getUserById(int id) {

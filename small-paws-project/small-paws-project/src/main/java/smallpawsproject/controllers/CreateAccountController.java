@@ -12,10 +12,21 @@ public class CreateAccountController
 
   private  final PetOwnerService petOwnerService;
 
+  /**
+   * CreateAccountController constructor
+   * @param petOwnerService is object of PetOwnerService
+   */
+
   @Autowired
   public CreateAccountController(PetOwnerService petOwnerService) {
     this.petOwnerService = petOwnerService;
   }
+
+  /**
+   * Method for checking if users username already exists
+   * @param user is object of User
+   * @return Method returns the checked username
+   */
 
 
   @PostMapping("/userName")
@@ -25,6 +36,12 @@ public class CreateAccountController
     String text = user.getUserName();
     return petOwnerService.checkUsername(text);
   }
+
+  /**
+   * Method for making new object of PetOwner with all its necessary information
+   * @param petOwner is object of PetOwner
+   * @return method returns the new PetOwner object
+   */
 
 
   @PostMapping("/newAccount")

@@ -10,6 +10,11 @@ public class CertificateController {
 
     private final CertificateService certificateService;
 
+    /**
+     * CertificateController constructor
+     * @param certificateService is object of CertificateService
+     */
+
     public CertificateController(CertificateService certificateService) {
         this.certificateService = certificateService;
     }

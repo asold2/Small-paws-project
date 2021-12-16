@@ -1,11 +1,11 @@
 package smallpawsproject.rmi;
 
+import org.springframework.stereotype.Component;
 import smallpawsproject.model.*;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
-
 @SuppressWarnings("unused")
 public interface Server extends Remote
 {

@@ -34,6 +34,7 @@
       "Client/1.0.0": {
         "dependencies": {
           "Aspose.PDF": "21.11.0",
+          "Microsoft.NETFramework.ReferenceAssemblies": "1.0.2",
           "Syncfusion.Blazor": "19.3.0.56",
           "Syncfusion.Pdf.WinForms": "19.3.0.57",
           "Syncfusion.PdfViewer.Windows": "19.3.0.57",
@@ -435,6 +436,7 @@
       "Microsoft.JSInterop/5.0.0": {},
       "Microsoft.NETCore.Platforms/5.0.0": {},
       "Microsoft.NETCore.Targets/1.0.1": {},
+      "Microsoft.NETFramework.ReferenceAssemblies/1.0.2": {},
       "Microsoft.Win32.Registry/4.5.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
@@ -2786,6 +2788,13 @@
       "sha512": "sha512-rkn+fKobF/cbWfnnfBOQHKVKIOpxMZBvlSHkqDWgBpwGDcLRduvs3D9OLGeV6GWGvVwNlVi2CBbTjuPmtHvyNw==",
       "path": "microsoft.netcore.targets/1.0.1",
       "hashPath": "microsoft.netcore.targets.1.0.1.nupkg.sha512"
+    },
+    "Microsoft.NETFramework.ReferenceAssemblies/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5/cSEVld+px/CuRrbohO/djfg6++eR6zGpy88MgqloXvkj//WXWpFZyu/OpkXPN0u5m+dN/EVwLNYFUxD4h2+A==",
+      "path": "microsoft.netframework.referenceassemblies/1.0.2",
+      "hashPath": "microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.5.0": {
       "type": "package",

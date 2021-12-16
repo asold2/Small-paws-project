@@ -212,6 +212,9 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.NETFramework.ReferenceAssemblies/1.0.2": {
+        "type": "package"
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1372,6 +1375,17 @@
         "microsoft.netcore.targets.1.0.1.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.NETFramework.ReferenceAssemblies/1.0.2": {
+      "sha512": "5/cSEVld+px/CuRrbohO/djfg6++eR6zGpy88MgqloXvkj//WXWpFZyu/OpkXPN0u5m+dN/EVwLNYFUxD4h2+A==",
+      "type": "package",
+      "path": "microsoft.netframework.referenceassemblies/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+        "microsoft.netframework.referenceassemblies.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.5.0": {
@@ -4116,6 +4130,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Aspose.PDF >= 21.11.0",
+      "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.2",
       "Syncfusion.Blazor >= 19.3.0.56",
       "Syncfusion.Pdf.WinForms >= 19.3.0.57",
       "Syncfusion.PdfViewer.Windows >= 19.3.0.57",
@@ -4169,6 +4184,12 @@
           "Aspose.PDF": {
             "target": "Package",
             "version": "[21.11.0, )"
+          },
+          "Microsoft.NETFramework.ReferenceAssemblies": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "Syncfusion.Blazor": {
             "target": "Package",

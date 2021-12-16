@@ -104,9 +104,19 @@ namespace Client.Pages
             dialog.Document = viewer.PrintDocument;
             dialog.Document.Print();
             viewer.Dispose();
-            // loadedDocument.Save();
-            // Console.WriteLine("Saved the document");
-            // loadedDocument.Close();
+            
+            
+            
+            
+            
+            
+            // // loadedDocument.Save();
+            // // Console.WriteLine("Saved the document");
+            // // loadedDocument.Close();
+            // byte[] fileByteArray = File.ReadAllBytes(Path.Combine(System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath, "MyPDF.pdf"));
+            // Response.AddHeader("Content-disposition", String.Format("attachment; filename={0}.pdf", "MyTestFile"));
+            // Response.ContentType = "application/octet-stream";
+            // Response.BinaryWrite(fileByteArray);
 
         }
 

@@ -1,5 +1,7 @@
 package smallpawsproject;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import smallpawsproject.data_access.DataAccess;
 import smallpawsproject.data_access.DataAccessImpl;
 import smallpawsproject.repositories.*;
@@ -12,6 +14,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.remoting.rmi.RmiServiceExporter;
 
+import java.net.MalformedURLException;
+import java.rmi.AlreadyBoundException;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 
 @SuppressWarnings({"FieldCanBeLocal", "unused"})
@@ -38,6 +43,12 @@ public class SmallPawsDataApplication {
 		serviceFactory = new ServiceFactory(petOwnerRepository, usersRepository, animalRepository, certificateRepository, adoptionRequestRepository);
 		dataAccess = DataAccessImpl.dataAccess();
 		dataAccess.setServicefactory(serviceFactory);
+//		try {
+//			Naming.bind( "rmi://8070:1090/ServerTier3", server());
+//		} catch (AlreadyBoundException | MalformedURLException | RemoteException e) {
+//			e.printStackTrace();
+//		}
+
 
 
 /*

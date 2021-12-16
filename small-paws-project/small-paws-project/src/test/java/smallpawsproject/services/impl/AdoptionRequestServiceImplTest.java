@@ -58,7 +58,7 @@ class AdoptionRequestServiceImplTest {
     }
 
 
-    @Test
+    @org.junit.Test
     void makeNewRequest() {
         AdoptionRequest adoptionRequest = new AdoptionRequest(new Date(), animal, petOwner, veterinarian, false, "animal");
         adoptionRequestService.makeNewRequest(adoptionRequest);

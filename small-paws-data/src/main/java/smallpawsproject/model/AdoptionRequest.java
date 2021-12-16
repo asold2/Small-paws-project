@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @SuppressWarnings("unused")
 @Entity
@@ -30,6 +31,9 @@ public class AdoptionRequest implements Serializable {
     @ManyToOne(targetEntity = PetOwner.class)
     @JoinColumn(name = "userId", nullable = false)
     private PetOwner userId;
+
+//    @OneToOne(mappedBy = "requestId")
+//    private Certificate myCertificate;
 
     @ManyToOne(targetEntity = Veterinarian.class)
     @JoinColumn( columnDefinition="integer", name = "veterinarianId")
@@ -115,5 +119,18 @@ public class AdoptionRequest implements Serializable {
 
     public void setApprove(boolean approve) {
         this.approve = approve;
+    }
+
+    @Override
+    public String toString() {
+        return "Certificate of Adoption:" +
+                "Request  Id = " + requestId +
+                " Date of request = " + date +
+                " Animal Id=" + animalId.getId() +
+                " Pet Owner's first name=" + userId.getFirstName() +
+                " Pet Owner's last name=" + userId.getLastName() +
+                " Pet Owner's address =" + userId.getAddress() +
+                " Approved by =" + veterinarianId.getUserId() +
+                " Animal's Name='" + animalName;
     }
 }

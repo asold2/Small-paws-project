@@ -19,6 +19,7 @@ import smallpawsproject.model.EndUser;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
+import smallpawsproject.rmi.ClientRMIImpl;
 import smallpawsproject.rmi.Server;
 
 import java.rmi.RemoteException;
@@ -29,6 +30,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
 
 //@ExtendWith(MockitoExtension.class)
 //@ExtendWith(SpringExtension.class)
@@ -36,24 +38,16 @@ import static org.mockito.Mockito.lenient;
 @SpringBootTest(classes = SmallPawsProjectApplication.class)
 class PetOwnerServiceImplTest {
 
-    @Spy//Spy, because we need the server, clientRMI and clientFactory to "act" as if in the normal environment
-    private ClientFactory clientFactory;
-    @Spy
+
     private ClientRMI clientRMI;
-    @Spy
-    private Server server;
+
     PetOwnerServiceImpl petOwnerService;
-    @Mock
+
     private List<PetOwner> petOwnerList;
 
     @BeforeEach
     public void setUp(){
-        clientRMI = clientFactory.getClient();
-        try {
-            clientRMI.setServer(server);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+        clientRMI = mock(ClientRMIImpl.class);
         petOwnerService = new PetOwnerServiceImpl();
         petOwnerService.setClient(clientRMI);
         petOwnerList = new ArrayList<>();
@@ -62,7 +56,7 @@ class PetOwnerServiceImplTest {
 
 
     @Test
-    void registerPetOwnerWorksCorrectly() throws RemoteException {
+    void registerPetOwnerWorksCorrectly()  {
         PetOwner petOwnerTest = new PetOwner("Student","kamtjatka, 12",8700,  20,200000,"Single", "Andrei2","Soldan2","M",
         231102, "blablabla", "password", "asoldan2@mail.ru", "PetOwner");
 
@@ -70,14 +64,14 @@ class PetOwnerServiceImplTest {
 
     }
     @Test
-    void registerPetOwnerWhenEmailExists() throws RemoteException {
+    void registerPetOwnerWhenEmailExists() {
         PetOwner petOwnerTest = new PetOwner("Student","kamtjatka, 12",8700,  20,200000,"Single", "Andrei2","Soldan2","M",
                 231102, "blablabla", "password", "asoldan@mail.ru", "PetOwner");
         assertEquals(409, petOwnerService.registerPetOwner(petOwnerTest));
 
     }
     @Test
-    void registerPetOwnerUsernameExists() throws RemoteException {
+    void registerPetOwnerUsernameExists()  {
         PetOwner petOwnerTest = new PetOwner("Student","kamtjatka, 12",8700,  20,200000,"Single", "Andrei2","Soldan2","M",
                 231102, "andrei", "password", "asoldan2@mail.ru", "PetOwner");
         assertEquals(409, petOwnerService.registerPetOwner(petOwnerTest));
@@ -109,11 +103,13 @@ class PetOwnerServiceImplTest {
         petOwnerTest.setUserId(15);
         List<PetOwner> users = new ArrayList<>();
         users.add(petOwnerTest);
+
         try {
             Mockito.when(clientRMI.getPetOwners()).thenReturn(users);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+
         List<PetOwner> gottenUsers = petOwnerService.getPetOwners();
         assertEquals(petOwnerTest.getUserName(), petOwnerService.getUserById(petOwnerTest.getUserId()).getUserName());
         assertEquals(petOwnerTest.getFirstName(), petOwnerService.getUserById(petOwnerTest.getUserId()).getFirstName());

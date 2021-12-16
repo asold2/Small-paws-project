@@ -240,6 +240,32 @@ th[b-usjncqfocu], td[b-usjncqfocu] {
 .petOwnerId[b-usjncqfocu]{
     cursor: pointer;
 }
+/* _content/Client/Pages/CertificatesPrint.razor.rz.scp.css */
+table[b-k4s8f2wul2]{
+    width: 100%;
+}
+tr:nth-child(even)[b-k4s8f2wul2] {
+    background-color: #f2f2f2;
+}
+
+th[b-k4s8f2wul2], td[b-k4s8f2wul2] {
+    padding: 2%;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+.AcceptReject[b-k4s8f2wul2]{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.accept[b-k4s8f2wul2]{
+    height: 100%;
+}
+.reject[b-k4s8f2wul2]{
+    height: 100%;
+}
 /* _content/Client/Pages/CreateAccountDetails.razor.rz.scp.css */
 
 ul[b-sto1q7iszl], li[b-sto1q7iszl] {

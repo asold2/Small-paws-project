@@ -3,9 +3,11 @@ package smallpawsproject.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import smallpawsproject.model.AdoptionRequest;
+import smallpawsproject.model.Certificate;
 import smallpawsproject.model.PetOwner;
 import smallpawsproject.model.Veterinarian;
 import smallpawsproject.services.AdoptionRequestService;
+import smallpawsproject.services.CertificateService;
 import smallpawsproject.services.PetOwnerService;
 import smallpawsproject.services.UsersService;
 
@@ -17,12 +19,14 @@ public class AdoptionRequestController {
     private  final AdoptionRequestService adoptionRequestService;
     private final UsersService usersService;
     private final PetOwnerService petOwnerService;
+    private final CertificateService certificateService;
 
     @Autowired
-    public AdoptionRequestController(AdoptionRequestService adoptionRequestService, UsersService usersService, PetOwnerService petOwnerService) {
+    public AdoptionRequestController(AdoptionRequestService adoptionRequestService, UsersService usersService, PetOwnerService petOwnerService, CertificateService certificateService) {
         this.adoptionRequestService = adoptionRequestService;
         this.usersService = usersService;
         this.petOwnerService = petOwnerService;
+        this.certificateService = certificateService;
     }
 
 
@@ -58,6 +62,12 @@ public class AdoptionRequestController {
     @RequestMapping(method = RequestMethod.PATCH, value="/request_decision")
     @ResponseBody
     public void updateAdoptionRequest(@RequestBody AdoptionRequest adoptionRequest){
+        if(adoptionRequest.isApprove()){
+            System.out.println("It was approved");
+            certificateService.addCertificate(new Certificate(adoptionRequest, null));
+        }
+
+
         adoptionRequestService.updateAdoptionRequest(adoptionRequest);
     }
 

@@ -18,6 +18,7 @@ import smallpawsproject.SmallPawsProjectApplication;
 import smallpawsproject.model.Animal;
 import smallpawsproject.rmi.ClientFactory;
 import smallpawsproject.rmi.ClientRMI;
+import smallpawsproject.rmi.ClientRMIImpl;
 import smallpawsproject.rmi.Server;
 import smallpawsproject.services.AnimalServices;
 
@@ -25,6 +26,8 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+
 import java.util.List;
 
 //@ExtendWith(MockitoExtension.class)
@@ -33,24 +36,13 @@ import java.util.List;
 @SpringBootTest(classes = SmallPawsProjectApplication.class)
 class AnimalServicesImplTest {
 
-    @Spy//Spy, because we need the server, clientRMI and clientFactory to "act" as if in the normal environment
-    private ClientFactory clientFactory;
-    @Spy
     private ClientRMI clientRMI;
-    @Spy
-    private Server server;
-    @Mock
     List<Animal> animals;
     AnimalServicesImpl animalServices;
 
     @BeforeEach
     public void setUp(){
-        clientRMI = clientFactory.getClient();
-        try {
-            clientRMI.setServer(server);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+        clientRMI = mock(ClientRMIImpl.class);
         animalServices = new AnimalServicesImpl();
         animalServices.setClient(clientRMI);
         animals = new ArrayList<>();

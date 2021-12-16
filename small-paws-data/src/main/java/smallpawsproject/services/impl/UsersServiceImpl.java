@@ -14,6 +14,11 @@ public class UsersServiceImpl implements UsersService
   @Autowired
   private final UsersRepository usersRepository;
 
+  /**
+   * This is the constructor that initializes the
+   * repository for interacting with the database further in the program.
+   * @param usersRepository
+   */
   public UsersServiceImpl(UsersRepository usersRepository)
   {
     this.usersRepository = usersRepository;

@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+/**
+ * This is the class that uses all the services that connect to the database.
+ */
 public class DataAccessImpl implements DataAccess
 {
   @Autowired

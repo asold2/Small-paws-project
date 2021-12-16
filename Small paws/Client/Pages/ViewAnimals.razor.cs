@@ -35,12 +35,16 @@ namespace Client.Pages
         /// </summary>
         protected string[] ShownDescription { get; set; }
 
+        protected string NoAnimalsMessage;
+
         /// <summary>
         /// Method used for loading all animals when the page is loaded.
         /// </summary>
         protected override async Task OnInitializedAsync()
         {
             Animals = await AnimalService.GetAnimalsAsync();
+            if (Animals.Count != 0)
+            {
                 ShownImage = new string[Animals.Max(a => a.Id)+1];
                 ShownDescription = new string[Animals.Max(a => a.Id)+1];
                 foreach (var animal in Animals)
@@ -56,6 +60,13 @@ namespace Client.Pages
                         ShownDescription[animal.Id] = animal.Description;
                     }
                 }
+                NoAnimalsMessage = "";
+            }
+            else
+            {
+                NoAnimalsMessage = "No animals in the system";
+            }
+                
         }
 
         /// <summary>

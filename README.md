@@ -14,7 +14,7 @@
 <br />
 <div align="center">
    <a href="https://github.com/HansLongLe/Small-paws-project">
-    <img src="" alt="Logo">
+    <img src="logo.png" alt="Logo">
   </a>
   <h3 align="center">Small paws</h3>
 

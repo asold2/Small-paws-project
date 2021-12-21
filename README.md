@@ -13,10 +13,10 @@
 
 <br />
 <div align="center">
-   <a href="https://github.com/HansLongLe/Small-paws-projectr">
+   <a href="https://github.com/HansLongLe/Small-paws-project">
     <img src="" alt="Logo">
   </a>
-  <h3 align="center">MyFlixerJr</h3>
+  <h3 align="center">Small paws</h3>
 
   <p align="center">
     The project aims to create a pet shelter software. The project has been created as a part of VIA university education programme for the second semester

@@ -144,7 +144,7 @@ Project Link: [https://github.com/HansLongLe/Small-paws-project](https://github.
 [contributors-shield]: https://img.shields.io/github/contributors/hanslongle/small-paws-project.svg?style=for-the-badge
 [contributors-url]: https://github.com/hanslongle/small-paws-project/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/hanslongle/small-paws-project.svg?style=for-the-badge
-[forks-url]: https://github.com/IanaPostolachi/hanslongle/small-paws-project/network/members
+[forks-url]: https://github.com/hanslongle/small-paws-project/network/members
 [stars-shield]: https://img.shields.io/github/stars/hanslongle/small-paws-project.svg?style=for-the-badge
 [stars-url]: https://github.com/hanslongle/small-paws-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/hanslongle/small-paws-project.svg?style=for-the-badge

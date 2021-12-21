@@ -154,4 +154,4 @@ Project Link: [https://github.com/HansLongLe/Small-paws-project](https://github.
 [code-shield]: https://img.shields.io/codefactor/grade/github/hanslongle/Small-paws-project?style=for-the-badge
 [code-url]: https://www.codefactor.io/repository/github/hanslongle/small-paws-project
 [test-shield]: https://img.shields.io/github/workflow/status/hanslongle/small-paws-project/Greetings.svg?style=for-the-badge
-[test-url]: https://github.com/anuraghazra/github-readme-stats/actions
+[test-url]: https://github.com/HansLongLe/Small-paws-project/actions

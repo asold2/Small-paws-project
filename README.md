@@ -148,10 +148,10 @@ Project Link: [https://github.com/HansLongLe/Small-paws-project](https://github.
 [stars-shield]: https://img.shields.io/github/stars/hanslongle/small-paws-project.svg?style=for-the-badge
 [stars-url]: https://github.com/hanslongle/small-paws-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/hanslongle/small-paws-project.svg?style=for-the-badge
-[issues-url]: https://github.com/IanaPostolachi/hanslongle/small-paws-project/issues
+[issues-url]: https://github.com/hanslongle/small-paws-project/issues
 [pull-shield]: https://img.shields.io/github/issues-pr/hanslongle/small-paws-project.svg?style=for-the-badge
 [pull-url]: https://github.com/hanslongle/small-paws-project/pulls
 [code-shield]: https://www.codefactor.io/repository/github/hanslongle/small-paws-project/badge/main
 [code-url]: https://www.codefactor.io/repository/github/hanslongle/small-paws-project
-[test-shield]: https://github.com/HansLongLe/Small-paws-project/workflows/Test/badge.svg
+[test-shield]: https://github.com/HansLongLe/Small-paws-project/workflows/Greetings/badge.svg
 [test-url]: https://github.com/anuraghazra/github-readme-stats/actions

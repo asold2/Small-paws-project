@@ -151,7 +151,7 @@ Project Link: [https://github.com/HansLongLe/Small-paws-project](https://github.
 [issues-url]: https://github.com/hanslongle/small-paws-project/issues
 [pull-shield]: https://img.shields.io/github/issues-pr/hanslongle/small-paws-project.svg?style=for-the-badge
 [pull-url]: https://github.com/hanslongle/small-paws-project/pulls
-[code-shield]: https://www.codefactor.io/repository/github/hanslongle/small-paws-project/badge/main
+[code-shield]: https://img.shields.io/codefactor/grade/github/hanslongle/Small-paws-project?style=for-the-badge
 [code-url]: https://www.codefactor.io/repository/github/hanslongle/small-paws-project
-[test-shield]: https://github.com/HansLongLe/Small-paws-project/workflows/Greetings/badge.svg
+[test-shield]: https://img.shields.io/github/workflow/status/hanslongle/small-paws-project/Greetings.svg?style=for-the-badge
 [test-url]: https://github.com/anuraghazra/github-readme-stats/actions

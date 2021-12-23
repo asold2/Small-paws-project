@@ -111,7 +111,11 @@ Installation of the software
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Codebase visualization
 
+![Visualization of the codebase](./diagram.svg)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
